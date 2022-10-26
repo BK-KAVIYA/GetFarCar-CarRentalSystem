@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Dashboard;
+package GetFarCars.Com.Admin;
 
+import Dashboard.*;
 import java.awt.CardLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,13 +47,16 @@ public class AdminUserManage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         priCard1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
         txtLName = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        txtRegNo = new javax.swing.JTextField();
         txtCity = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         selStatus = new javax.swing.JComboBox<String>();
@@ -65,6 +69,8 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         StAdd = new rojerusan.RSMaterialButtonRectangle();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new rojeru_san.complementos.RSTableMetro();
         StDelete = new rojerusan.RSMaterialButtonRectangle();
         StUpdate = new rojerusan.RSMaterialButtonRectangle();
         jPanel2 = new javax.swing.JPanel();
@@ -74,37 +80,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         ShowPassword = new javax.swing.JCheckBox();
         jLabel36 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        priCard3 = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        selGender2 = new javax.swing.JComboBox<String>();
-        txtLName2 = new javax.swing.JTextField();
-        txtFName2 = new javax.swing.JTextField();
-        jLabel37 = new javax.swing.JLabel();
-        txtAddress2 = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel38 = new javax.swing.JLabel();
-        StCPwd2 = new javax.swing.JPasswordField();
-        StPwd2 = new javax.swing.JPasswordField();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        txtCity2 = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        txtDOB2 = new javax.swing.JTextField();
-        jLabel43 = new javax.swing.JLabel();
-        txtPhone2 = new javax.swing.JTextField();
-        ToAdd = new rojerusan.RSMaterialButtonRectangle();
-        ToUpdate = new rojerusan.RSMaterialButtonRectangle();
-        ToDelete = new rojerusan.RSMaterialButtonRectangle();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtRegNo = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new rojeru_san.complementos.RSTableMetro();
         priCard2 = new javax.swing.JPanel();
         priCard4 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -139,6 +114,37 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
+        priCard3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        txtRegNo2 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        selGender2 = new javax.swing.JComboBox<String>();
+        txtLName2 = new javax.swing.JTextField();
+        txtFName2 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        txtAddress2 = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel38 = new javax.swing.JLabel();
+        StCPwd2 = new javax.swing.JPasswordField();
+        StPwd2 = new javax.swing.JPasswordField();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        txtCity2 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        txtDOB2 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        txtPhone2 = new javax.swing.JTextField();
+        ToAdd = new rojerusan.RSMaterialButtonRectangle();
+        ToUpdate = new rojerusan.RSMaterialButtonRectangle();
+        ToDelete = new rojerusan.RSMaterialButtonRectangle();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new rojeru_san.complementos.RSTableMetro();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         rSMaterialButtonRectangle2 = new rojerusan.RSMaterialButtonRectangle();
@@ -161,10 +167,18 @@ public class AdminUserManage extends javax.swing.JFrame {
         priCard1.setBackground(new java.awt.Color(255, 255, 255));
         priCard1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel6.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        jLabel6.setText("User Management >Student->");
+        priCard1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 41));
+
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setText("Last Name");
         priCard1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 133, -1, 32));
         priCard1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 253, 398, 32));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel9.setText("Registration Number");
+        priCard1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 97, 143, 29));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel10.setText("First Name");
@@ -179,6 +193,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setText("Adress Line 1");
         priCard1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 214, -1, 32));
+        priCard1.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 95, 240, 32));
         priCard1.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 330, 398, 32));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -201,7 +216,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         priCard1.add(txtFName, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 174, 176, 29));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel16.setText("NIC ");
+        jLabel16.setText("Date of Birth");
         priCard1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 32));
         priCard1.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
 
@@ -220,6 +235,40 @@ public class AdminUserManage extends javax.swing.JFrame {
             }
         });
         priCard1.add(StAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 90, 40));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Index No", "F Name", "L Name", "Address ", "City", "Gender", "Birthday", "Contact", "Status"
+            }
+        ));
+        jTable2.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
+        jTable2.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
+        jTable2.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        jTable2.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable2.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable2.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setPreferredWidth(80);
+            jTable2.getColumnModel().getColumn(4).setPreferredWidth(50);
+            jTable2.getColumnModel().getColumn(5).setPreferredWidth(50);
+            jTable2.getColumnModel().getColumn(8).setPreferredWidth(40);
+            jTable2.getColumnModel().getColumn(8).setHeaderValue("Status");
+        }
+
+        priCard1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 670, 140));
 
         StDelete.setText("Delete");
         StDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -301,176 +350,6 @@ public class AdminUserManage extends javax.swing.JFrame {
             }
         });
         priCard1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, -1));
-
-        priCard3.setBackground(new java.awt.Color(255, 255, 255));
-        priCard3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel33.setText("First Name");
-        priCard3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 133, -1, 32));
-
-        jLabel34.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel34.setText("Last Name");
-        priCard3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 133, -1, 32));
-
-        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel35.setText("Gender");
-        priCard3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 95, -1, 32));
-
-        selGender2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        priCard3.add(selGender2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 136, 186, 28));
-        priCard3.add(txtLName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 174, 192, 29));
-        priCard3.add(txtFName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 174, 176, 29));
-
-        jLabel37.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel37.setText("Adress Line 1");
-        priCard3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 214, -1, 32));
-        priCard3.add(txtAddress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 253, 398, 32));
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
-
-        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel38.setText("Once Set the password Cann't Modifiey");
-
-        StCPwd2.setText("jPassw");
-
-        StPwd2.setText("jPas1");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(StCPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(StPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel38)
-                .addGap(37, 37, 37)
-                .addComponent(StPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(StCPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-        );
-
-        priCard3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 220, 180));
-
-        jLabel39.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel39.setText("Password");
-        priCard3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 252, -1, 32));
-
-        jLabel40.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel40.setText("Re-enter the password");
-        priCard3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 329, -1, 32));
-        priCard3.add(txtCity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 330, 398, 32));
-
-        jLabel41.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel41.setText("Adress Line 2");
-        priCard3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 291, -1, 32));
-
-        jLabel42.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel42.setText("NIC");
-        priCard3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 32));
-        priCard3.add(txtDOB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
-
-        jLabel43.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel43.setText("Phone Number");
-        priCard3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, 32));
-        priCard3.add(txtPhone2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 193, 29));
-
-        ToAdd.setText("Add");
-        ToAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToAddActionPerformed(evt);
-            }
-        });
-        priCard3.add(ToAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 90, 40));
-
-        ToUpdate.setText("Update");
-        ToUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUpdateActionPerformed(evt);
-            }
-        });
-        priCard3.add(ToUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 107, 40));
-
-        ToDelete.setText("Delete");
-        ToDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToDeleteActionPerformed(evt);
-            }
-        });
-        priCard3.add(ToDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 107, 40));
-
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/close.png"))); // NOI18N
-        jLabel47.setText("jLabel18");
-        jLabel47.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel47MouseClicked(evt);
-            }
-        });
-        priCard3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, -1));
-
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/minimize.png"))); // NOI18N
-        jLabel48.setText("jLabel29");
-        jLabel48.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel48MouseClicked(evt);
-            }
-        });
-        priCard3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 20, -1));
-
-        jLabel6.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel6.setText("User Management >Customer->");
-        priCard3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 41));
-        priCard3.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 240, 32));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel9.setText("Registration Number");
-        priCard3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 143, 29));
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Index No", "F Name", "L Name", "Address ", "City", "Gender", "NIC", "Contact"
-            }
-        ));
-        jTable2.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
-        jTable2.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        jTable2.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
-        jTable2.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable2.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable2.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable2MouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setPreferredWidth(80);
-            jTable2.getColumnModel().getColumn(4).setPreferredWidth(50);
-            jTable2.getColumnModel().getColumn(5).setPreferredWidth(50);
-        }
-
-        priCard3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 670, 140));
-
-        priCard1.add(priCard3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 620));
 
         jPanel1.add(priCard1, "priCard1");
 
@@ -668,6 +547,176 @@ public class AdminUserManage extends javax.swing.JFrame {
 
         jPanel1.add(priCard2, "priCard2");
 
+        priCard3.setBackground(new java.awt.Color(255, 255, 255));
+        priCard3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        jLabel4.setText("User Management >Instructor->");
+        priCard3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 41));
+        priCard3.add(txtRegNo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 95, 240, 32));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel20.setText("Registration Number");
+        priCard3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 97, 143, 29));
+
+        jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel33.setText("First Name");
+        priCard3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 133, -1, 32));
+
+        jLabel34.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel34.setText("Last Name");
+        priCard3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 133, -1, 32));
+
+        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel35.setText("Gender");
+        priCard3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 95, -1, 32));
+
+        selGender2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        priCard3.add(selGender2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 136, 186, 28));
+        priCard3.add(txtLName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 174, 192, 29));
+        priCard3.add(txtFName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 174, 176, 29));
+
+        jLabel37.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel37.setText("Adress Line 1");
+        priCard3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 214, -1, 32));
+        priCard3.add(txtAddress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 253, 398, 32));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel38.setText("Once Set the password Cann't Modifiey");
+
+        StCPwd2.setText("jPassw");
+
+        StPwd2.setText("jPas1");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StCPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel38)
+                .addGap(37, 37, 37)
+                .addComponent(StPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(StCPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+        );
+
+        priCard3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 220, 180));
+
+        jLabel39.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel39.setText("Password");
+        priCard3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 252, -1, 32));
+
+        jLabel40.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel40.setText("Re-enter the password");
+        priCard3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 329, -1, 32));
+        priCard3.add(txtCity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 330, 398, 32));
+
+        jLabel41.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel41.setText("Adress Line 2");
+        priCard3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 291, -1, 32));
+
+        jLabel42.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel42.setText("Date of Birth");
+        priCard3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 32));
+        priCard3.add(txtDOB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
+
+        jLabel43.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel43.setText("Phone Number");
+        priCard3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, 32));
+        priCard3.add(txtPhone2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 193, 29));
+
+        ToAdd.setText("Add");
+        ToAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToAddActionPerformed(evt);
+            }
+        });
+        priCard3.add(ToAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 90, 40));
+
+        ToUpdate.setText("Update");
+        ToUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUpdateActionPerformed(evt);
+            }
+        });
+        priCard3.add(ToUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 107, 40));
+
+        ToDelete.setText("Delete");
+        ToDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToDeleteActionPerformed(evt);
+            }
+        });
+        priCard3.add(ToDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 107, 40));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Reg No", "F Name", "L Name", "Address ", "City", "Gender", "Birthday", "Contact"
+            }
+        ));
+        jTable4.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
+        jTable4.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
+        jTable4.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        jTable4.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable4.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable4.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTable4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable4MouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jTable4);
+        if (jTable4.getColumnModel().getColumnCount() > 0) {
+            jTable4.getColumnModel().getColumn(0).setPreferredWidth(80);
+            jTable4.getColumnModel().getColumn(4).setPreferredWidth(50);
+            jTable4.getColumnModel().getColumn(5).setPreferredWidth(50);
+        }
+
+        priCard3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 670, 140));
+
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/close.png"))); // NOI18N
+        jLabel47.setText("jLabel18");
+        jLabel47.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel47MouseClicked(evt);
+            }
+        });
+        priCard3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, -1));
+
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/minimize.png"))); // NOI18N
+        jLabel48.setText("jLabel29");
+        jLabel48.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel48MouseClicked(evt);
+            }
+        });
+        priCard3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 20, -1));
+
+        jPanel1.add(priCard3, "priCard3");
+
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 690, 620));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/get.png"))); // NOI18N
@@ -689,7 +738,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 30, 40));
 
         rSMaterialButtonRectangle2.setBackground(new java.awt.Color(153, 0, 0));
-        rSMaterialButtonRectangle2.setText("MANAGE DRIVERS");
+        rSMaterialButtonRectangle2.setText("LECTURER MANAGEMNT");
         rSMaterialButtonRectangle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle2ActionPerformed(evt);
@@ -698,7 +747,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 50));
 
         rSMaterialButtonRectangle3.setBackground(new java.awt.Color(153, 0, 0));
-        rSMaterialButtonRectangle3.setText("MANAGE ADMINS");
+        rSMaterialButtonRectangle3.setText("INSTRUCTOR MANAGEMENT");
         rSMaterialButtonRectangle3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle3ActionPerformed(evt);
@@ -707,7 +756,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         jPanel3.add(rSMaterialButtonRectangle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, 50));
 
         rSMaterialButtonRectangle4.setBackground(new java.awt.Color(153, 0, 0));
-        rSMaterialButtonRectangle4.setText("MANAGE CUSTOMER");
+        rSMaterialButtonRectangle4.setText("STUDENT MANAGEMENT");
         rSMaterialButtonRectangle4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle4ActionPerformed(evt);
@@ -1330,6 +1379,23 @@ private void to_table_update(){
         }
     }//GEN-LAST:event_ToDeleteActionPerformed
 
+    private void jTable4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable4MouseClicked
+            DefaultTableModel df=(DefaultTableModel)jTable4.getModel();
+            int selectedIndex=jTable4.getSelectedRow();
+            txtRegNo2.setText(df.getValueAt(selectedIndex, 0).toString());
+            txtFName2.setText(df.getValueAt(selectedIndex, 1).toString());
+            txtLName2.setText(df.getValueAt(selectedIndex, 2).toString());
+            txtAddress2.setText(df.getValueAt(selectedIndex, 3).toString());
+            txtCity2.setText(df.getValueAt(selectedIndex, 4).toString());
+
+            String gen = (String)df.getValueAt(selectedIndex, 5).toString();
+            selGender2.setSelectedItem(gen);
+
+            txtDOB2.setText(df.getValueAt(selectedIndex, 6).toString());
+            txtPhone2.setText(df.getValueAt(selectedIndex, 7).toString()); 
+
+    }//GEN-LAST:event_jTable4MouseClicked
+
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         Admindashboard add=new Admindashboard();
         add.setVisible(true);
@@ -1417,6 +1483,7 @@ private void to_table_update(){
             java.util.logging.Logger.getLogger(AdminUserManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1455,6 +1522,7 @@ private void to_table_update(){
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1475,6 +1543,7 @@ private void to_table_update(){
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -1496,8 +1565,10 @@ private void to_table_update(){
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private rojeru_san.complementos.RSTableMetro jTable2;
     private rojeru_san.complementos.RSTableMetro jTable3;
+    private rojeru_san.complementos.RSTableMetro jTable4;
     private javax.swing.JPanel priCard1;
     private javax.swing.JPanel priCard2;
     private javax.swing.JPanel priCard3;
@@ -1530,5 +1601,6 @@ private void to_table_update(){
     private javax.swing.JTextField txtPhone2;
     private javax.swing.JTextField txtRegNo;
     private javax.swing.JTextField txtRegNo1;
+    private javax.swing.JTextField txtRegNo2;
     // End of variables declaration//GEN-END:variables
 }
