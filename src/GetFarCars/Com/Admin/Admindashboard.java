@@ -558,13 +558,10 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGroup(CardPri1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-<<<<<<< Updated upstream
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(102, Short.MAX_VALUE))
-=======
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(396, Short.MAX_VALUE))
->>>>>>> Stashed changes
+
+
         );
         CardPri1Layout.setVerticalGroup(
             CardPri1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2883,15 +2880,7 @@ private void time_table_clear(){
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
        time_table_clear();
     }//GEN-LAST:event_jButton5MouseClicked
-private void clear_add_notice(){
-   noticeNum.setText("");
-   noticeTitle.setText("");
-   noticeContent.setText("");
-   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-   LocalDateTime now = LocalDateTime.now();  
-   noticeDate.setText(dtf.format(now));
 
-} 
     private void jLabel78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel78MouseClicked
        this.setState(ICONIFIED);
     }//GEN-LAST:event_jLabel78MouseClicked
