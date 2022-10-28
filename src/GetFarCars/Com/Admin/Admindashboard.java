@@ -129,56 +129,37 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        ScarId = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        cModel = new javax.swing.JComboBox<String>();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
-        depId = new javax.swing.JComboBox<String>();
         jLabel40 = new javax.swing.JLabel();
-        courseId = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
         cName = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        cType = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
-        cCredite = new javax.swing.JTextField();
+        cStatus = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
-        lecNames = new javax.swing.JComboBox<String>();
-        marksPanel = new javax.swing.JPanel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        jLabel57 = new javax.swing.JLabel();
-        midMark = new javax.swing.JTextField();
-        assess = new javax.swing.JCheckBox();
-        mid = new javax.swing.JCheckBox();
-        quiz = new javax.swing.JCheckBox();
-        jLabel59 = new javax.swing.JLabel();
-        practical = new javax.swing.JCheckBox();
-        theoryMark = new javax.swing.JTextField();
-        jLabel60 = new javax.swing.JLabel();
-        courseMarkMessage = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        quizMark = new javax.swing.JTextField();
-        jLabel64 = new javax.swing.JLabel();
-        assessMark = new javax.swing.JTextField();
-        jLabel65 = new javax.swing.JLabel();
-        theory = new javax.swing.JCheckBox();
-        jLabel66 = new javax.swing.JLabel();
-        practicalMark = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         cadd = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
-        cLevel = new javax.swing.JComboBox<String>();
-        cclear = new javax.swing.JButton();
+        cdelete = new javax.swing.JButton();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        carId = new javax.swing.JTextField();
+        cPrice = new javax.swing.JTextField();
+        cSeats = new javax.swing.JTextField();
+        cNoplate = new javax.swing.JTextField();
+        cFueltype = new javax.swing.JComboBox();
+        cadd1 = new javax.swing.JButton();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
         CardPri4 = new javax.swing.JPanel();
@@ -699,7 +680,7 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel34.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel34.setText("Admin Dashboard >Course->");
+        jLabel34.setText("Admin Dashboard >Manage Cars->");
         CardPri3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
@@ -718,9 +699,15 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel36.setText("Course Code");
+        jLabel36.setText("Car ID");
         jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 86, 22));
-        jPanel7.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 206, 29));
+
+        ScarId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ScarIdActionPerformed(evt);
+            }
+        });
+        jPanel7.add(ScarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 206, 29));
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
@@ -741,11 +728,16 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel38.setText("Department");
+        jLabel38.setText("Car Model");
         jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 60, 86, 22));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ICT", "ET", "BST", "MUL" }));
-        jPanel7.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 56, 206, 30));
+        cModel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Waggon R", "Alto", "Premio", "Allion", "Grace" }));
+        cModel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cModelActionPerformed(evt);
+            }
+        });
+        jPanel7.add(cModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 56, 206, 30));
 
         jButton3.setBackground(new java.awt.Color(255, 0, 51));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -762,13 +754,15 @@ public class Admindashboard extends javax.swing.JFrame {
         jTable1.setForeground(new java.awt.Color(204, 0, 102));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Code", "Name", "Level", "Department_ID", "Lecture ID"
+                "Car ID", "Car Name", "Car Type", "Status", "Price", "No_of_seats", "Number plate", "Fuel Type"
             }
         ));
         jTable1.setGridColor(new java.awt.Color(255, 153, 153));
@@ -776,180 +770,44 @@ public class Admindashboard extends javax.swing.JFrame {
         jTable1.setSelectionForeground(new java.awt.Color(255, 255, 204));
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("Code");
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("Name");
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("Level");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Department_ID");
-            jTable1.getColumnModel().getColumn(4).setHeaderValue("Lecture ID");
         }
 
-        jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 570, 100));
+        jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 570, 130));
 
-        jTable2.setForeground(new java.awt.Color(204, 0, 102));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Creadite", "Quiz ", "Assessment", "MID", "Theory", "Patrical"
-            }
-        ));
-        jTable2.setGridColor(new java.awt.Color(255, 102, 102));
-        jScrollPane2.setViewportView(jTable2);
-
-        jPanel7.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 570, 100));
-
-        jTabbedPane1.addTab("View Course Details", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/viewCoursr.png")), jPanel7, "View Course Details"); // NOI18N
+        jTabbedPane1.addTab("View Car Details", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/viewCoursr.png")), jPanel7, "View Course Details"); // NOI18N
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
 
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel39.setText("Department ID");
-
-        depId.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Department" }));
+        jLabel39.setText("Car ID");
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel40.setText("Cource ID");
+        jLabel40.setText("Car Name");
 
         jLabel41.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel41.setText("Course Name");
+        jLabel41.setText("Car Type");
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel42.setText("Creadites");
+        jLabel42.setText("Status");
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel43.setText("Lecture In Charge");
+        jLabel43.setText("Price");
 
-        lecNames.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Lecturer" }));
-
-        marksPanel.setBackground(new java.awt.Color(255, 255, 255));
-        marksPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Exams", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(13, 20, 40))); // NOI18N
-        marksPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel51.setText("Assessment :");
-        marksPanel.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, 20));
-
-        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel54.setText("Quiz :");
-        marksPanel.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 40, 20));
-
-        jLabel56.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel56.setText("marks");
-        marksPanel.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, 20));
-
-        jLabel57.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel57.setText("Mid :");
-        marksPanel.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 50, 20));
-
-        midMark.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        midMark.setEnabled(false);
-        marksPanel.add(midMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 30, 20));
-
-        assess.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assessActionPerformed(evt);
-            }
-        });
-        marksPanel.add(assess, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
-
-        mid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                midActionPerformed(evt);
-            }
-        });
-        marksPanel.add(mid, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
-
-        quiz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quizActionPerformed(evt);
-            }
-        });
-        marksPanel.add(quiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
-
-        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel59.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel59.setText("Final Practical :");
-        marksPanel.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 90, 20));
-
-        practical.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                practicalActionPerformed(evt);
-            }
-        });
-        marksPanel.add(practical, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
-
-        theoryMark.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        theoryMark.setEnabled(false);
-        marksPanel.add(theoryMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 30, 20));
-
-        jLabel60.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel60.setText("marks");
-        marksPanel.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, 20));
-
-        courseMarkMessage.setForeground(new java.awt.Color(255, 0, 0));
-        courseMarkMessage.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        marksPanel.add(courseMarkMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 170, 15));
-
-        jLabel63.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel63.setText("marks");
-        marksPanel.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, 20));
-
-        quizMark.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        quizMark.setEnabled(false);
-        marksPanel.add(quizMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 30, 20));
-
-        jLabel64.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel64.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel64.setText("marks");
-        marksPanel.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, 20));
-
-        assessMark.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        assessMark.setEnabled(false);
-        marksPanel.add(assessMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 30, 20));
-
-        jLabel65.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel65.setText("Final Theory :");
-        marksPanel.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 90, 20));
-
-        theory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                theoryActionPerformed(evt);
-            }
-        });
-        marksPanel.add(theory, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
-
-        jLabel66.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel66.setForeground(new java.awt.Color(13, 20, 40));
-        jLabel66.setText("marks");
-        marksPanel.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, 20));
-
-        practicalMark.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        practicalMark.setEnabled(false);
-        marksPanel.add(practicalMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 30, 20));
-
-        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel44.setText("Add New Course");
+        jLabel44.setText("Add New Car");
 
         cadd.setBackground(new java.awt.Color(204, 0, 51));
         cadd.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cadd.setForeground(new java.awt.Color(153, 0, 51));
-        cadd.setText("Add");
+        cadd.setText("ADD");
         cadd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caddActionPerformed(evt);
@@ -958,17 +816,41 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel45.setText("Level");
+        jLabel45.setText("No_of_seats");
 
-        cLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
-
-        cclear.setBackground(new java.awt.Color(204, 0, 51));
-        cclear.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cclear.setForeground(new java.awt.Color(153, 0, 51));
-        cclear.setText("Clear");
-        cclear.addActionListener(new java.awt.event.ActionListener() {
+        cdelete.setBackground(new java.awt.Color(204, 0, 51));
+        cdelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cdelete.setForeground(new java.awt.Color(153, 0, 51));
+        cdelete.setText("DELETE");
+        cdelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cclearActionPerformed(evt);
+                cdeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel51.setText("Number Plate");
+
+        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel54.setText("Fuel Type");
+
+        cPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cPriceActionPerformed(evt);
+            }
+        });
+
+        cFueltype.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Petrol", "Diesel" }));
+
+        cadd1.setBackground(new java.awt.Color(204, 0, 51));
+        cadd1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cadd1.setForeground(new java.awt.Color(153, 0, 51));
+        cadd1.setText("UPDATE");
+        cadd1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadd1ActionPerformed(evt);
             }
         });
 
@@ -977,39 +859,46 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel44)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
+                .addGap(49, 49, 49)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(marksPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cclear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cadd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel40)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel42)
-                            .addComponent(jLabel43)
-                            .addComponent(jLabel45))
+                        .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lecNames, javax.swing.GroupLayout.Alignment.LEADING, 0, 180, Short.MAX_VALUE)
-                            .addComponent(cCredite, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cName)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(depId, 0, 180, Short.MAX_VALUE)
-                                    .addComponent(courseId))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(cLevel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(189, 189, 189))))
+                            .addComponent(cStatus, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cType)
+                            .addComponent(carId)
+                            .addComponent(cName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cPrice)
+                            .addComponent(cSeats)))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel45)
+                                    .addComponent(jLabel43)
+                                    .addComponent(jLabel42)
+                                    .addComponent(jLabel41)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel39))
+                                .addGap(23, 23, 23))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel54)
+                                    .addComponent(jLabel51)
+                                    .addComponent(cadd, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cFueltype, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cNoplate)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(cadd1)
+                                .addGap(0, 72, Short.MAX_VALUE)))))
+                .addGap(1, 1, 1)
+                .addComponent(cdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1018,43 +907,45 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addComponent(jLabel44)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(depId, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(carId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(courseId, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(cName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cType, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(cCredite, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(cStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lecNames, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel43))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel45)
-                        .addGap(0, 12, Short.MAX_VALUE))
-                    .addComponent(cLevel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(marksPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addComponent(cadd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cclear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel45))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cNoplate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cFueltype, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel54))
+                .addGap(53, 53, 53)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cadd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cadd1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86))
         );
 
-        jTabbedPane1.addTab("Add New Courses", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addCoursrred.png")), jPanel8); // NOI18N
+        jTabbedPane1.addTab("Add New Car", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addCoursrred.png")), jPanel8); // NOI18N
 
         CardPri3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 59, 605, -1));
 
@@ -2172,56 +2063,11 @@ public void admin_setting(){
         cardLayout1.show(CardjPannel,"CardPri3");
     }//GEN-LAST:event_menucourseActionPerformed
 
-    
-    private void assessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assessActionPerformed
-        if(assess.isSelected()){
-            assessMark.setEnabled(true);
-        } else {
-            assessMark.setText(null);
-            assessMark.setEnabled(false);
-        }
-    }//GEN-LAST:event_assessActionPerformed
-
-    private void midActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_midActionPerformed
-        if(mid.isSelected()){
-            midMark.setEnabled(true);
-        } else {
-            midMark.setText(null);
-            midMark.setEnabled(false);
-        }
-    }//GEN-LAST:event_midActionPerformed
-
-    private void quizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizActionPerformed
-        if(quiz.isSelected()){
-            quizMark.setEnabled(true);
-        } else {
-            quizMark.setText(null);
-            quizMark.setEnabled(false);
-        }
-    }//GEN-LAST:event_quizActionPerformed
-
-    private void practicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_practicalActionPerformed
-        if(practical.isSelected()){
-            practicalMark.setEnabled(true);
-        } else {
-            practicalMark.setText(null);
-            practicalMark.setEnabled(false);
-        }
-    }//GEN-LAST:event_practicalActionPerformed
-
-    private void theoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_theoryActionPerformed
-        if(theory.isSelected()){
-            theoryMark.setEnabled(true);
-        } else {
-            theoryMark.setText(null);
-            theoryMark.setEnabled(false);
-        }
-    }//GEN-LAST:event_theoryActionPerformed
-private void clear_cource_fields(){
+    private void clear_cource_fields(){
         
-        courseId.setText("");
         cName.setText("");
-        cCredite.setText("");
+        cType.setText("");
+        cStatus.setText("");
         depId.setSelectedIndex(0);
         lecNames.setSelectedIndex(0);
         cLevel.setSelectedIndex(0);            
@@ -2240,14 +2086,14 @@ private void clear_cource_fields(){
         practical.setSelected(false);
         practicalMark.setText(null);
         practicalMark.setEnabled(false);
-        courseId.requestFocus();
+        cName.requestFocus();
 }
     private void caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddActionPerformed
 
             String DepID=(String)depId.getSelectedItem();
-            String CID=courseId.getText();
-            String Cname=cName.getText();
-            String Ccredite=cCredite.getText();
+            String CID=cName.getText();
+            String Cname=cType.getText();
+            String Ccredite=cStatus.getText();
             String CLevel=(String)cLevel.getSelectedItem();
             String Lecturer=(String)lecNames.getSelectedItem();
             int q;
@@ -2327,9 +2173,9 @@ private void clear_cource_fields(){
 
     }//GEN-LAST:event_caddActionPerformed
 
-    private void cclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cclearActionPerformed
+    private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
         clear_cource_fields();
-    }//GEN-LAST:event_cclearActionPerformed
+    }//GEN-LAST:event_cdeleteActionPerformed
 
     private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
         cardLayout1.show(CardjPannel,"CardPri5");
@@ -2875,6 +2721,22 @@ private void clear_add_notice(){
         } catch (Exception e) {
         }       
     }//GEN-LAST:event_jButton9MouseClicked
+
+    private void cPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cPriceActionPerformed
+
+    private void cModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cModelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cModelActionPerformed
+
+    private void ScarIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScarIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ScarIdActionPerformed
+
+    private void cadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadd1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadd1ActionPerformed
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2937,23 +2799,26 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel CardPri5;
     private javax.swing.JPanel CardjPannel;
     private javax.swing.JTable NoticeTbale;
+    private javax.swing.JTextField ScarId;
     private javax.swing.JCheckBox ShowPassword;
     private javax.swing.JPasswordField adCPwd;
     private javax.swing.JLabel adName;
     private javax.swing.JPasswordField adPwd;
     private javax.swing.JButton addNotice;
-    private javax.swing.JCheckBox assess;
-    private javax.swing.JTextField assessMark;
-    private javax.swing.JTextField cCredite;
-    private javax.swing.JComboBox<String> cLevel;
+    private javax.swing.JComboBox cFueltype;
+    private javax.swing.JComboBox<String> cModel;
     private javax.swing.JTextField cName;
+    private javax.swing.JTextField cNoplate;
+    private javax.swing.JTextField cPrice;
+    private javax.swing.JTextField cSeats;
+    private javax.swing.JTextField cStatus;
+    private javax.swing.JTextField cType;
     private javax.swing.JButton cadd;
-    private javax.swing.JButton cclear;
+    private javax.swing.JButton cadd1;
+    private javax.swing.JTextField carId;
+    private javax.swing.JButton cdelete;
     private javax.swing.JButton clearNotice;
-    private javax.swing.JTextField courseId;
-    private javax.swing.JLabel courseMarkMessage;
     private javax.swing.JLabel demoCount;
-    private javax.swing.JComboBox<String> depId;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -2963,7 +2828,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3013,18 +2877,10 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
@@ -3061,7 +2917,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -3073,26 +2928,16 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
-    private javax.swing.JComboBox<String> lecNames;
-    private javax.swing.JPanel marksPanel;
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
     private rojerusan.RSMaterialButtonRectangle menutimetable;
     private rojerusan.RSMaterialButtonRectangle menuuser;
-    private javax.swing.JCheckBox mid;
-    private javax.swing.JTextField midMark;
     private javax.swing.JTextArea noticeContent;
     private javax.swing.JTextField noticeDate;
     private javax.swing.JTextField noticeNum;
     private javax.swing.JTextField noticeTitle;
-    private javax.swing.JCheckBox practical;
-    private javax.swing.JTextField practicalMark;
-    private javax.swing.JCheckBox quiz;
-    private javax.swing.JTextField quizMark;
     private javax.swing.JComboBox<String> selGender;
     private javax.swing.JComboBox<String> selStatus;
     private javax.swing.JLabel stCount;
@@ -3123,8 +2968,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JComboBox<String> tdate;
     private javax.swing.JComboBox<String> tdep;
     private javax.swing.JComboBox<String> tdep1;
-    private javax.swing.JCheckBox theory;
-    private javax.swing.JTextField theoryMark;
     private javax.swing.JTextArea timeTablesView;
     private javax.swing.JButton timesub;
     private javax.swing.JComboBox<String> tlevel;
