@@ -1,7 +1,10 @@
 
-package com.carrentalsystem.common;
+package com.getfarcar.common;
 
-
+import GetFarCars.Com.Admin.AdminUserManage;
+import GetFarCars.Com.Admin.Admindashboard;
+import com.carrentalsystem.system.DBConnector;
+import com.carrentalsystem.system.LoginPageGetFarCars;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,20 +21,20 @@ public class LoginImp implements LoginDAO{
     
     @Override
     public void userLogin(Login logins) {
-        LoginPage loginPage = new LoginPage();
-        String sql="SELECT * FROM user WHERE UserID='"+logins.getID()+"';";
+        LoginPageGetFarCars loginPage = new LoginPageGetFarCars();
+        String sql="SELECT * FROM user WHERE user_id='"+logins.getID()+"';";
         try {
             pst=conn.prepareStatement(sql);
             ResultSet rs=pst.executeQuery();
             
             while(rs.next()){
                 if(rs.getString("Password").equals(logins.getPassword())){
-                    switch(rs.getInt("UserRolle")){
+                    switch(rs.getInt("Role")){
                         case 1:
-                           /* AdminInterface adminInterface = new AdminInterface();
-                            adminInterface.setUserID(logins.getID());
+                            Admindashboard admindashboard = new Admindashboard();
+                            admindashboard.setUser(logins.getID());
                             loginPage.dispose();
-                            adminInterface.show();*/
+                            admindashboard.show();
                             break;
                         case 2:
                             /*SellerInterface sellerInterface = new SellerInterface();
@@ -40,11 +43,6 @@ public class LoginImp implements LoginDAO{
                             loginPage.dispose();
                             sellerInterface.show();*/
                             
-                            break;
-                        case 3:
-                           /* cashierInterface cashierinterface = new cashierInterface();
-                            loginPage.dispose();
-                            cashierinterface.show();*/
                             break;
                         default :
                             JOptionPane.showMessageDialog(loginPage,"user cann't Identified!!");

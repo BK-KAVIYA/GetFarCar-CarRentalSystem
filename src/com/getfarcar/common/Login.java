@@ -1,5 +1,5 @@
 
-package com.carrentalsystem.common;
+package com.getfarcar.common;
 
 /**
  *

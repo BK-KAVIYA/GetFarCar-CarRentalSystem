@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.carrentalsystem.common;
+package com.carrentalsystem.system;
 
 import Dashboard.*;
 import javax.swing.JProgressBar;
@@ -145,8 +145,8 @@ public class Splash extends javax.swing.JFrame {
     } catch (InterruptedException Ex) {
         System.out.println(Ex);
     }
-        LoginPage Lpage=new LoginPage();
-        Lpage.show();
+        LoginPageGetFarCars loginPageGetFarCars = new LoginPageGetFarCars();
+        loginPageGetFarCars.show();
         Mysplash.hide();
 
     }

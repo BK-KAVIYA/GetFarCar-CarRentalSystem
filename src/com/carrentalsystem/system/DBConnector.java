@@ -1,4 +1,4 @@
-package com.carrentalsystem.common;
+package com.carrentalsystem.system;
 
 
 import java.sql.Connection;
@@ -28,7 +28,7 @@ public class DBConnector {
     
    public static Connection getConnection(){
        Connection conn=null;
-       String url="jdbc:mysql://localhost:3306/supermarket";
+       String url="jdbc:mysql://localhost:3306/getfarcars";
        String username="root";
        String Password="";
        

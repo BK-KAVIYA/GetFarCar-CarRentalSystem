@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Dashboard;
+package com.carrentalsystem.system;
 
+import Dashboard.*;
+import com.getfarcar.common.Login;
+import com.getfarcar.common.LoginImp;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,17 +20,19 @@ import javax.swing.JOptionPane;
  *
  * @author KA VI YA
  */
-public class LoginPage extends javax.swing.JFrame {
-    Connection conn1=ConnectDB.MyDBConnection();
- public static String username;
- public static String password;
+public class LoginPageGetFarCars extends javax.swing.JFrame {
+     DBConnector obj=DBConnector.getObject();
+    java.sql.Connection conn=DBConnector.getConnection();
+    
+    public static String username;
+    public static String password;
 
     public static String getUsername() {
         return username;
     }
 
     public static void setUsername(String username) {
-        LoginPage.username = username;
+        LoginPageGetFarCars.username = username;
     }
 
     public static String getPassword() {
@@ -35,9 +40,9 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     public static void setPassword(String password) {
-        LoginPage.password = password;
+        LoginPageGetFarCars.password = password;
     }
-    public LoginPage() {
+    public LoginPageGetFarCars() {
         initComponents();
     }
 
@@ -54,7 +59,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -78,21 +83,20 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel2.setText("Faculty of Technology");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        jLabel2.setText("Get Far Cars");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("University of Ruhuna");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, 10));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, 10));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/loging_bg.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 140, 590, 400));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Banner_Cover.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 400));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/fot-logo.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 90));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Get_far_cars_logo_login.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 100));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 600));
 
@@ -208,64 +212,17 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void btnlogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogActionPerformed
         // TODO add your handling code here:
-        int c;
-
-    try {
-
-            setUsername(uname.getText());
-            setPassword(pwd.getText());
-
-            Statement stm=conn1.createStatement();
-            String sql="select * from log_user where Uname='"+getUsername()+"' and Password='"+getPassword()+"'";
-            ResultSet rs= stm.executeQuery(sql);
-            if(rs.next()){
-               int role=rs.getInt("Role");
-                //if username and password correct go to home
-            if(role==1){
-                this.dispose(); //close the loging page
-                Admindashboard apage=new Admindashboard();
-                apage.setUser(username);
-                apage.admin_onload(username);
-                apage.show();
-            }else if(role==2){
-                this.dispose(); //close the loging page
-                Lecturerdashboard lbd = new Lecturerdashboard();
-                lbd.setUser(username);
-                lbd.lecturer_setting();
-                lbd.show();
-            }else if(role==3){
-                this.dispose(); //close the loging page
-                TechnicalOfficerDashboard tpage=new TechnicalOfficerDashboard();
-                tpage.setUser(username);
-                tpage.to_on_load();
-                tpage.show();
-            }else if(role==4){
-                this.dispose(); //close the loging page
-                StudentDashboard spage=new StudentDashboard();
-                spage.setUser(username);
-                spage.student_on_load();
-                spage.show();
-            }else{
-                LogPageError error=new LogPageError();
-                error.show();
-                uname.setText("");
-                pwd.setText("");
-            }
-                
-            }else{
-                //if username password is wrong
-                LogPageError error=new LogPageError();
-                error.show();
-                uname.setText("");
-                pwd.setText("");
-            }
-
-            //conn1.close();
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
+        
+        Login login = new Login();
+        String userId=uname.getText();
+        String password=pwd.getText();
+        
+        login.setID(userId);
+        login.setPassword(password);
+        
+        LoginImp lgImp = new LoginImp();
+        lgImp.userLogin(login);
     }//GEN-LAST:event_btnlogActionPerformed
 
     /**
@@ -285,20 +242,21 @@ public class LoginPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPageGetFarCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPageGetFarCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPageGetFarCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPageGetFarCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginPage().setVisible(true);
+                new LoginPageGetFarCars().setVisible(true);
             }
         });
     }
@@ -314,7 +272,7 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

@@ -5,10 +5,10 @@
 package GetFarCars.Com.Admin;
 
 
-import Dashboard.*;
+import com.carrentalsystem.system.DBConnector;
+import com.carrentalsystem.system.LoginPageGetFarCars;
 import java.awt.CardLayout;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,8 +33,8 @@ import javax.swing.table.DefaultTableModel;
  * @author KA VI YA
  */
 public class Admindashboard extends javax.swing.JFrame {
-    Connection conn1=ConnectDB.MyDBConnection();
-
+    DBConnector obj=DBConnector.getObject();
+    java.sql.Connection conn=DBConnector.getConnection();
     CardLayout cardLayout1;
     private static String userID;
 
@@ -312,7 +312,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel1.add(adName, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 195, 240, -1));
 
         menutimetable.setBackground(new java.awt.Color(153, 0, 0));
-        menutimetable.setText("Time Tables");
+        menutimetable.setText("MAINTANACE");
         menutimetable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menutimetableMouseClicked(evt);
@@ -335,7 +335,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel1.add(menuuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 231, -1, 54));
 
         menucourse.setBackground(new java.awt.Color(153, 0, 0));
-        menucourse.setText("Manage Courses");
+        menucourse.setText("MANAGE CARS");
         menucourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menucourseActionPerformed(evt);
@@ -344,7 +344,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel1.add(menucourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, 54));
 
         menunotice.setBackground(new java.awt.Color(153, 0, 0));
-        menunotice.setText("Notices");
+        menunotice.setText("CAR RESERVATION");
         menunotice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menunoticeActionPerformed(evt);
@@ -406,7 +406,7 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("STUDENT");
+        jLabel9.setText("CARS");
 
         stCount.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
         stCount.setForeground(new java.awt.Color(255, 255, 255));
@@ -417,23 +417,22 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(stCount, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jLabel9)))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(stCount, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(79, 79, 79))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -451,7 +450,7 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("LECTURER");
+        jLabel12.setText("DRIVERS");
 
         lecCount.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
         lecCount.setForeground(new java.awt.Color(255, 255, 255));
@@ -462,15 +461,16 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lecCount, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lecCount, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel12)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addGap(52, 52, 52))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,8 +498,8 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("INSTRUCTOR");
-        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, 25));
+        jLabel14.setText("BOOKING");
+        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 25));
 
         demoCount.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
         demoCount.setForeground(new java.awt.Color(255, 255, 255));
@@ -540,7 +540,7 @@ public class Admindashboard extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addContainerGap(392, Short.MAX_VALUE))
         );
         CardPri1Layout.setVerticalGroup(
             CardPri1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1920,7 +1920,7 @@ private void course_table_update(){
 
 }
 private void notice_table_update(){
-    try {
+   /* try {
 
             insert=conn1.prepareStatement("select *  from notice");
             ResultSet rs= insert.executeQuery();
@@ -1940,10 +1940,10 @@ private void notice_table_update(){
 
         } catch (SQLException ex) {
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
 }
 public void admin_onload(String ID){
-    int lec,stu,demo,c;
+   /* int lec,stu,demo,c;
     try {
             insert=conn1.prepareStatement("select f_name from admin where admin_id='"+ID+"'");
             ResultSet admName= insert.executeQuery();
@@ -1994,7 +1994,7 @@ public void admin_onload(String ID){
         } catch (SQLException ex) {
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-     
+     */
 
     }
 
@@ -2014,8 +2014,8 @@ public void admin_onload(String ID){
 
         if(dialogResult==JOptionPane.YES_NO_OPTION){    
             this.dispose();
-            LoginPage apage=new LoginPage();
-            apage.show();
+            LoginPageGetFarCars lgp = new LoginPageGetFarCars();
+            lgp.show();
         }
     }//GEN-LAST:event_jLabel7MouseClicked
 
@@ -2037,7 +2037,7 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel17MouseClicked
 
 public void admin_setting(){
-    int c;
+    /*int c;
     try {
 
             insert=conn1.prepareStatement("select *  from admin where admin_id='"+userID+"'");
@@ -2088,12 +2088,12 @@ public void admin_setting(){
 
         } catch (SQLException ex) {
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
 
 }
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
 
-        try {
+      /*  try {
             String RegNO=txtRegNo.getText();
             String FName=txtFName.getText();
             String LName=txtLName.getText();
@@ -2141,7 +2141,7 @@ public void admin_setting(){
             
         } catch (SQLException ex) {
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }//GEN-LAST:event_AdUpdateActionPerformed
 
    
@@ -2296,7 +2296,7 @@ private void clear_cource_fields(){
         
 
             try {
-            insert=conn1.prepareStatement("insert into course_module(cmod_id,cmod_name,cmod_credite,cmod_dep_id,cmod_lec_id,level,quiz_marks,assess_marks,mid_marks,theory_marks,patrical_marks) values (?,?,?,?,?,?,?,?,?,?,?)");
+            insert=conn.prepareStatement("insert into course_module(cmod_id,cmod_name,cmod_credite,cmod_dep_id,cmod_lec_id,level,quiz_marks,assess_marks,mid_marks,theory_marks,patrical_marks) values (?,?,?,?,?,?,?,?,?,?,?)");
             insert.setString(1, CID);
             insert.setString(2, Cname);
             insert.setString(3, Ccredite);
@@ -2386,7 +2386,7 @@ private void clear_cource_fields(){
         String tSem=(String)tsem.getSelectedItem();
     try {
 
-            insert=conn1.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Monday'");
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Monday'");
             ResultSet rs= insert.executeQuery();
   
             int a=1;
@@ -2395,7 +2395,7 @@ private void clear_cource_fields(){
                     ttmonday.append("\n"+a+". "+rs.getString("Subject_Name")+"\nTo-"+rs.getString("Start_time")+"\nFrom-"+rs.getString("End_time")+"\n@"+rs.getString("Location")+"\n"+"("+rs.getString("Type")+")"+"\n--------------");
             a++;
              }
-            insert=conn1.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Tuesday'");
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Tuesday'");
             ResultSet rs1= insert.executeQuery();
   
             a=1;
@@ -2405,7 +2405,7 @@ private void clear_cource_fields(){
             a++;
              }
 
-            insert=conn1.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Wednesday'");
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Wednesday'");
             ResultSet rs2= insert.executeQuery();
   
             a=1;
@@ -2414,7 +2414,7 @@ private void clear_cource_fields(){
                     tswed.append("\n"+a+". "+rs2.getString("Subject_Name")+"\nTo-"+rs2.getString("Start_time")+"\nFrom-"+rs2.getString("End_time")+"\n@"+rs2.getString("Location")+"\n"+"("+rs2.getString("Type")+")"+"\n--------------");
             a++;
              }
-            insert=conn1.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Thursday'");
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Thursday'");
             ResultSet rs3= insert.executeQuery();
   
             a=1;
@@ -2423,7 +2423,7 @@ private void clear_cource_fields(){
                     tsthus.append("\n"+a+". "+rs3.getString("Subject_Name")+"\nTo-"+rs3.getString("Start_time")+"\nFrom-"+rs3.getString("End_time")+"\n@"+rs3.getString("Location")+"\n"+"("+rs3.getString("Type")+")"+"\n--------------");
             a++;
              }
-            insert=conn1.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Friday'");
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Friday'");
             ResultSet rs4= insert.executeQuery();
   
             a=1;
