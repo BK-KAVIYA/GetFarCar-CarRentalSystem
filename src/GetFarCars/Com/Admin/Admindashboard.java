@@ -257,24 +257,40 @@ public class Admindashboard extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        NoticeTbale = new javax.swing.JTable();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
-        timeTablesView = new javax.swing.JTextArea();
-        jButton6 = new javax.swing.JButton();
+        Jdriver = new rojeru_san.complementos.RSTableMetro();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        LecUpdate3 = new rojerusan.RSMaterialButtonRectangle();
+        LecUpdate5 = new rojerusan.RSMaterialButtonRectangle();
         jPanel14 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
         noticeNum = new javax.swing.JTextField();
         noticeTitle = new javax.swing.JTextField();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        noticeContent = new javax.swing.JTextArea();
-        clearNotice = new javax.swing.JButton();
-        addNotice = new javax.swing.JButton();
+        LecAdd3 = new rojerusan.RSMaterialButtonRectangle();
+        LecUpdate = new rojerusan.RSMaterialButtonRectangle();
+        LecDelete = new rojerusan.RSMaterialButtonRectangle();
+        LecUpdate1 = new rojerusan.RSMaterialButtonRectangle();
+        jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
-        noticeDate = new javax.swing.JTextField();
+        jLabel84 = new javax.swing.JLabel();
+        noticeTitle3 = new javax.swing.JTextField();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        noticeTitle4 = new javax.swing.JTextField();
+        noticeTitle5 = new javax.swing.JTextField();
+        noticeTitle6 = new javax.swing.JTextField();
+        noticeTitle7 = new javax.swing.JTextField();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        Jdriver1 = new rojeru_san.complementos.RSTableMetro();
+        jComboBox2 = new javax.swing.JComboBox();
+        noticeNum1 = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
 
@@ -542,8 +558,13 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGroup(CardPri1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< Updated upstream
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(102, Short.MAX_VALUE))
+=======
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
         CardPri1Layout.setVerticalGroup(
             CardPri1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -756,7 +777,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 60, 86, 22));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ICT", "ET", "BST", "MUL" }));
-        jPanel7.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 56, 206, 30));
+        jPanel7.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 206, 30));
 
         jButton3.setBackground(new java.awt.Color(255, 0, 51));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1640,45 +1661,67 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel72.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel72.setText("Most Recent Notices");
+        jLabel72.setText("Most Recent Bookings");
 
-        NoticeTbale.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        NoticeTbale.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "No", "Date", "Title", "View"
-            }
-        ));
-        NoticeTbale.setGridColor(new java.awt.Color(255, 255, 255));
-        NoticeTbale.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NoticeTbaleMouseClicked(evt);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
             }
         });
-        jScrollPane4.setViewportView(NoticeTbale);
-        if (NoticeTbale.getColumnModel().getColumnCount() > 0) {
-            NoticeTbale.getColumnModel().getColumn(0).setPreferredWidth(35);
-            NoticeTbale.getColumnModel().getColumn(1).setPreferredWidth(50);
-            NoticeTbale.getColumnModel().getColumn(2).setPreferredWidth(220);
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        Jdriver.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking ID", "Start Date", "End Date", "Status ", "Deposite", "Customer ID", "Car ID", "Driver ID", "Admin ID"
+            }
+        ));
+        Jdriver.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
+        Jdriver.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
+        Jdriver.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        Jdriver.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jdriver.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jdriver.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Jdriver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JdriverMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(Jdriver);
+        if (Jdriver.getColumnModel().getColumnCount() > 0) {
+            Jdriver.getColumnModel().getColumn(8).setHeaderValue("Admin ID");
         }
 
-        timeTablesView.setColumns(20);
-        timeTablesView.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        timeTablesView.setRows(5);
-        jScrollPane9.setViewportView(timeTablesView);
+        jLabel85.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel85.setText("Booking ID :");
 
-        jButton6.setBackground(new java.awt.Color(255, 0, 102));
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Clear");
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
+        jLabel86.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel86.setText("Customer ID :");
+
+        LecUpdate3.setText("Search");
+        LecUpdate3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LecUpdate3ActionPerformed(evt);
+            }
+        });
+
+        LecUpdate5.setText("Search");
+        LecUpdate5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LecUpdate5ActionPerformed(evt);
             }
         });
 
@@ -1687,149 +1730,232 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(jLabel72)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addGap(93, 93, 93)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(261, 261, 261))))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LecUpdate5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LecUpdate3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel72)))
+                .addGap(77, 85, Short.MAX_VALUE))
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane9)
+                .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(76, 76, 76)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LecUpdate3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LecUpdate5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
-        jTabbedPane3.addTab("View Notice", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/noticeList.png")), jPanel13); // NOI18N
+        jTabbedPane3.addTab("Bookings", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/noticeList.png")), jPanel13); // NOI18N
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel73.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel73.setText("Add Notices");
+        jLabel73.setText("Manage Bookings");
+        jPanel14.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 15, -1, 30));
 
         jLabel74.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel74.setText("Notice number");
+        jLabel74.setText("Booking ID :");
+        jPanel14.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 69, -1, -1));
 
         jLabel75.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel75.setText("Title of the notice");
+        jLabel75.setText("Start Date :");
+        jPanel14.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        noticeNum.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeNumActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 107, -1));
+
+        noticeTitle.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeTitle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeTitleActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 107, -1));
+
+        LecAdd3.setText("Add");
+        LecAdd3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LecAdd3ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(LecAdd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 90, 40));
+
+        LecUpdate.setText("Search");
+        LecUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LecUpdateActionPerformed(evt);
+            }
+        });
+        jPanel14.add(LecUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 90, 40));
+
+        LecDelete.setText("Delete");
+        LecDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LecDeleteActionPerformed(evt);
+            }
+        });
+        jPanel14.add(LecDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 90, 40));
+
+        LecUpdate1.setText("Update");
+        LecUpdate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LecUpdate1ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(LecUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 90, 40));
 
         jLabel76.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel76.setText("Content of the notice");
-
-        noticeNum.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-
-        noticeTitle.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-
-        noticeContent.setColumns(20);
-        noticeContent.setRows(5);
-        jScrollPane10.setViewportView(noticeContent);
-
-        clearNotice.setBackground(new java.awt.Color(255, 0, 51));
-        clearNotice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        clearNotice.setForeground(new java.awt.Color(255, 255, 255));
-        clearNotice.setText("Clear");
-        clearNotice.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clearNoticeMouseClicked(evt);
-            }
-        });
-
-        addNotice.setBackground(new java.awt.Color(255, 0, 51));
-        addNotice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        addNotice.setForeground(new java.awt.Color(255, 255, 255));
-        addNotice.setText("Add");
-        addNotice.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addNoticeMouseClicked(evt);
-            }
-        });
+        jLabel76.setText("End Date :");
+        jPanel14.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
 
         jLabel77.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel77.setText("Date");
+        jLabel77.setText("Status :");
+        jPanel14.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
 
-        noticeDate.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel84.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel84.setText("      Deposite  :");
+        jPanel14.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
 
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel73)
-                .addGap(247, 247, 247))
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel74)
-                            .addComponent(jLabel75)
-                            .addComponent(jLabel76)
-                            .addComponent(jLabel77))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-                            .addComponent(noticeTitle)
-                            .addComponent(noticeNum)
-                            .addComponent(noticeDate)))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(clearNotice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(addNotice, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel74)
-                    .addComponent(noticeNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel75)
-                    .addComponent(noticeTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel77)
-                    .addComponent(noticeDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel76))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addNotice)
-                    .addComponent(clearNotice))
-                .addContainerGap(102, Short.MAX_VALUE))
-        );
+        noticeTitle3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeTitle3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeTitle3ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeTitle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 107, -1));
 
-        jTabbedPane3.addTab("Add Notice", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addNotice.png")), jPanel14); // NOI18N
+        jLabel87.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel87.setText("Customer ID :");
+        jPanel14.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+
+        jLabel88.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel88.setText("Car ID :");
+        jPanel14.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+
+        jLabel89.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel89.setText("Driver ID :");
+        jPanel14.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
+
+        jLabel90.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel90.setText("Admin ID :");
+        jPanel14.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
+
+        noticeTitle4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeTitle4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeTitle4ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeTitle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 107, -1));
+
+        noticeTitle5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeTitle5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeTitle5ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeTitle5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 107, -1));
+
+        noticeTitle6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeTitle6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeTitle6ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeTitle6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 107, -1));
+
+        noticeTitle7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeTitle7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeTitle7ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeTitle7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 107, -1));
+
+        Jdriver1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking ID", "Start Date", "End Date", "Status ", "Deposite", "Customer ID", "Car ID", "Driver ID"
+            }
+        ));
+        Jdriver1.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
+        Jdriver1.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
+        Jdriver1.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        Jdriver1.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jdriver1.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jdriver1.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Jdriver1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Jdriver1MouseClicked(evt);
+            }
+        });
+        jScrollPane10.setViewportView(Jdriver1);
+
+        jPanel14.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 590, 150));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel14.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+
+        noticeNum1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        noticeNum1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noticeNum1ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(noticeNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 67, 110, -1));
+
+        jTabbedPane3.addTab("Manage Booking", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addNotice.png")), jPanel14); // NOI18N
 
         jPanel12.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 620, 530));
 
@@ -2757,32 +2883,6 @@ private void time_table_clear(){
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
        time_table_clear();
     }//GEN-LAST:event_jButton5MouseClicked
-
-    private void NoticeTbaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoticeTbaleMouseClicked
-        timeTablesView.setText("");         
-        DefaultTableModel df=(DefaultTableModel)NoticeTbale.getModel();
-        int selectedIndex=NoticeTbale.getSelectedRow();
-        String NoticeID=(df.getValueAt(selectedIndex, 0).toString());
-        try {
-
-            insert=conn1.prepareStatement("select *  from notice where Notice_ID='"+NoticeID+"'");
-            ResultSet rs= insert.executeQuery();
-   
-            while(rs.next()){
-            
-                   timeTablesView.append("\nDate :- "+rs.getString("DATE")+"\n"+rs.getString("Subject")+"\n\n"+rs.getString("Content")+"\n------------------------------------------------------------");;
-                 }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_NoticeTbaleMouseClicked
-
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        timeTablesView.setText("");
-    }//GEN-LAST:event_jButton6MouseClicked
 private void clear_add_notice(){
    noticeNum.setText("");
    noticeTitle.setText("");
@@ -2792,44 +2892,6 @@ private void clear_add_notice(){
    noticeDate.setText(dtf.format(now));
 
 } 
-    private void addNoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNoticeMouseClicked
-        String noticeNumber=noticeNum.getText();
-        String noticeTl=noticeTitle.getText();
-        String noticeD=noticeDate.getText();
-        String noticeCon=noticeContent.getText();
-
-
-            try {
-
-                insert=conn1.prepareStatement("INSERT INTO notice( Notice_ID, Subject,Content, DATE)VALUES (?,?,?,?)");
-                insert.setString(1, noticeNumber);
-                insert.setString(2, noticeTl);
-                insert.setString(3,noticeCon);
-                insert.setString(4, noticeD);
-
-
-
-                if(noticeNumber.isEmpty() || noticeTl.isEmpty() || noticeCon.isEmpty()){
-
-                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-
-                }else{
-
-                        insert.executeUpdate();
-                        clear_add_notice();
-
-                }
-            
-
-                } catch (SQLException ex) {
-                    Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-                }
-    }//GEN-LAST:event_addNoticeMouseClicked
-
-    private void clearNoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearNoticeMouseClicked
-        clear_add_notice();
-    }//GEN-LAST:event_clearNoticeMouseClicked
-
     private void jLabel78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel78MouseClicked
        this.setState(ICONIFIED);
     }//GEN-LAST:event_jLabel78MouseClicked
@@ -2886,6 +2948,154 @@ private void clear_add_notice(){
         } catch (Exception e) {
         }       
     }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void JdriverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JdriverMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JdriverMouseClicked
+
+    private void LecAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecAdd3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LecAdd3ActionPerformed
+
+    private void LecUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecUpdateActionPerformed
+        DefaultTableModel df=(DefaultTableModel)Jdriver.getModel();
+        int selectedIndex=Jdriver.getSelectedRow();
+        try {
+
+            String RegNO=txtRegNo1.getText();
+            String FName=txtFName1.getText();
+            String LName=txtLName1.getText();
+            String Address=txtAddress1.getText();
+            String City=txtCity1.getText();
+            String Gender=(String)selGender1.getSelectedItem();
+            String DOB=txtDOB1.getText();
+            String Telephone=txtPhone1.getText();
+            String Position=(String)selStatus1.getSelectedItem();
+
+            Connection conn1=ConnectDB.MyDBConnection();
+            insert=conn1.prepareStatement("update  lectures set lec_id=?,f_name=?,l_name=?,address_l1=?,address_l2=?,gender=?,dob=?,phone_num=?,position=? where lec_id=?");
+            insert.setString(1, RegNO);
+            insert.setString(2, FName);
+            insert.setString(3, LName);
+            insert.setString(4,Address );
+            insert.setString(5, City);
+            insert.setString(6, Gender);
+            insert.setString(7, DOB);
+            insert.setString(8,Telephone );
+            insert.setString(9,Position );
+            insert.setString(10, RegNO);
+
+            insert.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"Recode Update!!");
+            lec_table_update();
+
+            txtRegNo1.setText("");
+            txtFName1.setText("");
+            txtLName1.setText("");
+            txtAddress1.setText("");
+            txtCity1.setText("");
+            txtDOB1.setText("");
+            txtPhone1.setText("");
+            txtRegNo1.requestFocus();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_LecUpdateActionPerformed
+
+    private void LecDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecDeleteActionPerformed
+
+        DefaultTableModel df=(DefaultTableModel)Jdriver.getModel();
+        int selectedIndex=Jdriver.getSelectedRow();
+        try {
+            String index_num=df.getValueAt(selectedIndex,0).toString();
+            int dialogResult=JOptionPane.showConfirmDialog(null,"Do You Want to Delete the Recode", "Warnning",JOptionPane.YES_NO_OPTION);
+
+            if(dialogResult==JOptionPane.YES_NO_OPTION){
+                Connection conn1=ConnectDB.MyDBConnection();
+
+                insert=conn1.prepareStatement("delete from lectures where lec_id=?");
+                insert.setString(1,index_num );
+                insert.executeUpdate();
+
+                insert=conn1.prepareStatement("delete from log_user where Uname=?");
+                insert.setString(1,index_num );
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"Recode Deleted!!");
+                lec_table_update();
+
+                txtRegNo1.setText("");
+                txtFName1.setText("");
+                txtLName1.setText("");
+                txtAddress1.setText("");
+                txtCity1.setText("");
+                txtDOB1.setText("");
+                txtPhone1.setText("");
+                txtRegNo1.requestFocus();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_LecDeleteActionPerformed
+
+    private void LecUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecUpdate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LecUpdate1ActionPerformed
+
+    private void noticeNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeNumActionPerformed
+
+    private void noticeTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeTitleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeTitleActionPerformed
+
+    private void noticeTitle3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeTitle3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeTitle3ActionPerformed
+
+    private void noticeTitle4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeTitle4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeTitle4ActionPerformed
+
+    private void noticeTitle5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeTitle5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeTitle5ActionPerformed
+
+    private void noticeTitle6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeTitle6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeTitle6ActionPerformed
+
+    private void noticeTitle7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeTitle7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeTitle7ActionPerformed
+
+    private void Jdriver1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Jdriver1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Jdriver1MouseClicked
+
+    private void LecUpdate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecUpdate3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LecUpdate3ActionPerformed
+
+    private void noticeNum1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeNum1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noticeNum1ActionPerformed
+
+    private void LecUpdate5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecUpdate5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LecUpdate5ActionPerformed
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2947,12 +3157,18 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel CardPri4;
     private javax.swing.JPanel CardPri5;
     private javax.swing.JPanel CardjPannel;
-    private javax.swing.JTable NoticeTbale;
+    private rojeru_san.complementos.RSTableMetro Jdriver;
+    private rojeru_san.complementos.RSTableMetro Jdriver1;
+    private rojerusan.RSMaterialButtonRectangle LecAdd3;
+    private rojerusan.RSMaterialButtonRectangle LecDelete;
+    private rojerusan.RSMaterialButtonRectangle LecUpdate;
+    private rojerusan.RSMaterialButtonRectangle LecUpdate1;
+    private rojerusan.RSMaterialButtonRectangle LecUpdate3;
+    private rojerusan.RSMaterialButtonRectangle LecUpdate5;
     private javax.swing.JCheckBox ShowPassword;
     private javax.swing.JPasswordField adCPwd;
     private javax.swing.JLabel adName;
     private javax.swing.JPasswordField adPwd;
-    private javax.swing.JButton addNotice;
     private javax.swing.JCheckBox assess;
     private javax.swing.JTextField assessMark;
     private javax.swing.JTextField cCredite;
@@ -2960,7 +3176,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField cName;
     private javax.swing.JButton cadd;
     private javax.swing.JButton cclear;
-    private javax.swing.JButton clearNotice;
     private javax.swing.JTextField courseId;
     private javax.swing.JLabel courseMarkMessage;
     private javax.swing.JLabel demoCount;
@@ -2970,11 +3185,11 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3055,7 +3270,14 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -3074,7 +3296,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -3086,6 +3307,8 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
     private javax.swing.JComboBox<String> lecNames;
@@ -3096,10 +3319,14 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private rojerusan.RSMaterialButtonRectangle menuuser;
     private javax.swing.JCheckBox mid;
     private javax.swing.JTextField midMark;
-    private javax.swing.JTextArea noticeContent;
-    private javax.swing.JTextField noticeDate;
     private javax.swing.JTextField noticeNum;
+    private javax.swing.JTextField noticeNum1;
     private javax.swing.JTextField noticeTitle;
+    private javax.swing.JTextField noticeTitle3;
+    private javax.swing.JTextField noticeTitle4;
+    private javax.swing.JTextField noticeTitle5;
+    private javax.swing.JTextField noticeTitle6;
+    private javax.swing.JTextField noticeTitle7;
     private javax.swing.JCheckBox practical;
     private javax.swing.JTextField practicalMark;
     private javax.swing.JCheckBox quiz;
@@ -3136,7 +3363,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JComboBox<String> tdep1;
     private javax.swing.JCheckBox theory;
     private javax.swing.JTextField theoryMark;
-    private javax.swing.JTextArea timeTablesView;
     private javax.swing.JButton timesub;
     private javax.swing.JComboBox<String> tlevel;
     private javax.swing.JComboBox<String> tlevel1;
