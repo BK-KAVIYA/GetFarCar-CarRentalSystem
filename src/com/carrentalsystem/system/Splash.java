@@ -30,7 +30,6 @@ public class Splash extends javax.swing.JFrame {
         ProgressBar1 = new javax.swing.JProgressBar();
         presentage = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -64,9 +63,6 @@ public class Splash extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/carrentalsystem/common/pngwing.com.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-
         javax.swing.GroupLayout MyprogressLayout = new javax.swing.GroupLayout(Myprogress);
         Myprogress.setLayout(MyprogressLayout);
         MyprogressLayout.setHorizontalGroup(
@@ -85,13 +81,9 @@ public class Splash extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(MyprogressLayout.createSequentialGroup()
                         .addGap(198, 198, 198)
-                        .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MyprogressLayout.createSequentialGroup()
-                                .addGap(201, 201, 201)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2)))))
+                        .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         MyprogressLayout.setVerticalGroup(
@@ -99,13 +91,8 @@ public class Splash extends javax.swing.JFrame {
             .addGroup(MyprogressLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel5)
-                .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MyprogressLayout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel1))
-                    .addGroup(MyprogressLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(77, 77, 77)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -167,7 +154,6 @@ public class Splash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel presentage;
     // End of variables declaration//GEN-END:variables
