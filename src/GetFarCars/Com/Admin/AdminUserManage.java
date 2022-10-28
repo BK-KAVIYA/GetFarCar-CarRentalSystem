@@ -141,7 +141,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(204, 0, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 102));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -204,6 +204,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel31.setText("Password");
         priCard4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 252, -1, 32));
 
+        LecAdd.setBackground(new java.awt.Color(0, 0, 102));
         LecAdd.setText("Add");
         LecAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,6 +213,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         });
         priCard4.add(LecAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 90, 40));
 
+        LecDelete.setBackground(new java.awt.Color(0, 0, 102));
         LecDelete.setText("Delete");
         LecDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +222,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         });
         priCard4.add(LecDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 107, 40));
 
+        LecUpdate.setBackground(new java.awt.Color(0, 0, 102));
         LecUpdate.setText("Update");
         LecUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,7 +231,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         });
         priCard4.add(LecUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 107, 40));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel4.setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 0, 0));
@@ -299,7 +302,7 @@ public class AdminUserManage extends javax.swing.JFrame {
                 "ID", "F Name", "L Name", "Address ", "City", "Email", "NIC", "Contact"
             }
         ));
-        Jdriver.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
+        Jdriver.setColorBackgoundHead(new java.awt.Color(102, 153, 255));
         Jdriver.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
         Jdriver.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
         Jdriver.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -318,6 +321,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         priCard4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 90, 29));
         priCard4.add(txtEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 310, 32));
 
+        Csearch1.setBackground(new java.awt.Color(0, 0, 102));
         Csearch1.setText("Search");
         Csearch1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -556,32 +560,34 @@ public class AdminUserManage extends javax.swing.JFrame {
         });
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 30, 40));
 
-        rSMaterialButtonRectangle2.setBackground(new java.awt.Color(153, 0, 0));
+        rSMaterialButtonRectangle2.setBackground(new java.awt.Color(102, 153, 255));
+        rSMaterialButtonRectangle2.setForeground(new java.awt.Color(0, 0, 102));
         rSMaterialButtonRectangle2.setText("MANAGE DRIVERS");
         rSMaterialButtonRectangle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle2ActionPerformed(evt);
             }
         });
-        jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 50));
+        jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 250, 50));
 
-        rSMaterialButtonRectangle4.setBackground(new java.awt.Color(153, 0, 0));
+        rSMaterialButtonRectangle4.setBackground(new java.awt.Color(102, 153, 255));
+        rSMaterialButtonRectangle4.setForeground(new java.awt.Color(0, 0, 102));
         rSMaterialButtonRectangle4.setText("MANAGE CUSTOMER");
         rSMaterialButtonRectangle4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle4ActionPerformed(evt);
             }
         });
-        jPanel3.add(rSMaterialButtonRectangle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, 50));
+        jPanel3.add(rSMaterialButtonRectangle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 240, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Update1.png"))); // NOI18N
         jLabel3.setText("jLabel3");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 120, 100));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, 100));
 
         jLabel5.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("User Management");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 190, 30));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 190, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
