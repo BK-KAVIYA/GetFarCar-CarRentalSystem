@@ -44,9 +44,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         
         initComponents();
         Load();
-        /*stu_table_update();
-        lec_table_update();
-        to_table_update();*/
         cardLayout =(CardLayout)(jPanel1.getLayout());
     }
 
@@ -95,37 +92,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         Jdriver = new rojeru_san.complementos.RSTableMetro();
-        priCard3 = new javax.swing.JPanel();
-        txtRegNo2 = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        selGender2 = new javax.swing.JComboBox<String>();
-        txtLName2 = new javax.swing.JTextField();
-        txtFName2 = new javax.swing.JTextField();
-        jLabel37 = new javax.swing.JLabel();
-        txtAddress2 = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel38 = new javax.swing.JLabel();
-        StCPwd2 = new javax.swing.JPasswordField();
-        StPwd2 = new javax.swing.JPasswordField();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        txtCity2 = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        txtDOB2 = new javax.swing.JTextField();
-        jLabel43 = new javax.swing.JLabel();
-        txtPhone2 = new javax.swing.JTextField();
-        ToAdd = new rojerusan.RSMaterialButtonRectangle();
-        ToUpdate = new rojerusan.RSMaterialButtonRectangle();
-        ToDelete = new rojerusan.RSMaterialButtonRectangle();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new rojeru_san.complementos.RSTableMetro();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         priCard1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
@@ -166,7 +132,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         rSMaterialButtonRectangle2 = new rojerusan.RSMaterialButtonRectangle();
-        rSMaterialButtonRectangle3 = new rojerusan.RSMaterialButtonRectangle();
         rSMaterialButtonRectangle4 = new rojerusan.RSMaterialButtonRectangle();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -306,7 +271,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         priCard4.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 220, 180));
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel7.setText("User Management >Lecturer->");
+        jLabel7.setText("User Management >Driver->");
         priCard4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 41));
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/close.png"))); // NOI18N
@@ -372,176 +337,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         );
 
         jPanel1.add(priCard2, "priCard2");
-
-        priCard3.setBackground(new java.awt.Color(255, 255, 255));
-        priCard3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        priCard3.add(txtRegNo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 95, 240, 32));
-
-        jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel20.setText("Registration Number");
-        priCard3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 97, 143, 29));
-
-        jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel33.setText("First Name");
-        priCard3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 133, -1, 32));
-
-        jLabel34.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel34.setText("Last Name");
-        priCard3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 133, -1, 32));
-
-        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel35.setText("Gender");
-        priCard3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 95, -1, 32));
-
-        selGender2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        priCard3.add(selGender2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 136, 186, 28));
-        priCard3.add(txtLName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 174, 192, 29));
-        priCard3.add(txtFName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 174, 176, 29));
-
-        jLabel37.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel37.setText("Adress Line 1");
-        priCard3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 214, -1, 32));
-        priCard3.add(txtAddress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 253, 398, 32));
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
-
-        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel38.setText("Once Set the password Cann't Modifiey");
-
-        StCPwd2.setText("jPassw");
-
-        StPwd2.setText("jPas1");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(StCPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(StPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel38)
-                .addGap(37, 37, 37)
-                .addComponent(StPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(StCPwd2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-        );
-
-        priCard3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 220, 180));
-
-        jLabel39.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel39.setText("Password");
-        priCard3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 252, -1, 32));
-
-        jLabel40.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel40.setText("Re-enter the password");
-        priCard3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 329, -1, 32));
-        priCard3.add(txtCity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 330, 398, 32));
-
-        jLabel41.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel41.setText("Adress Line 2");
-        priCard3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 291, -1, 32));
-
-        jLabel42.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel42.setText("NIC");
-        priCard3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 32));
-        priCard3.add(txtDOB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
-
-        jLabel43.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel43.setText("Phone Number");
-        priCard3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, 32));
-        priCard3.add(txtPhone2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 193, 29));
-
-        ToAdd.setText("Add");
-        ToAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToAddActionPerformed(evt);
-            }
-        });
-        priCard3.add(ToAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 90, 40));
-
-        ToUpdate.setText("Update");
-        ToUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUpdateActionPerformed(evt);
-            }
-        });
-        priCard3.add(ToUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 107, 40));
-
-        ToDelete.setText("Delete");
-        ToDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToDeleteActionPerformed(evt);
-            }
-        });
-        priCard3.add(ToDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 107, 40));
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Reg No", "F Name", "L Name", "Address ", "City", "Gender", "Birthday", "Contact"
-            }
-        ));
-        jTable4.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
-        jTable4.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        jTable4.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
-        jTable4.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable4.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable4.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTable4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable4MouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(jTable4);
-        if (jTable4.getColumnModel().getColumnCount() > 0) {
-            jTable4.getColumnModel().getColumn(0).setPreferredWidth(80);
-            jTable4.getColumnModel().getColumn(4).setPreferredWidth(50);
-            jTable4.getColumnModel().getColumn(5).setPreferredWidth(50);
-        }
-
-        priCard3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 670, 140));
-
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/close.png"))); // NOI18N
-        jLabel47.setText("jLabel18");
-        jLabel47.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel47MouseClicked(evt);
-            }
-        });
-        priCard3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, -1));
-
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/minimize.png"))); // NOI18N
-        jLabel48.setText("jLabel29");
-        jLabel48.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel48MouseClicked(evt);
-            }
-        });
-        priCard3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 20, -1));
-
-        jLabel6.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel6.setText("User Management >Customer->");
-        priCard3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 41));
-
-        jPanel1.add(priCard3, "card4");
 
         priCard1.setBackground(new java.awt.Color(255, 255, 255));
         priCard1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -767,15 +562,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         });
         jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 50));
 
-        rSMaterialButtonRectangle3.setBackground(new java.awt.Color(153, 0, 0));
-        rSMaterialButtonRectangle3.setText("MANAGE ADMINS");
-        rSMaterialButtonRectangle3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonRectangle3ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(rSMaterialButtonRectangle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, 50));
-
         rSMaterialButtonRectangle4.setBackground(new java.awt.Color(153, 0, 0));
         rSMaterialButtonRectangle4.setText("MANAGE CUSTOMER");
         rSMaterialButtonRectangle4.addActionListener(new java.awt.event.ActionListener() {
@@ -827,13 +613,13 @@ private void Load(){
         for(User drv:drlist){
             UD.addRow(new Object[]{drv.getID(),drv.getfName(),drv.getlName(),drv.getAddressl1()+drv.getAddressl2(),drv.getCity(),drv.getEmail(),drv.getNIC(),drv.getContactno()});
         }
-        /*
-        List<User> sellerlist=sellerImp.list("Seller");
+        
+        /*List<User> sellerlist=sellerImp.list("Seller");
         for(User sel:sellerlist){      
            SellerName.addItem(sel.getSellerName());
            UFT.addRow(new Object[]{sel.getSellerID(),sel.getSellerName(),sel.getSellerAddress(),sel.getContacatNo()});
-        }
-        
+        }*/
+        /*
          List<User> Cashlist=sellerImp.list("Cheshire");
         for(User ch:Cashlist){
             UFT.addRow(new Object[]{ch.getSellerID(),ch.getSellerName(),ch.getSellerAddress(),ch.getContacatNo()});
@@ -871,10 +657,6 @@ private void Load(){
     private void rSMaterialButtonRectangle2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle2ActionPerformed
         cardLayout.show(jPanel1,"priCard2");
     }//GEN-LAST:event_rSMaterialButtonRectangle2ActionPerformed
-
-    private void rSMaterialButtonRectangle3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle3ActionPerformed
-        cardLayout.show(jPanel1,"priCard3");
-    }//GEN-LAST:event_rSMaterialButtonRectangle3ActionPerformed
 
     private void cusTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cusTableMouseClicked
            
@@ -1105,144 +887,6 @@ private void Load(){
 
 
 
-    private void ToAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToAddActionPerformed
-        String RegNO=txtRegNo2.getText();
-            String FName=txtFName2.getText();
-            String LName=txtLName2.getText();
-            String Address=txtAddress2.getText();
-            String City=txtCity2.getText();
-            String Gender=(String)selGender2.getSelectedItem();
-            String DOB=txtDOB2.getText();
-            String Telephone=txtPhone2.getText();
-            String Password=StPwd2.getText();
-            String CPassword=StCPwd2.getText();
-
-            try {
-            Connection conn1=ConnectDB.MyDBConnection();
-            insert=conn1.prepareStatement("insert into technical_officers(to_id,f_name,l_name,address_l1,address_l2,gender,dob,phone_num) values (?,?,?,?,?,?,?,?)");
-            insert.setString(1, RegNO);
-            insert.setString(2, FName);
-            insert.setString(3, LName);
-            insert.setString(4,Address );
-            insert.setString(5, City);
-            insert.setString(6, Gender);
-            insert.setString(7, DOB);
-            insert.setString(8,Telephone );
-
-
-            if(Password.equals(CPassword)){
-
-                insert.executeUpdate();
-
-                insert=conn1.prepareStatement("insert into log_user(Uname,Password,Role) values (?,?,3)");
-                insert.setString(1, RegNO);
-                insert.setString(2, Password);
-                insert.executeUpdate();
-
-                JOptionPane.showMessageDialog(this,"Technical officers is Added!!");
-                to_table_update();
-
-                txtRegNo2.setText("");
-                txtFName2.setText("");
-                txtLName2.setText("");
-                txtAddress2.setText(""); 
-                txtCity2.setText("");
-                txtDOB2.setText("");
-                txtPhone2.setText("");
-                txtRegNo2.requestFocus();
-            }else{
-                JOptionPane.showMessageDialog(this,"Password not matched!!");
-                StPwd2.setText("");
-                StCPwd2.setText("");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_ToAddActionPerformed
-
-    private void ToUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUpdateActionPerformed
-         DefaultTableModel df=(DefaultTableModel)jTable4.getModel();
-        int selectedIndex=jTable4.getSelectedRow();
-        try {
-
-            String RegNO=txtRegNo2.getText();
-            String FName=txtFName2.getText();
-            String LName=txtLName2.getText();
-            String Address=txtAddress2.getText();
-            String City=txtCity2.getText();
-            String Gender=(String)selGender2.getSelectedItem();
-            String DOB=txtDOB2.getText();
-            String Telephone=txtPhone2.getText();
-
-
-            insert=conn1.prepareStatement("update  technical_officers set to_id=?,f_name=?,l_name=?,address_l1=?,address_l2=?,gender=?,dob=?,phone_num=? where to_id=?");
-            insert.setString(1, RegNO);
-            insert.setString(2, FName);
-            insert.setString(3, LName);
-            insert.setString(4,Address );
-            insert.setString(5, City);
-            insert.setString(6, Gender);
-            insert.setString(7, DOB);
-            insert.setString(8,Telephone );
-            insert.setString(9, RegNO);
-
-
-            insert.executeUpdate();
-
-            JOptionPane.showMessageDialog(this,"Recode Update!!");
-            to_table_update();
-
-            txtRegNo2.setText("");
-            txtFName2.setText("");
-            txtLName2.setText("");
-            txtAddress2.setText(""); 
-            txtCity2.setText("");
-            txtDOB2.setText("");
-            txtPhone2.setText("");
-            txtRegNo2.requestFocus();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_ToUpdateActionPerformed
-
-    private void ToDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToDeleteActionPerformed
-        DefaultTableModel df=(DefaultTableModel)jTable4.getModel();
-        int selectedIndex=jTable4.getSelectedRow();
-    try {
-        String index_num=df.getValueAt(selectedIndex,0).toString();
-        int dialogResult=JOptionPane.showConfirmDialog(null,"Do You Want to Delete the Recode", "Warnning",JOptionPane.YES_NO_OPTION);
-
-        if(dialogResult==JOptionPane.YES_NO_OPTION){
-
-
-            insert=conn1.prepareStatement("delete from technical_officers where to_id=?");
-            insert.setString(1,index_num );
-            insert.executeUpdate();
-
-            insert=conn1.prepareStatement("delete from log_user where Uname=?");
-            insert.setString(1,index_num );
-            insert.executeUpdate();
-
-            JOptionPane.showMessageDialog(this,"Recode Deleted!!");
-            to_table_update();
-
-            txtRegNo2.setText("");
-            txtFName2.setText("");
-            txtLName2.setText("");
-            txtAddress2.setText(""); 
-            txtCity2.setText("");
-            txtDOB2.setText("");
-            txtPhone2.setText("");
-            txtRegNo2.requestFocus();
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_ToDeleteActionPerformed
-
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         Admindashboard add=new Admindashboard();
         add.setVisible(true);
@@ -1291,34 +935,6 @@ private void Load(){
     private void jLabel46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel46MouseClicked
         this.setState(ICONIFIED);
     }//GEN-LAST:event_jLabel46MouseClicked
-
-    private void jLabel47MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel47MouseClicked
-        int dialogResult=JOptionPane.showConfirmDialog(null,"Do You Want to Exit?", "Warnning",JOptionPane.YES_NO_OPTION);
-
-        if(dialogResult==JOptionPane.YES_NO_OPTION){    
-                System.exit(0);
-        }
-    }//GEN-LAST:event_jLabel47MouseClicked
-
-    private void jLabel48MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel48MouseClicked
-        this.setState(ICONIFIED);
-    }//GEN-LAST:event_jLabel48MouseClicked
-
-    private void jTable4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable4MouseClicked
-        DefaultTableModel df=(DefaultTableModel)jTable4.getModel();
-        int selectedIndex=jTable4.getSelectedRow();
-        txtRegNo2.setText(df.getValueAt(selectedIndex, 0).toString());
-        txtFName2.setText(df.getValueAt(selectedIndex, 1).toString());
-        txtLName2.setText(df.getValueAt(selectedIndex, 2).toString());
-        txtAddress2.setText(df.getValueAt(selectedIndex, 3).toString());
-        txtCity2.setText(df.getValueAt(selectedIndex, 4).toString());
-
-        String gen = (String)df.getValueAt(selectedIndex, 5).toString();
-        selGender2.setSelectedItem(gen);
-
-        txtDOB2.setText(df.getValueAt(selectedIndex, 6).toString());
-        txtPhone2.setText(df.getValueAt(selectedIndex, 7).toString());
-    }//GEN-LAST:event_jTable4MouseClicked
 
     private void JdriverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JdriverMouseClicked
         // TODO add your handling code here:
@@ -1392,15 +1008,10 @@ private void Load(){
     private rojerusan.RSMaterialButtonRectangle StAdd1;
     private javax.swing.JPasswordField StCPwd;
     private javax.swing.JPasswordField StCPwd1;
-    private javax.swing.JPasswordField StCPwd2;
     private rojerusan.RSMaterialButtonRectangle StDelete;
     private javax.swing.JPasswordField StPwd;
     private javax.swing.JPasswordField StPwd1;
-    private javax.swing.JPasswordField StPwd2;
     private rojerusan.RSMaterialButtonRectangle StUpdate;
-    private rojerusan.RSMaterialButtonRectangle ToAdd;
-    private rojerusan.RSMaterialButtonRectangle ToDelete;
-    private rojerusan.RSMaterialButtonRectangle ToUpdate;
     private javax.swing.JComboBox<String> cusGender;
     private rojeru_san.complementos.RSTableMetro cusTable;
     private javax.swing.JLabel jLabel1;
@@ -1415,7 +1026,6 @@ private void Load(){
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1429,26 +1039,13 @@ private void Load(){
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1456,43 +1053,30 @@ private void Load(){
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private rojeru_san.complementos.RSTableMetro jTable4;
     private javax.swing.JPanel priCard1;
     private javax.swing.JPanel priCard2;
-    private javax.swing.JPanel priCard3;
     private javax.swing.JPanel priCard4;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle2;
-    private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle3;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle4;
     private javax.swing.JComboBox<String> selGender1;
-    private javax.swing.JComboBox<String> selGender2;
     private javax.swing.JComboBox<String> selStatus1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtAddress1;
-    private javax.swing.JTextField txtAddress2;
     private javax.swing.JTextField txtAddressl2;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtCity1;
-    private javax.swing.JTextField txtCity2;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtDOB1;
-    private javax.swing.JTextField txtDOB2;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFName;
     private javax.swing.JTextField txtFName1;
-    private javax.swing.JTextField txtFName2;
     private javax.swing.JTextField txtLName;
     private javax.swing.JTextField txtLName1;
-    private javax.swing.JTextField txtLName2;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtPhone1;
-    private javax.swing.JTextField txtPhone2;
     private javax.swing.JTextField txtRegNo;
     private javax.swing.JTextField txtRegNo1;
-    private javax.swing.JTextField txtRegNo2;
     // End of variables declaration//GEN-END:variables
 }
