@@ -77,13 +77,12 @@ public class UserImp implements UserDAO{
         User user = new User();
         char UserType=userID.charAt(0);
         switch(UserType){
-            case 'A':
-               TableName="admin";
+            case 'D':
+               TableName="driver";
                 break;
             case 'C':
                TableName="customer";
                 break;
-
         }
         
         String sql="select * from "+TableName+" where ID=?;";

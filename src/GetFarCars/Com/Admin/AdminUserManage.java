@@ -69,15 +69,13 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         txtRegNo1 = new javax.swing.JTextField();
-        txtCity1 = new javax.swing.JTextField();
+        txtAddressl21 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        selStatus1 = new javax.swing.JComboBox<String>();
-        jLabel27 = new javax.swing.JLabel();
-        selGender1 = new javax.swing.JComboBox<String>();
+        DrGender1 = new javax.swing.JComboBox<String>();
         jLabel28 = new javax.swing.JLabel();
         txtFName1 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        txtDOB1 = new javax.swing.JTextField();
+        txtNIC1 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         LecAdd = new rojerusan.RSMaterialButtonRectangle();
@@ -92,6 +90,11 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         Jdriver = new rojeru_san.complementos.RSTableMetro();
+        jLabel33 = new javax.swing.JLabel();
+        txtEmail1 = new javax.swing.JTextField();
+        Csearch1 = new rojerusan.RSMaterialButtonRectangle();
+        jLabel27 = new javax.swing.JLabel();
+        txtCity1 = new javax.swing.JTextField();
         priCard1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
@@ -154,18 +157,18 @@ public class AdminUserManage extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setText("Last Name");
-        priCard4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 133, -1, 32));
+        priCard4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, -1, 32));
         priCard4.add(txtAddress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 253, 398, 32));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel22.setText("Lecturer ID");
-        priCard4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 97, 90, 29));
+        jLabel22.setText("Driver ID");
+        priCard4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, 29));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("First Name");
-        priCard4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 133, -1, 32));
+        priCard4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 32));
         priCard4.add(txtPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 193, 29));
-        priCard4.add(txtLName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 174, 192, 29));
+        priCard4.add(txtLName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 192, 29));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("Adress Line 2");
@@ -174,32 +177,25 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("Adress Line 1");
         priCard4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 214, -1, 32));
-        priCard4.add(txtRegNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 95, 310, 32));
-        priCard4.add(txtCity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 330, 398, 32));
+        priCard4.add(txtRegNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 310, 32));
+        priCard4.add(txtAddressl21, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 330, 180, 32));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel26.setText("Gender");
         priCard4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 95, -1, 32));
 
-        selStatus1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Senior professor", "Professor", "Dean", "HOD" }));
-        priCard4.add(selStatus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 206, 186, 28));
-
-        jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel27.setText("Position");
-        priCard4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 171, -1, 32));
-
-        selGender1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        priCard4.add(selGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 136, 186, 28));
+        DrGender1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        priCard4.add(DrGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 136, 186, 28));
 
         jLabel28.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel28.setText("Phone Number");
         priCard4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, 32));
-        priCard4.add(txtFName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 174, 176, 29));
+        priCard4.add(txtFName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 176, 29));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel29.setText("Date of Birth");
+        jLabel29.setText("NIC");
         priCard4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 32));
-        priCard4.add(txtDOB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
+        priCard4.add(txtNIC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
 
         jLabel30.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel30.setText("Re-enter the password");
@@ -322,6 +318,24 @@ public class AdminUserManage extends javax.swing.JFrame {
         }
 
         priCard4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 670, 140));
+
+        jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel33.setText("Email");
+        priCard4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 90, 29));
+        priCard4.add(txtEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 310, 32));
+
+        Csearch1.setText("Search");
+        Csearch1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Csearch1ActionPerformed(evt);
+            }
+        });
+        priCard4.add(Csearch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 90, 40));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel27.setText("City");
+        priCard4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, 32));
+        priCard4.add(txtCity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 180, 32));
 
         javax.swing.GroupLayout priCard2Layout = new javax.swing.GroupLayout(priCard2);
         priCard2.setLayout(priCard2Layout);
@@ -694,7 +708,7 @@ private void Load(){
         cusGender.setSelectedItem(user.getGender());
         txtPhone.setText(String.valueOf(user.getContactno()));
         txtRegNo.requestFocus();
-;
+
         
     }//GEN-LAST:event_CsearchActionPerformed
 
@@ -739,62 +753,21 @@ private void Load(){
 
 
     private void LecAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecAddActionPerformed
-            String RegNO=txtRegNo1.getText();
-            String FName=txtFName1.getText();
-            String LName=txtLName1.getText();
-            String Address=txtAddress1.getText();
-            String City=txtCity1.getText();
-            String Gender=(String)selGender1.getSelectedItem();
-            String DOB=txtDOB1.getText();
-            String Telephone=txtPhone1.getText();
-            String Position=(String)selStatus1.getSelectedItem();
-            String Password=StPwd1.getText();
-            String CPassword=StCPwd1.getText();
-   
-
-            try {
-
-            insert=conn1.prepareStatement("insert into lectures(lec_id,f_name,l_name,address_l1,address_l2,gender,dob,phone_num,position) values (?,?,?,?,?,?,?,?,?)");
-            insert.setString(1, RegNO);
-            insert.setString(2, FName);
-            insert.setString(3, LName);
-            insert.setString(4,Address );
-            insert.setString(5, City);
-            insert.setString(6, Gender);
-            insert.setString(7, DOB);
-            insert.setString(8,Telephone );
-            insert.setString(9,Position );
-
-            if(Password.equals(CPassword)){
-
-                insert.executeUpdate();
-
-                insert=conn1.prepareStatement("insert into log_user(Uname,Password,Role) values (?,?,2)");
-                insert.setString(1, RegNO);
-                insert.setString(2, Password);
-                insert.executeUpdate();
-
-                JOptionPane.showMessageDialog(this,"Lecturer is Added!!");
-                lec_table_update();
-
-                txtRegNo1.setText("");
-                txtFName1.setText("");
-                txtLName1.setText("");
-                txtAddress1.setText(""); 
-                txtCity1.setText("");
-                txtDOB1.setText("");
-                txtPhone1.setText("");
-                txtRegNo1.requestFocus();
-            }else{
-                JOptionPane.showMessageDialog(this,"Password not matched!!");
-                StPwd1.setText("");
-                StCPwd1.setText("");
-            }
-            
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        User user = new User();
+        user.setID(txtRegNo1.getText());
+        user.setfName(txtFName1.getText());
+        user.setlName(txtLName1.getText());
+        user.setAddressl1(txtAddress1.getText());
+        user.setAddressl2(txtAddressl21.getText());
+        user.setCity(txtCity1.getText());
+        user.setNIC(txtNIC1.getText());
+        user.setEmail(txtEmail1.getText());
+        user.setContactno(Integer.parseInt(txtPhone1.getText()));
+        user.setGender((String)DrGender1.getSelectedItem());
+        
+        UserImp userImp = new UserImp();
+        userImp.Add(user,"driver");
+        Load();
     }//GEN-LAST:event_LecAddActionPerformed
 
     private void LecDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecDeleteActionPerformed
@@ -823,8 +796,8 @@ private void Load(){
             txtFName1.setText("");
             txtLName1.setText("");
             txtAddress1.setText(""); 
-            txtCity1.setText("");
-            txtDOB1.setText("");
+            txtAddressl21.setText("");
+            txtNIC1.setText("");
             txtPhone1.setText("");
             txtRegNo1.requestFocus();
             }
@@ -844,9 +817,9 @@ private void Load(){
             String FName=txtFName1.getText();
             String LName=txtLName1.getText();
             String Address=txtAddress1.getText();
-            String City=txtCity1.getText();
-            String Gender=(String)selGender1.getSelectedItem();
-            String DOB=txtDOB1.getText();
+            String City=txtAddressl21.getText();
+            String Gender=(String)DrGender1.getSelectedItem();
+            String DOB=txtNIC1.getText();
             String Telephone=txtPhone1.getText();
             String Position=(String)selStatus1.getSelectedItem();
 
@@ -874,8 +847,8 @@ private void Load(){
             txtFName1.setText("");
             txtLName1.setText("");
             txtAddress1.setText(""); 
-            txtCity1.setText("");
-            txtDOB1.setText("");
+            txtAddressl21.setText("");
+            txtNIC1.setText("");
             txtPhone1.setText("");
             txtRegNo1.requestFocus();
 
@@ -962,6 +935,25 @@ private void Load(){
   
     }//GEN-LAST:event_StAdd1ActionPerformed
 
+    private void Csearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Csearch1ActionPerformed
+        String UID=(JOptionPane.showInputDialog("Enter the category ID"));
+        UserImp userImp = new UserImp();
+        User user = new User();     
+        user=userImp.Serch(UID);
+        
+        txtRegNo1.setText(user.getID());
+        txtFName1.setText(user.getfName());
+        txtEmail1.setText(user.getEmail());
+        txtLName1.setText(user.getlName());
+        txtAddress1.setText(user.getAddressl1());
+        txtAddressl21.setText(user.getAddressl2());
+        txtCity1.setText(user.getCity());
+        txtNIC1.setText(user.getNIC());
+        DrGender1.setSelectedItem(user.getGender());
+        txtPhone1.setText(String.valueOf(user.getContactno()));
+        txtRegNo1.requestFocus();
+    }//GEN-LAST:event_Csearch1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1000,6 +992,8 @@ private void Load(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSMaterialButtonRectangle Csearch;
+    private rojerusan.RSMaterialButtonRectangle Csearch1;
+    private javax.swing.JComboBox<String> DrGender1;
     private rojeru_san.complementos.RSTableMetro Jdriver;
     private rojerusan.RSMaterialButtonRectangle LecAdd;
     private rojerusan.RSMaterialButtonRectangle LecDelete;
@@ -1039,6 +1033,7 @@ private void Load(){
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -1060,20 +1055,20 @@ private void Load(){
     private javax.swing.JPanel priCard4;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle2;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle4;
-    private javax.swing.JComboBox<String> selGender1;
-    private javax.swing.JComboBox<String> selStatus1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtAddress1;
     private javax.swing.JTextField txtAddressl2;
+    private javax.swing.JTextField txtAddressl21;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtCity1;
     private javax.swing.JTextField txtDOB;
-    private javax.swing.JTextField txtDOB1;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtFName;
     private javax.swing.JTextField txtFName1;
     private javax.swing.JTextField txtLName;
     private javax.swing.JTextField txtLName1;
+    private javax.swing.JTextField txtNIC1;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtPhone1;
     private javax.swing.JTextField txtRegNo;
