@@ -58,8 +58,8 @@ public class LoginPageGetFarCars extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -84,23 +84,24 @@ public class LoginPageGetFarCars extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
         jLabel2.setText("Get Far Cars");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("University of Ruhuna");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, 10));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Banner_Cover.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 400));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, 10));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Get_far_cars_logo_login.png"))); // NOI18N
         jLabel5.setText("jLabel5");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 100));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 600));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Car rent.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 120, 590, 470));
 
-        jPanel3.setBackground(new java.awt.Color(153, 0, 51));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 600));
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
@@ -126,7 +127,7 @@ public class LoginPageGetFarCars extends javax.swing.JFrame {
         jLabel8.setText("Login To Your Account");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
-        uname.setBackground(new java.awt.Color(153, 0, 51));
+        uname.setBackground(new java.awt.Color(0, 0, 102));
         uname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
         uname.setForeground(new java.awt.Color(255, 255, 255));
         uname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -138,7 +139,7 @@ public class LoginPageGetFarCars extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/icons8_Secure_50px.png"))); // NOI18N
         jLabel9.setText("Password :");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 50, 50));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 50, 50));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,7 +156,7 @@ public class LoginPageGetFarCars extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Password :");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
         btnsing.setBackground(new java.awt.Color(255, 153, 0));
         btnsing.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -182,7 +183,7 @@ public class LoginPageGetFarCars extends javax.swing.JFrame {
         jLabel13.setText("Username :");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
-        pwd.setBackground(new java.awt.Color(153, 0, 51));
+        pwd.setBackground(new java.awt.Color(0, 0, 102));
         pwd.setForeground(new java.awt.Color(255, 255, 255));
         pwd.setToolTipText("");
         pwd.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));

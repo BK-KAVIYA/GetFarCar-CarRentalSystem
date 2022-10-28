@@ -30,31 +30,33 @@ public class Splash extends javax.swing.JFrame {
         ProgressBar1 = new javax.swing.JProgressBar();
         presentage = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        Myprogress.setBackground(new java.awt.Color(0, 204, 204));
+        Myprogress.setBackground(new java.awt.Color(0, 0, 102));
         Myprogress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/pngegg_edited.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Car Rental System");
 
+        jLabel2.setBackground(new java.awt.Color(51, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 255, 255));
         jLabel2.setText("Get Far Car");
 
         ProgressBar1.setBackground(new java.awt.Color(255, 255, 255));
-        ProgressBar1.setForeground(new java.awt.Color(0, 153, 0));
+        ProgressBar1.setForeground(new java.awt.Color(51, 255, 255));
 
-        presentage.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        presentage.setFont(new java.awt.Font("Arial Black", 2, 14)); // NOI18N
         presentage.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("X");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -62,10 +64,17 @@ public class Splash extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/carrentalsystem/common/pngwing.com.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+
         javax.swing.GroupLayout MyprogressLayout = new javax.swing.GroupLayout(Myprogress);
         Myprogress.setLayout(MyprogressLayout);
         MyprogressLayout.setHorizontalGroup(
             MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(MyprogressLayout.createSequentialGroup()
+                .addComponent(presentage, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(MyprogressLayout.createSequentialGroup()
                 .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MyprogressLayout.createSequentialGroup()
@@ -78,32 +87,33 @@ public class Splash extends javax.swing.JFrame {
                         .addGap(198, 198, 198)
                         .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MyprogressLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel3))
-                            .addComponent(jLabel2)))
-                    .addGroup(MyprogressLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(presentage, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(ProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(201, 201, 201)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2)))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         MyprogressLayout.setVerticalGroup(
             MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MyprogressLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel5)
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1)
-                .addGap(2, 2, 2)
                 .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MyprogressLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2))
-                .addGap(65, 65, 65)
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel1))
+                    .addGroup(MyprogressLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(presentage, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(ProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,7 +132,7 @@ public class Splash extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-         System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
@@ -157,6 +167,7 @@ public class Splash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel presentage;
     // End of variables declaration//GEN-END:variables
