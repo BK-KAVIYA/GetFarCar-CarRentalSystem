@@ -4,20 +4,16 @@
  */
 package GetFarCars.Com.Admin;
 
-import Dashboard.*;
 import java.awt.CardLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.Vector;
 import com.carrentalsystem.system.DBConnector;
 import com.getfarcar.common.User;
 import com.getfarcar.common.UserImp;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,9 +22,12 @@ import javax.swing.table.DefaultTableModel;
  * @author KA VI YA
  */
 public class AdminUserManage extends javax.swing.JFrame {
-    PreparedStatement pst1;
+    
     DBConnector obj=DBConnector.getObject();
     java.sql.Connection conn=DBConnector.getConnection();
+    
+    PreparedStatement pst1;
+    CardLayout cardLayout;
     CardLayout cardLayout1;
     String UserID;
 
@@ -39,7 +38,7 @@ public class AdminUserManage extends javax.swing.JFrame {
     public void setUserID(String UserID) {
         this.UserID = UserID;
     }
-    CardLayout cardLayout;
+    
     public AdminUserManage() {
         
         initComponents();
@@ -83,8 +82,8 @@ public class AdminUserManage extends javax.swing.JFrame {
         LecUpdate = new rojerusan.RSMaterialButtonRectangle();
         jPanel4 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
-        StCPwd1 = new javax.swing.JPasswordField();
-        StPwd1 = new javax.swing.JPasswordField();
+        Dcpwd = new javax.swing.JPasswordField();
+        Dpwd = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
@@ -121,8 +120,8 @@ public class AdminUserManage extends javax.swing.JFrame {
         StUpdate = new rojerusan.RSMaterialButtonRectangle();
         jPanel2 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        StCPwd = new javax.swing.JPasswordField();
-        StPwd = new javax.swing.JPasswordField();
+        Ccpwd = new javax.swing.JPasswordField();
+        Cpwd = new javax.swing.JPasswordField();
         ShowPassword = new javax.swing.JCheckBox();
         jLabel36 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
@@ -235,9 +234,9 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel32.setForeground(new java.awt.Color(255, 0, 0));
         jLabel32.setText("Once Set the password Cann't Modifiey");
 
-        StCPwd1.setText("jPassw");
+        Dcpwd.setText("jPassw");
 
-        StPwd1.setText("jPas1");
+        Dpwd.setText("jPas1");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -249,8 +248,8 @@ public class AdminUserManage extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(StCPwd1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(StPwd1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Dcpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Dpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -258,9 +257,9 @@ public class AdminUserManage extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel32)
                 .addGap(37, 37, 37)
-                .addComponent(StPwd1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Dpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(StCPwd1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Dcpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
 
@@ -306,11 +305,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         Jdriver.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jdriver.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jdriver.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Jdriver.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JdriverMouseClicked(evt);
-            }
-        });
         jScrollPane5.setViewportView(Jdriver);
         if (Jdriver.getColumnModel().getColumnCount() > 0) {
             Jdriver.getColumnModel().getColumn(0).setPreferredWidth(40);
@@ -429,11 +423,6 @@ public class AdminUserManage extends javax.swing.JFrame {
         cusTable.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cusTable.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cusTable.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cusTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cusTableMouseClicked(evt);
-            }
-        });
         jScrollPane2.setViewportView(cusTable);
         if (cusTable.getColumnModel().getColumnCount() > 0) {
             cusTable.getColumnModel().getColumn(0).setPreferredWidth(40);
@@ -464,9 +453,9 @@ public class AdminUserManage extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 0, 0));
         jLabel19.setText("Once Set the password Cann't Modifiey");
 
-        StCPwd.setText("jPassw");
+        Ccpwd.setText("jPassw");
 
-        StPwd.setText("jPas1");
+        Cpwd.setText("Cpwd");
 
         ShowPassword.setText(" Show Password");
         ShowPassword.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -486,8 +475,8 @@ public class AdminUserManage extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ShowPassword)
-                    .addComponent(StCPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(StPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Ccpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -495,9 +484,9 @@ public class AdminUserManage extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel19)
                 .addGap(37, 37, 37)
-                .addComponent(StPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Cpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(StCPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Ccpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ShowPassword)
                 .addContainerGap())
@@ -628,37 +617,6 @@ private void Load(){
             UD.addRow(new Object[]{drv.getID(),drv.getfName(),drv.getlName(),drv.getAddressl1()+drv.getAddressl2(),drv.getCity(),drv.getEmail(),drv.getNIC(),drv.getContactno()});
         }
         
-        /*List<User> sellerlist=sellerImp.list("Seller");
-        for(User sel:sellerlist){      
-           SellerName.addItem(sel.getSellerName());
-           UFT.addRow(new Object[]{sel.getSellerID(),sel.getSellerName(),sel.getSellerAddress(),sel.getContacatNo()});
-        }*/
-        /*
-         List<User> Cashlist=sellerImp.list("Cheshire");
-        for(User ch:Cashlist){
-            UFT.addRow(new Object[]{ch.getSellerID(),ch.getSellerName(),ch.getSellerAddress(),ch.getContacatNo()});
-        }
-        
-        List<User> UserRolle=sellerImp.Userlist();
-        for(User usr:UserRolle){
-            UserType.addItem(usr.getUserType());
-        
-        }
-        
-        ProductImp pImp = new ProductImp();
-        List<Category> productlist=pImp.Plist();
-        for(Category cat:productlist){
-            PCategory.addItem(cat.getCategoryName());
-        
-        }
-        
-        ProductImp productImp = new ProductImp();
-        List<Product> list1=productImp.list();
-        DefaultTableModel PDFT=(DefaultTableModel) PTable.getModel();
-        PDFT.setRowCount(0);
-        for(Product pt:list1){
-            PDFT.addRow(new Object[]{pt.getProductID(),pt.getProductName(),pt.getQuantity(),pt.getPrice(),pt.getProductCategoryID()});
-        }*/
 
 }
 
@@ -671,24 +629,6 @@ private void Load(){
     private void rSMaterialButtonRectangle2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle2ActionPerformed
         cardLayout.show(jPanel1,"priCard2");
     }//GEN-LAST:event_rSMaterialButtonRectangle2ActionPerformed
-
-    private void cusTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cusTableMouseClicked
-           
-            DefaultTableModel df=(DefaultTableModel)cusTable.getModel();
-            int selectedIndex=cusTable.getSelectedRow();
-            txtRegNo.setText(df.getValueAt(selectedIndex, 0).toString());
-            txtFName.setText(df.getValueAt(selectedIndex, 1).toString());
-            txtLName.setText(df.getValueAt(selectedIndex, 2).toString());
-            txtAddress.setText(df.getValueAt(selectedIndex, 3).toString());
-            txtCity.setText(df.getValueAt(selectedIndex, 4).toString());
-
-            String gen = (String)df.getValueAt(selectedIndex, 5).toString();
-            //selGender.addItem(gen);
-            cusGender.setSelectedItem(gen);
-
-            txtDOB.setText(df.getValueAt(selectedIndex, 6).toString());
-            txtPhone.setText(df.getValueAt(selectedIndex, 7).toString()); 
-    }//GEN-LAST:event_cusTableMouseClicked
 
     private void CsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsearchActionPerformed
             
@@ -713,148 +653,126 @@ private void Load(){
     }//GEN-LAST:event_CsearchActionPerformed
 
     private void StUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StUpdateActionPerformed
-        User user = new User();
-        user.setID(txtRegNo.getText());
-        user.setfName(txtFName.getText());
-        user.setlName(txtLName.getText());
-        user.setAddressl1(txtAddress.getText());
-        user.setAddressl2(txtAddressl2.getText());
-        user.setCity(txtCity.getText());
-        user.setNIC(txtDOB.getText());
-        user.setEmail(txtEmail.getText());
-        user.setContactno(Integer.parseInt(txtPhone.getText()));
-        user.setGender((String)cusGender.getSelectedItem());
-        
-        UserImp userImp = new UserImp();
-        userImp.Update(user,"customer");
-        Load();
+        if(!(txtRegNo.getText().equals("")&&txtFName.getText().equals("")&&txtLName.getText().equals("")&&txtAddress.getText().equals("")&&txtAddressl2.getText().equals("")&&txtCity.getText().equals("")&&txtDOB.getText().equals("")&&txtPhone.getText().equals("")&&Cpwd.getText().equals("")&&txtEmail.getText().equals(""))){
+            User user = new User();
+            user.setID(txtRegNo.getText());
+            user.setfName(txtFName.getText());
+            user.setlName(txtLName.getText());
+            user.setAddressl1(txtAddress.getText());
+            user.setAddressl2(txtAddressl2.getText());
+            user.setCity(txtCity.getText());
+            user.setNIC(txtDOB.getText());
+            user.setEmail(txtEmail.getText());
+            user.setContactno(Integer.parseInt(txtPhone.getText()));
+            user.setGender((String)cusGender.getSelectedItem());
+
+            UserImp userImp = new UserImp();
+            userImp.Update(user,"customer");
+            Load();
+            
+            }else{   
+			JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+            }
     }//GEN-LAST:event_StUpdateActionPerformed
 
     private void StDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StDeleteActionPerformed
-            User user = new User();
-            user.setID(txtRegNo.getText());
-            UserImp userImp = new UserImp();
-            userImp.Delete(user,"customer");
+            if(!(txtRegNo.getText().equals("")&&txtFName.getText().equals("")&&txtLName.getText().equals("")&&txtAddress.getText().equals("")&&txtAddressl2.getText().equals("")&&txtCity.getText().equals("")&&txtDOB.getText().equals("")&&txtPhone.getText().equals("")&&Cpwd.getText().equals("")&&txtEmail.getText().equals(""))){
+                User user = new User();
+                user.setID(txtRegNo.getText());
+                UserImp userImp = new UserImp();
+                userImp.Delete(user,"customer");
 
-            Load();
+                Load();
 
-            txtRegNo.setText("");
-            txtFName.setText("");
-            txtLName.setText("");
-            txtAddress.setText(""); 
-            txtCity.setText("");
-            txtDOB.setText("");
-            txtPhone.setText("");
-            txtRegNo.requestFocus();
-            
-
-       
+                txtRegNo.setText("");
+                txtEmail.setText("");
+                txtFName.setText("");
+                txtLName.setText("");
+                txtAddress.setText("");
+                txtAddressl2.setText("");
+                txtCity.setText("");
+                txtDOB.setText("");
+                txtPhone.setText("");
+                txtRegNo.requestFocus();
+            }else{   
+			JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+            }
+                 
     }//GEN-LAST:event_StDeleteActionPerformed
 
 
     private void LecAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecAddActionPerformed
-        User user = new User();
-        user.setID(txtRegNo1.getText());
-        user.setfName(txtFName1.getText());
-        user.setlName(txtLName1.getText());
-        user.setAddressl1(txtAddress1.getText());
-        user.setAddressl2(txtAddressl21.getText());
-        user.setCity(txtCity1.getText());
-        user.setNIC(txtNIC1.getText());
-        user.setEmail(txtEmail1.getText());
-        user.setContactno(Integer.parseInt(txtPhone1.getText()));
-        user.setGender((String)DrGender1.getSelectedItem());
         
-        UserImp userImp = new UserImp();
-        userImp.Add(user,"driver");
-        Load();
+        if(!(txtRegNo1.getText().equals("")&&txtFName1.getText().equals("")&&txtLName1.getText().equals("")&&txtAddress1.getText().equals("")&&txtAddressl21.getText().equals("")&&txtCity1.getText().equals("")&&txtNIC1.getText().equals("")&&txtPhone1.getText().equals("")&&Dpwd.getText().equals("")&&txtEmail1.getText().equals("")&&Dcpwd.getText().equals(Dpwd.getText()))){
+            User user = new User();
+            user.setID(txtRegNo1.getText());
+            user.setfName(txtFName1.getText());
+            user.setlName(txtLName1.getText());
+            user.setAddressl1(txtAddress1.getText());
+            user.setAddressl2(txtAddressl21.getText());
+            user.setCity(txtCity1.getText());
+            user.setNIC(txtNIC1.getText());
+            user.setEmail(txtEmail1.getText());
+            user.setContactno(Integer.parseInt(txtPhone1.getText()));
+            user.setGender((String)DrGender1.getSelectedItem());
+            user.setPassword(Dpwd.getText());
+            user.setUserRolle(2);
+
+            UserImp userImp = new UserImp();
+            userImp.Add(user,"driver");
+            Load();
+        
+        }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
     }//GEN-LAST:event_LecAddActionPerformed
 
     private void LecDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecDeleteActionPerformed
-       
-        DefaultTableModel df=(DefaultTableModel)Jdriver.getModel();
-        int selectedIndex=Jdriver.getSelectedRow();
-    try {
-        String index_num=df.getValueAt(selectedIndex,0).toString();
-        int dialogResult=JOptionPane.showConfirmDialog(null,"Do You Want to Delete the Recode", "Warnning",JOptionPane.YES_NO_OPTION);
 
-        if(dialogResult==JOptionPane.YES_NO_OPTION){
-             Connection conn1=ConnectDB.MyDBConnection();
+        if(!(txtRegNo1.getText().equals("")&&txtFName1.getText().equals("")&&txtLName1.getText().equals("")&&txtAddress1.getText().equals("")&&txtAddressl21.getText().equals("")&&txtCity1.getText().equals("")&&txtNIC1.getText().equals("")&&txtPhone1.getText().equals("")&&Dpwd.getText().equals("")&&txtEmail1.getText().equals(""))){
+                User user = new User();
+                user.setID(txtRegNo1.getText());
+                UserImp userImp = new UserImp();
+                userImp.Delete(user,"driver");
 
-            insert=conn1.prepareStatement("delete from lectures where lec_id=?");
-            insert.setString(1,index_num );
-            insert.executeUpdate();
+                Load();
 
-            insert=conn1.prepareStatement("delete from log_user where Uname=?");
-            insert.setString(1,index_num );
-            insert.executeUpdate();
 
-            JOptionPane.showMessageDialog(this,"Recode Deleted!!");
-            lec_table_update();
-
-            txtRegNo1.setText("");
-            txtFName1.setText("");
-            txtLName1.setText("");
-            txtAddress1.setText(""); 
-            txtAddressl21.setText("");
-            txtNIC1.setText("");
-            txtPhone1.setText("");
-            txtRegNo1.requestFocus();
+                txtRegNo1.setText("");
+                txtFName1.setText("");
+                txtLName1.setText("");
+                txtAddress1.setText(""); 
+                txtAddressl21.setText("");
+                txtNIC1.setText("");
+                txtPhone1.setText("");
+                txtRegNo1.requestFocus();
+            
+            }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
             }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
-        }
+             
     }//GEN-LAST:event_LecDeleteActionPerformed
 
     private void LecUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecUpdateActionPerformed
-        DefaultTableModel df=(DefaultTableModel)Jdriver.getModel();
-        int selectedIndex=Jdriver.getSelectedRow();
-        try {
- 
+        if(!(txtRegNo1.getText().equals("")&&txtFName1.getText().equals("")&&txtLName1.getText().equals("")&&txtAddress1.getText().equals("")&&txtAddressl21.getText().equals("")&&txtCity1.getText().equals("")&&txtNIC1.getText().equals("")&&txtPhone1.getText().equals("")&&Dpwd.getText().equals("")&&txtEmail1.getText().equals(""))){
+            User user = new User();
+            user.setID(txtRegNo1.getText());
+            user.setfName(txtFName1.getText());
+            user.setlName(txtLName1.getText());
+            user.setAddressl1(txtAddress1.getText());
+            user.setAddressl2(txtAddressl21.getText());
+            user.setCity(txtCity1.getText());
+            user.setNIC(txtNIC1.getText());
+            user.setEmail(txtEmail1.getText());
+            user.setContactno(Integer.parseInt(txtPhone1.getText()));
+            user.setGender((String)DrGender1.getSelectedItem());
 
-            String RegNO=txtRegNo1.getText();
-            String FName=txtFName1.getText();
-            String LName=txtLName1.getText();
-            String Address=txtAddress1.getText();
-            String City=txtAddressl21.getText();
-            String Gender=(String)DrGender1.getSelectedItem();
-            String DOB=txtNIC1.getText();
-            String Telephone=txtPhone1.getText();
-            String Position=(String)selStatus1.getSelectedItem();
-
-
-            Connection conn1=ConnectDB.MyDBConnection();
-            insert=conn1.prepareStatement("update  lectures set lec_id=?,f_name=?,l_name=?,address_l1=?,address_l2=?,gender=?,dob=?,phone_num=?,position=? where lec_id=?");
-            insert.setString(1, RegNO);
-            insert.setString(2, FName);
-            insert.setString(3, LName);
-            insert.setString(4,Address );
-            insert.setString(5, City);
-            insert.setString(6, Gender);
-            insert.setString(7, DOB);
-            insert.setString(8,Telephone );
-            insert.setString(9,Position );
-            insert.setString(10, RegNO);
-
-
-            insert.executeUpdate();
-
-            JOptionPane.showMessageDialog(this,"Recode Update!!");
-            lec_table_update();
-
-            txtRegNo1.setText("");
-            txtFName1.setText("");
-            txtLName1.setText("");
-            txtAddress1.setText(""); 
-            txtAddressl21.setText("");
-            txtNIC1.setText("");
-            txtPhone1.setText("");
-            txtRegNo1.requestFocus();
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminUserManage.class.getName()).log(Level.SEVERE, null, ex);
+            UserImp userImp = new UserImp();
+            userImp.Update(user,"driver");
+            Load();
+        
+         }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
         }
     }//GEN-LAST:event_LecUpdateActionPerformed
 
@@ -886,13 +804,13 @@ private void Load(){
 
     private void ShowPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowPasswordMouseClicked
         if(ShowPassword.isSelected()){
-            StPwd.setEchoChar((char)0);
-            StCPwd.setEchoChar((char)0);
+            Cpwd.setEchoChar((char)0);
+            Ccpwd.setEchoChar((char)0);
             ShowPassword.setText("Hide Password");
         }
         else{
-            StPwd.setEchoChar('•');
-            StCPwd.setEchoChar('•');
+            Cpwd.setEchoChar('•');
+            Ccpwd.setEchoChar('•');
             ShowPassword.setText("Show Password");
         }
     }//GEN-LAST:event_ShowPasswordMouseClicked
@@ -909,29 +827,29 @@ private void Load(){
         this.setState(ICONIFIED);
     }//GEN-LAST:event_jLabel46MouseClicked
 
-    private void JdriverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JdriverMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JdriverMouseClicked
-
     private void StAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StAdd1ActionPerformed
+        if(!(txtRegNo.getText().equals("")&&txtFName.getText().equals("")&&txtLName.getText().equals("")&&txtAddress.getText().equals("")&&txtAddressl2.getText().equals("")&&txtCity.getText().equals("")&&txtDOB.getText().equals("")&&txtPhone.getText().equals("")&&Cpwd.getText().equals("")&&txtEmail.getText().equals("")&&Dcpwd.getText().equals(Dpwd.getText()))){        
+            User user = new User();
+            user.setID(txtRegNo.getText());
+            user.setfName(txtFName.getText());
+            user.setlName(txtLName.getText());
+            user.setAddressl1(txtAddress.getText());
+            user.setAddressl2(txtAddressl2.getText());
+            user.setCity(txtCity.getText());
+            user.setNIC(txtDOB.getText());
+            user.setEmail(txtEmail.getText());
+            user.setContactno(Integer.parseInt(txtPhone.getText()));
+            user.setGender((String)cusGender.getSelectedItem());
+            user.setPassword(Dpwd.getText());
+            user.setUserRolle(3);
+
+            UserImp userImp = new UserImp();
+            userImp.Add(user,"customer");
+            Load();
+            
+            
         
-        User user = new User();
-        user.setID(txtRegNo.getText());
-        user.setfName(txtFName.getText());
-        user.setlName(txtLName.getText());
-        user.setAddressl1(txtAddress.getText());
-        user.setAddressl2(txtAddressl2.getText());
-        user.setCity(txtCity.getText());
-        user.setNIC(txtDOB.getText());
-        user.setEmail(txtEmail.getText());
-        user.setContactno(Integer.parseInt(txtPhone.getText()));
-        user.setGender((String)cusGender.getSelectedItem());
-        
-        UserImp userImp = new UserImp();
-        userImp.Add(user,"customer");
-        Load();
-        
-        
+        }  
   
     }//GEN-LAST:event_StAdd1ActionPerformed
 
@@ -991,8 +909,12 @@ private void Load(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField Ccpwd;
+    private javax.swing.JPasswordField Cpwd;
     private rojerusan.RSMaterialButtonRectangle Csearch;
     private rojerusan.RSMaterialButtonRectangle Csearch1;
+    private javax.swing.JPasswordField Dcpwd;
+    private javax.swing.JPasswordField Dpwd;
     private javax.swing.JComboBox<String> DrGender1;
     private rojeru_san.complementos.RSTableMetro Jdriver;
     private rojerusan.RSMaterialButtonRectangle LecAdd;
@@ -1000,11 +922,7 @@ private void Load(){
     private rojerusan.RSMaterialButtonRectangle LecUpdate;
     private javax.swing.JCheckBox ShowPassword;
     private rojerusan.RSMaterialButtonRectangle StAdd1;
-    private javax.swing.JPasswordField StCPwd;
-    private javax.swing.JPasswordField StCPwd1;
     private rojerusan.RSMaterialButtonRectangle StDelete;
-    private javax.swing.JPasswordField StPwd;
-    private javax.swing.JPasswordField StPwd1;
     private rojerusan.RSMaterialButtonRectangle StUpdate;
     private javax.swing.JComboBox<String> cusGender;
     private rojeru_san.complementos.RSTableMetro cusTable;

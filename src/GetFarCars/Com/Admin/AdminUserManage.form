@@ -364,8 +364,8 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="StCPwd1" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
-                                      <Component id="StPwd1" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="Dcpwd" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="Dpwd" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="19" max="32767" attributes="0"/>
                               </Group>
@@ -376,9 +376,9 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Component id="StPwd1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="Dpwd" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace pref="45" max="32767" attributes="0"/>
-                                  <Component id="StCPwd1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="Dcpwd" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -396,12 +396,12 @@
                             <Property name="text" type="java.lang.String" value="Once Set the password Cann&apos;t Modifiey"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JPasswordField" name="StCPwd1">
+                        <Component class="javax.swing.JPasswordField" name="Dcpwd">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jPassw"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JPasswordField" name="StPwd1">
+                        <Component class="javax.swing.JPasswordField" name="Dpwd">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jPas1"/>
                           </Properties>
@@ -545,9 +545,6 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JdriverMouseClicked"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -926,9 +923,6 @@
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cusTableMouseClicked"/>
-                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -981,8 +975,8 @@
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="ShowPassword" min="-2" max="-2" attributes="0"/>
-                                  <Component id="StCPwd" min="-2" pref="181" max="-2" attributes="0"/>
-                                  <Component id="StPwd" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="Ccpwd" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="Cpwd" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="19" max="32767" attributes="0"/>
                           </Group>
@@ -993,9 +987,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="StPwd" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="Cpwd" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace pref="38" max="32767" attributes="0"/>
-                              <Component id="StCPwd" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="Ccpwd" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="ShowPassword" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1015,14 +1009,14 @@
                         <Property name="text" type="java.lang.String" value="Once Set the password Cann&apos;t Modifiey"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JPasswordField" name="StCPwd">
+                    <Component class="javax.swing.JPasswordField" name="Ccpwd">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="jPassw"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JPasswordField" name="StPwd">
+                    <Component class="javax.swing.JPasswordField" name="Cpwd">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="jPas1"/>
+                        <Property name="text" type="java.lang.String" value="Cpwd"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="ShowPassword">

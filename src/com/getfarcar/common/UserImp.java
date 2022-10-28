@@ -191,13 +191,17 @@ public class UserImp implements UserDAO{
             pst.setString(10,user.getNIC()); 
             
             pst.executeUpdate();
-            /*
-            String sql1="Insert into user Values(?,?,?)";
+            
+            
+            
+            String sql1="Insert into user Values(?,?,?,?)";
             pst1=conn.prepareStatement(sql1);
+            
             pst1.setString(1, user.getID());
             pst1.setString(2, user.getPassword());
-            pst1.setInt(3, userType);
-            pst1.executeUpdate();*/
+            pst1.setInt(3, user.getUserRolle());
+            pst1.setString(4, user.getID());
+            pst1.executeUpdate();
             
             JOptionPane.showMessageDialog(null,"New User is added!!");
         } catch (SQLException ex) {
