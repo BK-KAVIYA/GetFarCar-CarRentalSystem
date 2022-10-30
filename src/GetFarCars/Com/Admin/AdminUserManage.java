@@ -305,6 +305,11 @@ public class AdminUserManage extends javax.swing.JFrame {
         Jdriver.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jdriver.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jdriver.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Jdriver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JdriverMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(Jdriver);
         if (Jdriver.getColumnModel().getColumnCount() > 0) {
             Jdriver.getColumnModel().getColumn(0).setPreferredWidth(40);
@@ -728,7 +733,7 @@ private void Load(){
     }//GEN-LAST:event_LecAddActionPerformed
 
     private void LecDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LecDeleteActionPerformed
-
+ 
         if(!(txtRegNo1.getText().equals("")&&txtFName1.getText().equals("")&&txtLName1.getText().equals("")&&txtAddress1.getText().equals("")&&txtAddressl21.getText().equals("")&&txtCity1.getText().equals("")&&txtNIC1.getText().equals("")&&txtPhone1.getText().equals("")&&Dpwd.getText().equals("")&&txtEmail1.getText().equals(""))){
                 User user = new User();
                 user.setID(txtRegNo1.getText());
@@ -871,6 +876,10 @@ private void Load(){
         txtPhone1.setText(String.valueOf(user.getContactno()));
         txtRegNo1.requestFocus();
     }//GEN-LAST:event_Csearch1ActionPerformed
+
+    private void JdriverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JdriverMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JdriverMouseClicked
 
     /**
      * @param args the command line arguments
