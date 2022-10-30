@@ -30,32 +30,33 @@ public class CarMaintananceImp implements MaintananceDAO{
 
 
     @Override
-    public void Update(CarMaintanance carmaintanance,String CarMaintananceTable) {
+    public void Update(CarMaintanance carmaintanance) {
         
         try {
   
-                String sql="Update "+CarMaintananceTable+" set  M_ID=?,Reason=?,Parts=?,Cost=?,Car_ID=?,Invoice_no=?;";
+                String sql="Update maintance set Reason=?,Parts=?,Cost=?,Car_ID=?,Invoice_no=? where M_ID=?;";
                 pst=conn.prepareStatement(sql);
-                pst.setString(1,carmaintanance.getM_ID());
-                pst.setString(2,carmaintanance.getReason());
-                pst.setString(3,carmaintanance.getParts());
-                pst.setInt(4,carmaintanance.getCost());
-                pst.setString(5,carmaintanance.getCar_id());
-                pst.setInt(6,carmaintanance.getInvoice_id());
+                
+                pst.setString(1,carmaintanance.getReason());
+                pst.setString(2,carmaintanance.getParts());
+                pst.setInt(3,carmaintanance.getCost());
+                pst.setString(4,carmaintanance.getCar_id());
+                pst.setInt(5,carmaintanance.getInvoice_id());
+                pst.setString(6,carmaintanance.getM_ID());
                
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null,"Data recode is Updated!!");
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null,"Data Insertion Error!!");
-                Logger.getLogger(CarMaintananceImp.class.getName()).log(Level.SEVERE, null, ex);++++++++++++++++++++++
+                Logger.getLogger(CarMaintananceImp.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
 
     @Override
-    public void Delete(CarMaintanance carmaintanance,String CarMaintananceTable) {
+    public void Delete(CarMaintanance carmaintanance) {
          try {
-            String sql="Delete from "+CarMaintananceTable+" where M_ID=?;";
+            String sql="Delete from maintance where M_ID=?;";
             pst=conn.prepareStatement(sql);
             pst.setString(1,carmaintanance.getM_ID());
             pst.executeUpdate();
@@ -63,26 +64,15 @@ public class CarMaintananceImp implements MaintananceDAO{
             JOptionPane.showMessageDialog(null, "Recode Deleted!!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Recode Deletion Error!!");
-            Logger.getLogger(CarMaintananceImp.class.getName()).log(Level.SEVERE, null, ex);++++++++++++++++++
+            Logger.getLogger(CarMaintananceImp.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
     public CarMaintanance Serch(String M_ID) {
-        String TableName=null;
-        CarMaintanance carmaintanance = new CarMaintanance();
-        char res=M_ID.charAt(0);
-        switch(res){
-            case 'A':
-               TableName="admin";
-                break;
-            case 'C':
-               TableName="customer";
-                break;
 
-        }
-        
-        String sql="select * from "+TableName+" where M_ID=?;";
+        CarMaintanance carmaintanance = new CarMaintanance();       
+        String sql="select * from maintance where M_ID=?;";
 
             
         try {
@@ -96,7 +86,7 @@ public class CarMaintananceImp implements MaintananceDAO{
                 carmaintanance.setParts(rs.getString("parts"));
                 carmaintanance.setCost(rs.getInt("cost"));
                 carmaintanance.setCar_id(rs.getString("car_id"));
-                carmaintanance.setInvoice_id(rs.getInt("invoice_id"));
+                carmaintanance.setInvoice_id(rs.getInt("Invoice_no"));
                 
             }
             
@@ -169,7 +159,8 @@ public class CarMaintananceImp implements MaintananceDAO{
         try {
 
             String sql="Insert into maintance Values(?,?,?,?,?,?)";
-            pst.setString(1,carmaintanance.getM_ID());
+                pst=conn.prepareStatement(sql);
+                pst.setString(1,carmaintanance.getM_ID());
                 pst.setString(2,carmaintanance.getReason());
                 pst.setString(3,carmaintanance.getParts());
                 pst.setInt(4,carmaintanance.getCost());
@@ -177,13 +168,6 @@ public class CarMaintananceImp implements MaintananceDAO{
                 pst.setInt(6,carmaintanance.getInvoice_id());
             
             pst.executeUpdate();
-            /*
-            String sql1="Insert into user Values(?,?,?)";
-            pst1=conn.prepareStatement(sql1);
-            pst1.setString(1, user.getID());
-            pst1.setString(2, user.getPassword());
-            pst1.setInt(3, userType);
-            pst1.executeUpdate();*/
             
             JOptionPane.showMessageDialog(null,"New Maintanance is added!!");        
         } catch (SQLException ex) {
@@ -191,35 +175,9 @@ public class CarMaintananceImp implements MaintananceDAO{
         }
     }
 
-    @Override
-    public void Add(CarMaintanance car_maintanance, String tableName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public void Update(CarMaintanance car_maintanance, String tableName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public void Delete(CarMaintanance car_maintanance, String tablename) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public CarMaintanance Serch(String car_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<CarMaintanance> list(String tableName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<CarMaintanance> CarMaintanancelist() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 
     

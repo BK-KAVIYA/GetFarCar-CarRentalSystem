@@ -7,6 +7,10 @@ package GetFarCars.Com.Admin;
 
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
+import com.getfarcar.common.User;
+import com.getfarcar.common.UserImp;
+import com.getfarcars.maintanance.CarMaintanance;
+import com.getfarcars.maintanance.CarMaintananceImp;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
@@ -192,7 +196,8 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
+        Search = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         CardPri5 = new javax.swing.JPanel();
@@ -952,7 +957,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(255, 51, 51));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Reset");
+        jButton5.setText("Search");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton5MouseClicked(evt);
@@ -1042,7 +1047,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(204, 0, 51));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Clear");
+        jButton7.setText("Delete");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton7MouseClicked(evt);
@@ -1082,13 +1087,23 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel61.setText("Invoive No");
 
-        jButton10.setBackground(new java.awt.Color(255, 0, 51));
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Update");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        Search.setBackground(new java.awt.Color(255, 0, 51));
+        Search.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Search.setForeground(new java.awt.Color(255, 255, 255));
+        Search.setText("Search");
+        Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                SearchActionPerformed(evt);
+            }
+        });
+
+        jButton11.setBackground(new java.awt.Color(255, 0, 51));
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("Update");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
             }
         });
 
@@ -1121,11 +1136,13 @@ public class Admindashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
+                .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addGap(17, 17, 17))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1149,9 +1166,9 @@ public class Admindashboard extends javax.swing.JFrame {
                     .addComponent(jLabel49)
                     .addComponent(costtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel58)
-                    .addComponent(carid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(carid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
@@ -1160,11 +1177,12 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Add Maintanance", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addTimetabler.png")), jPanel11); // NOI18N
+        jTabbedPane2.addTab("Manage Maintanance", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addTimetabler.png")), jPanel11); // NOI18N
 
         jPanel9.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 620, 510));
 
@@ -1951,140 +1969,24 @@ private void clear_timetable_fields(){
 
 }
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+            if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
+            CarMaintanance carmaintanance = new CarMaintanance();
+            carmaintanance.setM_ID(midtxt.getText());
+            carmaintanance.setReason(reasontxt.getText());
+            carmaintanance.setParts(partstxt.getText());
+            carmaintanance.setCost(Integer.parseInt(costtxt.getText()));
+            carmaintanance.setCar_id(carid.getText());
+            carmaintanance.setInvoice_id(Integer.parseInt(ivoicetxt.getText()));
             
-            
- 
-            
-
-            insert=conn.prepareStatement("INSERT INTO maintance( M_ID, Reason,Parts, Cost,Car_ID, Invoice_no)VALUES (?,?,?,?,?)");
-            insert.setString(1, M_ID);
-            insert.setString(2, reason);
-            insert.setInt(3,cost );
-            insert.setString(4, car_id);
-            insert.setInt(5, invoice_id);
            
 
-
-            
-            
-
+            CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+            carmaintananceImp.Add(carmaintanance);
+            //Load();
         
-        
-            
-           if(this.sub2.isSelected()){
-                String subName=sub2name.getText();
-                String subFrom=sub2from.getText();
-                String subTo=sub2to.getText();
-                String subLoc=sub2loc.getText();
-                String tType=(String)sub2type.getSelectedItem();
-
-            try {
-
-                insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
-                insert.setString(1, tdep);
-                insert.setString(2, tlevel);
-                insert.setString(3,tSem );
-                insert.setString(4, tDate);
-
-                insert.setString(5, subName);
-                insert.setString(6, subFrom);
-                insert.setString(7, subTo);
-                insert.setString(8, subLoc);
-                insert.setString(9, tType);
-
-
-                if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
-
-                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-
-                }else{
-
-                        insert.executeUpdate();
-
-                }
-            
-
-                } catch (SQLException ex) {
-                    Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
-           if(this.sub3.isSelected()){
-                String subName=sub3name.getText();
-                String subFrom=sub3from.getText();
-                String subTo=sub3to.getText();
-                String subLoc=sub3loc.getText();
-                String tType=(String)sub3type.getSelectedItem();
-            try {
-
-                insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
-                insert.setString(1, tdep);
-                insert.setString(2, tlevel);
-                insert.setString(3,tSem );
-                insert.setString(4, tDate);
-
-                insert.setString(5, subName);
-                insert.setString(6, subFrom);
-                insert.setString(7, subTo);
-                insert.setString(8, subLoc);
-                insert.setString(9, tType);
-
-
-                if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
-
-                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-
-                }else{
-
-                        insert.executeUpdate();
-
-                }
-            
-
-                } catch (SQLException ex) {
-                    Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
-          if(this.sub4.isSelected()){
-                String subName=sub4name.getText();
-                String subFrom=sub4from.getText();
-                String subTo=sub4to.getText();
-                String subLoc=sub4loc.getText();
-                String tType=(String)sub4type.getSelectedItem();
-
-            try {
-
-                insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
-                insert.setString(1, tdep);
-                insert.setString(2, tlevel);
-                insert.setString(3,tSem );
-                insert.setString(4, tDate);
-
-                insert.setString(5, subName);
-                insert.setString(6, subFrom);
-                insert.setString(7, subTo);
-                insert.setString(8, subLoc);
-                insert.setString(9, tType);
-
-
-                if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
-
-                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-
-                }else{
-
-                        insert.executeUpdate();
-
-                }
-            
-
-                } catch (SQLException ex) {
-                    Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
-            
+        }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
             
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -2257,16 +2159,67 @@ private void clear_add_notice(){
     }//GEN-LAST:event_sub1name2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+       if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
+            CarMaintanance carmaintanance = new CarMaintanance();
+                carmaintanance.setM_ID(midtxt.getText());
+                CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+                carmaintananceImp.Delete(carmaintanance);
+
+              
+
+
+                midtxt.setText("");
+                reasontxt.setText("");
+                partstxt.setText("");
+                costtxt.setText(""); 
+                carid.setText("");
+                ivoicetxt.setText("");
+               
+            
+            }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+            }
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
+        String MID=(JOptionPane.showInputDialog("Enter the Maintanance ID"));
+            CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+            CarMaintanance carmaintanance = new CarMaintanance();     
+            carmaintanance=carmaintananceImp.Serch(MID);
 
-    }//GEN-LAST:event_jButton10ActionPerformed
+            midtxt.setText(carmaintanance.getM_ID());
+            reasontxt.setText(carmaintanance.getReason());
+            partstxt.setText(carmaintanance.getParts());
+            costtxt.setText(String.valueOf(carmaintanance.getCost()));
+            carid.setText(carmaintanance.getCar_id());
+            ivoicetxt.setText(String.valueOf(carmaintanance.getInvoice_id()));
+            
+            midtxt.requestFocus();
+    }//GEN-LAST:event_SearchActionPerformed
 
     private void midtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_midtxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_midtxtActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+       if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
+            CarMaintanance carmaintanance = new CarMaintanance();
+            
+            carmaintanance.setM_ID(midtxt.getText());
+            carmaintanance.setReason(reasontxt.getText());
+            carmaintanance.setParts(partstxt.getText());
+            carmaintanance.setCost(Integer.parseInt(costtxt.getText()));
+            carmaintanance.setCar_id(carid.getText());
+            carmaintanance.setInvoice_id(Integer.parseInt(ivoicetxt.getText()));
+
+            CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+            carmaintananceImp.Update(carmaintanance);
+            //Load();
+        
+         }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
 
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
@@ -2331,6 +2284,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel CardjPannel;
     private javax.swing.JTable NoticeTbale;
     private javax.swing.JTextField ScarId;
+    private javax.swing.JButton Search;
     private javax.swing.JCheckBox ShowPassword;
     private javax.swing.JPasswordField adCPwd;
     private javax.swing.JLabel adName;
@@ -2345,25 +2299,16 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField cStatus;
     private javax.swing.JTextField cType;
     private javax.swing.JButton cadd;
-
     private javax.swing.JButton cadd1;
     private javax.swing.JTextField carId;
+    private javax.swing.JTextField carid;
     private javax.swing.JButton cdelete;
     private javax.swing.JButton clearNotice;
-    private javax.swing.JLabel demoCount;
-
-    private javax.swing.JTextField carid;
-    private javax.swing.JButton cclear;
-    private javax.swing.JButton clearNotice;
     private javax.swing.JTextField costtxt;
-    private javax.swing.JTextField courseId;
-    private javax.swing.JLabel courseMarkMessage;
     private javax.swing.JLabel demoCount;
-    private javax.swing.JComboBox<String> depId;
     private javax.swing.JTextField ivoicetxt;
-
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2422,20 +2367,9 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
@@ -2467,74 +2401,32 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
     private rojerusan.RSMaterialButtonRectangle menutimetable;
     private rojerusan.RSMaterialButtonRectangle menuuser;
-    private javax.swing.JCheckBox mid;
-    private javax.swing.JTextField midMark;
     private javax.swing.JTextField midtxt;
     private javax.swing.JTextArea noticeContent;
     private javax.swing.JTextField noticeDate;
     private javax.swing.JTextField noticeNum;
     private javax.swing.JTextField noticeTitle;
-    private javax.swing.JComboBox<String> selGender;
-    private javax.swing.JComboBox<String> selStatus;
-    private javax.swing.JLabel stCount;
-    private javax.swing.JCheckBox sub1;
-    private javax.swing.JTextField sub1from;
-    private javax.swing.JTextField sub1loc;
-    private javax.swing.JTextField sub1name;
-    private javax.swing.JTextField sub1to;
-    private javax.swing.JComboBox<String> sub1type;
-    private javax.swing.JCheckBox sub2;
-    private javax.swing.JTextField sub2from;
-    private javax.swing.JTextField sub2loc;
-    private javax.swing.JTextField sub2name;
-    private javax.swing.JTextField sub2to;
-    private javax.swing.JComboBox<String> sub2type;
-    private javax.swing.JCheckBox sub3;
-    private javax.swing.JTextField sub3from;
-    private javax.swing.JTextField sub3loc;
-    private javax.swing.JTextField sub3name;
-    private javax.swing.JTextField sub3to;
-    private javax.swing.JComboBox<String> sub3type;
-    private javax.swing.JCheckBox sub4;
-    private javax.swing.JTextField sub4from;
-    private javax.swing.JTextField sub4loc;
-    private javax.swing.JTextField sub4name;
-    private javax.swing.JTextField sub4to;
-    private javax.swing.JComboBox<String> sub4type;
-    private javax.swing.JComboBox<String> tdate;
-    private javax.swing.JComboBox<String> tdep;
-    private javax.swing.JComboBox<String> tdep1;
     private javax.swing.JTextField partstxt;
-    private javax.swing.JCheckBox practical;
-    private javax.swing.JTextField practicalMark;
-    private javax.swing.JCheckBox quiz;
-    private javax.swing.JTextField quizMark;
     private javax.swing.JTextField reasontxt;
     private javax.swing.JComboBox<String> selGender;
     private javax.swing.JComboBox<String> selStatus;
     private javax.swing.JLabel stCount;
     private javax.swing.JTextField sub1name1;
     private javax.swing.JTextField sub1name2;
-    private javax.swing.JCheckBox theory;
-    private javax.swing.JTextField theoryMark;
     private javax.swing.JTextArea timeTablesView;
     private javax.swing.JButton timesub;
     private javax.swing.JTextField txtAddress;

@@ -10,9 +10,9 @@ import java.util.List;
  */
 public interface MaintananceDAO {
     public void Add(CarMaintanance car_maintanance);
-    public void Update(CarMaintanance car_maintanance,String tableName);
-    public void Delete(CarMaintanance car_maintanance,String tablename);
-    public CarMaintanance Serch(String car_id);
+    public void Update(CarMaintanance car_maintanance);
+    public void Delete(CarMaintanance car_maintanance);
+    public CarMaintanance Serch(String M_ID);
     public List<CarMaintanance> list(String tableName);
     public List<CarMaintanance> CarMaintanancelist();
 }
