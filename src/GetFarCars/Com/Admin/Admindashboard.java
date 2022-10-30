@@ -13,6 +13,9 @@ import com.getfarcar.common.User;
 import com.getfarcar.common.UserImp;
 import com.getfarcars.maintanance.CarMaintanance;
 import com.getfarcars.maintanance.CarMaintananceImp;
+import com.getfarcar.common.Login;
+import com.getfarcar.common.User;
+import com.getfarcar.common.UserImp;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
@@ -39,14 +42,22 @@ import javax.swing.table.DefaultTableModel;
  * @author KA VI YA
  */
 public class Admindashboard extends javax.swing.JFrame {
-    DBConnector obj=DBConnector.getObject();
-    java.sql.Connection conn=DBConnector.getConnection();
+
+    
     CardLayout cardLayout1;
     private static String userID;
 
     PreparedStatement insert;
     PreparedStatement update;
 
+    public void setUser(String aUser) {
+        userID = aUser;
+    }
+    
+     public String getUser() {
+        return userID;
+    }
+    
    private ImageIcon format=null;
    String fname=null;
    int s=0;
@@ -70,7 +81,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         adName = new javax.swing.JLabel();
-        menutimetable = new rojerusan.RSMaterialButtonRectangle();
+        menuReport = new rojerusan.RSMaterialButtonRectangle();
         menuuser = new rojerusan.RSMaterialButtonRectangle();
         menucourse = new rojerusan.RSMaterialButtonRectangle();
         menunotice = new rojerusan.RSMaterialButtonRectangle();
@@ -78,6 +89,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        menutimetable1 = new rojerusan.RSMaterialButtonRectangle();
         CardjPannel = new javax.swing.JPanel();
         CardPri1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -101,17 +113,15 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txtRegNo = new javax.swing.JTextField();
-        selGender = new javax.swing.JComboBox<String>();
+        adGender = new javax.swing.JComboBox<String>();
         jLabel20 = new javax.swing.JLabel();
-        selStatus = new javax.swing.JComboBox<String>();
-        jLabel21 = new javax.swing.JLabel();
         txtLName = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         txtFName = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        txtCity = new javax.swing.JTextField();
+        txtaddress2 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -129,6 +139,9 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         txtid = new javax.swing.JLabel();
+        txtCity1 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        txtCity2 = new javax.swing.JTextField();
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -271,20 +284,15 @@ public class Admindashboard extends javax.swing.JFrame {
         adName.setText("B. Kavinda");
         jPanel1.add(adName, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 195, 240, -1));
 
-        menutimetable.setBackground(new java.awt.Color(102, 153, 255));
-        menutimetable.setForeground(new java.awt.Color(0, 0, 102));
-        menutimetable.setText("MAINTANACE");
-        menutimetable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menutimetableMouseClicked(evt);
-            }
-        });
-        menutimetable.addActionListener(new java.awt.event.ActionListener() {
+        menuReport.setBackground(new java.awt.Color(102, 153, 255));
+        menuReport.setForeground(new java.awt.Color(0, 0, 102));
+        menuReport.setText("REPORTS");
+        menuReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menutimetableActionPerformed(evt);
+                menuReportActionPerformed(evt);
             }
         });
-        jPanel1.add(menutimetable, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 440, -1, 54));
+        jPanel1.add(menuReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 54));
 
         menuuser.setBackground(new java.awt.Color(102, 153, 255));
         menuuser.setForeground(new java.awt.Color(0, 0, 102));
@@ -304,7 +312,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 menucourseActionPerformed(evt);
             }
         });
-        jPanel1.add(menucourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, 54));
+        jPanel1.add(menucourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 54));
 
         menunotice.setBackground(new java.awt.Color(102, 153, 255));
         menunotice.setForeground(new java.awt.Color(0, 0, 102));
@@ -314,7 +322,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 menunoticeActionPerformed(evt);
             }
         });
-        jPanel1.add(menunotice, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, 54));
+        jPanel1.add(menunotice, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, 54));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/exit.png"))); // NOI18N
         jLabel7.setText("jLabel7");
@@ -356,6 +364,21 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Get_far_cars_logo copy.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 103, 110));
+
+        menutimetable1.setBackground(new java.awt.Color(102, 153, 255));
+        menutimetable1.setForeground(new java.awt.Color(0, 0, 102));
+        menutimetable1.setText("MAINTANACE");
+        menutimetable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menutimetable1MouseClicked(evt);
+            }
+        });
+        menutimetable1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menutimetable1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(menutimetable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 54));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 622));
 
@@ -548,24 +571,17 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 243, 143, 29));
         CardPri2.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 241, 260, 32));
 
-        selGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        CardPri2.add(selGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 111, 186, 28));
+        adGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        CardPri2.add(adGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 111, 186, 28));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
         CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 73, -1, 32));
-
-        selStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "admin1", "admin2", "admin3" }));
-        CardPri2.add(selStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 196, 186, 28));
-
-        jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel21.setText("Admin Status");
-        CardPri2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 32));
-        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 194, 260, 29));
+        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 260, 29));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setText("Last Name");
-        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 159, -1, 32));
+        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("First Name");
@@ -576,14 +592,14 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("Adress Line 1");
         CardPri2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 284, -1, 32));
-        CardPri2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 398, 32));
+        CardPri2.add(txtaddress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 180, 32));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("Adress Line 2");
         CardPri2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 361, -1, 32));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel26.setText("Date of Birth");
+        jLabel26.setText("NIC");
         CardPri2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 430, -1, 32));
 
         jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -655,6 +671,12 @@ public class Admindashboard extends javax.swing.JFrame {
 
         txtid.setText("Image name");
         CardPri2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 120, 20));
+        CardPri2.add(txtCity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 180, 32));
+
+        jLabel31.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel31.setText("City");
+        CardPri2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, 32));
+        CardPri2.add(txtCity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 180, 32));
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1580,17 +1602,16 @@ public class Admindashboard extends javax.swing.JFrame {
 
 //Couuse details tab
 
-    public String getUser() {
-        return userID;
-    }
+  
 
     /**
      *
+     * @param <error>
      * @param aUser
      */
-    public void setUser(String aUser) {
-        userID = aUser;
-    }  
+    
+    
+
 private void course_table_update(){
     int c;
     try {
@@ -1630,6 +1651,46 @@ private void course_table_update(){
         }
 
 }
+
+public void admin_onload(){
+    DBConnector obj=DBConnector.getObject();
+    java.sql.Connection conn=DBConnector.getConnection();
+    int lec,stu,demo,c;
+    try {
+            insert=conn.prepareStatement("select f_name from admin where ID='Ad001'");
+            ResultSet admName= insert.executeQuery();
+            admName.next();
+            String adminName=admName.getString("f_name");
+            adName.setText(adminName);
+
+            insert=conn.prepareStatement("select count(*) as rowcount  from car");
+            ResultSet rsscount= insert.executeQuery();
+            rsscount.next();
+            stu=rsscount.getInt("rowcount");
+
+
+            insert=conn.prepareStatement("select count(*) as rowcount  from driver");
+            ResultSet rslcount= insert.executeQuery();
+            rslcount.next();
+            lec=rslcount.getInt("rowcount");
+
+            insert=conn.prepareStatement("select count(*) as rowcount  from booking");
+            ResultSet rsctec= insert.executeQuery();
+            rsctec.next();
+            demo=rsctec.getInt("rowcount");
+
+
+            stCount.setText(Integer.toString(stu));
+            lecCount.setText(Integer.toString(lec));
+            demoCount.setText(Integer.toString(demo));
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+
+    }
 private void notice_table_update(){
    /* try {
 
@@ -1653,65 +1714,7 @@ private void notice_table_update(){
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
         }*/
 }
-public void admin_onload(String ID){
-   /* int lec,stu,demo,c;
-    try {
-            insert=conn1.prepareStatement("select f_name from admin where admin_id='"+ID+"'");
-            ResultSet admName= insert.executeQuery();
-            admName.next();
-            String adminName=admName.getString("f_name");
-            adName.setText(adminName);
 
-            insert=conn1.prepareStatement("select count(*) as rowcount  from students");
-            ResultSet rsscount= insert.executeQuery();
-            rsscount.next();
-            stu=rsscount.getInt("rowcount");
-
-
-            insert=conn1.prepareStatement("select count(*) as rowcount  from lectures");
-            ResultSet rslcount= insert.executeQuery();
-            rslcount.next();
-            lec=rslcount.getInt("rowcount");
-
-            insert=conn1.prepareStatement("select count(*) as rowcount  from technical_officers");
-            ResultSet rsctec= insert.executeQuery();
-            rsctec.next();
-            demo=rsctec.getInt("rowcount");
-
-
-            stCount.setText(Integer.toString(stu));
-            lecCount.setText(Integer.toString(lec));
-            demoCount.setText(Integer.toString(demo));
-
-            insert=conn1.prepareStatement("select * from department");
-            ResultSet depid= insert.executeQuery();
-            while(depid.next()){
-
-                    String dpid = (String)depid.getString("dep_id");
-                    depId.addItem(dpid);
- 
-            }
-
-            insert=conn1.prepareStatement("select * from lectures");
-            ResultSet lecname= insert.executeQuery();
-            while(lecname.next()){
-
-                    String lid = (String)lecname.getString("lec_id");
-                    lecNames.addItem(lid);
- 
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-     */
-
-    }
-
-    private void menutimetableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menutimetableActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menutimetableActionPerformed
 
     private void menuuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuuserActionPerformed
         AdminUserManage aum=new AdminUserManage();
@@ -1748,58 +1751,22 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel17MouseClicked
 
 public void admin_setting(){
-    /*int c;
-    try {
-
-            insert=conn1.prepareStatement("select *  from admin where admin_id='"+userID+"'");
-            ResultSet rs= insert.executeQuery();
-            ResultSetMetaData Rss=rs.getMetaData();
-            c=Rss.getColumnCount();
-
-            while(rs.next()){
-                for(int a=1;a<c;a++){
-                    txtRegNo.setText(rs.getString("admin_id"));
-                    txtFName.setText(rs.getString("f_name"));
-                    txtLName.setText(rs.getString("l_name"));
-                    txtAddress.setText(rs.getString("address_l1"));
-                    txtCity.setText(rs.getString("address_l2"));
-
-                    String gen = (String)rs.getString("gender");
-                    //selGender.addItem(gen);
-                    selGender.setSelectedItem(gen);
-
-                    txtDOB.setText(rs.getString("dob"));
-                    txtPhone.setText(rs.getString("phone_num")); 
-
-                    String status = (String)rs.getString("admin_role");
-                    selStatus.setSelectedItem(status);
-
-                    byte[] imagedata=rs.getBytes("picture_path");
-                    format=new ImageIcon(imagedata);
-                    Image mm=format.getImage();
-                    Image img2=mm.getScaledInstance(lblimage.getWidth(),lblimage.getHeight(), Image.SCALE_SMOOTH);
-                    ImageIcon image=new ImageIcon(img2);
-                    lblimage.setIcon(image);
- 
-                }
-            }
-
-            insert=conn1.prepareStatement("select *  from log_user where Uname='"+userID+"'");
-            ResultSet rs1= insert.executeQuery();
-            ResultSetMetaData Rss1=rs.getMetaData();
-            c=Rss1.getColumnCount();
-
-            while(rs1.next()){
-                for(int a=1;a<c;a++){
-                    adPwd.setText(rs1.getString("Password"));
-                    adCPwd.setText(rs1.getString("Password"));
-                 }
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        Admindashboard admindashboard = new Admindashboard();
+        String UID=admindashboard.getUser();
+        UserImp userImp = new UserImp();
+        User user = new User();     
+        user=userImp.Serch(UID);
+        
+        txtRegNo.setText(user.getID());
+        txtFName.setText(user.getfName());
+        txtLName.setText(user.getlName());
+        txtAddress.setText(user.getAddressl1());
+        txtaddress2.setText(user.getAddressl2());
+        txtCity2.setText(user.getCity());
+        txtDOB.setText(user.getNIC());
+        adGender.setSelectedItem(user.getGender());
+        txtPhone.setText(String.valueOf(user.getContactno()));
+        txtRegNo.requestFocus();
 
 }
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
@@ -2012,9 +1979,39 @@ public void admin_setting(){
         noticeDate.setText(dtf.format(now));*/
     }//GEN-LAST:event_menunoticeActionPerformed
 
+
     private void menutimetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetableMouseClicked
          cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetableMouseClicked
+
+    private void tdepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdepActionPerformed
+
+    private void tlevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tlevelActionPerformed
+
+    private void tsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tsemActionPerformed
+
+    private void tdep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdep1ActionPerformed
+
+    private void tlevel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevel1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tlevel1ActionPerformed
+
+    private void tsem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tsem1ActionPerformed
+
+    private void tdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdateActionPerformed
+
 
     private void timesubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timesubMouseClicked
         time_table_clear();      
@@ -2185,6 +2182,7 @@ private void clear_add_notice(){
         } catch (Exception e) {
         }       
     }//GEN-LAST:event_jButton9MouseClicked
+
 
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -2395,6 +2393,20 @@ private void clear_add_notice(){
     }//GEN-LAST:event_jButton11ActionPerformed
 
 
+    private void menutimetable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetable1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menutimetable1MouseClicked
+
+    private void menutimetable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menutimetable1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menutimetable1ActionPerformed
+
+    private void menuReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReportActionPerformed
+        AdminReport adminR = new AdminReport();
+        adminR.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_menuReportActionPerformed
+
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2464,6 +2476,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JButton Search;
     private javax.swing.JCheckBox ShowPassword;
     private javax.swing.JPasswordField adCPwd;
+    private javax.swing.JComboBox<String> adGender;
     private javax.swing.JLabel adName;
     private javax.swing.JPasswordField adPwd;
     private javax.swing.JTextField admintxt;
@@ -2525,7 +2538,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -2632,9 +2644,10 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTable jTable3;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
+    private rojerusan.RSMaterialButtonRectangle menuReport;
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
-    private rojerusan.RSMaterialButtonRectangle menutimetable;
+    private rojerusan.RSMaterialButtonRectangle menutimetable1;
     private rojerusan.RSMaterialButtonRectangle menuuser;
     private javax.swing.JCheckBox mid;
     private javax.swing.JTextField midMark;
@@ -2651,7 +2664,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField partstxt;
     private javax.swing.JTextField reasontxt;
     private javax.swing.JComboBox<String> selGender;
-    private javax.swing.JComboBox<String> selStatus;
+    private javax.swing.JComboBox<String> selStatus;s
     private javax.swing.JLabel stCount;
     private javax.swing.JComboBox statustxt;
     private javax.swing.JCheckBox sub1;
@@ -2688,12 +2701,14 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextArea timeTablesView;
     private javax.swing.JButton timesub;
     private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtCity;
+    private javax.swing.JTextField txtCity1;
+    private javax.swing.JTextField txtCity2;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtFName;
     private javax.swing.JTextField txtLName;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtRegNo;
+    private javax.swing.JTextField txtaddress2;
     private javax.swing.JLabel txtid;
     // End of variables declaration//GEN-END:variables
 }
