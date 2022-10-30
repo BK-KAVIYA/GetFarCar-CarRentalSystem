@@ -166,71 +166,33 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
-        jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        tdep = new javax.swing.JComboBox<String>();
         jButton5 = new javax.swing.JButton();
         timesub = new javax.swing.JButton();
         jLabel48 = new javax.swing.JLabel();
-        tlevel = new javax.swing.JComboBox<String>();
-        jLabel49 = new javax.swing.JLabel();
-        tsem = new javax.swing.JComboBox<String>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        ttmonday = new javax.swing.JTextArea();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tswed = new javax.swing.JTextArea();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tstues = new javax.swing.JTextArea();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        tsfri = new javax.swing.JTextArea();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        tsthus = new javax.swing.JTextArea();
         jLabel50 = new javax.swing.JLabel();
-        tslevel = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
-        tslevel1 = new javax.swing.JLabel();
-        tsdep = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        sub1name1 = new javax.swing.JTextField();
+        sub1name2 = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        tdep1 = new javax.swing.JComboBox<String>();
-        jLabel58 = new javax.swing.JLabel();
-        tlevel1 = new javax.swing.JComboBox<String>();
-        tsem1 = new javax.swing.JComboBox<String>();
-        jLabel61 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        tdate = new javax.swing.JComboBox<String>();
-        sub1name = new javax.swing.JTextField();
-        jLabel67 = new javax.swing.JLabel();
-        jLabel68 = new javax.swing.JLabel();
-        sub1from = new javax.swing.JTextField();
-        sub1to = new javax.swing.JTextField();
-        jLabel69 = new javax.swing.JLabel();
-        sub1loc = new javax.swing.JTextField();
-        jLabel70 = new javax.swing.JLabel();
-        sub1 = new javax.swing.JCheckBox();
-        sub2 = new javax.swing.JCheckBox();
-        sub2name = new javax.swing.JTextField();
-        sub2from = new javax.swing.JTextField();
-        sub2to = new javax.swing.JTextField();
-        sub2loc = new javax.swing.JTextField();
-        sub3name = new javax.swing.JTextField();
-        sub3from = new javax.swing.JTextField();
-        sub3 = new javax.swing.JCheckBox();
-        sub3to = new javax.swing.JTextField();
-        sub3loc = new javax.swing.JTextField();
-        sub4from = new javax.swing.JTextField();
-        sub4 = new javax.swing.JCheckBox();
-        sub4to = new javax.swing.JTextField();
-        sub4name = new javax.swing.JTextField();
-        sub4loc = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jLabel71 = new javax.swing.JLabel();
-        sub1type = new javax.swing.JComboBox<String>();
-        sub2type = new javax.swing.JComboBox<String>();
-        sub3type = new javax.swing.JComboBox<String>();
-        sub4type = new javax.swing.JComboBox<String>();
+        midtxt = new javax.swing.JTextField();
+        ivoicetxt = new javax.swing.JTextField();
+        reasontxt = new javax.swing.JTextField();
+        partstxt = new javax.swing.JTextField();
+        costtxt = new javax.swing.JTextField();
+        carid = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         CardPri5 = new javax.swing.JPanel();
@@ -982,23 +944,10 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel46.setText("Level");
-        jPanel10.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 178, -1, -1));
-
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel47.setText("Department");
-        jPanel10.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 43, 86, 22));
-
-        tdep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ICT", "ET", "BST", " " }));
-        tdep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tdepActionPerformed(evt);
-            }
-        });
-        jPanel10.add(tdep, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 39, 206, 30));
+        jLabel47.setText("Maintanance Id");
+        jPanel10.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, 22));
 
         jButton5.setBackground(new java.awt.Color(255, 51, 51));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
@@ -1009,7 +958,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 jButton5MouseClicked(evt);
             }
         });
-        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 80, 30));
+        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 80, 30));
 
         timesub.setBackground(new java.awt.Color(255, 51, 51));
         timesub.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1025,95 +974,62 @@ public class Admindashboard extends javax.swing.JFrame {
                 timesubActionPerformed(evt);
             }
         });
-        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 80, 30));
+        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 80, 30));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel48.setText("Level");
-        jPanel10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 86, 86, 22));
-
-        tlevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
-        tlevel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tlevelActionPerformed(evt);
-            }
-        });
-        jPanel10.add(tlevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 82, 206, 30));
-
-        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel49.setText("Semester");
-        jPanel10.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 134, 86, 22));
-
-        tsem.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
-        tsem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tsemActionPerformed(evt);
-            }
-        });
-        jPanel10.add(tsem, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 130, 206, 30));
-
-        ttmonday.setColumns(12);
-        ttmonday.setFont(new java.awt.Font("Cambria", 1, 10)); // NOI18N
-        ttmonday.setRows(5);
-        jScrollPane3.setViewportView(ttmonday);
-
-        jPanel10.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 213, 110, 232));
-
-        tswed.setColumns(12);
-        tswed.setFont(new java.awt.Font("Cambria", 1, 10)); // NOI18N
-        tswed.setRows(5);
-        jScrollPane5.setViewportView(tswed);
-
-        jPanel10.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 110, 232));
-
-        tstues.setColumns(12);
-        tstues.setFont(new java.awt.Font("Cambria", 1, 10)); // NOI18N
-        tstues.setRows(5);
-        jScrollPane6.setViewportView(tstues);
-
-        jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 100, 232));
-
-        tsfri.setColumns(12);
-        tsfri.setFont(new java.awt.Font("Cambria", 1, 10)); // NOI18N
-        tsfri.setRows(5);
-        jScrollPane7.setViewportView(tsfri);
-
-        jPanel10.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 110, 232));
-
-        tsthus.setColumns(12);
-        tsthus.setFont(new java.awt.Font("Cambria", 1, 10)); // NOI18N
-        tsthus.setRows(5);
-        jScrollPane8.setViewportView(tsthus);
-
-        jPanel10.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 110, 232));
+        jLabel48.setText("Car Id");
+        jPanel10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 86, 22));
 
         jLabel50.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel50.setText("Time tables");
+        jLabel50.setText("View Maintanance");
         jPanel10.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, -1, -1));
-
-        tslevel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tslevel.setForeground(new java.awt.Color(153, 0, 51));
-        tslevel.setText("4");
-        jPanel10.add(tslevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 178, -1, -1));
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel52.setText("Semester");
-        jPanel10.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 178, -1, -1));
+        jLabel52.setText("Vehicle Maintanance Details");
+        jPanel10.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
 
-        tslevel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tslevel1.setForeground(new java.awt.Color(153, 0, 51));
-        tslevel1.setText("4");
-        jPanel10.add(tslevel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 178, -1, -1));
+        jTable3.setForeground(new java.awt.Color(204, 0, 102));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "M ID", "Reason", "Parts", "Cost", "Car ID", "Invoice no"
+            }
+        ));
+        jTable3.setGridColor(new java.awt.Color(255, 153, 153));
+        jTable3.setSelectionBackground(new java.awt.Color(0, 153, 153));
+        jTable3.setSelectionForeground(new java.awt.Color(255, 255, 204));
+        jScrollPane11.setViewportView(jTable3);
+        if (jTable3.getColumnModel().getColumnCount() > 0) {
+            jTable3.getColumnModel().getColumn(1).setPreferredWidth(200);
+        }
 
-        tsdep.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tsdep.setForeground(new java.awt.Color(153, 0, 51));
-        tsdep.setText("BST");
-        jPanel10.add(tsdep, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 178, -1, -1));
+        jPanel10.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 570, 100));
 
-        jTabbedPane2.addTab("View Time Table", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/timetableListr.png")), jPanel10); // NOI18N
+        sub1name1.setEnabled(false);
+        sub1name1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub1name1ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(sub1name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 130, -1));
+
+        sub1name2.setEnabled(false);
+        sub1name2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub1name2ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(sub1name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
+
+        jTabbedPane2.addTab("View Maintanance", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/timetableListr.png")), jPanel10); // NOI18N
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
@@ -1121,145 +1037,7 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel53.setText("Add Time tables");
-
-        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel55.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel55.setText("Department");
-
-        tdep1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ICT", "ET", "BST", "MUL" }));
-        tdep1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tdep1ActionPerformed(evt);
-            }
-        });
-
-        jLabel58.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel58.setText("Level");
-
-        tlevel1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
-        tlevel1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tlevel1ActionPerformed(evt);
-            }
-        });
-
-        tsem1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
-        tsem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tsem1ActionPerformed(evt);
-            }
-        });
-
-        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel61.setText("Semester");
-
-        jLabel62.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel62.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel62.setText("Date");
-
-        tdate.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Monday", "Tuesday", "Wendsday", "Thursday", "Friday" }));
-        tdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tdateActionPerformed(evt);
-            }
-        });
-
-        sub1name.setEnabled(false);
-        sub1name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub1nameActionPerformed(evt);
-            }
-        });
-
-        jLabel67.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel67.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel67.setText("Subject");
-
-        jLabel68.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel68.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel68.setText("From");
-
-        sub1from.setEnabled(false);
-
-        sub1to.setEnabled(false);
-
-        jLabel69.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel69.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel69.setText("To");
-
-        sub1loc.setEnabled(false);
-
-        jLabel70.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel70.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel70.setText("Location");
-
-        sub1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        sub1.setForeground(new java.awt.Color(204, 0, 51));
-        sub1.setText(" Subject 1");
-        sub1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub1ActionPerformed(evt);
-            }
-        });
-
-        sub2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        sub2.setForeground(new java.awt.Color(204, 0, 51));
-        sub2.setText(" Subject 2");
-        sub2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub2ActionPerformed(evt);
-            }
-        });
-
-        sub2name.setEnabled(false);
-
-        sub2from.setEnabled(false);
-
-        sub2to.setEnabled(false);
-
-        sub2loc.setEnabled(false);
-
-        sub3name.setEnabled(false);
-
-        sub3from.setEnabled(false);
-
-        sub3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        sub3.setForeground(new java.awt.Color(204, 0, 51));
-        sub3.setText(" Subject 3");
-        sub3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub3ActionPerformed(evt);
-            }
-        });
-
-        sub3to.setEnabled(false);
-
-        sub3loc.setEnabled(false);
-        sub3loc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub3locActionPerformed(evt);
-            }
-        });
-
-        sub4from.setEnabled(false);
-
-        sub4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        sub4.setForeground(new java.awt.Color(204, 0, 51));
-        sub4.setText(" Subject 4");
-        sub4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub4ActionPerformed(evt);
-            }
-        });
-
-        sub4to.setEnabled(false);
-
-        sub4name.setEnabled(false);
-
-        sub4loc.setEnabled(false);
+        jLabel53.setText("Add Maintanance");
 
         jButton7.setBackground(new java.awt.Color(204, 0, 51));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1268,6 +1046,11 @@ public class Admindashboard extends javax.swing.JFrame {
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton7MouseClicked(evt);
+            }
+        });
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
             }
         });
 
@@ -1281,198 +1064,107 @@ public class Admindashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel71.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel71.setText("Type");
+        midtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                midtxtActionPerformed(evt);
+            }
+        });
 
-        sub1type.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theory", "Patrical" }));
-        sub1type.setEnabled(false);
+        jLabel5.setText("M Id");
 
-        sub2type.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theory", "Patrical" }));
-        sub2type.setEnabled(false);
+        jLabel31.setText("Reason");
 
-        sub3type.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theory", "Patrical" }));
-        sub3type.setEnabled(false);
+        jLabel46.setText("Parts");
 
-        sub4type.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theory", "Patrical" }));
-        sub4type.setEnabled(false);
+        jLabel49.setText("Cost");
+
+        jLabel58.setText("Car ID");
+
+        jLabel61.setText("Invoive No");
+
+        jButton10.setBackground(new java.awt.Color(255, 0, 51));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("Update");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel53)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(101, 101, 101)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel53))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(tdep1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tdate, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(tlevel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tsem1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(440, 440, 440)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
-                                        .addComponent(sub4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(sub4name, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(sub4from, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel11Layout.createSequentialGroup()
-                                            .addGap(8, 8, 8)
-                                            .addComponent(sub3)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(sub3name, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(10, 10, 10)
-                                            .addComponent(sub3from, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
-                                            .addGap(6, 6, 6)
-                                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                                                    .addComponent(sub2)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(sub2name, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                                                    .addComponent(sub1)
-                                                    .addGap(20, 20, 20)
-                                                    .addComponent(sub1name, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(sub1from, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                                .addComponent(sub2from)))))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(sub4to, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                    .addComponent(sub3to, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(sub2to, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(sub1to, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(113, 113, 113)
-                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(sub3loc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                                .addComponent(sub2loc, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(sub1loc, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(sub4loc)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub1type, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub2type, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub3type, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub4type, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(jLabel49)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel58)
+                    .addComponent(jLabel61))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(carid, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reasontxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(midtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(costtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(partstxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ivoicetxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 273, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel53)
-                .addGap(28, 28, 28)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tdep1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tdate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tlevel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tsem1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(48, 48, 48)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sub1)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sub1from, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub1to, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub1loc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub1type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub1name, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(sub2))
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sub2from, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub2to, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub2loc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub2type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub2name, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(sub3))
-                    .addComponent(sub3name, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sub3from, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub3to, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub3loc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub3type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(sub4))
-                    .addComponent(sub4name, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sub4from, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub4to, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub4loc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sub4type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(midtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(reasontxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(partstxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(costtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58)
+                    .addComponent(carid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel61)
+                    .addComponent(ivoicetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("AddTime table", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addTimetabler.png")), jPanel11); // NOI18N
+        jTabbedPane2.addTab("Add Maintanance", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addTimetabler.png")), jPanel11); // NOI18N
 
         jPanel9.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 620, 510));
 
@@ -2185,37 +1877,9 @@ public void admin_setting(){
         noticeDate.setText(dtf.format(now));
     }//GEN-LAST:event_menunoticeActionPerformed
 
-    private void tdepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdepActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tdepActionPerformed
-
-    private void tlevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tlevelActionPerformed
-
-    private void tsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tsemActionPerformed
-
-    private void tdep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdep1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tdep1ActionPerformed
-
-    private void tlevel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevel1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tlevel1ActionPerformed
-
-    private void tsem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tsem1ActionPerformed
-
     private void menutimetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetableMouseClicked
          cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetableMouseClicked
-
-    private void tdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tdateActionPerformed
 
     private void timesubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timesubMouseClicked
         time_table_clear();      
@@ -2281,183 +1945,32 @@ public void admin_setting(){
     private void timesubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesubActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_timesubActionPerformed
-
-    private void sub1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1ActionPerformed
-         if(sub1.isSelected()){
-            sub1name.setEnabled(true);
-            sub1from.setEnabled(true);
-            sub1to.setEnabled(true);
-            sub1loc.setEnabled(true);
-            sub1type.setEnabled(true);
-        } else {
-            sub1name.setEnabled(false);
-            sub1from.setEnabled(false);
-            sub1to.setEnabled(false);
-            sub1loc.setEnabled(false);
-            sub1name.setText(null);
-            sub1from.setText(null);
-            sub1to.setText(null);
-            sub1loc.setText(null);
-        }
-    }//GEN-LAST:event_sub1ActionPerformed
-
-    private void sub1nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1nameActionPerformed
-
-    }//GEN-LAST:event_sub1nameActionPerformed
-
-    private void sub2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub2ActionPerformed
-         if(sub2.isSelected()){
-            sub2name.setEnabled(true);
-            sub2from.setEnabled(true);
-            sub2to.setEnabled(true);
-            sub2loc.setEnabled(true);
-            sub2type.setEnabled(true);
-        } else {
-            sub2name.setEnabled(false);
-            sub2from.setEnabled(false);
-            sub2to.setEnabled(false);
-            sub2loc.setEnabled(false);
-            sub2name.setText(null);
-            sub2from.setText(null);
-            sub2to.setText(null);
-            sub2loc.setText(null);
-        }
-    }//GEN-LAST:event_sub2ActionPerformed
-
-    private void sub3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub3ActionPerformed
-            if(sub3.isSelected()){
-            sub3name.setEnabled(true);
-            sub3from.setEnabled(true);
-            sub3to.setEnabled(true);
-            sub3loc.setEnabled(true);
-            sub3type.setEnabled(true);
-        } else {
-            sub3name.setEnabled(false);
-            sub3from.setEnabled(false);
-            sub3to.setEnabled(false);
-            sub3loc.setEnabled(false);
-            sub3name.setText(null);
-            sub3from.setText(null);
-            sub3to.setText(null);
-            sub3loc.setText(null);
-        }
-    }//GEN-LAST:event_sub3ActionPerformed
-
-    private void sub4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub4ActionPerformed
-            if(sub4.isSelected()){
-            sub4name.setEnabled(true);
-            sub4from.setEnabled(true);
-            sub4to.setEnabled(true);
-            sub4loc.setEnabled(true);
-            sub4type.setEnabled(true);
-        } else {
-            sub4name.setEnabled(false);
-            sub4from.setEnabled(false);
-            sub4to.setEnabled(false);
-            sub4loc.setEnabled(false);
-            sub4name.setText(null);
-            sub4from.setText(null);
-            sub4to.setText(null);
-            sub4loc.setText(null);
-        }
-    }//GEN-LAST:event_sub4ActionPerformed
 private void clear_timetable_fields(){
         
-        sub1name.setText("");
-        sub1from.setText("");
-        sub1to.setText("");
-        sub1loc.setText("");
-        sub2name.setText("");
-        sub2from.setText("");
-        sub2to.setText("");
-        sub2loc.setText("");
-        sub3name.setText("");
-        sub3from.setText("");
-        sub3to.setText("");
-        sub3loc.setText("");
-        sub4name.setText("");
-        sub4from.setText("");
-        sub4to.setText("");
-        sub4loc.setText("");
-        tdep1.setSelectedIndex(0);
-        tlevel1.setSelectedIndex(0);
-        tsem1.setSelectedIndex(0);
-        tdate.setSelectedIndex(0); 
-        sub1type.setSelectedIndex(0);
-             
-        sub1.setSelected(false);
-        sub1name.setEnabled(false);   
-        sub1from.setEnabled(false);
-        sub1to.setEnabled(false);
-        sub1loc.setEnabled(false);
-        sub1type.setEnabled(false);
-
-        sub2.setSelected(false);
-        sub2name.setEnabled(false);   
-        sub2from.setEnabled(false);
-        sub2to.setEnabled(false);
-        sub2loc.setEnabled(false);
-        sub2type.setEnabled(false);
-
-        sub3.setSelected(false);
-        sub3name.setEnabled(false);   
-        sub3from.setEnabled(false);
-        sub3to.setEnabled(false);
-        sub3loc.setEnabled(false);
-        sub3type.setEnabled(false);
-
-        sub4.setSelected(false);
-        sub4name.setEnabled(false);   
-        sub4from.setEnabled(false);
-        sub4to.setEnabled(false);
-        sub4loc.setEnabled(false);
-        sub4type.setEnabled(false);
+        
 
 }
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
             
-            String tdep=(String)tdep1.getSelectedItem();
-            String tlevel=(String)tlevel1.getSelectedItem();
-            String tSem=(String)tsem1.getSelectedItem();
-            String tDate=(String)tdate.getSelectedItem();
- 
-            if(this.sub1.isSelected()){
-                String subName=sub1name.getText();
-                String subFrom=sub1from.getText();
-                String subTo=sub1to.getText();
-                String subLoc=sub1loc.getText();
-                String tType=(String)sub1type.getSelectedItem();
-            try {
-
-            insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
-            insert.setString(1, tdep);
-            insert.setString(2, tlevel);
-            insert.setString(3,tSem );
-            insert.setString(4, tDate);
             
-            insert.setString(5, subName);
-            insert.setString(6, subFrom);
-            insert.setString(7, subTo);
-            insert.setString(8, subLoc);
-            insert.setString(9, tType);
-
-
-            if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
-
-                JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-               
-            }else{
-  
-                    insert.executeUpdate();
  
-            }
             
 
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            insert=conn.prepareStatement("INSERT INTO maintance( M_ID, Reason,Parts, Cost,Car_ID, Invoice_no)VALUES (?,?,?,?,?)");
+            insert.setString(1, M_ID);
+            insert.setString(2, reason);
+            insert.setInt(3,cost );
+            insert.setString(4, car_id);
+            insert.setInt(5, invoice_id);
+           
+
+
+            
+            
+
         
-            }
+        
+            
            if(this.sub2.isSelected()){
                 String subName=sub2name.getText();
                 String subFrom=sub2from.getText();
@@ -2574,10 +2087,6 @@ private void clear_timetable_fields(){
             
             
     }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void sub3locActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub3locActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sub3locActionPerformed
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         clear_timetable_fields();
@@ -2722,6 +2231,7 @@ private void clear_add_notice(){
         }       
     }//GEN-LAST:event_jButton9MouseClicked
 
+
     private void cPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cPriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cPriceActionPerformed
@@ -2737,6 +2247,27 @@ private void clear_add_notice(){
     private void cadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadd1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cadd1ActionPerformed
+
+    private void sub1name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub1name1ActionPerformed
+
+    private void sub1name2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub1name2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void midtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_midtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_midtxtActionPerformed
+
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2814,12 +2345,25 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField cStatus;
     private javax.swing.JTextField cType;
     private javax.swing.JButton cadd;
+
     private javax.swing.JButton cadd1;
     private javax.swing.JTextField carId;
     private javax.swing.JButton cdelete;
     private javax.swing.JButton clearNotice;
     private javax.swing.JLabel demoCount;
+
+    private javax.swing.JTextField carid;
+    private javax.swing.JButton cclear;
+    private javax.swing.JButton clearNotice;
+    private javax.swing.JTextField costtxt;
+    private javax.swing.JTextField courseId;
+    private javax.swing.JLabel courseMarkMessage;
+    private javax.swing.JLabel demoCount;
+    private javax.swing.JComboBox<String> depId;
+    private javax.swing.JTextField ivoicetxt;
+
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2852,6 +2396,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -2871,12 +2416,15 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
@@ -2884,9 +2432,11 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
@@ -2918,22 +2468,26 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
     private rojerusan.RSMaterialButtonRectangle menutimetable;
     private rojerusan.RSMaterialButtonRectangle menuuser;
+    private javax.swing.JCheckBox mid;
+    private javax.swing.JTextField midMark;
+    private javax.swing.JTextField midtxt;
     private javax.swing.JTextArea noticeContent;
     private javax.swing.JTextField noticeDate;
     private javax.swing.JTextField noticeNum;
@@ -2968,20 +2522,21 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JComboBox<String> tdate;
     private javax.swing.JComboBox<String> tdep;
     private javax.swing.JComboBox<String> tdep1;
+    private javax.swing.JTextField partstxt;
+    private javax.swing.JCheckBox practical;
+    private javax.swing.JTextField practicalMark;
+    private javax.swing.JCheckBox quiz;
+    private javax.swing.JTextField quizMark;
+    private javax.swing.JTextField reasontxt;
+    private javax.swing.JComboBox<String> selGender;
+    private javax.swing.JComboBox<String> selStatus;
+    private javax.swing.JLabel stCount;
+    private javax.swing.JTextField sub1name1;
+    private javax.swing.JTextField sub1name2;
+    private javax.swing.JCheckBox theory;
+    private javax.swing.JTextField theoryMark;
     private javax.swing.JTextArea timeTablesView;
     private javax.swing.JButton timesub;
-    private javax.swing.JComboBox<String> tlevel;
-    private javax.swing.JComboBox<String> tlevel1;
-    private javax.swing.JLabel tsdep;
-    private javax.swing.JComboBox<String> tsem;
-    private javax.swing.JComboBox<String> tsem1;
-    private javax.swing.JTextArea tsfri;
-    private javax.swing.JLabel tslevel;
-    private javax.swing.JLabel tslevel1;
-    private javax.swing.JTextArea tsthus;
-    private javax.swing.JTextArea tstues;
-    private javax.swing.JTextArea tswed;
-    private javax.swing.JTextArea ttmonday;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtDOB;
