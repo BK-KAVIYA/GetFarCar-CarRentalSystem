@@ -10,6 +10,8 @@ import com.getfarcar.common.UserImp;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -135,10 +137,136 @@ try {
     
     
     
+    @Override
+    public List<Booking> ManageBookingList(){
+        
+    List<Booking> list= new ArrayList<Booking>();
+        try {
+            String sql="SELECT * FROM booking;";
+            pst=conn.prepareStatement(sql);
+            ResultSet rs;
+            rs=pst.executeQuery();
+            
+            
+            while(rs.next()){
+                
+                
+                    Booking booking = new Booking();
+                    
+                    booking.setBid(rs.getString("B_ID"));
+                    booking.setStartdate(rs.getString("Start_Date"));
+                    booking.setEnddate(rs.getString("End_Date"));
+                    booking.setEnddate(rs.getString("End_Date"));
+                    booking.setStatus(rs.getString("Status"));
+                    booking.setDeposit(rs.getString("Deposite"));
+                    booking.setCustomerid(rs.getString("Cus_ID"));
+                    booking.setCarid(rs.getString("Car_ID"));
+                    booking.setDriverid(rs.getString("Dri_ID"));
+                    
+                    
+                    list.add(booking);
+               
+            }  
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(BookingImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    
+    
+    }
+    
+    
+    @Override
+    public List<Booking>SearchBookingList(String BookingID){
+        List<Booking> list=new ArrayList<Booking>();
+        try {
+               
+            
+
+            String sql="SELECT * FROM booking WHERE B_ID='"+BookingID+"';";
+            pst=conn.prepareStatement(sql);
+            ResultSet rs;
+            rs=pst.executeQuery();
+            
+            while(rs.next()){
+                
+                Booking booking = new Booking();
+                booking.setBid(rs.getString("B_ID"));
+                booking.setStartdate(rs.getString("Start_Date"));
+                booking.setEnddate(rs.getString("End_Date"));
+                booking.setStatus(rs.getString("Status"));
+                booking.setDeposit(rs.getString("Deposite"));
+                booking.setCustomerid(rs.getString("Cus_ID"));
+                booking.setCarid(rs.getString("Car_ID"));
+                booking.setDriverid(rs.getString("Dri_ID"));
+                booking.setAdminid (rs.getString("Admin_ID"));
+                
+                list.add(booking);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BookingImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    
+    return list;
+    
+    
+    
     
     
     
     }
     
+    
+    @Override
+   public List<Booking>SearchCustomerList(String CustomerID){
+        List<Booking> list=new ArrayList<Booking>();
+        try {
+               
+            
 
+            String sql="SELECT * FROM booking WHERE Cus_ID='"+CustomerID+"';";
+            pst=conn.prepareStatement(sql);
+            ResultSet rs;
+            rs=pst.executeQuery();
+            
+            while(rs.next()){
+                
+                Booking booking1 = new Booking();
+                booking1.setBid(rs.getString("B_ID"));
+                booking1.setStartdate(rs.getString("Start_Date"));
+                booking1.setEnddate(rs.getString("End_Date"));
+                booking1.setStatus(rs.getString("Status"));
+                booking1.setDeposit(rs.getString("Deposite"));
+                booking1.setCustomerid(rs.getString("Cus_ID"));
+                booking1.setCarid(rs.getString("Car_ID"));
+                booking1.setDriverid(rs.getString("Dri_ID"));
+                booking1.setAdminid (rs.getString("Admin_ID"));
+                
+                list.add(booking1);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BookingImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    
+    return list;
+    
+    
+    
+    
+    
+    
+    } 
+    
+    
+    
+    
+    
+    
+    
 
+}

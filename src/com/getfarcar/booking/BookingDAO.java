@@ -5,6 +5,8 @@
  */
 package com.getfarcar.booking;
 
+import java.util.List;
+
 
 
 /**
@@ -16,4 +18,7 @@ public interface BookingDAO {
     public void Update(Booking booking);   
     public Booking Search(String BID);
      public void Delete(Booking booking);
+     public List<Booking>ManageBookingList();
+     public List<Booking>SearchBookingList(String BookingID);
+     public List<Booking>SearchCustomerList(String CustomerID);
 }

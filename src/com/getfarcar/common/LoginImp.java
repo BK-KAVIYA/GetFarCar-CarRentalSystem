@@ -2,7 +2,7 @@
 package com.getfarcar.common;
 
 import GetFarCars.Com.Admin.AdminUserManage;
-import GetFarCars.Com.Admin.Admindashboard;
+import GetFarCars.Com.Admin.DriverDashboard;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
 import java.sql.Connection;
@@ -31,7 +31,7 @@ public class LoginImp implements LoginDAO{
                 if(rs.getString("Password").equals(logins.getPassword())){
                     switch(rs.getInt("Role")){
                         case 1:
-                            Admindashboard admindashboard = new Admindashboard();
+                            DriverDashboard admindashboard = new DriverDashboard();
                             admindashboard.setUser(logins.getID());
                             loginPage.dispose();
                             admindashboard.show();

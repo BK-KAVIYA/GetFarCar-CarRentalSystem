@@ -790,13 +790,13 @@ private void Load(){
 
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        Admindashboard add=new Admindashboard();
+        DriverDashboard add=new DriverDashboard();
         add.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Admindashboard add=new Admindashboard();
+        DriverDashboard add=new DriverDashboard();
         add.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked

@@ -13,9 +13,6 @@ import com.getfarcar.common.User;
 import com.getfarcar.common.UserImp;
 import com.getfarcars.maintanance.CarMaintanance;
 import com.getfarcars.maintanance.CarMaintananceImp;
-import com.getfarcar.common.Login;
-import com.getfarcar.common.User;
-import com.getfarcar.common.UserImp;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
@@ -29,7 +26,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,32 +38,22 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author KA VI YA
  */
-public class Admindashboard extends javax.swing.JFrame {
-
-
+public class DriverDashboard extends javax.swing.JFrame {
+    DBConnector obj=DBConnector.getObject();
+    java.sql.Connection conn=DBConnector.getConnection();
     CardLayout cardLayout1;
     private static String userID;
 
     PreparedStatement insert;
     PreparedStatement update;
 
-    public void setUser(String aUser) {
-        userID = aUser;
-    }
-    
-     public String getUser() {
-        return userID;
-    }
-    
    private ImageIcon format=null;
    String fname=null;
    int s=0;
    byte[] pimage=null;
-    public Admindashboard() {
+    public DriverDashboard() {
         initComponents();
-        Load();
         cardLayout1 =(CardLayout)(CardjPannel.getLayout());
-        
     }
 
     /**
@@ -84,7 +70,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         adName = new javax.swing.JLabel();
-        menuReport = new rojerusan.RSMaterialButtonRectangle();
+        menutimetable = new rojerusan.RSMaterialButtonRectangle();
         menuuser = new rojerusan.RSMaterialButtonRectangle();
         menucourse = new rojerusan.RSMaterialButtonRectangle();
         menunotice = new rojerusan.RSMaterialButtonRectangle();
@@ -92,7 +78,6 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        menutimetable1 = new rojerusan.RSMaterialButtonRectangle();
         CardjPannel = new javax.swing.JPanel();
         CardPri1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -116,7 +101,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txtRegNo = new javax.swing.JTextField();
-        adGender = new javax.swing.JComboBox<String>();
+        selGender = new javax.swing.JComboBox<String>();
         jLabel20 = new javax.swing.JLabel();
         txtLName = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
@@ -124,7 +109,7 @@ public class Admindashboard extends javax.swing.JFrame {
         txtFName = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        txtaddress2 = new javax.swing.JTextField();
+        txtCity = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -142,9 +127,6 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         txtid = new javax.swing.JLabel();
-        txtCity1 = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        txtCity2 = new javax.swing.JTextField();
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -221,6 +203,16 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri5 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        Csearch2 = new rojerusan.RSMaterialButtonRectangle();
+        Csearch3 = new rojerusan.RSMaterialButtonRectangle();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        Jdriver = new rojeru_san.complementos.RSTableMetro();
         jPanel14 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
@@ -245,16 +237,6 @@ public class Admindashboard extends javax.swing.JFrame {
         bookingupdate = new rojerusan.RSMaterialButtonRectangle();
         bookingdelete = new rojerusan.RSMaterialButtonRectangle();
         manage_booking_search = new rojerusan.RSMaterialButtonRectangle();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel84 = new javax.swing.JLabel();
-        jLabel85 = new javax.swing.JLabel();
-        bookingidtxt = new javax.swing.JTextField();
-        customeridtxt = new javax.swing.JTextField();
-        customeridsearch = new rojerusan.RSMaterialButtonRectangle();
-        BookingIdSearch = new rojerusan.RSMaterialButtonRectangle();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        bookingtable = new rojeru_san.complementos.RSTableMetro();
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
 
@@ -287,15 +269,20 @@ public class Admindashboard extends javax.swing.JFrame {
         adName.setText("B. Kavinda");
         jPanel1.add(adName, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 195, 240, -1));
 
-        menuReport.setBackground(new java.awt.Color(102, 153, 255));
-        menuReport.setForeground(new java.awt.Color(0, 0, 102));
-        menuReport.setText("REPORTS");
-        menuReport.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuReportActionPerformed(evt);
+        menutimetable.setBackground(new java.awt.Color(102, 153, 255));
+        menutimetable.setForeground(new java.awt.Color(0, 0, 102));
+        menutimetable.setText("MAINTANACE");
+        menutimetable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menutimetableMouseClicked(evt);
             }
         });
-        jPanel1.add(menuReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 54));
+        menutimetable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menutimetableActionPerformed(evt);
+            }
+        });
+        jPanel1.add(menutimetable, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 440, -1, 54));
 
         menuuser.setBackground(new java.awt.Color(102, 153, 255));
         menuuser.setForeground(new java.awt.Color(0, 0, 102));
@@ -315,7 +302,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 menucourseActionPerformed(evt);
             }
         });
-        jPanel1.add(menucourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 54));
+        jPanel1.add(menucourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, 54));
 
         menunotice.setBackground(new java.awt.Color(102, 153, 255));
         menunotice.setForeground(new java.awt.Color(0, 0, 102));
@@ -325,7 +312,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 menunoticeActionPerformed(evt);
             }
         });
-        jPanel1.add(menunotice, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, 54));
+        jPanel1.add(menunotice, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, 54));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/exit.png"))); // NOI18N
         jLabel7.setText("jLabel7");
@@ -367,21 +354,6 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Get_far_cars_logo copy.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 103, 110));
-
-        menutimetable1.setBackground(new java.awt.Color(102, 153, 255));
-        menutimetable1.setForeground(new java.awt.Color(0, 0, 102));
-        menutimetable1.setText("MAINTANACE");
-        menutimetable1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menutimetable1MouseClicked(evt);
-            }
-        });
-        menutimetable1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menutimetable1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(menutimetable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 54));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 622));
 
@@ -522,7 +494,7 @@ public class Admindashboard extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE))
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
         CardPri1Layout.setVerticalGroup(
             CardPri1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,7 +510,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -557,8 +529,8 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 57, 32, -1));
 
         jLabel15.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel15.setText("Admin Dashboard >Setting->");
-        CardPri2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 255, 41));
+        jLabel15.setText("Driver >Settings");
+        CardPri2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 255, 41));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/close.png"))); // NOI18N
         jLabel17.setText("jLabel17");
@@ -574,17 +546,17 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 243, 143, 29));
         CardPri2.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 241, 260, 32));
 
-        adGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        CardPri2.add(adGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 111, 186, 28));
+        selGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        CardPri2.add(selGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 111, 186, 28));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
         CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 73, -1, 32));
-        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 260, 29));
+        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 194, 260, 29));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setText("Last Name");
-        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
+        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 159, -1, 32));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("First Name");
@@ -595,14 +567,14 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("Adress Line 1");
         CardPri2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 284, -1, 32));
-        CardPri2.add(txtaddress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 180, 32));
+        CardPri2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 398, 32));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("Adress Line 2");
         CardPri2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 361, -1, 32));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel26.setText("NIC");
+        jLabel26.setText("Date of Birth");
         CardPri2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 430, -1, 32));
 
         jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -621,6 +593,11 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel3.add(adCPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 125, 181, 30));
 
         adPwd.setText("jPas1");
+        adPwd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adPwdActionPerformed(evt);
+            }
+        });
         jPanel3.add(adPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 181, 30));
 
         jLabel32.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -639,7 +616,7 @@ public class Admindashboard extends javax.swing.JFrame {
         });
         jPanel3.add(ShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        CardPri2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 310, -1, 190));
+        CardPri2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, 190));
         CardPri2.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 470, 193, 29));
         CardPri2.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 470, 176, 29));
 
@@ -649,7 +626,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 AdUpdateActionPerformed(evt);
             }
         });
-        CardPri2.add(AdUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, 107, 40));
+        CardPri2.add(AdUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 107, 40));
 
         lblimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/man-with-beard-avatar-character-isolated-icon-free-vector-removebg-preview-removebg-preview.png"))); // NOI18N
         lblimage.setText("jLabel31");
@@ -674,12 +651,6 @@ public class Admindashboard extends javax.swing.JFrame {
 
         txtid.setText("Image name");
         CardPri2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 120, 20));
-        CardPri2.add(txtCity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 180, 32));
-
-        jLabel31.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel31.setText("City");
-        CardPri2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, 32));
-        CardPri2.add(txtCity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 180, 32));
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1249,7 +1220,7 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri4.setLayout(CardPri4Layout);
         CardPri4Layout.setHorizontalGroup(
             CardPri4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
         );
         CardPri4Layout.setVerticalGroup(
             CardPri4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1264,6 +1235,113 @@ public class Admindashboard extends javax.swing.JFrame {
         jTabbedPane3.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane3.setForeground(new java.awt.Color(204, 0, 51));
         jTabbedPane3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
+        jPanel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel72.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel72.setText("Most Recent Bookings");
+
+        jLabel84.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel84.setText("Booking ID :");
+
+        jLabel85.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel85.setText("Customer ID :");
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        Csearch2.setText("Search");
+        Csearch2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Csearch2ActionPerformed(evt);
+            }
+        });
+
+        Csearch3.setText("Search");
+        Csearch3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Csearch3ActionPerformed(evt);
+            }
+        });
+
+        Jdriver.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking ID", "Start Date", "End Date", "Status ", "Deposite", "Cus_ID", "Car ID", "Driver ID", "Admin ID"
+            }
+        ));
+        Jdriver.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
+        Jdriver.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
+        Jdriver.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        Jdriver.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jdriver.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jdriver.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jScrollPane9.setViewportView(Jdriver);
+        if (Jdriver.getColumnModel().getColumnCount() > 0) {
+            Jdriver.getColumnModel().getColumn(8).setResizable(false);
+        }
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(202, 202, 202)
+                        .addComponent(jLabel72))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel85)
+                            .addComponent(jLabel84))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Csearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Csearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel84)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Csearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel85)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Csearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jTabbedPane3.addTab("Bookings", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/noticeList.png")), jPanel13); // NOI18N
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
@@ -1457,113 +1535,6 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Manage Booking", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addNotice.png")), jPanel14); // NOI18N
 
-        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
-        jPanel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        jLabel72.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel72.setText("Most Recent Bookings");
-
-        jLabel84.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel84.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel84.setText("Booking ID :");
-
-        jLabel85.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel85.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel85.setText("Customer ID :");
-
-        bookingidtxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookingidtxtActionPerformed(evt);
-            }
-        });
-
-        customeridsearch.setText("Search");
-        customeridsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customeridsearchActionPerformed(evt);
-            }
-        });
-
-        BookingIdSearch.setText("Search");
-        BookingIdSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BookingIdSearchActionPerformed(evt);
-            }
-        });
-
-        bookingtable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Booking ID", "Start Date", "End Date", "Status ", "Deposite", "Cus_ID", "Car ID", "Driver ID"
-            }
-        ));
-        bookingtable.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
-        bookingtable.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        bookingtable.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
-        bookingtable.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        bookingtable.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        bookingtable.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jScrollPane9.setViewportView(bookingtable);
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(202, 202, 202)
-                                .addComponent(jLabel72))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel85)
-                                    .addComponent(jLabel84))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bookingidtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customeridtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(customeridsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BookingIdSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 140, Short.MAX_VALUE))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane9)))
-                .addContainerGap())
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel84)
-                    .addComponent(bookingidtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BookingIdSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel85)
-                    .addComponent(customeridtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(customeridsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jTabbedPane3.addTab("Bookings", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/noticeList.png")), jPanel13); // NOI18N
-
         jPanel12.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 620, 530));
 
         jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/minimize.png"))); // NOI18N
@@ -1605,17 +1576,17 @@ public class Admindashboard extends javax.swing.JFrame {
 
 //Couuse details tab
 
-  
+    public String getUser() {
+        return userID;
+    }
 
     /**
      *
-     * @param <error>
      * @param aUser
      */
-
-    
-    
-
+    public void setUser(String aUser) {
+        userID = aUser;
+    }  
 private void course_table_update(){
     int c;
     try {
@@ -1655,46 +1626,6 @@ private void course_table_update(){
         }
 
 }
-
-public void admin_onload(){
-    DBConnector obj=DBConnector.getObject();
-    java.sql.Connection conn=DBConnector.getConnection();
-    int lec,stu,demo,c;
-    try {
-            insert=conn.prepareStatement("select f_name from admin where ID='Ad001'");
-            ResultSet admName= insert.executeQuery();
-            admName.next();
-            String adminName=admName.getString("f_name");
-            adName.setText(adminName);
-
-            insert=conn.prepareStatement("select count(*) as rowcount  from car");
-            ResultSet rsscount= insert.executeQuery();
-            rsscount.next();
-            stu=rsscount.getInt("rowcount");
-
-
-            insert=conn.prepareStatement("select count(*) as rowcount  from driver");
-            ResultSet rslcount= insert.executeQuery();
-            rslcount.next();
-            lec=rslcount.getInt("rowcount");
-
-            insert=conn.prepareStatement("select count(*) as rowcount  from booking");
-            ResultSet rsctec= insert.executeQuery();
-            rsctec.next();
-            demo=rsctec.getInt("rowcount");
-
-
-            stCount.setText(Integer.toString(stu));
-            lecCount.setText(Integer.toString(lec));
-            demoCount.setText(Integer.toString(demo));
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-     
-
-    }
 private void notice_table_update(){
    /* try {
 
@@ -1718,30 +1649,65 @@ private void notice_table_update(){
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
         }*/
 }
+public void admin_onload(String ID){
+   /* int lec,stu,demo,c;
+    try {
+            insert=conn1.prepareStatement("select f_name from admin where admin_id='"+ID+"'");
+            ResultSet admName= insert.executeQuery();
+            admName.next();
+            String adminName=admName.getString("f_name");
+            adName.setText(adminName);
+
+            insert=conn1.prepareStatement("select count(*) as rowcount  from students");
+            ResultSet rsscount= insert.executeQuery();
+            rsscount.next();
+            stu=rsscount.getInt("rowcount");
 
 
-    public void setUser(String aUser) {
-        userID = aUser;
-    } 
-    
-  private void Load(){
+            insert=conn1.prepareStatement("select count(*) as rowcount  from lectures");
+            ResultSet rslcount= insert.executeQuery();
+            rslcount.next();
+            lec=rslcount.getInt("rowcount");
+
+            insert=conn1.prepareStatement("select count(*) as rowcount  from technical_officers");
+            ResultSet rsctec= insert.executeQuery();
+            rsctec.next();
+            demo=rsctec.getInt("rowcount");
+
+
+            stCount.setText(Integer.toString(stu));
+            lecCount.setText(Integer.toString(lec));
+            demoCount.setText(Integer.toString(demo));
+
+            insert=conn1.prepareStatement("select * from department");
+            ResultSet depid= insert.executeQuery();
+            while(depid.next()){
+
+                    String dpid = (String)depid.getString("dep_id");
+                    depId.addItem(dpid);
  
-        DefaultTableModel BFT=(DefaultTableModel) bookingtable.getModel();
-        BFT.setRowCount(0);
-        BookingImp bookingimp = new BookingImp();
-        List<Booking> bookinglist=bookingimp.ManageBookingList();
-        for(Booking book:bookinglist){
-            BFT.addRow(new Object[]{book.getBid(),book.getStartdate(),book.getEnddate(),book.getStatus(),book.getDeposit(),book.getCustomerid(),book.getCarid(),book.getDriverid()});
-        }
-        
-        
+            }
 
-}  
-    
+            insert=conn1.prepareStatement("select * from lectures");
+            ResultSet lecname= insert.executeQuery();
+            while(lecname.next()){
+
+                    String lid = (String)lecname.getString("lec_id");
+                    lecNames.addItem(lid);
+ 
+            }
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     */
+
+    }
+
     private void menutimetableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menutimetableActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menutimetableActionPerformed
-
 
     private void menuuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuuserActionPerformed
         AdminUserManage aum=new AdminUserManage();
@@ -1778,22 +1744,58 @@ private void notice_table_update(){
     }//GEN-LAST:event_jLabel17MouseClicked
 
 public void admin_setting(){
-        Admindashboard admindashboard = new Admindashboard();
-        String UID=admindashboard.getUser();
-        UserImp userImp = new UserImp();
-        User user = new User();     
-        user=userImp.Serch(UID);
-        
-        txtRegNo.setText(user.getID());
-        txtFName.setText(user.getfName());
-        txtLName.setText(user.getlName());
-        txtAddress.setText(user.getAddressl1());
-        txtaddress2.setText(user.getAddressl2());
-        txtCity2.setText(user.getCity());
-        txtDOB.setText(user.getNIC());
-        adGender.setSelectedItem(user.getGender());
-        txtPhone.setText(String.valueOf(user.getContactno()));
-        txtRegNo.requestFocus();
+    /*int c;
+    try {
+
+            insert=conn1.prepareStatement("select *  from admin where admin_id='"+userID+"'");
+            ResultSet rs= insert.executeQuery();
+            ResultSetMetaData Rss=rs.getMetaData();
+            c=Rss.getColumnCount();
+
+            while(rs.next()){
+                for(int a=1;a<c;a++){
+                    txtRegNo.setText(rs.getString("admin_id"));
+                    txtFName.setText(rs.getString("f_name"));
+                    txtLName.setText(rs.getString("l_name"));
+                    txtAddress.setText(rs.getString("address_l1"));
+                    txtCity.setText(rs.getString("address_l2"));
+
+                    String gen = (String)rs.getString("gender");
+                    //selGender.addItem(gen);
+                    selGender.setSelectedItem(gen);
+
+                    txtDOB.setText(rs.getString("dob"));
+                    txtPhone.setText(rs.getString("phone_num")); 
+
+                    String status = (String)rs.getString("admin_role");
+                    selStatus.setSelectedItem(status);
+
+                    byte[] imagedata=rs.getBytes("picture_path");
+                    format=new ImageIcon(imagedata);
+                    Image mm=format.getImage();
+                    Image img2=mm.getScaledInstance(lblimage.getWidth(),lblimage.getHeight(), Image.SCALE_SMOOTH);
+                    ImageIcon image=new ImageIcon(img2);
+                    lblimage.setIcon(image);
+ 
+                }
+            }
+
+            insert=conn1.prepareStatement("select *  from log_user where Uname='"+userID+"'");
+            ResultSet rs1= insert.executeQuery();
+            ResultSetMetaData Rss1=rs.getMetaData();
+            c=Rss1.getColumnCount();
+
+            while(rs1.next()){
+                for(int a=1;a<c;a++){
+                    adPwd.setText(rs1.getString("Password"));
+                    adCPwd.setText(rs1.getString("Password"));
+                 }
+            }
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
 
 }
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
@@ -2006,39 +2008,9 @@ public void admin_setting(){
         noticeDate.setText(dtf.format(now));*/
     }//GEN-LAST:event_menunoticeActionPerformed
 
-
     private void menutimetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetableMouseClicked
          cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetableMouseClicked
-
-    private void tdepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdepActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tdepActionPerformed
-
-    private void tlevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tlevelActionPerformed
-
-    private void tsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tsemActionPerformed
-
-    private void tdep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdep1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tdep1ActionPerformed
-
-    private void tlevel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevel1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tlevel1ActionPerformed
-
-    private void tsem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tsem1ActionPerformed
-
-    private void tdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tdateActionPerformed
-
 
     private void timesubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timesubMouseClicked
         time_table_clear();      
@@ -2211,54 +2183,17 @@ private void clear_add_notice(){
     }//GEN-LAST:event_jButton9MouseClicked
 
 
-
-
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-    private void bookingidtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingidtxtActionPerformed
-
         // TODO add your handling code here:
-    }//GEN-LAST:event_bookingidtxtActionPerformed
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void customeridsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customeridsearchActionPerformed
-        
-        String CustomerID=customeridtxt.getText();
-        BookingImp bookingimp = new BookingImp();
-        Booking book1 = new Booking();
-        book1=bookingimp.SearchCus(CustomerID);
-        
-        DefaultTableModel UTF=(DefaultTableModel) bookingtable.getModel();
-        UTF.setRowCount(0);
-        
-        
-       UTF.addRow(new Object[]{book1.getBid(),book1.getStartdate(),book1.getEnddate(),book1.getStatus(),book1.getDeposit(),book1.getCustomerid(),book1.getCarid(),book1.getDriverid()});
-        
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_customeridsearchActionPerformed
+    private void Csearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Csearch2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Csearch2ActionPerformed
 
-    private void BookingIdSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingIdSearchActionPerformed
-        
-        String BookingID=bookingidtxt.getText();
-        BookingImp bookingimp = new BookingImp();
-        Booking book = new Booking();
-        book=bookingimp.Search(BookingID);
-        
-        DefaultTableModel UTF=(DefaultTableModel) bookingtable.getModel();
-        UTF.setRowCount(0);
-        
-        
-       UTF.addRow(new Object[]{book.getBid(),book.getStartdate(),book.getEnddate(),book.getStatus(),book.getDeposit(),book.getCustomerid(),book.getCarid(),book.getDriverid()});
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_BookingIdSearchActionPerformed
+    private void Csearch3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Csearch3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Csearch3ActionPerformed
 
     private void bidtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bidtxtActionPerformed
         // TODO add your handling code here:
@@ -2284,7 +2219,7 @@ private void clear_add_notice(){
 
             BookingImp bookingImp = new BookingImp();
             bookingImp.Add(booking);
-            Load();
+            //Load();
 
         }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
@@ -2309,7 +2244,7 @@ private void clear_add_notice(){
 
             BookingImp bookingImp = new BookingImp();
             bookingImp.Update(booking);
-            Load();
+            //Load();
 
         }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
@@ -2324,7 +2259,7 @@ private void clear_add_notice(){
             BookingImp bookingImp = new BookingImp();
             bookingImp.Delete(booking);
 
-            Load();
+           // Load();
 
             bidtxt.setText("");
             sdatetxt.setText("");
@@ -2455,20 +2390,10 @@ private void clear_add_notice(){
         }
     }//GEN-LAST:event_jButton11ActionPerformed
 
-
-    private void menutimetable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetable1MouseClicked
+    private void adPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adPwdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_menutimetable1MouseClicked
+    }//GEN-LAST:event_adPwdActionPerformed
 
-    private void menutimetable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menutimetable1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menutimetable1ActionPerformed
-
-    private void menuReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReportActionPerformed
-        AdminReport adminR = new AdminReport();
-        adminR.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_menuReportActionPerformed
 
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
@@ -2525,26 +2450,25 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSMaterialButtonRectangle AdUpdate;
-    private rojerusan.RSMaterialButtonRectangle BookingIdSearch;
     private javax.swing.JPanel CardPri1;
     private javax.swing.JPanel CardPri2;
     private javax.swing.JPanel CardPri3;
     private javax.swing.JPanel CardPri4;
     private javax.swing.JPanel CardPri5;
     private javax.swing.JPanel CardjPannel;
+    private rojerusan.RSMaterialButtonRectangle Csearch2;
+    private rojerusan.RSMaterialButtonRectangle Csearch3;
+    private rojeru_san.complementos.RSTableMetro Jdriver;
     private javax.swing.JTextField ScarId;
     private javax.swing.JButton Search;
     private javax.swing.JCheckBox ShowPassword;
     private javax.swing.JPasswordField adCPwd;
-    private javax.swing.JComboBox<String> adGender;
     private javax.swing.JLabel adName;
     private javax.swing.JPasswordField adPwd;
     private javax.swing.JTextField admintxt;
     private javax.swing.JTextField bidtxt;
     private rojerusan.RSMaterialButtonRectangle bookingadd;
     private rojerusan.RSMaterialButtonRectangle bookingdelete;
-    private javax.swing.JTextField bookingidtxt;
-    private rojeru_san.complementos.RSTableMetro bookingtable;
     private rojerusan.RSMaterialButtonRectangle bookingupdate;
     private javax.swing.JComboBox cFueltype;
     private javax.swing.JComboBox<String> cModel;
@@ -2561,8 +2485,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField cartxt;
     private javax.swing.JButton cdelete;
     private javax.swing.JTextField costtxt;
-    private rojerusan.RSMaterialButtonRectangle customeridsearch;
-    private javax.swing.JTextField customeridtxt;
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JLabel demoCount;
@@ -2674,37 +2596,32 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
-
-    private rojerusan.RSMaterialButtonRectangle menuReport;
-
     private rojerusan.RSMaterialButtonRectangle manage_booking_search;
-
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
-    private rojerusan.RSMaterialButtonRectangle menutimetable1;
+    private rojerusan.RSMaterialButtonRectangle menutimetable;
     private rojerusan.RSMaterialButtonRectangle menuuser;
     private javax.swing.JTextField midtxt;
     private javax.swing.JTextField partstxt;
     private javax.swing.JTextField reasontxt;
     private javax.swing.JTextField sdatetxt;
     private javax.swing.JComboBox<String> selGender;
-    private javax.swing.JComboBox<String> selStatus;s
     private javax.swing.JLabel stCount;
     private javax.swing.JComboBox statustxt;
     private javax.swing.JTextField sub1name1;
     private javax.swing.JTextField sub1name2;
     private javax.swing.JButton timesub;
     private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtCity1;
-    private javax.swing.JTextField txtCity2;
+    private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtFName;
     private javax.swing.JTextField txtLName;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtRegNo;
-    private javax.swing.JTextField txtaddress2;
     private javax.swing.JLabel txtid;
     // End of variables declaration//GEN-END:variables
 }
