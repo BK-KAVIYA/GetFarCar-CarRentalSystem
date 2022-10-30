@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
 
 
+
         <group/>
+
 
         <group>
             <file>file:/D:/Lectures/University/Level%202%20Semester%202/Software%20Engineering/Group%20Assignment/Project/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/Admindashboard.java</file>
@@ -18,6 +20,14 @@
             <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/common/UserImp.java</file>
 
         </group>
-
+        <group>
+            <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/Splash.java</file>
+            <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminUserManage.java</file>
+            <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/Dashboard/StudentIF.java</file>
+            <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/DBConnector.java</file>
+            <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/Dashboard/TechnicalOfficerDashboard.java</file>
+            <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/Admindashboard.java</file>
+            <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/LoginPageGetFarCars.java</file>
+        </group>
     </open-files>
 </project-private>
