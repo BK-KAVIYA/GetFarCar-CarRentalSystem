@@ -609,7 +609,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel27.setText("Phone Number");
         CardPri2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 430, -1, 32));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(102, 153, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -639,21 +639,22 @@ public class Admindashboard extends javax.swing.JFrame {
         });
         jPanel3.add(ShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        CardPri2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 310, -1, 190));
+        CardPri2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 310, -1, 200));
         CardPri2.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 470, 193, 29));
         CardPri2.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 470, 176, 29));
 
+        AdUpdate.setBackground(new java.awt.Color(0, 0, 102));
         AdUpdate.setText("Update");
         AdUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdUpdateActionPerformed(evt);
             }
         });
-        CardPri2.add(AdUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, 107, 40));
+        CardPri2.add(AdUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 107, 40));
 
-        lblimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/man-with-beard-avatar-character-isolated-icon-free-vector-removebg-preview-removebg-preview.png"))); // NOI18N
+        lblimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/user1.png"))); // NOI18N
         lblimage.setText("jLabel31");
-        CardPri2.add(lblimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 120, 110));
+        CardPri2.add(lblimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 140, 130));
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/minimize.png"))); // NOI18N
         jLabel30.setText("jLabel29");
@@ -692,7 +693,7 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setForeground(new java.awt.Color(204, 0, 0));
+        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 102));
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -701,12 +702,12 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel35.setForeground(new java.awt.Color(0, 0, 102));
         jLabel35.setText("Search");
         jPanel7.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel36.setForeground(new java.awt.Color(51, 153, 255));
         jLabel36.setText("Car ID");
         jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 86, 22));
 
@@ -717,25 +718,25 @@ public class Admindashboard extends javax.swing.JFrame {
         });
         jPanel7.add(ScarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 206, 29));
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setBackground(new java.awt.Color(102, 153, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 0, 153));
         jButton1.setText("Search");
         jPanel7.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 60, 70, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setBackground(new java.awt.Color(102, 153, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 0, 153));
         jButton2.setText("Reset");
         jPanel7.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 60, 70, -1));
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel37.setForeground(new java.awt.Color(0, 0, 102));
         jLabel37.setText("Filter");
         jPanel7.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 33, -1, -1));
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel38.setForeground(new java.awt.Color(51, 153, 255));
         jLabel38.setText("Car Model");
         jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 60, 86, 22));
 
@@ -747,19 +748,19 @@ public class Admindashboard extends javax.swing.JFrame {
         });
         jPanel7.add(cModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 56, 206, 30));
 
-        jButton3.setBackground(new java.awt.Color(255, 0, 51));
+        jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 0, 153));
         jButton3.setText("Search");
         jPanel7.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 70, -1));
 
-        jButton4.setBackground(new java.awt.Color(255, 0, 51));
+        jButton4.setBackground(new java.awt.Color(102, 153, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setForeground(new java.awt.Color(0, 0, 153));
         jButton4.setText("Reset");
         jPanel7.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 70, -1));
 
-        jTable1.setForeground(new java.awt.Color(204, 0, 102));
+        jTable1.setForeground(new java.awt.Color(102, 153, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -789,32 +790,32 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
 
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel39.setForeground(new java.awt.Color(51, 153, 255));
         jLabel39.setText("Car ID");
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel40.setForeground(new java.awt.Color(51, 153, 255));
         jLabel40.setText("Car Name");
 
         jLabel41.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel41.setForeground(new java.awt.Color(51, 153, 255));
         jLabel41.setText("Car Type");
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel42.setForeground(new java.awt.Color(51, 153, 255));
         jLabel42.setText("Status");
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel43.setForeground(new java.awt.Color(51, 153, 255));
         jLabel43.setText("Price");
 
         jLabel44.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel44.setForeground(new java.awt.Color(0, 0, 153));
         jLabel44.setText("Add New Car");
 
-        cadd.setBackground(new java.awt.Color(204, 0, 51));
+        cadd.setBackground(new java.awt.Color(102, 153, 255));
         cadd.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cadd.setForeground(new java.awt.Color(153, 0, 51));
+        cadd.setForeground(new java.awt.Color(0, 0, 153));
         cadd.setText("ADD");
         cadd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -823,12 +824,12 @@ public class Admindashboard extends javax.swing.JFrame {
         });
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel45.setForeground(new java.awt.Color(51, 153, 255));
         jLabel45.setText("No_of_seats");
 
-        cdelete.setBackground(new java.awt.Color(204, 0, 51));
+        cdelete.setBackground(new java.awt.Color(102, 153, 255));
         cdelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cdelete.setForeground(new java.awt.Color(153, 0, 51));
+        cdelete.setForeground(new java.awt.Color(0, 0, 153));
         cdelete.setText("DELETE");
         cdelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -837,11 +838,11 @@ public class Admindashboard extends javax.swing.JFrame {
         });
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel51.setForeground(new java.awt.Color(51, 153, 255));
         jLabel51.setText("Number Plate");
 
         jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel54.setForeground(new java.awt.Color(51, 153, 255));
         jLabel54.setText("Fuel Type");
 
         cPrice.addActionListener(new java.awt.event.ActionListener() {
@@ -852,9 +853,9 @@ public class Admindashboard extends javax.swing.JFrame {
 
         cFueltype.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Petrol", "Diesel" }));
 
-        cadd1.setBackground(new java.awt.Color(204, 0, 51));
+        cadd1.setBackground(new java.awt.Color(51, 153, 255));
         cadd1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cadd1.setForeground(new java.awt.Color(153, 0, 51));
+        cadd1.setForeground(new java.awt.Color(0, 0, 153));
         cadd1.setText("UPDATE");
         cadd1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -981,7 +982,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane2.setForeground(new java.awt.Color(204, 0, 51));
+        jTabbedPane2.setForeground(new java.awt.Color(0, 0, 153));
         jTabbedPane2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -991,13 +992,13 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel47.setForeground(new java.awt.Color(51, 153, 255));
         jLabel47.setText("Maintanance Id");
         jPanel10.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, 22));
 
-        jButton5.setBackground(new java.awt.Color(255, 51, 51));
+        jButton5.setBackground(new java.awt.Color(102, 153, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setForeground(new java.awt.Color(0, 0, 153));
         jButton5.setText("Search");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1006,9 +1007,9 @@ public class Admindashboard extends javax.swing.JFrame {
         });
         jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 80, 30));
 
-        timesub.setBackground(new java.awt.Color(255, 51, 51));
+        timesub.setBackground(new java.awt.Color(51, 153, 255));
         timesub.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        timesub.setForeground(new java.awt.Color(255, 255, 255));
+        timesub.setForeground(new java.awt.Color(0, 0, 153));
         timesub.setText("Search");
         timesub.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1023,17 +1024,17 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 80, 30));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel48.setForeground(new java.awt.Color(51, 153, 255));
         jLabel48.setText("Car Id");
         jPanel10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 86, 22));
 
         jLabel50.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel50.setForeground(new java.awt.Color(0, 0, 153));
         jLabel50.setText("View Maintanance");
         jPanel10.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, -1, -1));
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel52.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel52.setForeground(new java.awt.Color(0, 0, 153));
         jLabel52.setText("Vehicle Maintanance Details");
         jPanel10.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
 
@@ -1082,12 +1083,12 @@ public class Admindashboard extends javax.swing.JFrame {
         jPanel11.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel53.setForeground(new java.awt.Color(0, 0, 153));
         jLabel53.setText("Add Maintanance");
 
-        jButton7.setBackground(new java.awt.Color(204, 0, 51));
+        jButton7.setBackground(new java.awt.Color(51, 153, 255));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setForeground(new java.awt.Color(0, 0, 153));
         jButton7.setText("Delete");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1100,9 +1101,9 @@ public class Admindashboard extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(255, 0, 51));
+        jButton8.setBackground(new java.awt.Color(51, 153, 255));
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setForeground(new java.awt.Color(0, 0, 153));
         jButton8.setText("Add");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1116,21 +1117,27 @@ public class Admindashboard extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setForeground(new java.awt.Color(51, 153, 255));
         jLabel5.setText("M Id");
 
+        jLabel31.setForeground(new java.awt.Color(51, 153, 255));
         jLabel31.setText("Reason");
 
+        jLabel46.setForeground(new java.awt.Color(51, 153, 255));
         jLabel46.setText("Parts");
 
+        jLabel49.setForeground(new java.awt.Color(51, 153, 255));
         jLabel49.setText("Cost");
 
+        jLabel58.setForeground(new java.awt.Color(51, 153, 255));
         jLabel58.setText("Car ID");
 
+        jLabel61.setForeground(new java.awt.Color(51, 153, 255));
         jLabel61.setText("Invoive No");
 
-        Search.setBackground(new java.awt.Color(255, 0, 51));
+        Search.setBackground(new java.awt.Color(51, 153, 255));
         Search.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Search.setForeground(new java.awt.Color(255, 255, 255));
+        Search.setForeground(new java.awt.Color(0, 0, 153));
         Search.setText("Search");
         Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1138,9 +1145,9 @@ public class Admindashboard extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(255, 0, 51));
+        jButton11.setBackground(new java.awt.Color(51, 153, 255));
         jButton11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setForeground(new java.awt.Color(0, 51, 153));
         jButton11.setText("Update");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
