@@ -84,7 +84,7 @@ public class Splash extends javax.swing.JFrame {
                         .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MyprogressLayout.setVerticalGroup(
             MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
