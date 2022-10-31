@@ -19,7 +19,9 @@ public class UserImp implements UserDAO{
     PreparedStatement pst;
     PreparedStatement pst1;
     DBConnector obj=DBConnector.getObject();
-    java.sql.Connection conn=obj.getConnection();
+    java.sql.Connection conn=DBConnector.getConnection();
+    
+    
 
 
 
