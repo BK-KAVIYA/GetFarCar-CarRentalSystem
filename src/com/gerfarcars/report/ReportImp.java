@@ -175,5 +175,27 @@ public class ReportImp implements ReportDAO{
          return list2;
             
     }
+
+
+    public void Add(Report report) {
+        try {
+
+            String sql="Insert into checkout Values(?,?,?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setInt(1,3);
+            pst.setInt(2,report.getAmount());
+            pst.setString(3,report.getDate());
+            pst.setString(4,report.getCustomerID());
+            pst.setString(5,report.getAdminID());
+            pst.setString(6,report.getBookingID());
+     
+            pst.executeUpdate();
+            
+ 
+            JOptionPane.showMessageDialog(null,"New Checkout is added!!");
+        } catch (SQLException ex) {
+            Logger.getLogger(UserImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

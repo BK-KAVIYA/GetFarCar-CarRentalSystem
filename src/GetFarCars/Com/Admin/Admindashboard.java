@@ -2495,7 +2495,7 @@ public void admin_setting(){
             report.setAmount(Integer.parseInt(Amount.getText()));
             ReportImp reportImp = new ReportImp();
             reportImp.Add(report);
-            //Load();
+            Load();
         
          }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
@@ -2506,7 +2506,7 @@ public void admin_setting(){
        // ReportImp reportImp = new ReportImp();
        // List<Report> report=reportImp.ReportList();
 
-            UFT.addRow(new Object[]{report.getBookingID(),report.getAdminID(),report.getDate(),report.getRSText()+report.getAmount()});
+            UFT.addRow(new Object[]{report.getBookingID(),report.getAdminID(),report.getDate(),report.getText()+report.getAmount()});
             
             TAmountDisplay.setText("RS: "+report.getAmount());
 

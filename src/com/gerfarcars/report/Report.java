@@ -3,6 +3,7 @@ package com.gerfarcars.report;
 
 
 public class Report {
+    private String AdminID;
     private String InvoiceNo;
     private String CustomerID;
     private String CustomerName;
@@ -16,6 +17,21 @@ public class Report {
     private int Amount;
     private int Tcars;
     private int Acars;
+
+    public String getText() {
+        return "Rs :";
+    }
+
+    
+    public String getAdminID() {
+        return AdminID;
+    }
+
+    public void setAdminID(String AdminID) {
+        this.AdminID = AdminID;
+    }
+    
+    
 
     public int getTcars() {
         return Tcars;
