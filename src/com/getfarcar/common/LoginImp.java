@@ -6,6 +6,8 @@ import GetFarCars.Com.Admin.Admindashboard;
 import GetFarCars.Com.Admin.DriverDashboard;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
+import com.getfarcar.driver.DriverDashboard;
+import com.getfarcar.driver.DriverDashboardNew;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,11 +40,12 @@ public class LoginImp implements LoginDAO{
                             admindashboard.show();
                             break;
                         case 2:
-                            /*SellerInterface sellerInterface = new SellerInterface();
-                            sellerInterface.Load(logins.getID());
-                            sellerInterface.setUserID(logins.getID());
+                            DriverDashboardNew driverdashboard = new DriverDashboardNew();
+                            driverdashboard.setUser(logins.getID());
+                            //driverdashboard.Driver_setting();
+                           // sellerInterface.setUserID(logins.getID());
                             loginPage.dispose();
-                            sellerInterface.show();*/
+                            driverdashboard.show();
                             
                             break;
                         default :
