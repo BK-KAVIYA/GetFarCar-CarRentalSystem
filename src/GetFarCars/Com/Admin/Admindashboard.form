@@ -2477,13 +2477,13 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField2" min="-2" pref="156" max="-2" attributes="0"/>
-                                              <Component id="jTextField3" min="-2" pref="156" max="-2" attributes="0"/>
+                                              <Component id="bookingidtxt" min="-2" pref="156" max="-2" attributes="0"/>
+                                              <Component id="cusidtxt" min="-2" pref="156" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Csearch2" min="-2" pref="81" max="-2" attributes="0"/>
-                                              <Component id="Csearch3" min="-2" pref="81" max="-2" attributes="0"/>
+                                              <Component id="cusidsearch" min="-2" pref="81" max="-2" attributes="0"/>
+                                              <Component id="booking_id_search" min="-2" pref="81" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -2503,14 +2503,14 @@
                                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Csearch3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="bookingidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="booking_id_search" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Csearch2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="cusidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cusidsearch" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="155" max="32767" attributes="0"/>
                                   <Component id="jScrollPane9" min="-2" pref="140" max="-2" attributes="0"/>
@@ -2552,27 +2552,27 @@
                             <Property name="text" type="java.lang.String" value="Customer ID :"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField2">
+                        <Component class="javax.swing.JTextField" name="bookingidtxt">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bookingidtxtActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField3">
+                        <Component class="javax.swing.JTextField" name="cusidtxt">
                         </Component>
-                        <Component class="rojerusan.RSMaterialButtonRectangle" name="Csearch2">
+                        <Component class="rojerusan.RSMaterialButtonRectangle" name="cusidsearch">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Search"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Csearch2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cusidsearchActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="rojerusan.RSMaterialButtonRectangle" name="Csearch3">
+                        <Component class="rojerusan.RSMaterialButtonRectangle" name="booking_id_search">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Search"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Csearch3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="booking_id_searchActionPerformed"/>
                           </Events>
                         </Component>
                         <Container class="javax.swing.JScrollPane" name="jScrollPane9">
@@ -2582,10 +2582,10 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="rojeru_san.complementos.RSTableMetro" name="Jdriver">
+                            <Component class="rojeru_san.complementos.RSTableMetro" name="bookingtable">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="9" rowCount="5">
+                                  <Table columnCount="8" rowCount="5">
                                     <Column editable="true" title="Booking ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Start Date" type="java.lang.Object"/>
                                     <Column editable="true" title="End Date" type="java.lang.Object"/>
@@ -2594,7 +2594,6 @@
                                     <Column editable="true" title="Cus_ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Car ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Driver ID" type="java.lang.Object"/>
-                                    <Column editable="true" title="Admin ID" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="colorBackgoundHead" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2644,11 +2643,6 @@
                                       <Renderer/>
                                     </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>

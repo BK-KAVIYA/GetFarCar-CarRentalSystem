@@ -235,12 +235,12 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel72 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        Csearch2 = new rojerusan.RSMaterialButtonRectangle();
-        Csearch3 = new rojerusan.RSMaterialButtonRectangle();
+        bookingidtxt = new javax.swing.JTextField();
+        cusidtxt = new javax.swing.JTextField();
+        cusidsearch = new rojerusan.RSMaterialButtonRectangle();
+        booking_id_search = new rojerusan.RSMaterialButtonRectangle();
         jScrollPane9 = new javax.swing.JScrollPane();
-        Jdriver = new rojeru_san.complementos.RSTableMetro();
+        bookingtable = new rojeru_san.complementos.RSTableMetro();
         jPanel14 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
@@ -1367,48 +1367,45 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel85.setForeground(new java.awt.Color(255, 0, 51));
         jLabel85.setText("Customer ID :");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        bookingidtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                bookingidtxtActionPerformed(evt);
             }
         });
 
-        Csearch2.setText("Search");
-        Csearch2.addActionListener(new java.awt.event.ActionListener() {
+        cusidsearch.setText("Search");
+        cusidsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Csearch2ActionPerformed(evt);
+                cusidsearchActionPerformed(evt);
             }
         });
 
-        Csearch3.setText("Search");
-        Csearch3.addActionListener(new java.awt.event.ActionListener() {
+        booking_id_search.setText("Search");
+        booking_id_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Csearch3ActionPerformed(evt);
+                booking_id_searchActionPerformed(evt);
             }
         });
 
-        Jdriver.setModel(new javax.swing.table.DefaultTableModel(
+        bookingtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Booking ID", "Start Date", "End Date", "Status ", "Deposite", "Cus_ID", "Car ID", "Driver ID", "Admin ID"
+                "Booking ID", "Start Date", "End Date", "Status ", "Deposite", "Cus_ID", "Car ID", "Driver ID"
             }
         ));
-        Jdriver.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
-        Jdriver.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        Jdriver.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
-        Jdriver.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Jdriver.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Jdriver.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jScrollPane9.setViewportView(Jdriver);
-        if (Jdriver.getColumnModel().getColumnCount() > 0) {
-            Jdriver.getColumnModel().getColumn(8).setResizable(false);
-        }
+        bookingtable.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
+        bookingtable.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
+        bookingtable.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        bookingtable.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bookingtable.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bookingtable.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jScrollPane9.setViewportView(bookingtable);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1426,12 +1423,12 @@ public class Admindashboard extends javax.swing.JFrame {
                             .addComponent(jLabel84))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bookingidtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cusidtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Csearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Csearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cusidsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(booking_id_search, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1445,13 +1442,13 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel84)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Csearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bookingidtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(booking_id_search, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel85)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Csearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cusidtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cusidsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -2028,7 +2025,7 @@ public class Admindashboard extends javax.swing.JFrame {
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+       /*manage car search*/ 
        DefaultTableModel UFT=(DefaultTableModel) cartable.getModel();
         UFT.setRowCount(0);
         ManageCarImp managecarImp = new ManageCarImp();
@@ -2041,6 +2038,15 @@ public class Admindashboard extends javax.swing.JFrame {
         for(ManageCar ctype:cartypelist){
             cModel.addItem(ctype.getCtype());
         }
+         /* Booking search*/ 
+       DefaultTableModel BFT=(DefaultTableModel) bookingtable.getModel();
+        BFT.setRowCount(0);
+        BookingImp bookingimp = new BookingImp();
+        List<Booking> bookinglist=bookingimp.ManageBookingList();
+        for(Booking booking:bookinglist){
+            BFT.addRow(new Object[]{booking.getBid(),booking.getStartdate(),booking.getEnddate(),booking.getStatus(),booking.getDeposit(),booking.getCustomerid(),booking.getCarid(),booking.getDriverid()});
+        }
+        
    
    
    } 
@@ -2317,17 +2323,42 @@ public void admin_setting(){
 
 
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void bookingidtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingidtxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_bookingidtxtActionPerformed
 
-    private void Csearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Csearch2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Csearch2ActionPerformed
+    private void cusidsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusidsearchActionPerformed
+      
+        
+        String CID=bookingidtxt.getText();
+        BookingImp bookingimp = new BookingImp();
+        Booking booking = new Booking();    
+        booking=bookingimp.Search(BID);
+        
+        DefaultTableModel UFT=(DefaultTableModel) bookingtable.getModel();
+        UFT.setRowCount(0);
 
-    private void Csearch3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Csearch3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Csearch3ActionPerformed
+            UFT.addRow(new Object[]{booking.getBid(),booking.getStartdate(),booking.getEnddate(),booking.getStatus(),booking.getDeposit(),booking.getCustomerid(),booking.getCarid(),booking.getDriverid(),booking.getAdminid()});
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_cusidsearchActionPerformed
+
+    private void booking_id_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_id_searchActionPerformed
+         String BID=bookingidtxt.getText();
+        BookingImp bookingimp = new BookingImp();
+        Booking booking = new Booking();    
+        booking=bookingimp.Search(BID);
+        
+        DefaultTableModel UFT=(DefaultTableModel) bookingtable.getModel();
+        UFT.setRowCount(0);
+
+            UFT.addRow(new Object[]{booking.getBid(),booking.getStartdate(),booking.getEnddate(),booking.getStatus(),booking.getDeposit(),booking.getCustomerid(),booking.getCarid(),booking.getDriverid(),booking.getAdminid()});
+  
+    }//GEN-LAST:event_booking_id_searchActionPerformed
 
     private void bidtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bidtxtActionPerformed
         // TODO add your handling code here:
@@ -2795,15 +2826,12 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel CardPri5;
     private javax.swing.JPanel CardPri6;
     private javax.swing.JPanel CardjPannel;
-    private rojerusan.RSMaterialButtonRectangle Csearch2;
-    private rojerusan.RSMaterialButtonRectangle Csearch3;
     private rojerusan.RSMaterialButtonRectangle Csearch4;
     private rojerusan.RSMaterialButtonRectangle Csearch5;
     private javax.swing.JTextField Date;
     private javax.swing.JLabel DriCount;
     private javax.swing.JPanel Invoice;
     private rojeru_san.complementos.RSTableMetro InvoiceTable;
-    private rojeru_san.complementos.RSTableMetro Jdriver;
     private javax.swing.JTextField ScarId;
     private javax.swing.JButton Search;
     private javax.swing.JCheckBox ShowPassword;
@@ -2814,8 +2842,11 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPasswordField adPwd;
     private javax.swing.JTextField admintxt;
     private javax.swing.JTextField bidtxt;
+    private rojerusan.RSMaterialButtonRectangle booking_id_search;
     private rojerusan.RSMaterialButtonRectangle bookingadd;
     private rojerusan.RSMaterialButtonRectangle bookingdelete;
+    private javax.swing.JTextField bookingidtxt;
+    private rojeru_san.complementos.RSTableMetro bookingtable;
     private rojerusan.RSMaterialButtonRectangle bookingupdate;
     private javax.swing.JComboBox cFueltype;
     private javax.swing.JComboBox<String> cModel;
@@ -2834,6 +2865,8 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JButton cdelete;
     private javax.swing.JTextField costtxt;
     private javax.swing.JButton csearch;
+    private rojerusan.RSMaterialButtonRectangle cusidsearch;
+    private javax.swing.JTextField cusidtxt;
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JTextField drivertxt;
@@ -2966,8 +2999,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblimage;
     private rojerusan.RSMaterialButtonRectangle manage_booking_search;
     private rojerusan.RSMaterialButtonRectangle menuReport;
