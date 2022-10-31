@@ -374,7 +374,7 @@ public class AdminReport extends javax.swing.JFrame {
                 rSMaterialButtonRectangle2ActionPerformed(evt);
             }
         });
-        jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 50));
+        jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 200, 50));
 
         rSMaterialButtonRectangle4.setBackground(new java.awt.Color(102, 153, 255));
         rSMaterialButtonRectangle4.setText("SUMMARY REPORT");
@@ -383,7 +383,7 @@ public class AdminReport extends javax.swing.JFrame {
                 rSMaterialButtonRectangle4ActionPerformed(evt);
             }
         });
-        jPanel3.add(rSMaterialButtonRectangle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 50));
+        jPanel3.add(rSMaterialButtonRectangle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 210, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Update1.png"))); // NOI18N
         jLabel3.setText("jLabel3");
