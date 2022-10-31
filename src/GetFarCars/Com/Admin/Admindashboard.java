@@ -7,6 +7,10 @@ package GetFarCars.Com.Admin;
 
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
+import com.getfarcar.common.User;
+import com.getfarcar.common.UserImp;
+import com.getfarcars.managecars.ManageCar;
+import com.getfarcars.managecars.ManageCarImp;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
@@ -20,6 +24,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,6 +52,7 @@ public class Admindashboard extends javax.swing.JFrame {
    byte[] pimage=null;
     public Admindashboard() {
         initComponents();
+        Load();
         cardLayout1 =(CardLayout)(CardjPannel.getLayout());
     }
 
@@ -126,19 +132,6 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        ScarId = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        cModel = new javax.swing.JComboBox<String>();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
@@ -159,7 +152,21 @@ public class Admindashboard extends javax.swing.JFrame {
         cSeats = new javax.swing.JTextField();
         cNoplate = new javax.swing.JTextField();
         cFueltype = new javax.swing.JComboBox();
-        cadd1 = new javax.swing.JButton();
+        csearch = new javax.swing.JButton();
+        cupdate = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        ScarId = new javax.swing.JTextField();
+        scaridmodel = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        cModel = new javax.swing.JComboBox<String>();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cartable = new javax.swing.JTable();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
         CardPri4 = new javax.swing.JPanel();
@@ -687,96 +694,6 @@ public class Admindashboard extends javax.swing.JFrame {
         jTabbedPane1.setForeground(new java.awt.Color(204, 0, 0));
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
-        jPanel7.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel35.setText("Search");
-        jPanel7.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel36.setText("Car ID");
-        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 86, 22));
-
-        ScarId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ScarIdActionPerformed(evt);
-            }
-        });
-        jPanel7.add(ScarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 206, 29));
-
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Search");
-        jPanel7.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 60, 70, -1));
-
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Reset");
-        jPanel7.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 60, 70, -1));
-
-        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel37.setText("Filter");
-        jPanel7.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 33, -1, -1));
-
-        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel38.setText("Car Model");
-        jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 60, 86, 22));
-
-        cModel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Waggon R", "Alto", "Premio", "Allion", "Grace" }));
-        cModel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cModelActionPerformed(evt);
-            }
-        });
-        jPanel7.add(cModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 56, 206, 30));
-
-        jButton3.setBackground(new java.awt.Color(255, 0, 51));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Search");
-        jPanel7.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 70, -1));
-
-        jButton4.setBackground(new java.awt.Color(255, 0, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Reset");
-        jPanel7.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 70, -1));
-
-        jTable1.setForeground(new java.awt.Color(204, 0, 102));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Car ID", "Car Name", "Car Type", "Status", "Price", "No_of_seats", "Number plate", "Fuel Type"
-            }
-        ));
-        jTable1.setGridColor(new java.awt.Color(255, 153, 153));
-        jTable1.setSelectionBackground(new java.awt.Color(0, 153, 153));
-        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 204));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
-        }
-
-        jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 570, 130));
-
-        jTabbedPane1.addTab("View Car Details", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/viewCoursr.png")), jPanel7, "View Course Details"); // NOI18N
-
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
 
@@ -844,13 +761,23 @@ public class Admindashboard extends javax.swing.JFrame {
 
         cFueltype.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Petrol", "Diesel" }));
 
-        cadd1.setBackground(new java.awt.Color(204, 0, 51));
-        cadd1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cadd1.setForeground(new java.awt.Color(153, 0, 51));
-        cadd1.setText("UPDATE");
-        cadd1.addActionListener(new java.awt.event.ActionListener() {
+        csearch.setBackground(new java.awt.Color(204, 0, 51));
+        csearch.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        csearch.setForeground(new java.awt.Color(153, 0, 51));
+        csearch.setText("SEARCH");
+        csearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadd1ActionPerformed(evt);
+                csearchActionPerformed(evt);
+            }
+        });
+
+        cupdate.setBackground(new java.awt.Color(204, 0, 51));
+        cupdate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cupdate.setForeground(new java.awt.Color(153, 0, 51));
+        cupdate.setText("UPDATE");
+        cupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cupdateActionPerformed(evt);
             }
         });
 
@@ -861,7 +788,7 @@ public class Admindashboard extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                    .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -870,7 +797,10 @@ public class Admindashboard extends javax.swing.JFrame {
                             .addComponent(carId)
                             .addComponent(cName, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cPrice)
-                            .addComponent(cSeats)))
+                            .addComponent(cSeats))
+                        .addGap(1, 1, 1)
+                        .addComponent(cdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
@@ -881,24 +811,27 @@ public class Admindashboard extends javax.swing.JFrame {
                                     .addComponent(jLabel42)
                                     .addComponent(jLabel41)
                                     .addComponent(jLabel40)
-                                    .addComponent(jLabel39))
-                                .addGap(23, 23, 23))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jLabel39)))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel54)
                                     .addComponent(jLabel51)
-                                    .addComponent(cadd, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)))
+                                    .addComponent(csearch))))
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cFueltype, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cNoplate)
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(cadd1)
-                                .addGap(0, 72, Short.MAX_VALUE)))))
-                .addGap(1, 1, 1)
-                .addComponent(cdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cFueltype, javax.swing.GroupLayout.Alignment.TRAILING, 0, 214, Short.MAX_VALUE)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(cadd, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(cupdate)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(cNoplate)))
+                        .addGap(189, 189, 189))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -939,13 +872,124 @@ public class Admindashboard extends javax.swing.JFrame {
                     .addComponent(jLabel54))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cadd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cadd1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(csearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cadd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86))
         );
 
         jTabbedPane1.addTab("Add New Car", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addCoursrred.png")), jPanel8); // NOI18N
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
+        jPanel7.setForeground(new java.awt.Color(255, 0, 51));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel35.setText("Search");
+        jPanel7.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel36.setText("Car ID");
+        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 86, 22));
+
+        ScarId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ScarIdActionPerformed(evt);
+            }
+        });
+        jPanel7.add(ScarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 206, 29));
+
+        scaridmodel.setBackground(new java.awt.Color(255, 0, 51));
+        scaridmodel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        scaridmodel.setForeground(new java.awt.Color(255, 255, 255));
+        scaridmodel.setText("Search");
+        scaridmodel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scaridmodelActionPerformed(evt);
+            }
+        });
+        jPanel7.add(scaridmodel, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 60, 70, -1));
+
+        jButton2.setBackground(new java.awt.Color(255, 0, 51));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Reset");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 60, 70, -1));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel37.setText("Filter");
+        jPanel7.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 33, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel38.setText("Car Model");
+        jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 60, 86, 22));
+
+        cModel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Waggon R" }));
+        cModel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cModelActionPerformed(evt);
+            }
+        });
+        jPanel7.add(cModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 56, 206, 30));
+
+        jButton3.setBackground(new java.awt.Color(255, 0, 51));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Search");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 70, -1));
+
+        jButton4.setBackground(new java.awt.Color(255, 0, 51));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Reset");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 70, -1));
+
+        cartable.setForeground(new java.awt.Color(204, 0, 102));
+        cartable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Car ID", "Car Name", "Car Type", "Status", "Price", "No_of_seats", "Number plate", "Fuel Type"
+            }
+        ));
+        cartable.setGridColor(new java.awt.Color(255, 153, 153));
+        cartable.setSelectionBackground(new java.awt.Color(0, 153, 153));
+        cartable.setSelectionForeground(new java.awt.Color(255, 255, 204));
+        jScrollPane1.setViewportView(cartable);
+        if (cartable.getColumnModel().getColumnCount() > 0) {
+            cartable.getColumnModel().getColumn(1).setPreferredWidth(200);
+        }
+
+        jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 570, 130));
+
+        jTabbedPane1.addTab("View Car Details", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/viewCoursr.png")), jPanel7, "View Course Details"); // NOI18N
 
         CardPri3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 59, 605, -1));
 
@@ -1750,6 +1794,24 @@ public class Admindashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void Load(){
+ 
+        DefaultTableModel UFT=(DefaultTableModel) cartable.getModel();
+        UFT.setRowCount(0);
+        ManageCarImp managecarImp = new ManageCarImp();
+        List<ManageCar> carlist=managecarImp.ManageCarlist();
+        for(ManageCar cus:carlist){
+            UFT.addRow(new Object[]{cus.getCarID(),cus.getCname(),cus.getCtype(),cus.getCstatus(),cus.getCprice(),cus.getCseats(),cus.getCnoplate(),cus.getCfuel()});
+        }
+        
+        List<ManageCar> cartypelist=managecarImp.CarTypelist();
+        for(ManageCar ctype:cartypelist){
+            cModel.addItem(ctype.getCtype());
+        }
+    }
+    
+    
 //Couuse details tab
 
     public String getUser() {
@@ -1764,7 +1826,7 @@ public class Admindashboard extends javax.swing.JFrame {
         userID = aUser;
     }  
 private void course_table_update(){
-    int c;
+    /*int c;
     try {
 
             insert=conn1.prepareStatement("select *  from course_module");
@@ -1772,7 +1834,7 @@ private void course_table_update(){
             ResultSetMetaData Rss=rs.getMetaData();
             c=Rss.getColumnCount();
 
-            DefaultTableModel df=(DefaultTableModel)jTable1.getModel();            
+            DefaultTableModel df=(DefaultTableModel)cartable.getModel();            
             DefaultTableModel df1=(DefaultTableModel)jTable2.getModel();
 
             df.setRowCount(0);
@@ -1800,7 +1862,7 @@ private void course_table_update(){
         } catch (SQLException ex) {
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+*/
 }
 private void notice_table_update(){
    /* try {
@@ -2059,13 +2121,12 @@ public void admin_setting(){
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void menucourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menucourseActionPerformed
-        course_table_update();
         cardLayout1.show(CardjPannel,"CardPri3");
     }//GEN-LAST:event_menucourseActionPerformed
 
     private void clear_cource_fields(){
         
-        cName.setText("");
+       /* cName.setText("");
         cType.setText("");
         cStatus.setText("");
         depId.setSelectedIndex(0);
@@ -2086,95 +2147,54 @@ public void admin_setting(){
         practical.setSelected(false);
         practicalMark.setText(null);
         practicalMark.setEnabled(false);
-        cName.requestFocus();
+        cName.requestFocus();*/
 }
     private void caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddActionPerformed
 
-            String DepID=(String)depId.getSelectedItem();
-            String CID=cName.getText();
-            String Cname=cType.getText();
-            String Ccredite=cStatus.getText();
-            String CLevel=(String)cLevel.getSelectedItem();
-            String Lecturer=(String)lecNames.getSelectedItem();
-            int q;
-            int a;
-            int m;
-            int t;
-            int p;
-            int marks;
-            if(this.quiz.isSelected()){
-                q = Integer.parseInt(quizMark.getText());
-            } else {
-                q = 0;
-            }
-            if(this.assess.isSelected()){
-                a = Integer.parseInt(assessMark.getText());
-            } else {
-                a = 0;
-            }
-            if(this.mid.isSelected()){
-                m = Integer.parseInt(midMark.getText());
-            } else {
-                m = 0;
-            }
-            if(this.theory.isSelected()){
-                t = Integer.parseInt(theoryMark.getText());
-            } else {
-                t = 0;
-            }
-            if(this.practical.isSelected()){
-                p = Integer.parseInt(practicalMark.getText());
-            } else {
-                p = 0;
-            }
-
-            marks = q+a+m+t+p;
-
- 
-        
-
-            try {
-            insert=conn.prepareStatement("insert into course_module(cmod_id,cmod_name,cmod_credite,cmod_dep_id,cmod_lec_id,level,quiz_marks,assess_marks,mid_marks,theory_marks,patrical_marks) values (?,?,?,?,?,?,?,?,?,?,?)");
-            insert.setString(1, CID);
-            insert.setString(2, Cname);
-            insert.setString(3, Ccredite);
-            insert.setString(4,DepID );
-            insert.setString(5, Lecturer);
-            insert.setString(6, CLevel);
-            insert.setInt(7, q);
-            insert.setInt(8,a );
-            insert.setInt(9,m );
-            insert.setInt(10,t);
-            insert.setInt(11,p);
-
-            if(CID.isEmpty() || Cname.isEmpty() || Ccredite.isEmpty() ){
-
-                JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-               
-            }else{
-                if(marks==100){
-                    insert.executeUpdate();
-                    JOptionPane.showMessageDialog(this,"Course is Added!!");
-                    clear_cource_fields();
-                    
-                }else{
-                    JOptionPane.showMessageDialog(this,"Please insert the correct marks");
-                }
-                
-
-            }
+            if(!(carId.getText().equals("")&&cName.getText().equals("")&&cType.getText().equals("")&&cStatus.getText().equals("")&&cPrice.getText().equals("")&&cSeats.getText().equals("")&&cNoplate.getText().equals(""))){
+            ManageCar managecar = new ManageCar();
+            managecar.setCarID(carId.getText());
             
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            
+            managecar.setCname(cName.getText());
+            managecar.setCtype(cType.getText());
+            managecar.setCstatus(cStatus.getText());
+            managecar.setCprice(Integer.parseInt(cPrice.getText()));
+            managecar.setCseats(Integer.parseInt(cSeats.getText()));
+            managecar.setCnoplate(cNoplate.getText());
+            managecar.setCfuel((String)cFueltype.getSelectedItem());
+            ManageCarImp managecarImp = new ManageCarImp();
+            managecarImp.Add(managecar);
+            //Load();
         
+        }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
 
     }//GEN-LAST:event_caddActionPerformed
 
     private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
-        clear_cource_fields();
+           if(!(carId.getText().equals("")&&cName.getText().equals("")&&cType.getText().equals("")&&cStatus.getText().equals("")&&cPrice.getText().equals("")&&cSeats.getText().equals("")&&cNoplate.getText().equals(""))){
+                ManageCar managecar = new ManageCar();
+                managecar.setCarID(cName.getText());
+                ManageCarImp managecarImp = new ManageCarImp();
+                managecarImp.Delete(managecar);
+
+                //Load();
+
+
+                carId.setText("");
+                cName.setText("");
+                cType.setText("");
+                cStatus.setText(""); 
+                cPrice.setText("");
+                cSeats.setText("");
+                cNoplate.setText("");
+                cFueltype.requestFocus();
+            
+            }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+            }
     }//GEN-LAST:event_cdeleteActionPerformed
 
     private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
@@ -2734,9 +2754,76 @@ private void clear_add_notice(){
         // TODO add your handling code here:
     }//GEN-LAST:event_ScarIdActionPerformed
 
-    private void cadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadd1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadd1ActionPerformed
+    private void csearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csearchActionPerformed
+        String CarID=(JOptionPane.showInputDialog("Enter the Car ID"));
+        ManageCarImp managecarImp = new ManageCarImp();
+        ManageCar managecar = new ManageCar();    
+        managecar=managecarImp.Search(CarID);
+        
+        carId.setText(managecar.getCarID());
+        cName.setText(managecar.getCname());
+        cType.setText(managecar.getCtype());
+        cStatus.setText(managecar.getCstatus());
+        cPrice.setText(String.valueOf(managecar.getCprice()));
+        cSeats.setText(String.valueOf(managecar.getCseats()));
+        cNoplate.setText(managecar.getCnoplate());
+        cFueltype.setSelectedItem(managecar.getCfuel());
+        carId.requestFocus();
+    }//GEN-LAST:event_csearchActionPerformed
+
+    private void cupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cupdateActionPerformed
+        if(!(carId.getText().equals("")&&cName.getText().equals("")&&cType.getText().equals("")&&cStatus.getText().equals("")&&cPrice.getText().equals("")&&cSeats.getText().equals("")&&cNoplate.getText().equals(""))){
+            ManageCar managecar = new ManageCar();
+            managecar.setCarID(carId.getText());
+            managecar.setCname(cName.getText());
+            managecar.setCtype(cType.getText());
+            managecar.setCstatus(cStatus.getText());
+            managecar.setCprice(Integer.parseInt(cPrice.getText()));
+            managecar.setCseats(Integer.parseInt(cSeats.getText()));
+            managecar.setCnoplate(cNoplate.getText());
+            managecar.setCfuel((String)cFueltype.getSelectedItem());
+            
+            ManageCarImp managecarImp = new ManageCarImp();
+            managecarImp.Update(managecar);
+            //Load();
+        
+         }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
+    }//GEN-LAST:event_cupdateActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        ScarId.setText("");
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String CarID=ScarId.getText();
+        ManageCarImp managecarImp = new ManageCarImp();
+        ManageCar managecar = new ManageCar();    
+        managecar=managecarImp.Search(CarID);
+        
+        DefaultTableModel UFT=(DefaultTableModel) cartable.getModel();
+        UFT.setRowCount(0);
+
+            UFT.addRow(new Object[]{managecar.getCarID(),managecar.getCname(),managecar.getCtype(),managecar.getCstatus(),managecar.getCprice(),managecar.getCseats(),managecar.getCnoplate(),managecar.getCfuel()});
+  
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ScarId.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void scaridmodelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scaridmodelActionPerformed
+        String ctype=(String)cModel.getSelectedItem();
+        ManageCarImp managecarImp = new ManageCarImp();
+        ManageCar managecar = new ManageCar();    
+        managecar=managecarImp.Searchtype(ctype);
+        
+        DefaultTableModel UFT=(DefaultTableModel) cartable.getModel();
+        UFT.setRowCount(0);
+
+            UFT.addRow(new Object[]{managecar.getCarID(),managecar.getCname(),managecar.getCtype(),managecar.getCstatus(),managecar.getCprice(),managecar.getCseats(),managecar.getCnoplate(),managecar.getCfuel()});
+    }//GEN-LAST:event_scaridmodelActionPerformed
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2814,12 +2901,13 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField cStatus;
     private javax.swing.JTextField cType;
     private javax.swing.JButton cadd;
-    private javax.swing.JButton cadd1;
     private javax.swing.JTextField carId;
+    private javax.swing.JTable cartable;
     private javax.swing.JButton cdelete;
     private javax.swing.JButton clearNotice;
+    private javax.swing.JButton csearch;
+    private javax.swing.JButton cupdate;
     private javax.swing.JLabel demoCount;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2927,7 +3015,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
     private rojerusan.RSMaterialButtonRectangle menucourse;
@@ -2938,6 +3025,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField noticeDate;
     private javax.swing.JTextField noticeNum;
     private javax.swing.JTextField noticeTitle;
+    private javax.swing.JButton scaridmodel;
     private javax.swing.JComboBox<String> selGender;
     private javax.swing.JComboBox<String> selStatus;
     private javax.swing.JLabel stCount;
