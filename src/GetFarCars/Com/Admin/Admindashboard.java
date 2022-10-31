@@ -209,7 +209,7 @@ public class Admindashboard extends javax.swing.JFrame {
         costtxt = new javax.swing.JTextField();
         carid = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
@@ -1120,8 +1120,12 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(51, 153, 255));
         jLabel5.setText("M Id");
 
+
         jLabel31.setForeground(new java.awt.Color(51, 153, 255));
         jLabel31.setText("Reason");
+
+        jLabel55.setText("Reason");
+
 
         jLabel46.setForeground(new java.awt.Color(51, 153, 255));
         jLabel46.setText("Parts");
@@ -1167,7 +1171,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGap(101, 101, 101)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel49)
-                    .addComponent(jLabel31)
+                    .addComponent(jLabel55)
                     .addComponent(jLabel5)
                     .addComponent(jLabel46)
                     .addComponent(jLabel58)
@@ -1203,7 +1207,7 @@ public class Admindashboard extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31)
+                    .addComponent(jLabel55)
                     .addComponent(reasontxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1727,9 +1731,9 @@ private void notice_table_update(){
 }
 
 
-    public void setUser(String aUser) {
-        userID = aUser;
-    } 
+   // public void setUser(String aUser) {
+   //     userID = aUser;
+   // } 
     
   private void Load(){
  
@@ -2220,7 +2224,7 @@ private void clear_add_notice(){
 
 
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
     private void bookingidtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingidtxtActionPerformed
 
         // TODO add your handling code here:
@@ -2231,7 +2235,7 @@ private void clear_add_notice(){
         String CustomerID=customeridtxt.getText();
         BookingImp bookingimp = new BookingImp();
         Booking book1 = new Booking();
-        book1=bookingimp.SearchCus(CustomerID);
+        book1=bookingimp.Search(CustomerID);
         
         DefaultTableModel UTF=(DefaultTableModel) bookingtable.getModel();
         UTF.setRowCount(0);
@@ -2634,6 +2638,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
@@ -2683,11 +2688,8 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTable jTable3;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
-
-    private rojerusan.RSMaterialButtonRectangle menuReport;
-
     private rojerusan.RSMaterialButtonRectangle manage_booking_search;
-
+    private rojerusan.RSMaterialButtonRectangle menuReport;
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
     private rojerusan.RSMaterialButtonRectangle menutimetable1;
@@ -2696,8 +2698,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField partstxt;
     private javax.swing.JTextField reasontxt;
     private javax.swing.JTextField sdatetxt;
-    private javax.swing.JComboBox<String> selGender;
-    private javax.swing.JComboBox<String> selStatus;s
     private javax.swing.JLabel stCount;
     private javax.swing.JComboBox statustxt;
     private javax.swing.JTextField sub1name1;

@@ -24,17 +24,7 @@ public class LoginImp implements LoginDAO{
         LoginPageGetFarCars loginPage = new LoginPageGetFarCars();
         String sql="SELECT * FROM user WHERE user_id='"+logins.getID()+"';";
         try {
-            pst=conn.prepareStatement(sql);
-            ResultSet rs=pst.executeQuery();
-            
-            while(rs.next()){
-                if(rs.getString("Password").equals(logins.getPassword())){
-                    switch(rs.getInt("Role")){
-                        case 1:
-                            DriverDashboard admindashboard = new DriverDashboard();
-                            admindashboard.setUser(logins.getID());
-                            loginPage.dispose();
-                            admindashboard.show();
+            pst=conn.prepareStatement .show();
                             break;
                         case 2:
                             /*SellerInterface sellerInterface = new SellerInterface();
