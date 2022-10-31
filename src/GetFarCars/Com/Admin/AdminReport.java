@@ -100,7 +100,7 @@ public class AdminReport extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(204, 0, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 102));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -147,7 +147,7 @@ public class AdminReport extends javax.swing.JFrame {
                 "Invoice No", "Customer Name", "Vehicale Model", "Date ", "Amount"
             }
         ));
-        Ttable.setColorBackgoundHead(new java.awt.Color(51, 204, 255));
+        Ttable.setColorBackgoundHead(new java.awt.Color(51, 153, 255));
         Ttable.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
         Ttable.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
         Ttable.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -179,7 +179,7 @@ public class AdminReport extends javax.swing.JFrame {
         jLabel22.setText("getfarcars@gmail.com");
         priCard4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel4.setBackground(new java.awt.Color(51, 153, 255));
 
         jLabel23.setBackground(new java.awt.Color(0, 51, 255));
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -190,19 +190,20 @@ public class AdminReport extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(192, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(187, 187, 187)
                 .addComponent(jLabel23)
-                .addGap(185, 185, 185))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jLabel23)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        priCard4.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 660, 40));
+        priCard4.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 660, 60));
 
         amount.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         amount.setText("RS: 1500.00");
@@ -366,7 +367,7 @@ public class AdminReport extends javax.swing.JFrame {
         });
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 30, 40));
 
-        rSMaterialButtonRectangle2.setBackground(new java.awt.Color(153, 0, 0));
+        rSMaterialButtonRectangle2.setBackground(new java.awt.Color(102, 153, 255));
         rSMaterialButtonRectangle2.setText("TRANSACTION REPORT");
         rSMaterialButtonRectangle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -375,7 +376,7 @@ public class AdminReport extends javax.swing.JFrame {
         });
         jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 50));
 
-        rSMaterialButtonRectangle4.setBackground(new java.awt.Color(153, 0, 0));
+        rSMaterialButtonRectangle4.setBackground(new java.awt.Color(102, 153, 255));
         rSMaterialButtonRectangle4.setText("SUMMARY REPORT");
         rSMaterialButtonRectangle4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
