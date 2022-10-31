@@ -8,6 +8,7 @@ package GetFarCars.Com.Admin;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
 
+
 import com.gerfarcars.report.Report;
 import com.gerfarcars.report.ReportImp;
 import com.getfarcar.booking.Booking;
@@ -20,10 +21,15 @@ import com.getfarcar.common.Login;
 import com.getfarcar.common.User;
 import com.getfarcar.common.UserImp;
 
+
+
 import com.getfarcar.common.User;
 import com.getfarcar.common.UserImp;
 import com.getfarcars.managecars.ManageCar;
 import com.getfarcars.managecars.ManageCarImp;
+
+
+
 
 import java.awt.CardLayout;
 import java.awt.Graphics;
@@ -48,6 +54,9 @@ import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+
+
+
 
 
 import java.util.Vector;
@@ -748,6 +757,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
 
+
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
         jPanel7.setForeground(new java.awt.Color(255, 0, 51));
@@ -840,6 +850,8 @@ public class Admindashboard extends javax.swing.JFrame {
 
 
 
+
+
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
 
@@ -912,6 +924,7 @@ public class Admindashboard extends javax.swing.JFrame {
         csearch.setForeground(new java.awt.Color(153, 0, 51));
         csearch.setText("SEARCH");
         csearch.addActionListener(new java.awt.event.ActionListener() {
+
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 csearchActionPerformed(evt);
             }
@@ -923,6 +936,19 @@ public class Admindashboard extends javax.swing.JFrame {
         cupdate.setText("UPDATE");
         cupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                csearchActionPerformed(evt);
+            }
+        });
+
+        cupdate.setBackground(new java.awt.Color(204, 0, 51));
+        cupdate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cupdate.setForeground(new java.awt.Color(153, 0, 51));
+        cupdate.setText("UPDATE");
+        cupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
                 cupdateActionPerformed(evt);
             }
         });
@@ -935,7 +961,10 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
 
+
                         .addGap(49, 49, 49)
+
+
 
                         .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22)
@@ -951,6 +980,9 @@ public class Admindashboard extends javax.swing.JFrame {
                         .addComponent(cdelete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(111, 111, 111))
 
+
+
+
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(120, 120, 120)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -961,6 +993,7 @@ public class Admindashboard extends javax.swing.JFrame {
                                     .addComponent(jLabel42)
                                     .addComponent(jLabel41)
                                     .addComponent(jLabel40)
+
 
                                     .addComponent(jLabel39))
                                 .addGap(23, 23, 23))
@@ -994,6 +1027,16 @@ public class Admindashboard extends javax.swing.JFrame {
                                     .addComponent(jLabel51)
                                     .addComponent(csearch))))
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
+                                    .addComponent(jLabel39)))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel54)
+                                    .addComponent(jLabel51)
+                                    .addComponent(csearch))))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1007,6 +1050,9 @@ public class Admindashboard extends javax.swing.JFrame {
                                 .addGap(23, 23, 23)
                                 .addComponent(cNoplate)))
                         .addGap(189, 189, 189))))
+
+
+
 
         );
         jPanel8Layout.setVerticalGroup(
@@ -1099,7 +1145,10 @@ public class Admindashboard extends javax.swing.JFrame {
         jTabbedPane1.addTab("Add New Car", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/addCoursrred.png")), jPanel8); // NOI18N
 
 
+
         CardPri3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 620, 480));
+
+
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
@@ -1871,6 +1920,28 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel21.setText("Admin Dashboard >Checkout->");
 
 
+
+    
+    private void Load(){
+ 
+        DefaultTableModel UFT=(DefaultTableModel) cartable.getModel();
+        UFT.setRowCount(0);
+        ManageCarImp managecarImp = new ManageCarImp();
+        List<ManageCar> carlist=managecarImp.ManageCarlist();
+        for(ManageCar cus:carlist){
+            UFT.addRow(new Object[]{cus.getCarID(),cus.getCname(),cus.getCtype(),cus.getCstatus(),cus.getCprice(),cus.getCseats(),cus.getCnoplate(),cus.getCfuel()});
+        }
+        
+        List<ManageCar> cartypelist=managecarImp.CarTypelist();
+        for(ManageCar ctype:cartypelist){
+            cModel.addItem(ctype.getCtype());
+        }
+    }
+    
+    
+//Couuse details tab
+
+
         BID1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BID1ActionPerformed(evt);
@@ -1920,6 +1991,7 @@ private void course_table_update(){
     try {
 
 
+
         jLabel76.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(255, 0, 51));
         jLabel76.setText("Customer ID :");
@@ -1928,6 +2000,8 @@ private void course_table_update(){
         AID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AIDActionPerformed(evt);
+
+
 
             DefaultTableModel df=(DefaultTableModel)cartable.getModel();            
             DefaultTableModel df1=(DefaultTableModel)jTable2.getModel();
@@ -2359,6 +2433,378 @@ public void admin_setting(){
     }//GEN-LAST:event_menucourseActionPerformed
 
 
+
+    private void clear_cource_fields(){
+        
+       /* cName.setText("");
+        cType.setText("");
+        cStatus.setText("");
+        depId.setSelectedIndex(0);
+        lecNames.setSelectedIndex(0);
+        cLevel.setSelectedIndex(0);            
+        quiz.setSelected(false);
+        quizMark.setText(null);
+        quizMark.setEnabled(false);
+        assess.setSelected(false);
+        assessMark.setText(null);
+        assessMark.setEnabled(false);
+        mid.setSelected(false);
+        midMark.setText(null);
+        midMark.setEnabled(false);
+        theory.setSelected(false);
+        theoryMark.setText(null);
+        theoryMark.setEnabled(false);
+        practical.setSelected(false);
+        practicalMark.setText(null);
+        practicalMark.setEnabled(false);
+        cName.requestFocus();*/
+}
+    private void caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddActionPerformed
+
+            if(!(carId.getText().equals("")&&cName.getText().equals("")&&cType.getText().equals("")&&cStatus.getText().equals("")&&cPrice.getText().equals("")&&cSeats.getText().equals("")&&cNoplate.getText().equals(""))){
+            ManageCar managecar = new ManageCar();
+            managecar.setCarID(carId.getText());
+            
+            
+            managecar.setCname(cName.getText());
+            managecar.setCtype(cType.getText());
+            managecar.setCstatus(cStatus.getText());
+            managecar.setCprice(Integer.parseInt(cPrice.getText()));
+            managecar.setCseats(Integer.parseInt(cSeats.getText()));
+            managecar.setCnoplate(cNoplate.getText());
+            managecar.setCfuel((String)cFueltype.getSelectedItem());
+            ManageCarImp managecarImp = new ManageCarImp();
+            managecarImp.Add(managecar);
+            //Load();
+        
+        }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
+
+    }//GEN-LAST:event_caddActionPerformed
+
+    private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
+           if(!(carId.getText().equals("")&&cName.getText().equals("")&&cType.getText().equals("")&&cStatus.getText().equals("")&&cPrice.getText().equals("")&&cSeats.getText().equals("")&&cNoplate.getText().equals(""))){
+                ManageCar managecar = new ManageCar();
+                managecar.setCarID(cName.getText());
+                ManageCarImp managecarImp = new ManageCarImp();
+                managecarImp.Delete(managecar);
+
+                //Load();
+
+
+                carId.setText("");
+                cName.setText("");
+                cType.setText("");
+                cStatus.setText(""); 
+                cPrice.setText("");
+                cSeats.setText("");
+                cNoplate.setText("");
+                cFueltype.requestFocus();
+            
+            }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+            }
+    }//GEN-LAST:event_cdeleteActionPerformed
+
+    private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
+        cardLayout1.show(CardjPannel,"CardPri5");
+        notice_table_update();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now();  
+        noticeDate.setText(dtf.format(now));
+    }//GEN-LAST:event_menunoticeActionPerformed
+
+    private void tdepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdepActionPerformed
+
+    private void tlevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tlevelActionPerformed
+
+    private void tsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tsemActionPerformed
+
+    private void tdep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdep1ActionPerformed
+
+    private void tlevel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tlevel1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tlevel1ActionPerformed
+
+    private void tsem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tsem1ActionPerformed
+
+    private void menutimetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetableMouseClicked
+         cardLayout1.show(CardjPannel,"CardPri4");
+    }//GEN-LAST:event_menutimetableMouseClicked
+
+    private void tdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdateActionPerformed
+
+    private void timesubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timesubMouseClicked
+        time_table_clear();      
+        String tDepID=(String)tdep.getSelectedItem();
+        String Level=(String)tlevel.getSelectedItem();
+        String tSem=(String)tsem.getSelectedItem();
+    try {
+
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Monday'");
+            ResultSet rs= insert.executeQuery();
+  
+            int a=1;
+            ttmonday.append("Monday\n");
+            while(rs.next()){ 
+                    ttmonday.append("\n"+a+". "+rs.getString("Subject_Name")+"\nTo-"+rs.getString("Start_time")+"\nFrom-"+rs.getString("End_time")+"\n@"+rs.getString("Location")+"\n"+"("+rs.getString("Type")+")"+"\n--------------");
+            a++;
+             }
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Tuesday'");
+            ResultSet rs1= insert.executeQuery();
+  
+            a=1;
+            tstues.append("Tuesday\n");
+            while(rs1.next()){ 
+                    tstues.append("\n"+a+". "+rs1.getString("Subject_Name")+"\nTo-"+rs1.getString("Start_time")+"\nFrom-"+rs1.getString("End_time")+"\n@"+rs1.getString("Location")+"\n"+"("+rs1.getString("Type")+")"+"\n--------------");
+            a++;
+             }
+
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Wednesday'");
+            ResultSet rs2= insert.executeQuery();
+  
+            a=1;
+            tswed.append("Wednesday\n");
+            while(rs2.next()){ 
+                    tswed.append("\n"+a+". "+rs2.getString("Subject_Name")+"\nTo-"+rs2.getString("Start_time")+"\nFrom-"+rs2.getString("End_time")+"\n@"+rs2.getString("Location")+"\n"+"("+rs2.getString("Type")+")"+"\n--------------");
+            a++;
+             }
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Thursday'");
+            ResultSet rs3= insert.executeQuery();
+  
+            a=1;
+            tsthus.append("Thursday\n");
+            while(rs3.next()){ 
+                    tsthus.append("\n"+a+". "+rs3.getString("Subject_Name")+"\nTo-"+rs3.getString("Start_time")+"\nFrom-"+rs3.getString("End_time")+"\n@"+rs3.getString("Location")+"\n"+"("+rs3.getString("Type")+")"+"\n--------------");
+            a++;
+             }
+            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Friday'");
+            ResultSet rs4= insert.executeQuery();
+  
+            a=1;
+            tsfri.append("Friday\n");
+            while(rs4.next()){ 
+                    tsfri.append("\n"+a+". "+rs4.getString("Subject_Name")+"\nTo-"+rs4.getString("Start_time")+"\nFrom-"+rs4.getString("End_time")+"\n@"+rs4.getString("Location")+"\n"+"("+rs4.getString("Type")+")"+"\n--------------");
+            a++;
+             }
+
+        } catch (SQLException ex) {
+           // Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_timesubMouseClicked
+
+    private void timesubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesubActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_timesubActionPerformed
+
+    private void sub1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1ActionPerformed
+         if(sub1.isSelected()){
+            sub1name.setEnabled(true);
+            sub1from.setEnabled(true);
+            sub1to.setEnabled(true);
+            sub1loc.setEnabled(true);
+            sub1type.setEnabled(true);
+        } else {
+            sub1name.setEnabled(false);
+            sub1from.setEnabled(false);
+            sub1to.setEnabled(false);
+            sub1loc.setEnabled(false);
+            sub1name.setText(null);
+            sub1from.setText(null);
+            sub1to.setText(null);
+            sub1loc.setText(null);
+        }
+    }//GEN-LAST:event_sub1ActionPerformed
+
+    private void sub1nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1nameActionPerformed
+
+    }//GEN-LAST:event_sub1nameActionPerformed
+
+    private void sub2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub2ActionPerformed
+         if(sub2.isSelected()){
+            sub2name.setEnabled(true);
+            sub2from.setEnabled(true);
+            sub2to.setEnabled(true);
+            sub2loc.setEnabled(true);
+            sub2type.setEnabled(true);
+        } else {
+            sub2name.setEnabled(false);
+            sub2from.setEnabled(false);
+            sub2to.setEnabled(false);
+            sub2loc.setEnabled(false);
+            sub2name.setText(null);
+            sub2from.setText(null);
+            sub2to.setText(null);
+            sub2loc.setText(null);
+        }
+    }//GEN-LAST:event_sub2ActionPerformed
+
+    private void sub3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub3ActionPerformed
+            if(sub3.isSelected()){
+            sub3name.setEnabled(true);
+            sub3from.setEnabled(true);
+            sub3to.setEnabled(true);
+            sub3loc.setEnabled(true);
+            sub3type.setEnabled(true);
+        } else {
+            sub3name.setEnabled(false);
+            sub3from.setEnabled(false);
+            sub3to.setEnabled(false);
+            sub3loc.setEnabled(false);
+            sub3name.setText(null);
+            sub3from.setText(null);
+            sub3to.setText(null);
+            sub3loc.setText(null);
+        }
+    }//GEN-LAST:event_sub3ActionPerformed
+
+    private void sub4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub4ActionPerformed
+            if(sub4.isSelected()){
+            sub4name.setEnabled(true);
+            sub4from.setEnabled(true);
+            sub4to.setEnabled(true);
+            sub4loc.setEnabled(true);
+            sub4type.setEnabled(true);
+        } else {
+            sub4name.setEnabled(false);
+            sub4from.setEnabled(false);
+            sub4to.setEnabled(false);
+            sub4loc.setEnabled(false);
+            sub4name.setText(null);
+            sub4from.setText(null);
+            sub4to.setText(null);
+            sub4loc.setText(null);
+        }
+    }//GEN-LAST:event_sub4ActionPerformed
+private void clear_timetable_fields(){
+        
+        sub1name.setText("");
+        sub1from.setText("");
+        sub1to.setText("");
+        sub1loc.setText("");
+        sub2name.setText("");
+        sub2from.setText("");
+        sub2to.setText("");
+        sub2loc.setText("");
+        sub3name.setText("");
+        sub3from.setText("");
+        sub3to.setText("");
+        sub3loc.setText("");
+        sub4name.setText("");
+        sub4from.setText("");
+        sub4to.setText("");
+        sub4loc.setText("");
+        tdep1.setSelectedIndex(0);
+        tlevel1.setSelectedIndex(0);
+        tsem1.setSelectedIndex(0);
+        tdate.setSelectedIndex(0); 
+        sub1type.setSelectedIndex(0);
+             
+        sub1.setSelected(false);
+        sub1name.setEnabled(false);   
+        sub1from.setEnabled(false);
+        sub1to.setEnabled(false);
+        sub1loc.setEnabled(false);
+        sub1type.setEnabled(false);
+
+        sub2.setSelected(false);
+        sub2name.setEnabled(false);   
+        sub2from.setEnabled(false);
+        sub2to.setEnabled(false);
+        sub2loc.setEnabled(false);
+        sub2type.setEnabled(false);
+
+        sub3.setSelected(false);
+        sub3name.setEnabled(false);   
+        sub3from.setEnabled(false);
+        sub3to.setEnabled(false);
+        sub3loc.setEnabled(false);
+        sub3type.setEnabled(false);
+
+        sub4.setSelected(false);
+        sub4name.setEnabled(false);   
+        sub4from.setEnabled(false);
+        sub4to.setEnabled(false);
+        sub4loc.setEnabled(false);
+        sub4type.setEnabled(false);
+
+}
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+            
+            String tdep=(String)tdep1.getSelectedItem();
+            String tlevel=(String)tlevel1.getSelectedItem();
+            String tSem=(String)tsem1.getSelectedItem();
+            String tDate=(String)tdate.getSelectedItem();
+ 
+            if(this.sub1.isSelected()){
+                String subName=sub1name.getText();
+                String subFrom=sub1from.getText();
+                String subTo=sub1to.getText();
+                String subLoc=sub1loc.getText();
+                String tType=(String)sub1type.getSelectedItem();
+            try {
+
+            insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
+            insert.setString(1, tdep);
+            insert.setString(2, tlevel);
+            insert.setString(3,tSem );
+            insert.setString(4, tDate);
+            
+            insert.setString(5, subName);
+            insert.setString(6, subFrom);
+            insert.setString(7, subTo);
+            insert.setString(8, subLoc);
+            insert.setString(9, tType);
+
+
+            if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
+
+                JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+               
+            }else{
+  
+                    insert.executeUpdate();
+ 
+            }
+            
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+            }
+           if(this.sub2.isSelected()){
+                String subName=sub2name.getText();
+                String subFrom=sub2from.getText();
+                String subTo=sub2to.getText();
+                String subLoc=sub2loc.getText();
+                String tType=(String)sub2type.getSelectedItem();
+
+            try {
+
+                insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
+                insert.setString(1, tdep);
+                insert.setString(2, tlevel);
+                insert.setString(3,tSem );
+                insert.setString(4, tDate);
+
+
+
     private void caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddActionPerformed
 
     }//GEN-LAST:event_caddActionPerformed
@@ -2729,6 +3175,7 @@ public void admin_setting(){
     }//GEN-LAST:event_ScarIdActionPerformed
 
 
+
     private void cadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadd1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cadd1ActionPerformed
@@ -2799,6 +3246,8 @@ public void admin_setting(){
             CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
             carmaintananceImp.Update(carmaintanance);
 
+
+
     private void csearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csearchActionPerformed
         String CarID=(JOptionPane.showInputDialog("Enter the Car ID"));
         ManageCarImp managecarImp = new ManageCarImp();
@@ -2831,11 +3280,15 @@ public void admin_setting(){
             ManageCarImp managecarImp = new ManageCarImp();
             managecarImp.Update(managecar);
 
+
+
+
             //Load();
         
          }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
         }
+
 
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -2956,6 +3409,8 @@ public void admin_setting(){
     }//GEN-LAST:event_Csearch5ActionPerformed
 
 
+
+
     }//GEN-LAST:event_cupdateActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -2990,6 +3445,9 @@ public void admin_setting(){
 
             UFT.addRow(new Object[]{managecar.getCarID(),managecar.getCname(),managecar.getCtype(),managecar.getCstatus(),managecar.getCprice(),managecar.getCseats(),managecar.getCnoplate(),managecar.getCfuel()});
     }//GEN-LAST:event_scaridmodelActionPerformed
+
+
+
 
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
@@ -3091,6 +3549,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JButton cadd;
     private javax.swing.JTextField carId;
 
+
     private javax.swing.JTextField carid;
     private javax.swing.JTextField cartxt;
     private javax.swing.JButton cdelete;
@@ -3103,12 +3562,17 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
 
+
+
     private javax.swing.JTable cartable;
     private javax.swing.JButton cdelete;
     private javax.swing.JButton clearNotice;
     private javax.swing.JButton csearch;
     private javax.swing.JButton cupdate;
     private javax.swing.JLabel demoCount;
+
+
+
 
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -3235,10 +3699,13 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
 
+
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+
+
 
 
     private javax.swing.JLabel lblimage;
