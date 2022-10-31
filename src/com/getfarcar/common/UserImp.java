@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.getfarcar.common;
 
 import com.carrentalsystem.system.DBConnector;
@@ -24,7 +19,9 @@ public class UserImp implements UserDAO{
     PreparedStatement pst;
     PreparedStatement pst1;
     DBConnector obj=DBConnector.getObject();
-    java.sql.Connection conn=obj.getConnection();
+    java.sql.Connection conn=DBConnector.getConnection();
+    
+    
 
 
 
@@ -82,6 +79,9 @@ public class UserImp implements UserDAO{
                 break;
             case 'C':
                TableName="customer";
+                break;
+            case 'A':
+               TableName="admin";
                 break;
         }
         

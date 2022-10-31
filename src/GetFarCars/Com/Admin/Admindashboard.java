@@ -2815,9 +2815,16 @@ private void clear_add_notice(){
 
     private void scaridmodelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scaridmodelActionPerformed
         String ctype=(String)cModel.getSelectedItem();
+
         ManageCarImp managecarImp = new ManageCarImp();
         ManageCar managecar = new ManageCar();    
         managecar=managecarImp.Searchtype(ctype);
+
+        System.out.println(ctype);
+        ManageCarImp managecarImp = new ManageCarImp();
+        ManageCar managecar = new ManageCar();    
+        managecar=managecarImp.Search(ctype);
+
         
         DefaultTableModel UFT=(DefaultTableModel) cartable.getModel();
         UFT.setRowCount(0);

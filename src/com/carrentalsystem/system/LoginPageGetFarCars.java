@@ -21,8 +21,6 @@ import javax.swing.JOptionPane;
  * @author KA VI YA
  */
 public class LoginPageGetFarCars extends javax.swing.JFrame {
-     DBConnector obj=DBConnector.getObject();
-    java.sql.Connection conn=DBConnector.getConnection();
     
     public static String username;
     public static String password;
