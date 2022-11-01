@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GetFarCars.Com.Admin;
+package com.getfarcar.driver;
 
 
 import com.carrentalsystem.system.DBConnector;
@@ -362,7 +362,7 @@ public class DriverDashboard extends javax.swing.JFrame {
         CardPri1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel4.setText("Admin Dashboard->");
+        jLabel4.setText("Driver Dashboard->");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
@@ -1587,68 +1587,7 @@ public class DriverDashboard extends javax.swing.JFrame {
     public void setUser(String aUser) {
         userID = aUser;
     }  
-private void course_table_update(){
-    int c;
-    try {
 
-            insert=conn1.prepareStatement("select *  from course_module");
-            ResultSet rs= insert.executeQuery();
-            ResultSetMetaData Rss=rs.getMetaData();
-            c=Rss.getColumnCount();
-
-            DefaultTableModel df=(DefaultTableModel)jTable1.getModel();            
-            DefaultTableModel df1=(DefaultTableModel)jTable2.getModel();
-
-            df.setRowCount(0);
-            while(rs.next()){
-                Vector v1=new Vector();               
-                Vector v2=new Vector();
-                for(int a=1;a<c;a++){
-                    v1.add(rs.getString("cmod_id"));
-                    v1.add(rs.getString("cmod_name"));
-                    v1.add(rs.getString("level"));
-                    v1.add(rs.getString("cmod_dep_id"));
-                    v1.add(rs.getString("cmod_lec_id"));
-                    
-                    v2.add(rs.getInt("cmod_credite"));
-                    v2.add(rs.getInt("quiz_marks"));
-                    v2.add(rs.getInt("mid_marks"));
-                    v2.add(rs.getInt("theory_marks"));
-                    v2.add(rs.getInt("patrical_marks"));
-                }
-                    df.addRow(v1);
-                    df1.addRow(v2);
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-}
-private void notice_table_update(){
-   /* try {
-
-            insert=conn1.prepareStatement("select *  from notice");
-            ResultSet rs= insert.executeQuery();
-  
-            DefaultTableModel df=(DefaultTableModel)NoticeTbale.getModel();            
-
-            df.setRowCount(0);
-            while(rs.next()){
-                Vector v1=new Vector();               
-                    v1.add(rs.getString("Notice_ID"));
-                    v1.add(rs.getString("DATE"));
-                    v1.add(rs.getString("Subject"));
-                    v1.add("Download");
-
-                    df.addRow(v1);
-             }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-}
 public void admin_onload(String ID){
    /* int lec,stu,demo,c;
     try {
@@ -1883,122 +1822,19 @@ public void admin_setting(){
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void menucourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menucourseActionPerformed
-        course_table_update();
         cardLayout1.show(CardjPannel,"CardPri3");
     }//GEN-LAST:event_menucourseActionPerformed
 
     private void clear_cource_fields(){
-        
-        cName.setText("");
-        cType.setText("");
-        cStatus.setText("");
-        depId.setSelectedIndex(0);
-        lecNames.setSelectedIndex(0);
-        cLevel.setSelectedIndex(0);            
-        quiz.setSelected(false);
-        quizMark.setText(null);
-        quizMark.setEnabled(false);
-        assess.setSelected(false);
-        assessMark.setText(null);
-        assessMark.setEnabled(false);
-        mid.setSelected(false);
-        midMark.setText(null);
-        midMark.setEnabled(false);
-        theory.setSelected(false);
-        theoryMark.setText(null);
-        theoryMark.setEnabled(false);
-        practical.setSelected(false);
-        practicalMark.setText(null);
-        practicalMark.setEnabled(false);
-        cName.requestFocus();
+  
 }
     private void caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddActionPerformed
 
-            String DepID=(String)depId.getSelectedItem();
-            String CID=cName.getText();
-            String Cname=cType.getText();
-            String Ccredite=cStatus.getText();
-            String CLevel=(String)cLevel.getSelectedItem();
-            String Lecturer=(String)lecNames.getSelectedItem();
-            int q;
-            int a;
-            int m;
-            int t;
-            int p;
-            int marks;
-            if(this.quiz.isSelected()){
-                q = Integer.parseInt(quizMark.getText());
-            } else {
-                q = 0;
-            }
-            if(this.assess.isSelected()){
-                a = Integer.parseInt(assessMark.getText());
-            } else {
-                a = 0;
-            }
-            if(this.mid.isSelected()){
-                m = Integer.parseInt(midMark.getText());
-            } else {
-                m = 0;
-            }
-            if(this.theory.isSelected()){
-                t = Integer.parseInt(theoryMark.getText());
-            } else {
-                t = 0;
-            }
-            if(this.practical.isSelected()){
-                p = Integer.parseInt(practicalMark.getText());
-            } else {
-                p = 0;
-            }
-
-            marks = q+a+m+t+p;
-
- 
-        
-
-            try {
-            insert=conn.prepareStatement("insert into course_module(cmod_id,cmod_name,cmod_credite,cmod_dep_id,cmod_lec_id,level,quiz_marks,assess_marks,mid_marks,theory_marks,patrical_marks) values (?,?,?,?,?,?,?,?,?,?,?)");
-            insert.setString(1, CID);
-            insert.setString(2, Cname);
-            insert.setString(3, Ccredite);
-            insert.setString(4,DepID );
-            insert.setString(5, Lecturer);
-            insert.setString(6, CLevel);
-            insert.setInt(7, q);
-            insert.setInt(8,a );
-            insert.setInt(9,m );
-            insert.setInt(10,t);
-            insert.setInt(11,p);
-
-            if(CID.isEmpty() || Cname.isEmpty() || Ccredite.isEmpty() ){
-
-                JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-               
-            }else{
-                if(marks==100){
-                    insert.executeUpdate();
-                    JOptionPane.showMessageDialog(this,"Course is Added!!");
-                    clear_cource_fields();
-                    
-                }else{
-                    JOptionPane.showMessageDialog(this,"Please insert the correct marks");
-                }
-                
-
-            }
             
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-
     }//GEN-LAST:event_caddActionPerformed
 
     private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
-        clear_cource_fields();
+       
     }//GEN-LAST:event_cdeleteActionPerformed
 
     private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
@@ -2013,74 +1849,14 @@ public void admin_setting(){
     }//GEN-LAST:event_menutimetableMouseClicked
 
     private void timesubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timesubMouseClicked
-        time_table_clear();      
-        String tDepID=(String)tdep.getSelectedItem();
-        String Level=(String)tlevel.getSelectedItem();
-        String tSem=(String)tsem.getSelectedItem();
-    try {
-
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Monday'");
-            ResultSet rs= insert.executeQuery();
-  
-            int a=1;
-            ttmonday.append("Monday\n");
-            while(rs.next()){ 
-                    ttmonday.append("\n"+a+". "+rs.getString("Subject_Name")+"\nTo-"+rs.getString("Start_time")+"\nFrom-"+rs.getString("End_time")+"\n@"+rs.getString("Location")+"\n"+"("+rs.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Tuesday'");
-            ResultSet rs1= insert.executeQuery();
-  
-            a=1;
-            tstues.append("Tuesday\n");
-            while(rs1.next()){ 
-                    tstues.append("\n"+a+". "+rs1.getString("Subject_Name")+"\nTo-"+rs1.getString("Start_time")+"\nFrom-"+rs1.getString("End_time")+"\n@"+rs1.getString("Location")+"\n"+"("+rs1.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Wednesday'");
-            ResultSet rs2= insert.executeQuery();
-  
-            a=1;
-            tswed.append("Wednesday\n");
-            while(rs2.next()){ 
-                    tswed.append("\n"+a+". "+rs2.getString("Subject_Name")+"\nTo-"+rs2.getString("Start_time")+"\nFrom-"+rs2.getString("End_time")+"\n@"+rs2.getString("Location")+"\n"+"("+rs2.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Thursday'");
-            ResultSet rs3= insert.executeQuery();
-  
-            a=1;
-            tsthus.append("Thursday\n");
-            while(rs3.next()){ 
-                    tsthus.append("\n"+a+". "+rs3.getString("Subject_Name")+"\nTo-"+rs3.getString("Start_time")+"\nFrom-"+rs3.getString("End_time")+"\n@"+rs3.getString("Location")+"\n"+"("+rs3.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Friday'");
-            ResultSet rs4= insert.executeQuery();
-  
-            a=1;
-            tsfri.append("Friday\n");
-            while(rs4.next()){ 
-                    tsfri.append("\n"+a+". "+rs4.getString("Subject_Name")+"\nTo-"+rs4.getString("Start_time")+"\nFrom-"+rs4.getString("End_time")+"\n@"+rs4.getString("Location")+"\n"+"("+rs4.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-
-        } catch (SQLException ex) {
-           // Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
+        
+    
     }//GEN-LAST:event_timesubMouseClicked
 
     private void timesubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesubActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_timesubActionPerformed
-private void clear_timetable_fields(){
-        
-        
 
-}
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
             if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
             CarMaintanance carmaintanance = new CarMaintanance();
@@ -2104,27 +1880,13 @@ private void clear_timetable_fields(){
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-        clear_timetable_fields();
+       
     }//GEN-LAST:event_jButton7MouseClicked
-private void time_table_clear(){
-        ttmonday.setText("");
-        tstues.setText("");
-        tswed.setText("");
-        tsthus.setText("");
-        tsfri.setText("");
-}
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-       time_table_clear();
-    }//GEN-LAST:event_jButton5MouseClicked
-private void clear_add_notice(){
-   noticeNum.setText("");
-   noticeTitle.setText("");
-   noticeContent.setText("");
-   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-   LocalDateTime now = LocalDateTime.now();  
-   noticeDate.setText(dtf.format(now));
 
-} 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       
+    }//GEN-LAST:event_jButton5MouseClicked
+
     private void jLabel78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel78MouseClicked
        this.setState(ICONIFIED);
     }//GEN-LAST:event_jLabel78MouseClicked
@@ -2328,26 +2090,7 @@ private void clear_add_notice(){
     }//GEN-LAST:event_sub1name2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
-            CarMaintanance carmaintanance = new CarMaintanance();
-                carmaintanance.setM_ID(midtxt.getText());
-                CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
-                carmaintananceImp.Delete(carmaintanance);
-
-              
-
-
-                midtxt.setText("");
-                reasontxt.setText("");
-                partstxt.setText("");
-                costtxt.setText(""); 
-                carid.setText("");
-                ivoicetxt.setText("");
-               
-            
-            }else{
-            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
-            }
+       
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
@@ -2443,7 +2186,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admindashboard().setVisible(true);
+                new DriverDashboard().setVisible(true);
             }
         });
     }
