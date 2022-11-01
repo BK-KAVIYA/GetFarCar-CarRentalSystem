@@ -125,7 +125,7 @@ public class Admindashboard extends javax.swing.JFrame {
         txtRegNo = new javax.swing.JTextField();
         adGender = new javax.swing.JComboBox<String>();
         jLabel20 = new javax.swing.JLabel();
-        txtLName = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         txtFName = new javax.swing.JTextField();
@@ -152,6 +152,8 @@ public class Admindashboard extends javax.swing.JFrame {
         txtCity1 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         txtCity2 = new javax.swing.JTextField();
+        jLabel97 = new javax.swing.JLabel();
+        txtLName1 = new javax.swing.JTextField();
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -281,9 +283,9 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel57 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
+        cusname = new javax.swing.JLabel();
+        cusad1 = new javax.swing.JLabel();
+        cusad2 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
@@ -620,11 +622,11 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
         CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 73, -1, 32));
-        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 260, 29));
+        CardPri2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 180, 29));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel22.setText("Last Name");
-        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
+        jLabel22.setText("Email");
+        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 32));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("First Name");
@@ -720,6 +722,11 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel31.setText("City");
         CardPri2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, 32));
         CardPri2.add(txtCity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 180, 32));
+
+        jLabel97.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel97.setText("Last Name");
+        CardPri2.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
+        CardPri2.add(txtLName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 260, 29));
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1721,11 +1728,11 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel60.setText("MR");
 
-        jLabel62.setText("Ashan Indarajith");
+        cusname.setText("Ashan Indarajith");
 
-        jLabel63.setText("No120, Kesbewa Road,");
+        cusad1.setText("No120, Kesbewa Road,");
 
-        jLabel64.setText("Piliyandala");
+        cusad2.setText("Piliyandala");
 
         jLabel65.setText("FROM:");
 
@@ -1777,12 +1784,12 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(InvoiceLayout.createSequentialGroup()
                         .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel64)
-                            .addComponent(jLabel63)
+                            .addComponent(cusad2)
+                            .addComponent(cusad1)
                             .addGroup(InvoiceLayout.createSequentialGroup()
                                 .addComponent(jLabel60)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel62))
+                                .addComponent(cusname))
                             .addComponent(jLabel59))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1821,11 +1828,11 @@ public class Admindashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel60)
-                            .addComponent(jLabel62))
+                            .addComponent(cusname))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel63)
+                        .addComponent(cusad1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel64))
+                        .addComponent(cusad2))
                     .addGroup(InvoiceLayout.createSequentialGroup()
                         .addComponent(jLabel65)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2030,18 +2037,39 @@ public void admin_setting(){
         
         txtRegNo.setText(user.getID());
         txtFName.setText(user.getfName());
-        txtLName.setText(user.getlName());
+        txtLName1.setText(user.getlName());
+        txtEmail.setText(user.getlName());
         txtAddress.setText(user.getAddressl1());
         txtaddress2.setText(user.getAddressl2());
         txtCity2.setText(user.getCity());
         txtDOB.setText(user.getNIC());
         adGender.setSelectedItem(user.getGender());
+        txtEmail.setText(user.getEmail());
         txtPhone.setText(String.valueOf(user.getContactno()));
         txtRegNo.requestFocus();
 
 }
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
-                    
+        if(!(txtRegNo.getText().equals("")&&txtFName.getText().equals("")&&txtEmail.getText().equals("")&&txtAddress.getText().equals("")&&txtaddress2.getText().equals("")&&txtCity2.getText().equals("")&&txtDOB.getText().equals("")&&txtPhone.getText().equals("")&&txtLName1.getText().equals("")&&txtEmail.getText().equals(""))){
+            User user = new User();
+            user.setID(txtRegNo.getText());
+            user.setfName(txtFName.getText());
+            user.setlName(txtLName1.getText());
+            user.setAddressl1(txtAddress.getText());
+            user.setAddressl2(txtaddress2.getText());
+            user.setCity(txtCity2.getText());
+            user.setNIC(txtDOB.getText());
+            user.setEmail(txtEmail.getText());
+            user.setContactno(Integer.parseInt(txtPhone.getText()));
+            user.setGender((String)adGender.getSelectedItem());
+
+            UserImp userImp = new UserImp();
+            userImp.Update(user,"admin");
+            Load();
+        
+         }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
     }//GEN-LAST:event_AdUpdateActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
@@ -2503,12 +2531,14 @@ public void admin_setting(){
 
         DefaultTableModel UFT=(DefaultTableModel) InvoiceTable.getModel();
         UFT.setRowCount(0);
-       // ReportImp reportImp = new ReportImp();
-       // List<Report> report=reportImp.ReportList();
 
-            UFT.addRow(new Object[]{report.getBookingID(),report.getAdminID(),report.getDate(),report.getText()+report.getAmount()});
+        UFT.addRow(new Object[]{report.getBookingID(),report.getAdminID(),report.getDate(),report.getText()+report.getAmount()});
             
-            TAmountDisplay.setText("RS: "+report.getAmount());
+        TAmountDisplay.setText("RS: "+report.getAmount());
+        
+        cusname.setText(report.getCustomerName());
+        cusad1.setText(report.getAddress1());
+        cusad2.setText(report.getAddress2());
 
     }//GEN-LAST:event_Csearch4ActionPerformed
 
@@ -2669,6 +2699,9 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField cartxt;
     private javax.swing.JButton cdelete;
     private javax.swing.JTextField costtxt;
+    private javax.swing.JLabel cusad1;
+    private javax.swing.JLabel cusad2;
+    private javax.swing.JLabel cusname;
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JTextField drivertxt;
@@ -2741,9 +2774,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
@@ -2779,6 +2809,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -2824,8 +2855,9 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField txtCity1;
     private javax.swing.JTextField txtCity2;
     private javax.swing.JTextField txtDOB;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFName;
-    private javax.swing.JTextField txtLName;
+    private javax.swing.JTextField txtLName1;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtRegNo;
     private javax.swing.JTextField txtaddress2;
