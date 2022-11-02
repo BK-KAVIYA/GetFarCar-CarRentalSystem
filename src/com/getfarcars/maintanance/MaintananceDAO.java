@@ -13,6 +13,6 @@ public interface MaintananceDAO {
     public void Update(CarMaintanance car_maintanance);
     public void Delete(CarMaintanance car_maintanance);
     public CarMaintanance Serch(String M_ID);
-    public List<CarMaintanance> list(String tableName);
+    public List<CarMaintanance> list();
     public List<CarMaintanance> CarMaintanancelist();
 }
