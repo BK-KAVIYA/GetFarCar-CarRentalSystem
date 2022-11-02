@@ -98,23 +98,23 @@ public class CarMaintananceImp implements MaintananceDAO{
     }
 
     @Override
-    public List<CarMaintanance> list(String tableName) {
+    public List<CarMaintanance> list() {
         List<CarMaintanance> list =new ArrayList<CarMaintanance>();
          try {
             
-            String sql="Select * from "+tableName+";";
+            String sql="Select * from maintance;";
             pst=conn.prepareStatement(sql);
             ResultSet rs=pst.executeQuery();
             
             while(rs.next()){
                 CarMaintanance carmaintanance = new CarMaintanance();
-                String M_ID = null;
-                carmaintanance.setM_ID(M_ID);
+                //String M_ID = null;
+                carmaintanance.setM_ID(rs.getString("M_ID"));
                 carmaintanance.setReason(rs.getString("reason"));
                 carmaintanance.setParts(rs.getString("parts"));
                 carmaintanance.setCost(rs.getInt("cost"));
                 carmaintanance.setCar_id(rs.getString("car_id"));
-                carmaintanance.setInvoice_id(rs.getInt("invoice_id"));
+                carmaintanance.setInvoice_id(rs.getInt("Invoice_no"));
                 
                 list.add(carmaintanance);
             
@@ -128,21 +128,27 @@ public class CarMaintananceImp implements MaintananceDAO{
          return list;
     }
 
-    @Override
-    public List<CarMaintanance> CarMaintanancelist() {
+   
+    public List<CarMaintanance> CarMaintanancelist(String MID) {
         List<CarMaintanance> list =new ArrayList<CarMaintanance>();
             
             
         try {
-            String sql="Select * from carmaintanancerolle;";
+            String sql="Select * from maintance WHERE M_ID='"+MID+"';";
             pst=conn.prepareStatement(sql);
             ResultSet rs;
             rs = pst.executeQuery();
             
             while(rs.next()){
                 CarMaintanance carmaintanance = new CarMaintanance();
-                carmaintanance.setCarMaintananceRolle(rs.getInt("CarMaintananceRolleID"));   ------------------------------------++++++++
-                carmaintanance.setUserType(rs.getString("UserType"));              ------------------------------------+++++++++++++***
+                
+                carmaintanance.setM_ID(rs.getString("M_ID"));
+                carmaintanance.setReason(rs.getString("reason"));
+                carmaintanance.setParts(rs.getString("parts"));
+                carmaintanance.setCost(rs.getInt("cost"));
+                carmaintanance.setCar_id(rs.getString("car_id"));
+                carmaintanance.setInvoice_id(rs.getInt("Invoice_no"));
+                
                 list.add(carmaintanance);
             
             }
@@ -174,6 +180,68 @@ public class CarMaintananceImp implements MaintananceDAO{
             Logger.getLogger(CarMaintananceImp.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @Override
+    public List<CarMaintanance> CarMaintanancelist() {
+         List<CarMaintanance> list =new ArrayList<CarMaintanance>();
+            
+            
+        try {
+            String sql="Select * from maintance;";
+            pst=conn.prepareStatement(sql);
+            ResultSet rs;
+            rs = pst.executeQuery();
+            
+            while(rs.next()){
+                CarMaintanance carmaintanance = new CarMaintanance();
+                
+                carmaintanance.setM_ID(rs.getString("M_ID"));
+                carmaintanance.setReason(rs.getString("reason"));
+                carmaintanance.setParts(rs.getString("parts"));
+                carmaintanance.setCost(rs.getInt("cost"));
+                carmaintanance.setCar_id(rs.getString("car_id"));
+                carmaintanance.setInvoice_id(rs.getInt("Invoice_no"));
+                
+                list.add(carmaintanance);
+            
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(CarMaintananceImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                  
+         return list;
+    }
+    
+   public CarMaintanance Serch_cid(String Car_ID) {
+
+        CarMaintanance carmaintanance = new CarMaintanance();       
+        String sql="select * from maintance where Car_ID=?;";
+
+            
+        try {
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,Car_ID);
+            ResultSet rs=pst.executeQuery();
+            while(rs.next()){
+                
+                carmaintanance.setM_ID(rs.getString("M_ID"));
+                carmaintanance.setReason(rs.getString("reason"));
+                carmaintanance.setParts(rs.getString("parts"));
+                carmaintanance.setCost(rs.getInt("cost"));
+                carmaintanance.setCar_id(rs.getString("car_id"));
+                carmaintanance.setInvoice_id(rs.getInt("Invoice_no"));
+                
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(CarMaintananceImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                    
+        return carmaintanance;
+    }
+    
+    
 
 
 

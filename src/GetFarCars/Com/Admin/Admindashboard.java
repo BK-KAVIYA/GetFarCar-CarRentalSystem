@@ -24,6 +24,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,6 +52,7 @@ public class Admindashboard extends javax.swing.JFrame {
    byte[] pimage=null;
     public Admindashboard() {
         initComponents();
+        Load();
         cardLayout1 =(CardLayout)(CardjPannel.getLayout());
     }
 
@@ -178,8 +180,9 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        sub1name1 = new javax.swing.JTextField();
-        sub1name2 = new javax.swing.JTextField();
+        viewCidtxt = new javax.swing.JTextField();
+        viewMidtxt = new javax.swing.JTextField();
+        timesub1 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -958,28 +961,23 @@ public class Admindashboard extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Search");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
             }
         });
-        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 80, 30));
+        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 80, 30));
 
         timesub.setBackground(new java.awt.Color(255, 51, 51));
         timesub.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         timesub.setForeground(new java.awt.Color(255, 255, 255));
-        timesub.setText("Search");
-        timesub.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                timesubMouseClicked(evt);
-            }
-        });
+        timesub.setText("Reset");
         timesub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 timesubActionPerformed(evt);
             }
         });
-        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 80, 30));
+        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 80, 30));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(255, 153, 0));
@@ -1017,22 +1015,19 @@ public class Admindashboard extends javax.swing.JFrame {
         }
 
         jPanel10.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 570, 100));
+        jPanel10.add(viewCidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, -1));
+        jPanel10.add(viewMidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, -1));
 
-        sub1name1.setEnabled(false);
-        sub1name1.addActionListener(new java.awt.event.ActionListener() {
+        timesub1.setBackground(new java.awt.Color(255, 51, 51));
+        timesub1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        timesub1.setForeground(new java.awt.Color(255, 255, 255));
+        timesub1.setText("Search");
+        timesub1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub1name1ActionPerformed(evt);
+                timesub1ActionPerformed(evt);
             }
         });
-        jPanel10.add(sub1name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 130, -1));
-
-        sub1name2.setEnabled(false);
-        sub1name2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub1name2ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(sub1name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
+        jPanel10.add(timesub1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 80, 30));
 
         jTabbedPane2.addTab("View Maintanance", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/timetableListr.png")), jPanel10); // NOI18N
 
@@ -1899,69 +1894,8 @@ public void admin_setting(){
          cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetableMouseClicked
 
-    private void timesubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timesubMouseClicked
-        time_table_clear();      
-        String tDepID=(String)tdep.getSelectedItem();
-        String Level=(String)tlevel.getSelectedItem();
-        String tSem=(String)tsem.getSelectedItem();
-    try {
-
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Monday'");
-            ResultSet rs= insert.executeQuery();
-  
-            int a=1;
-            ttmonday.append("Monday\n");
-            while(rs.next()){ 
-                    ttmonday.append("\n"+a+". "+rs.getString("Subject_Name")+"\nTo-"+rs.getString("Start_time")+"\nFrom-"+rs.getString("End_time")+"\n@"+rs.getString("Location")+"\n"+"("+rs.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Tuesday'");
-            ResultSet rs1= insert.executeQuery();
-  
-            a=1;
-            tstues.append("Tuesday\n");
-            while(rs1.next()){ 
-                    tstues.append("\n"+a+". "+rs1.getString("Subject_Name")+"\nTo-"+rs1.getString("Start_time")+"\nFrom-"+rs1.getString("End_time")+"\n@"+rs1.getString("Location")+"\n"+"("+rs1.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Wednesday'");
-            ResultSet rs2= insert.executeQuery();
-  
-            a=1;
-            tswed.append("Wednesday\n");
-            while(rs2.next()){ 
-                    tswed.append("\n"+a+". "+rs2.getString("Subject_Name")+"\nTo-"+rs2.getString("Start_time")+"\nFrom-"+rs2.getString("End_time")+"\n@"+rs2.getString("Location")+"\n"+"("+rs2.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Thursday'");
-            ResultSet rs3= insert.executeQuery();
-  
-            a=1;
-            tsthus.append("Thursday\n");
-            while(rs3.next()){ 
-                    tsthus.append("\n"+a+". "+rs3.getString("Subject_Name")+"\nTo-"+rs3.getString("Start_time")+"\nFrom-"+rs3.getString("End_time")+"\n@"+rs3.getString("Location")+"\n"+"("+rs3.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Friday'");
-            ResultSet rs4= insert.executeQuery();
-  
-            a=1;
-            tsfri.append("Friday\n");
-            while(rs4.next()){ 
-                    tsfri.append("\n"+a+". "+rs4.getString("Subject_Name")+"\nTo-"+rs4.getString("Start_time")+"\nFrom-"+rs4.getString("End_time")+"\n@"+rs4.getString("Location")+"\n"+"("+rs4.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-
-        } catch (SQLException ex) {
-           // Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-    }//GEN-LAST:event_timesubMouseClicked
-
     private void timesubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesubActionPerformed
-        // TODO add your handling code here:
+        Load();
     }//GEN-LAST:event_timesubActionPerformed
 private void clear_timetable_fields(){
         
@@ -1982,7 +1916,13 @@ private void clear_timetable_fields(){
 
             CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
             carmaintananceImp.Add(carmaintanance);
-            //Load();
+            Load();
+            midtxt.setText("");
+            reasontxt.setText("");
+            partstxt.setText("");
+            costtxt.setText(""); 
+            carid.setText("");
+            ivoicetxt.setText("");
         
         }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
@@ -2000,10 +1940,6 @@ private void time_table_clear(){
         tsthus.setText("");
         tsfri.setText("");
 }
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-       time_table_clear();
-    }//GEN-LAST:event_jButton5MouseClicked
-
     private void NoticeTbaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoticeTbaleMouseClicked
         timeTablesView.setText("");         
         DefaultTableModel df=(DefaultTableModel)NoticeTbale.getModel();
@@ -2150,14 +2086,6 @@ private void clear_add_notice(){
         // TODO add your handling code here:
     }//GEN-LAST:event_cadd1ActionPerformed
 
-    private void sub1name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sub1name1ActionPerformed
-
-    private void sub1name2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sub1name2ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
        if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
             CarMaintanance carmaintanance = new CarMaintanance();
@@ -2221,6 +2149,29 @@ private void clear_add_notice(){
         }
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       String MID = viewMidtxt.getText();
+       CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+       CarMaintanance m = new CarMaintanance();
+       m=carmaintananceImp.Serch(MID);
+       
+       DefaultTableModel UTF=(DefaultTableModel) jTable3.getModel();
+       UTF.setRowCount(0);
+       UTF.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
+       
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void timesub1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesub1ActionPerformed
+        String CID = viewCidtxt.getText();
+       CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+       CarMaintanance m = new CarMaintanance();
+       m=carmaintananceImp.Serch_cid(CID);
+       
+       DefaultTableModel UTF=(DefaultTableModel) jTable3.getModel();
+       UTF.setRowCount(0);
+       UTF.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
+    }//GEN-LAST:event_timesub1ActionPerformed
+
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2273,6 +2224,24 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
             }
         });
     }
+    
+    private void Load(){
+ 
+        DefaultTableModel UFT=(DefaultTableModel) jTable3.getModel();
+        UFT.setRowCount(0);
+        CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+        List<CarMaintanance> mlist=carmaintananceImp.list();
+        for(CarMaintanance m:mlist){
+            UFT.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
+        }
+        
+       
+        
+
+}
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSMaterialButtonRectangle AdUpdate;
@@ -2425,10 +2394,9 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JComboBox<String> selGender;
     private javax.swing.JComboBox<String> selStatus;
     private javax.swing.JLabel stCount;
-    private javax.swing.JTextField sub1name1;
-    private javax.swing.JTextField sub1name2;
     private javax.swing.JTextArea timeTablesView;
     private javax.swing.JButton timesub;
+    private javax.swing.JButton timesub1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtDOB;
@@ -2437,5 +2405,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtRegNo;
     private javax.swing.JLabel txtid;
+    private javax.swing.JTextField viewCidtxt;
+    private javax.swing.JTextField viewMidtxt;
     // End of variables declaration//GEN-END:variables
 }
