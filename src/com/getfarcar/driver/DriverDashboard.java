@@ -102,7 +102,9 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         idtxt = new javax.swing.JTextField();
+
         gendertxt = new javax.swing.JComboBox<String>();
+
         jLabel20 = new javax.swing.JLabel();
         lnametxt = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
@@ -132,6 +134,9 @@ public class DriverDashboard extends javax.swing.JFrame {
         phonetxt = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         emailtxt = new javax.swing.JTextField();
+
+        drivergender = new javax.swing.JComboBox();
+
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -515,7 +520,7 @@ public class DriverDashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -551,8 +556,10 @@ public class DriverDashboard extends javax.swing.JFrame {
         CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 143, 29));
         CardPri2.add(idtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 260, 32));
 
+
         gendertxt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
         CardPri2.add(gendertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 186, 28));
+
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
@@ -666,6 +673,12 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel56.setText("Email");
         CardPri2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 32));
         CardPri2.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 180, 29));
+
+
+        drivergender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        CardPri2.add(drivergender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 140, -1));
+
+
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1664,7 +1677,7 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_menutimetableActionPerformed
 
     private void menuuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuuserActionPerformed
-        AdminUserManage aum=new AdminUserManage();
+        DriverDashboard aum=new DriverDashboard();
         aum.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuuserActionPerformed
@@ -1681,7 +1694,9 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-    admin_setting(); 
+
+    Driver_setting(); 
+
     cardLayout1.show(CardjPannel,"CardPri2");
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -1697,7 +1712,12 @@ public void admin_onload(String ID){
         }
     }//GEN-LAST:event_jLabel17MouseClicked
 
+
+public void Driver_setting(){
+
+
 public void admin_setting(){
+
     DriverDashboard driverdahboard = new DriverDashboard();
         String UID=getUser();
         UserImp userImp = new UserImp();
@@ -1710,7 +1730,11 @@ public void admin_setting(){
         line1txt.setText(user.getAddressl1());
         line2txt.setText(user.getAddressl2());
         citytxt.setText(user.getCity());
+
+        drivergender.setSelectedItem(user.getGender());
+
         gendertxt.setSelectedItem(user.getGender());
+
         emailtxt.setText(user.getEmail());
         phonetxt.setText(String.valueOf(user.getContactno()));
         nictxt.setText(user.getNIC());
@@ -1718,7 +1742,26 @@ public void admin_setting(){
 
 
 }
+
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
+
+
+      if(!(fnametxt.getText().equals("")&&lnametxt.getText().equals("")&&idtxt.getText().equals("")&&line1txt.getText().equals("")&&line2txt.getText().equals("")&&citytxt.getText().equals("")&&emailtxt.getText().equals("")&&phonetxt.getText().equals("")&&nictxt.getText().equals(""))){
+            User user = new User();
+            user.setID(idtxt.getText());
+            user.setfName(fnametxt.getText());
+            user.setlName(lnametxt.getText());
+            user.setAddressl1(line1txt.getText());
+            user.setAddressl2(line2txt.getText());
+            user.setCity(citytxt.getText());
+            user.setNIC(nictxt.getText());
+            user.setEmail(emailtxt.getText());
+            user.setContactno(Integer.parseInt(phonetxt.getText()));
+            user.setGender((String)drivergender.getSelectedItem());
+
+            UserImp userImp = new UserImp();
+            userImp.Update(user,"driver");
+            
 
       if(!(fnametxt.getText().equals("")&&lnametxt.getText().equals("")&&idtxt.getText().equals("")&&line1txt.getText().equals("")&&line2txt.getText().equals("")&&citytxt.getText().equals("")&&gendertxt.getText.equals("")&&emailtxt.getText().equals("")&&phonetxt.getText().equals("")&&phonetxt.getText().equals(""))){
             User user = new User();
@@ -1736,6 +1779,7 @@ public void admin_setting(){
             UserImp userImp = new UserImp();
             userImp.Update(user,"admin");
             Load();
+
         
          }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
@@ -2184,11 +2228,14 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JLabel demoCount;
+    private javax.swing.JComboBox drivergender;
     private javax.swing.JTextField drivertxt;
     private javax.swing.JTextField edatetxt;
     private javax.swing.JTextField emailtxt;
     private javax.swing.JTextField fnametxt;
+
     private javax.swing.JComboBox<String> gendertxt;
+
     private javax.swing.JTextField idtxt;
     private javax.swing.JTextField ivoicetxt;
     private javax.swing.JButton jButton1;
