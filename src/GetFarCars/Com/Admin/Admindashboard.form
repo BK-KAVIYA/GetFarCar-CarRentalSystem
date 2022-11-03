@@ -1890,9 +1890,12 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="11" style="1"/>
                             </Property>
+<<<<<<< HEAD
+=======
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="99" red="ff" type="rgb"/>
                             </Property>
+>>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
                             <Property name="text" type="java.lang.String" value="Maintanance Id"/>
                           </Properties>
                           <Constraints>
@@ -1950,9 +1953,12 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="11" style="1"/>
                             </Property>
+<<<<<<< HEAD
+=======
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="99" red="ff" type="rgb"/>
                             </Property>
+>>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
                             <Property name="text" type="java.lang.String" value="Car Id"/>
                           </Properties>
                           <Constraints>
@@ -2430,7 +2436,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="33" green="0" red="cc" type="rgb"/>
+                      <Color blue="66" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
@@ -2438,7 +2444,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="40" y="50" width="620" height="530"/>
+                      <AbsoluteConstraints x="20" y="80" width="590" height="450"/>
                     </Constraint>
                   </Constraints>
 
@@ -2713,26 +2719,36 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="205" pref="205" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
                                           <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
-                                          <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                          <Component id="bidtxt" min="-2" pref="145" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel92" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel90" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
+                                                  <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                                              <Component id="bidtxt" min="-2" pref="145" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="sdatetxt" min="-2" pref="145" max="-2" attributes="0"/>
+                                                          <Component id="statustxt" min="-2" max="-2" attributes="0"/>
+=======
                                               <Group type="102" alignment="1" attributes="0">
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                   <Component id="bookingadd" min="-2" pref="87" max="-2" attributes="0"/>
@@ -2755,23 +2771,47 @@
                                                           <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                           <Component id="edatetxt" min="-2" pref="147" max="-2" attributes="0"/>
+>>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
                                                       </Group>
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Group type="103" groupAlignment="1" attributes="0">
-                                                              <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel93" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="edatetxt" min="-2" pref="147" max="-2" attributes="0"/>
                                                           </Group>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                              <Component id="cartxt" max="32767" attributes="0"/>
-                                                              <Component id="damounttxt" max="32767" attributes="0"/>
-                                                              <Component id="admintxt" min="-2" pref="146" max="-2" attributes="0"/>
+                                                          <Group type="102" attributes="0">
+                                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                                  <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel91" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel93" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Component id="cartxt" max="32767" attributes="0"/>
+                                                                  <Component id="damounttxt" max="32767" attributes="0"/>
+                                                                  <Component id="admintxt" min="-2" pref="146" max="-2" attributes="0"/>
+                                                              </Group>
                                                           </Group>
                                                       </Group>
                                                   </Group>
+<<<<<<< HEAD
+                                                  <Component id="customertxt" min="-2" pref="145" max="-2" attributes="0"/>
+                                                  <Component id="drivertxt" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="bookingadd" min="-2" pref="87" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="bookingupdate" min="-2" pref="88" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="bookingdelete" min="-2" pref="87" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="manage_booking_search" min="-2" pref="87" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+=======
                                               </Group>
                                               <Component id="drivertxt" alignment="0" max="32767" attributes="0"/>
+>>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
                                           </Group>
                                       </Group>
                                   </Group>
@@ -2782,8 +2822,14 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Component id="jLabel73" min="-2" pref="30" max="-2" attributes="0"/>
+<<<<<<< HEAD
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bidtxt" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+=======
                                   <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
@@ -2831,6 +2877,7 @@
                                               <Component id="admintxt" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+>>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
                                   </Group>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2852,11 +2899,14 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="jLabel73">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="18" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="99" red="ff" type="rgb"/>
+                              <Color blue="66" green="0" red="0" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Manage Bookings"/>
                           </Properties>
@@ -2865,9 +2915,6 @@
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Booking ID :"/>
                           </Properties>
@@ -2882,9 +2929,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Start Date :"/>
                           </Properties>
                         </Component>
@@ -2897,9 +2941,6 @@
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="End Date :"/>
                           </Properties>
@@ -2914,9 +2955,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Status :"/>
                           </Properties>
                         </Component>
@@ -2926,9 +2964,6 @@
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Deposit Amount :"/>
                           </Properties>
@@ -2950,9 +2985,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Customer ID :"/>
                           </Properties>
                         </Component>
@@ -2960,9 +2992,6 @@
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Car ID :"/>
                           </Properties>
@@ -2974,9 +3003,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Driver ID :"/>
                           </Properties>
                         </Component>
@@ -2987,9 +3013,6 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="12" style="1"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="0" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Admin ID :"/>
                           </Properties>
                         </Component>
@@ -2997,6 +3020,9 @@
                         </Component>
                         <Component class="rojerusan.RSMaterialButtonRectangle" name="bookingadd">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="0" red="0" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Add"/>
                           </Properties>
                           <Events>
@@ -3005,6 +3031,9 @@
                         </Component>
                         <Component class="rojerusan.RSMaterialButtonRectangle" name="bookingupdate">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="0" red="0" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Update"/>
                           </Properties>
                           <Events>
@@ -3013,6 +3042,9 @@
                         </Component>
                         <Component class="rojerusan.RSMaterialButtonRectangle" name="bookingdelete">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="0" red="0" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Delete"/>
                           </Properties>
                           <Events>
@@ -3021,6 +3053,9 @@
                         </Component>
                         <Component class="rojerusan.RSMaterialButtonRectangle" name="manage_booking_search">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="0" red="0" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Search"/>
                           </Properties>
                           <Events>
@@ -3029,6 +3064,252 @@
                         </Component>
                       </SubComponents>
                     </Container>
+<<<<<<< HEAD
+                    <Container class="javax.swing.JPanel" name="jPanel13">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                            <BevelBorder>
+                              <Color PropertyName="highlightOuter" blue="33" green="0" red="ff" type="rgb"/>
+                              <Color PropertyName="highlightInner" blue="33" green="0" red="ff" type="rgb"/>
+                              <Color PropertyName="shadowOuter" blue="33" green="0" red="ff" type="rgb"/>
+                              <Color PropertyName="shadowInner" blue="33" green="0" red="ff" type="rgb"/>
+                            </BevelBorder>
+                          </Border>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="12" style="0"/>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName="Bookings">
+                            <Property name="tabTitle" type="java.lang.String" value="Bookings"/>
+                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/PHOTOS/noticeList.png"/>
+                            </Property>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
+                                                  <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="bookingidtxt" min="-2" pref="156" max="-2" attributes="0"/>
+                                                      <Component id="customeridtxt" min="-2" pref="156" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="customeridsearch" min="-2" pref="81" max="-2" attributes="0"/>
+                                                      <Component id="BookingIdSearch" min="-2" pref="81" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="0" pref="110" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jScrollPane9" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jLabel72" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bookingidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BookingIdSearch" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="customeridtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="customeridsearch" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="33" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane9" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="jLabel72">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="18" style="1"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="0" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Most Recent Bookings"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel84">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Arial" size="12" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Booking ID :"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel85">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Arial" size="12" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Customer ID :"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="bookingidtxt">
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bookingidtxtActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="customeridtxt">
+                        </Component>
+                        <Component class="rojerusan.RSMaterialButtonRectangle" name="customeridsearch">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="0" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Search"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customeridsearchActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="rojerusan.RSMaterialButtonRectangle" name="BookingIdSearch">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="0" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Search"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BookingIdSearchActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="rojeru_san.complementos.RSTableMetro" name="bookingtable">
+                              <Properties>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="8" rowCount="5">
+                                    <Column editable="true" title="Booking ID" type="java.lang.Object"/>
+                                    <Column editable="true" title="Start Date" type="java.lang.Object"/>
+                                    <Column editable="true" title="End Date" type="java.lang.Object"/>
+                                    <Column editable="true" title="Status " type="java.lang.Object"/>
+                                    <Column editable="true" title="Deposite" type="java.lang.Object"/>
+                                    <Column editable="true" title="Cus_ID" type="java.lang.Object"/>
+                                    <Column editable="true" title="Car ID" type="java.lang.Object"/>
+                                    <Column editable="true" title="Driver ID" type="java.lang.Object"/>
+                                  </Table>
+                                </Property>
+                                <Property name="colorBackgoundHead" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="66" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="colorFilasForeground1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="colorFilasForeground2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                  <TableColumnModel selectionModel="0">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                  </TableColumnModel>
+                                </Property>
+                                <Property name="fuenteFilas" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Tahoma" size="12" style="1"/>
+                                </Property>
+                                <Property name="fuenteFilasSelect" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Tahoma" size="12" style="1"/>
+                                </Property>
+                                <Property name="fuenteHead" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Tahoma" size="14" style="1"/>
+                                </Property>
+                                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+=======
+>>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
                   </SubComponents>
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel82">
