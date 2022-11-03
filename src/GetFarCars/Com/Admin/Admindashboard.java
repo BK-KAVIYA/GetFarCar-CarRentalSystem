@@ -7,6 +7,7 @@ package GetFarCars.Com.Admin;
 
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
+import com.gerfarcars.report.CalAmount;
 import com.gerfarcars.report.Report;
 import com.gerfarcars.report.ReportImp;
 import com.getfarcar.booking.Booking;
@@ -2352,7 +2353,7 @@ public void admin_setting(){
         String CID=bookingidtxt.getText();
         BookingImp bookingimp = new BookingImp();
         Booking booking = new Booking();    
-        booking=bookingimp.Search(BID);
+        booking=bookingimp.Search(CID);
         
         DefaultTableModel UFT=(DefaultTableModel) bookingtable.getModel();
         UFT.setRowCount(0);
@@ -2367,7 +2368,7 @@ public void admin_setting(){
     }//GEN-LAST:event_cusidsearchActionPerformed
 
     private void booking_id_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_id_searchActionPerformed
-         String BID=bookingidtxt.getText();
+        String BID=bookingidtxt.getText();
         BookingImp bookingimp = new BookingImp();
         Booking booking = new Booking();    
         booking=bookingimp.Search(BID);
@@ -2409,9 +2410,9 @@ public void admin_setting(){
             report.setCustomerID(customertxt.getText());
 
             
-             BID1.setText(report.getBookingID());
-             CID1.setText(report.getCustomerID());
-             AID.setText(report.getAdminID());     
+            BID1.setText(report.getBookingID());
+            CID1.setText(report.getCustomerID());
+            AID.setText(report.getAdminID());     
 
 
             
@@ -2419,6 +2420,12 @@ public void admin_setting(){
             bookingImp.Add(booking);
             Load();
             
+            CalAmount calAmount = new CalAmount();
+            calAmount.setCarID(cartxt.getText());
+            calAmount.setStartDate(sdatetxt.getText());
+            calAmount.setEndDate(edatetxt.getText());
+            double tAmount = calAmount.calAmount();
+            Amount.setText(String.valueOf(tAmount));
             
 
         }else{
@@ -2655,7 +2662,7 @@ public void admin_setting(){
             report.setCustomerID(CID1.getText());
             report.setAdminID(AID.getText());
             report.setDate(Date.getText());
-            report.setAmount(Integer.parseInt(Amount.getText()));
+            report.setAmount(Double.parseDouble(Amount.getText()));
             ReportImp reportImp = new ReportImp();
             reportImp.Add(report);
             Load();
@@ -2671,9 +2678,17 @@ public void admin_setting(){
             
         TAmountDisplay.setText("RS: "+report.getAmount());
         
-        cusname.setText(report.getCustomerName());
-        cusad1.setText(report.getAddress1());
-        cusad2.setText(report.getAddress2());
+  
+        ReportImp reportImp1 = new ReportImp();
+        List<Report> report2=reportImp1.InvoiceList(CID1.getText());
+        
+        for(Report repo:report2){
+            cusname.setText(repo.getCustomerName());
+            cusad1.setText(repo.getAddress1());
+            cusad2.setText(repo.getAddress2());
+        }
+
+        
 
     }//GEN-LAST:event_Csearch4ActionPerformed
 
