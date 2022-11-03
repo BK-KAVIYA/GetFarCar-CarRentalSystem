@@ -1649,7 +1649,7 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_menutimetableActionPerformed
 
     private void menuuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuuserActionPerformed
-        AdminUserManage aum=new AdminUserManage();
+        DriverDashboard aum=new DriverDashboard();
         aum.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuuserActionPerformed
@@ -1666,7 +1666,6 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-    admin_setting(); 
     cardLayout1.show(CardjPannel,"CardPri2");
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -1682,61 +1681,7 @@ public void admin_onload(String ID){
         }
     }//GEN-LAST:event_jLabel17MouseClicked
 
-public void admin_setting(){
-    /*int c;
-    try {
 
-            insert=conn1.prepareStatement("select *  from admin where admin_id='"+userID+"'");
-            ResultSet rs= insert.executeQuery();
-            ResultSetMetaData Rss=rs.getMetaData();
-            c=Rss.getColumnCount();
-
-            while(rs.next()){
-                for(int a=1;a<c;a++){
-                    txtRegNo.setText(rs.getString("admin_id"));
-                    txtFName.setText(rs.getString("f_name"));
-                    txtLName.setText(rs.getString("l_name"));
-                    txtAddress.setText(rs.getString("address_l1"));
-                    txtCity.setText(rs.getString("address_l2"));
-
-                    String gen = (String)rs.getString("gender");
-                    //selGender.addItem(gen);
-                    selGender.setSelectedItem(gen);
-
-                    txtDOB.setText(rs.getString("dob"));
-                    txtPhone.setText(rs.getString("phone_num")); 
-
-                    String status = (String)rs.getString("admin_role");
-                    selStatus.setSelectedItem(status);
-
-                    byte[] imagedata=rs.getBytes("picture_path");
-                    format=new ImageIcon(imagedata);
-                    Image mm=format.getImage();
-                    Image img2=mm.getScaledInstance(lblimage.getWidth(),lblimage.getHeight(), Image.SCALE_SMOOTH);
-                    ImageIcon image=new ImageIcon(img2);
-                    lblimage.setIcon(image);
- 
-                }
-            }
-
-            insert=conn1.prepareStatement("select *  from log_user where Uname='"+userID+"'");
-            ResultSet rs1= insert.executeQuery();
-            ResultSetMetaData Rss1=rs.getMetaData();
-            c=Rss1.getColumnCount();
-
-            while(rs1.next()){
-                for(int a=1;a<c;a++){
-                    adPwd.setText(rs1.getString("Password"));
-                    adCPwd.setText(rs1.getString("Password"));
-                 }
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-
-}
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
 
       /*  try {

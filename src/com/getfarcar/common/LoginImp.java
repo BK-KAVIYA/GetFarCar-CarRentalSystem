@@ -3,7 +3,7 @@ package com.getfarcar.common;
 
 import GetFarCars.Com.Admin.AdminUserManage;
 import GetFarCars.Com.Admin.Admindashboard;
-import GetFarCars.Com.Admin.DriverDashboard;
+import com.getfarcar.driver.DriverDashboard;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
 import java.sql.Connection;
