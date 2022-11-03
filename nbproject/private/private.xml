@@ -2,9 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
+
         <group/>
-=======
+
 
 
         <group>
@@ -20,7 +20,33 @@
 
         <group/>
 
->>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
+
+
+
+
+
+        <group>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminUserManage.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/booking/BookingDAO.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/LoginPageGetFarCars.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/common/User.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/booking/BookingImp.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/common/UserDAO.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/common/LoginImp.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/Admindashboard.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/driver/DriverDashboard.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/common/UserImp.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/booking/Booking.java</file>
+            <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/Splash.java</file>
+        </group>
+
+
+
+        <group/>
+
+
+
+
         <group>
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/Splash.java</file>
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminUserManage.java</file>
@@ -39,6 +65,7 @@
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/Admindashboard.java</file>
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/LoginPageGetFarCars.java</file>
         </group>
+
         <group>
             <file>file:/G:/Lecture%20Matirials/2nd%20Year/Software%20Engineering/Project/Get_Far_Cars/GetFarCar-CarRentalSystem/src/com/gerfarcars/report/ReportDAO.java</file>
             <file>file:/G:/Lecture%20Matirials/2nd%20Year/Software%20Engineering/Project/Get_Far_Cars/GetFarCar-CarRentalSystem/src/com/gerfarcars/report/ReportImp.java</file>
@@ -54,8 +81,9 @@
             <file>file:/G:/Lecture%20Matirials/2nd%20Year/Software%20Engineering/Project/Get_Far_Cars/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminUserManage.java</file>
             <file>file:/G:/Lecture%20Matirials/2nd%20Year/Software%20Engineering/Project/Get_Far_Cars/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminReport.java</file>
         </group>
+
         <group>
-<<<<<<< HEAD
+
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/com/carrentalsystem/system/Splash.java</file>
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminUserManage.java</file>
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/Dashboard/StudentIF.java</file>
@@ -65,7 +93,7 @@
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/com/getfarcar/driver/DriverDashboard.java</file>
             <file>file:/E:/2%20years/sem%202/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminReport.java</file>
         </group>
-=======
+
             <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/GetFarCars/Com/Admin/AdminUserManage.java</file>
             <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/booking/BookingDAO.java</file>
             <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcar/common/User.java</file>
@@ -123,6 +151,6 @@
             <file>file:/C:/wamp64/www/GetFarCar-CarRentalSystem/src/com/getfarcars/maintanance/CarMaintananceImp.java</file>
         </group>
         <group/>
->>>>>>> 060c6ec7e38393ee3fa03bf2516baa703f3c6737
+
     </open-files>
 </project-private>
