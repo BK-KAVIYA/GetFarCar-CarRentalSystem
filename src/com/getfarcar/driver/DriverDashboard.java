@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GetFarCars.Com.Admin;
+package com.getfarcar.driver;
 
 
+import GetFarCars.Com.Admin.AdminUserManage;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
 import com.getfarcar.booking.Booking;
@@ -100,16 +101,16 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        txtRegNo = new javax.swing.JTextField();
-        selGender = new javax.swing.JComboBox<String>();
+        idtxt = new javax.swing.JTextField();
+        gendertxt = new javax.swing.JComboBox<String>();
         jLabel20 = new javax.swing.JLabel();
-        txtLName = new javax.swing.JTextField();
+        lnametxt = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        txtFName = new javax.swing.JTextField();
-        txtAddress = new javax.swing.JTextField();
+        fnametxt = new javax.swing.JTextField();
+        line1txt = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        txtCity = new javax.swing.JTextField();
+        line2txt = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -120,13 +121,17 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         ShowPassword = new javax.swing.JCheckBox();
-        txtPhone = new javax.swing.JTextField();
-        txtDOB = new javax.swing.JTextField();
+        nictxt = new javax.swing.JTextField();
+        citytxt = new javax.swing.JTextField();
         AdUpdate = new rojerusan.RSMaterialButtonRectangle();
         lblimage = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         txtid = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        phonetxt = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        emailtxt = new javax.swing.JTextField();
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -362,7 +367,7 @@ public class DriverDashboard extends javax.swing.JFrame {
         CardPri1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
-        jLabel4.setText("Admin Dashboard->");
+        jLabel4.setText("Driver Dashboard->");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
@@ -543,43 +548,43 @@ public class DriverDashboard extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("Registration Number");
-        CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 243, 143, 29));
-        CardPri2.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 241, 260, 32));
+        CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 143, 29));
+        CardPri2.add(idtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 260, 32));
 
-        selGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        CardPri2.add(selGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 111, 186, 28));
+        gendertxt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        CardPri2.add(gendertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 186, 28));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
-        CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 73, -1, 32));
-        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 194, 260, 29));
+        CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, 32));
+        CardPri2.add(lnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 260, 29));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setText("Last Name");
-        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 159, -1, 32));
+        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("First Name");
-        CardPri2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 70, -1, 32));
-        CardPri2.add(txtFName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 106, 260, 29));
-        CardPri2.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 323, 398, 32));
+        CardPri2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, 32));
+        CardPri2.add(fnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 260, 29));
+        CardPri2.add(line1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 170, 32));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("Adress Line 1");
-        CardPri2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 284, -1, 32));
-        CardPri2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 398, 32));
+        CardPri2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 32));
+        CardPri2.add(line2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 190, 32));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("Adress Line 2");
-        CardPri2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 361, -1, 32));
+        CardPri2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, 32));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel26.setText("Date of Birth");
-        CardPri2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 430, -1, 32));
+        jLabel26.setText("City");
+        CardPri2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, 32));
 
         jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel27.setText("Phone Number");
-        CardPri2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 430, -1, 32));
+        CardPri2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, -1, 32));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -617,8 +622,8 @@ public class DriverDashboard extends javax.swing.JFrame {
         jPanel3.add(ShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         CardPri2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, 190));
-        CardPri2.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 470, 193, 29));
-        CardPri2.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 470, 176, 29));
+        CardPri2.add(nictxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 180, 29));
+        CardPri2.add(citytxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 176, 29));
 
         AdUpdate.setText("Update");
         AdUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -651,6 +656,16 @@ public class DriverDashboard extends javax.swing.JFrame {
 
         txtid.setText("Image name");
         CardPri2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 120, 20));
+
+        jLabel55.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel55.setText("NIC");
+        CardPri2.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, 32));
+        CardPri2.add(phonetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 176, 29));
+
+        jLabel56.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel56.setText("Email");
+        CardPri2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 32));
+        CardPri2.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 180, 29));
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1587,68 +1602,7 @@ public class DriverDashboard extends javax.swing.JFrame {
     public void setUser(String aUser) {
         userID = aUser;
     }  
-private void course_table_update(){
-    int c;
-    try {
 
-            insert=conn1.prepareStatement("select *  from course_module");
-            ResultSet rs= insert.executeQuery();
-            ResultSetMetaData Rss=rs.getMetaData();
-            c=Rss.getColumnCount();
-
-            DefaultTableModel df=(DefaultTableModel)jTable1.getModel();            
-            DefaultTableModel df1=(DefaultTableModel)jTable2.getModel();
-
-            df.setRowCount(0);
-            while(rs.next()){
-                Vector v1=new Vector();               
-                Vector v2=new Vector();
-                for(int a=1;a<c;a++){
-                    v1.add(rs.getString("cmod_id"));
-                    v1.add(rs.getString("cmod_name"));
-                    v1.add(rs.getString("level"));
-                    v1.add(rs.getString("cmod_dep_id"));
-                    v1.add(rs.getString("cmod_lec_id"));
-                    
-                    v2.add(rs.getInt("cmod_credite"));
-                    v2.add(rs.getInt("quiz_marks"));
-                    v2.add(rs.getInt("mid_marks"));
-                    v2.add(rs.getInt("theory_marks"));
-                    v2.add(rs.getInt("patrical_marks"));
-                }
-                    df.addRow(v1);
-                    df1.addRow(v2);
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-}
-private void notice_table_update(){
-   /* try {
-
-            insert=conn1.prepareStatement("select *  from notice");
-            ResultSet rs= insert.executeQuery();
-  
-            DefaultTableModel df=(DefaultTableModel)NoticeTbale.getModel();            
-
-            df.setRowCount(0);
-            while(rs.next()){
-                Vector v1=new Vector();               
-                    v1.add(rs.getString("Notice_ID"));
-                    v1.add(rs.getString("DATE"));
-                    v1.add(rs.getString("Subject"));
-                    v1.add("Download");
-
-                    df.addRow(v1);
-             }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-}
 public void admin_onload(String ID){
    /* int lec,stu,demo,c;
     try {
@@ -1744,111 +1698,48 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel17MouseClicked
 
 public void admin_setting(){
-    /*int c;
-    try {
+    DriverDashboard driverdahboard = new DriverDashboard();
+        String UID=getUser();
+        UserImp userImp = new UserImp();
+        User user = new User();     
+        user=userImp.Serch(UID);
+        
+        fnametxt.setText(user.getfName());
+        lnametxt.setText(user.getlName());
+        idtxt.setText(user.getID());
+        line1txt.setText(user.getAddressl1());
+        line2txt.setText(user.getAddressl2());
+        citytxt.setText(user.getCity());
+        gendertxt.setSelectedItem(user.getGender());
+        emailtxt.setText(user.getEmail());
+        phonetxt.setText(String.valueOf(user.getContactno()));
+        nictxt.setText(user.getNIC());
+        fnametxt.requestFocus();
 
-            insert=conn1.prepareStatement("select *  from admin where admin_id='"+userID+"'");
-            ResultSet rs= insert.executeQuery();
-            ResultSetMetaData Rss=rs.getMetaData();
-            c=Rss.getColumnCount();
-
-            while(rs.next()){
-                for(int a=1;a<c;a++){
-                    txtRegNo.setText(rs.getString("admin_id"));
-                    txtFName.setText(rs.getString("f_name"));
-                    txtLName.setText(rs.getString("l_name"));
-                    txtAddress.setText(rs.getString("address_l1"));
-                    txtCity.setText(rs.getString("address_l2"));
-
-                    String gen = (String)rs.getString("gender");
-                    //selGender.addItem(gen);
-                    selGender.setSelectedItem(gen);
-
-                    txtDOB.setText(rs.getString("dob"));
-                    txtPhone.setText(rs.getString("phone_num")); 
-
-                    String status = (String)rs.getString("admin_role");
-                    selStatus.setSelectedItem(status);
-
-                    byte[] imagedata=rs.getBytes("picture_path");
-                    format=new ImageIcon(imagedata);
-                    Image mm=format.getImage();
-                    Image img2=mm.getScaledInstance(lblimage.getWidth(),lblimage.getHeight(), Image.SCALE_SMOOTH);
-                    ImageIcon image=new ImageIcon(img2);
-                    lblimage.setIcon(image);
- 
-                }
-            }
-
-            insert=conn1.prepareStatement("select *  from log_user where Uname='"+userID+"'");
-            ResultSet rs1= insert.executeQuery();
-            ResultSetMetaData Rss1=rs.getMetaData();
-            c=Rss1.getColumnCount();
-
-            while(rs1.next()){
-                for(int a=1;a<c;a++){
-                    adPwd.setText(rs1.getString("Password"));
-                    adCPwd.setText(rs1.getString("Password"));
-                 }
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
 
 }
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
 
-      /*  try {
-            String RegNO=txtRegNo.getText();
-            String FName=txtFName.getText();
-            String LName=txtLName.getText();
-            String Address=txtAddress.getText();
-            String City=txtCity.getText();
-            String Gender=(String)selGender.getSelectedItem();
-            String DOB=txtDOB.getText();
-            String Telephone=txtPhone.getText();
-            String Type=(String)selStatus.getSelectedItem();
-            String id=txtid.getText(); 
+      if(!(fnametxt.getText().equals("")&&lnametxt.getText().equals("")&&idtxt.getText().equals("")&&line1txt.getText().equals("")&&line2txt.getText().equals("")&&citytxt.getText().equals("")&&gendertxt.getText.equals("")&&emailtxt.getText().equals("")&&phonetxt.getText().equals("")&&phonetxt.getText().equals(""))){
+            User user = new User();
+            user.setID(txtRegNo.getText());
+            user.setfName(txtFName.getText());
+            user.setlName(txtLName1.getText());
+            user.setAddressl1(txtAddress.getText());
+            user.setAddressl2(txtaddress2.getText());
+            user.setCity(txtCity2.getText());
+            user.setNIC(txtDOB.getText());
+            user.setEmail(txtEmail.getText());
+            user.setContactno(Integer.parseInt(txtPhone.getText()));
+            user.setGender((String)adGender.getSelectedItem());
 
-
-            insert=conn1.prepareStatement("update  admin set admin_id =?,f_name=?,l_name=?,address_l1=?,address_l2=?,gender=?,dob=?,phone_num=?,admin_role=?,picture_path=? where admin_id=?");
-            insert.setString(1, RegNO);
-            insert.setString(2, FName);
-            insert.setString(3, LName);
-            insert.setString(4,Address );
-            insert.setString(5, City);
-            insert.setString(6, Gender);
-            insert.setString(7, DOB);
-            insert.setString(8,Telephone );
-            insert.setString(9,Type );
-            insert.setBytes(10, pimage);
-            insert.setString(11, RegNO);
-
-
-            String AdPwd=adPwd.getText();
-            String AdCpwd=adCPwd.getText();
-            update=conn1.prepareStatement("update  log_user set Password=? where Uname=?");
-            update.setString(1, AdPwd);
-            update.setString(2, RegNO);
-
-        if(RegNO.isEmpty() || FName.isEmpty() || LName.isEmpty() || Address.isEmpty() || City.isEmpty() || Gender.isEmpty() || DOB.isEmpty() || Telephone.isEmpty() || AdPwd.isEmpty() || AdCpwd.isEmpty()){
-            JOptionPane.showMessageDialog(this,"Fill the all the fields!!");
+            UserImp userImp = new UserImp();
+            userImp.Update(user,"admin");
+            Load();
+        
          }else{
-                if(AdPwd.equals(AdCpwd)){
-                    insert.executeUpdate();
-                    update.executeUpdate();
-                    JOptionPane.showMessageDialog(this,"Profile Update!!");
-                }else{
-                    JOptionPane.showMessageDialog(this,"Password not matched!!");
-                }
-                    
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
         }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
     }//GEN-LAST:event_AdUpdateActionPerformed
 
    
@@ -1883,122 +1774,19 @@ public void admin_setting(){
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void menucourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menucourseActionPerformed
-        course_table_update();
         cardLayout1.show(CardjPannel,"CardPri3");
     }//GEN-LAST:event_menucourseActionPerformed
 
     private void clear_cource_fields(){
-        
-        cName.setText("");
-        cType.setText("");
-        cStatus.setText("");
-        depId.setSelectedIndex(0);
-        lecNames.setSelectedIndex(0);
-        cLevel.setSelectedIndex(0);            
-        quiz.setSelected(false);
-        quizMark.setText(null);
-        quizMark.setEnabled(false);
-        assess.setSelected(false);
-        assessMark.setText(null);
-        assessMark.setEnabled(false);
-        mid.setSelected(false);
-        midMark.setText(null);
-        midMark.setEnabled(false);
-        theory.setSelected(false);
-        theoryMark.setText(null);
-        theoryMark.setEnabled(false);
-        practical.setSelected(false);
-        practicalMark.setText(null);
-        practicalMark.setEnabled(false);
-        cName.requestFocus();
+  
 }
     private void caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddActionPerformed
 
-            String DepID=(String)depId.getSelectedItem();
-            String CID=cName.getText();
-            String Cname=cType.getText();
-            String Ccredite=cStatus.getText();
-            String CLevel=(String)cLevel.getSelectedItem();
-            String Lecturer=(String)lecNames.getSelectedItem();
-            int q;
-            int a;
-            int m;
-            int t;
-            int p;
-            int marks;
-            if(this.quiz.isSelected()){
-                q = Integer.parseInt(quizMark.getText());
-            } else {
-                q = 0;
-            }
-            if(this.assess.isSelected()){
-                a = Integer.parseInt(assessMark.getText());
-            } else {
-                a = 0;
-            }
-            if(this.mid.isSelected()){
-                m = Integer.parseInt(midMark.getText());
-            } else {
-                m = 0;
-            }
-            if(this.theory.isSelected()){
-                t = Integer.parseInt(theoryMark.getText());
-            } else {
-                t = 0;
-            }
-            if(this.practical.isSelected()){
-                p = Integer.parseInt(practicalMark.getText());
-            } else {
-                p = 0;
-            }
-
-            marks = q+a+m+t+p;
-
- 
-        
-
-            try {
-            insert=conn.prepareStatement("insert into course_module(cmod_id,cmod_name,cmod_credite,cmod_dep_id,cmod_lec_id,level,quiz_marks,assess_marks,mid_marks,theory_marks,patrical_marks) values (?,?,?,?,?,?,?,?,?,?,?)");
-            insert.setString(1, CID);
-            insert.setString(2, Cname);
-            insert.setString(3, Ccredite);
-            insert.setString(4,DepID );
-            insert.setString(5, Lecturer);
-            insert.setString(6, CLevel);
-            insert.setInt(7, q);
-            insert.setInt(8,a );
-            insert.setInt(9,m );
-            insert.setInt(10,t);
-            insert.setInt(11,p);
-
-            if(CID.isEmpty() || Cname.isEmpty() || Ccredite.isEmpty() ){
-
-                JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-               
-            }else{
-                if(marks==100){
-                    insert.executeUpdate();
-                    JOptionPane.showMessageDialog(this,"Course is Added!!");
-                    clear_cource_fields();
-                    
-                }else{
-                    JOptionPane.showMessageDialog(this,"Please insert the correct marks");
-                }
-                
-
-            }
             
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-
     }//GEN-LAST:event_caddActionPerformed
 
     private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
-        clear_cource_fields();
+       
     }//GEN-LAST:event_cdeleteActionPerformed
 
     private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
@@ -2013,74 +1801,14 @@ public void admin_setting(){
     }//GEN-LAST:event_menutimetableMouseClicked
 
     private void timesubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timesubMouseClicked
-        time_table_clear();      
-        String tDepID=(String)tdep.getSelectedItem();
-        String Level=(String)tlevel.getSelectedItem();
-        String tSem=(String)tsem.getSelectedItem();
-    try {
-
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Monday'");
-            ResultSet rs= insert.executeQuery();
-  
-            int a=1;
-            ttmonday.append("Monday\n");
-            while(rs.next()){ 
-                    ttmonday.append("\n"+a+". "+rs.getString("Subject_Name")+"\nTo-"+rs.getString("Start_time")+"\nFrom-"+rs.getString("End_time")+"\n@"+rs.getString("Location")+"\n"+"("+rs.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Tuesday'");
-            ResultSet rs1= insert.executeQuery();
-  
-            a=1;
-            tstues.append("Tuesday\n");
-            while(rs1.next()){ 
-                    tstues.append("\n"+a+". "+rs1.getString("Subject_Name")+"\nTo-"+rs1.getString("Start_time")+"\nFrom-"+rs1.getString("End_time")+"\n@"+rs1.getString("Location")+"\n"+"("+rs1.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Wednesday'");
-            ResultSet rs2= insert.executeQuery();
-  
-            a=1;
-            tswed.append("Wednesday\n");
-            while(rs2.next()){ 
-                    tswed.append("\n"+a+". "+rs2.getString("Subject_Name")+"\nTo-"+rs2.getString("Start_time")+"\nFrom-"+rs2.getString("End_time")+"\n@"+rs2.getString("Location")+"\n"+"("+rs2.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Thursday'");
-            ResultSet rs3= insert.executeQuery();
-  
-            a=1;
-            tsthus.append("Thursday\n");
-            while(rs3.next()){ 
-                    tsthus.append("\n"+a+". "+rs3.getString("Subject_Name")+"\nTo-"+rs3.getString("Start_time")+"\nFrom-"+rs3.getString("End_time")+"\n@"+rs3.getString("Location")+"\n"+"("+rs3.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-            insert=conn.prepareStatement("select *  from time_table where Department_ID='"+tDepID+"' and Level='"+Level+"' and Semester='"+tSem+"' and Date='Friday'");
-            ResultSet rs4= insert.executeQuery();
-  
-            a=1;
-            tsfri.append("Friday\n");
-            while(rs4.next()){ 
-                    tsfri.append("\n"+a+". "+rs4.getString("Subject_Name")+"\nTo-"+rs4.getString("Start_time")+"\nFrom-"+rs4.getString("End_time")+"\n@"+rs4.getString("Location")+"\n"+"("+rs4.getString("Type")+")"+"\n--------------");
-            a++;
-             }
-
-        } catch (SQLException ex) {
-           // Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
+        
+    
     }//GEN-LAST:event_timesubMouseClicked
 
     private void timesubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesubActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_timesubActionPerformed
-private void clear_timetable_fields(){
-        
-        
 
-}
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
             if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
             CarMaintanance carmaintanance = new CarMaintanance();
@@ -2104,27 +1832,13 @@ private void clear_timetable_fields(){
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-        clear_timetable_fields();
+       
     }//GEN-LAST:event_jButton7MouseClicked
-private void time_table_clear(){
-        ttmonday.setText("");
-        tstues.setText("");
-        tswed.setText("");
-        tsthus.setText("");
-        tsfri.setText("");
-}
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-       time_table_clear();
-    }//GEN-LAST:event_jButton5MouseClicked
-private void clear_add_notice(){
-   noticeNum.setText("");
-   noticeTitle.setText("");
-   noticeContent.setText("");
-   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-   LocalDateTime now = LocalDateTime.now();  
-   noticeDate.setText(dtf.format(now));
 
-} 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       
+    }//GEN-LAST:event_jButton5MouseClicked
+
     private void jLabel78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel78MouseClicked
        this.setState(ICONIFIED);
     }//GEN-LAST:event_jLabel78MouseClicked
@@ -2328,26 +2042,7 @@ private void clear_add_notice(){
     }//GEN-LAST:event_sub1name2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
-            CarMaintanance carmaintanance = new CarMaintanance();
-                carmaintanance.setM_ID(midtxt.getText());
-                CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
-                carmaintananceImp.Delete(carmaintanance);
-
-              
-
-
-                midtxt.setText("");
-                reasontxt.setText("");
-                partstxt.setText("");
-                costtxt.setText(""); 
-                carid.setText("");
-                ivoicetxt.setText("");
-               
-            
-            }else{
-            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
-            }
+       
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
@@ -2429,13 +2124,13 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -2443,7 +2138,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admindashboard().setVisible(true);
+                new DriverDashboard().setVisible(true);
             }
         });
     }
@@ -2484,12 +2179,17 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField carid;
     private javax.swing.JTextField cartxt;
     private javax.swing.JButton cdelete;
+    private javax.swing.JTextField citytxt;
     private javax.swing.JTextField costtxt;
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JLabel demoCount;
     private javax.swing.JTextField drivertxt;
     private javax.swing.JTextField edatetxt;
+    private javax.swing.JTextField emailtxt;
+    private javax.swing.JTextField fnametxt;
+    private javax.swing.JComboBox<String> gendertxt;
+    private javax.swing.JTextField idtxt;
     private javax.swing.JTextField ivoicetxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
@@ -2549,6 +2249,8 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
@@ -2600,28 +2302,25 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
+    private javax.swing.JTextField line1txt;
+    private javax.swing.JTextField line2txt;
+    private javax.swing.JTextField lnametxt;
     private rojerusan.RSMaterialButtonRectangle manage_booking_search;
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
     private rojerusan.RSMaterialButtonRectangle menutimetable;
     private rojerusan.RSMaterialButtonRectangle menuuser;
     private javax.swing.JTextField midtxt;
+    private javax.swing.JTextField nictxt;
     private javax.swing.JTextField partstxt;
+    private javax.swing.JTextField phonetxt;
     private javax.swing.JTextField reasontxt;
     private javax.swing.JTextField sdatetxt;
-    private javax.swing.JComboBox<String> selGender;
     private javax.swing.JLabel stCount;
     private javax.swing.JComboBox statustxt;
     private javax.swing.JTextField sub1name1;
     private javax.swing.JTextField sub1name2;
     private javax.swing.JButton timesub;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtCity;
-    private javax.swing.JTextField txtDOB;
-    private javax.swing.JTextField txtFName;
-    private javax.swing.JTextField txtLName;
-    private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtRegNo;
     private javax.swing.JLabel txtid;
     // End of variables declaration//GEN-END:variables
 }

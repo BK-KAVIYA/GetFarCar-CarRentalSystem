@@ -43,6 +43,10 @@ import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+
+import java.util.Vector;
+
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -127,7 +131,7 @@ public class Admindashboard extends javax.swing.JFrame {
         txtRegNo = new javax.swing.JTextField();
         adGender = new javax.swing.JComboBox<String>();
         jLabel20 = new javax.swing.JLabel();
-        txtLName = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         txtFName = new javax.swing.JTextField();
@@ -154,6 +158,8 @@ public class Admindashboard extends javax.swing.JFrame {
         txtCity1 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         txtCity2 = new javax.swing.JTextField();
+        jLabel97 = new javax.swing.JLabel();
+        txtLName1 = new javax.swing.JTextField();
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -206,8 +212,9 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        sub1name1 = new javax.swing.JTextField();
-        sub1name2 = new javax.swing.JTextField();
+        viewCidtxt = new javax.swing.JTextField();
+        viewMidtxt = new javax.swing.JTextField();
+        timesub1 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -284,9 +291,9 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel57 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
+        cusname = new javax.swing.JLabel();
+        cusad1 = new javax.swing.JLabel();
+        cusad2 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
@@ -565,7 +572,7 @@ public class Admindashboard extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE))
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
         CardPri1Layout.setVerticalGroup(
             CardPri1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,7 +588,7 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -615,7 +622,7 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("Registration Number");
         CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 243, 143, 29));
-        CardPri2.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 241, 260, 32));
+        CardPri2.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 241, 250, 32));
 
         adGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
         CardPri2.add(adGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 111, 186, 28));
@@ -623,16 +630,16 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
         CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 73, -1, 32));
-        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 260, 29));
+        CardPri2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 180, 29));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel22.setText("Last Name");
-        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
+        jLabel22.setText("Email");
+        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 32));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("First Name");
         CardPri2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 70, -1, 32));
-        CardPri2.add(txtFName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 106, 260, 29));
+        CardPri2.add(txtFName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 106, 250, 29));
         CardPri2.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 323, 398, 32));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -723,6 +730,11 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel31.setText("City");
         CardPri2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, 32));
         CardPri2.add(txtCity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 180, 32));
+
+        jLabel97.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel97.setText("Last Name");
+        CardPri2.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
+        CardPri2.add(txtLName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 250, 29));
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1076,28 +1088,23 @@ public class Admindashboard extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Search");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
             }
         });
-        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 80, 30));
+        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 80, 30));
 
         timesub.setBackground(new java.awt.Color(255, 51, 51));
         timesub.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         timesub.setForeground(new java.awt.Color(255, 255, 255));
-        timesub.setText("Search");
-        timesub.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                timesubMouseClicked(evt);
-            }
-        });
+        timesub.setText("Reset");
         timesub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 timesubActionPerformed(evt);
             }
         });
-        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 80, 30));
+        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 80, 30));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(255, 153, 0));
@@ -1135,22 +1142,19 @@ public class Admindashboard extends javax.swing.JFrame {
         }
 
         jPanel10.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 570, 100));
+        jPanel10.add(viewCidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, -1));
+        jPanel10.add(viewMidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, -1));
 
-        sub1name1.setEnabled(false);
-        sub1name1.addActionListener(new java.awt.event.ActionListener() {
+        timesub1.setBackground(new java.awt.Color(255, 51, 51));
+        timesub1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        timesub1.setForeground(new java.awt.Color(255, 255, 255));
+        timesub1.setText("Search");
+        timesub1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub1name1ActionPerformed(evt);
+                timesub1ActionPerformed(evt);
             }
         });
-        jPanel10.add(sub1name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 130, -1));
-
-        sub1name2.setEnabled(false);
-        sub1name2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sub1name2ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(sub1name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
+        jPanel10.add(timesub1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 80, 30));
 
         jTabbedPane2.addTab("View Maintanance", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/timetableListr.png")), jPanel10); // NOI18N
 
@@ -1326,7 +1330,7 @@ public class Admindashboard extends javax.swing.JFrame {
         CardPri4.setLayout(CardPri4Layout);
         CardPri4Layout.setHorizontalGroup(
             CardPri4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
         );
         CardPri4Layout.setVerticalGroup(
             CardPri4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1750,11 +1754,11 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jLabel60.setText("MR");
 
-        jLabel62.setText("Ashan Indarajith");
+        cusname.setText("Ashan Indarajith");
 
-        jLabel63.setText("No120, Kesbewa Road,");
+        cusad1.setText("No120, Kesbewa Road,");
 
-        jLabel64.setText("Piliyandala");
+        cusad2.setText("Piliyandala");
 
         jLabel65.setText("FROM:");
 
@@ -1806,12 +1810,12 @@ public class Admindashboard extends javax.swing.JFrame {
                 .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(InvoiceLayout.createSequentialGroup()
                         .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel64)
-                            .addComponent(jLabel63)
+                            .addComponent(cusad2)
+                            .addComponent(cusad1)
                             .addGroup(InvoiceLayout.createSequentialGroup()
                                 .addComponent(jLabel60)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel62))
+                                .addComponent(cusname))
                             .addComponent(jLabel59))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1850,11 +1854,11 @@ public class Admindashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel60)
-                            .addComponent(jLabel62))
+                            .addComponent(cusname))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel63)
+                        .addComponent(cusad1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel64))
+                        .addComponent(cusad2))
                     .addGroup(InvoiceLayout.createSequentialGroup()
                         .addComponent(jLabel65)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2084,18 +2088,39 @@ public void admin_setting(){
         
         txtRegNo.setText(user.getID());
         txtFName.setText(user.getfName());
-        txtLName.setText(user.getlName());
+        txtLName1.setText(user.getlName());
+        txtEmail.setText(user.getlName());
         txtAddress.setText(user.getAddressl1());
         txtaddress2.setText(user.getAddressl2());
         txtCity2.setText(user.getCity());
         txtDOB.setText(user.getNIC());
         adGender.setSelectedItem(user.getGender());
+        txtEmail.setText(user.getEmail());
         txtPhone.setText(String.valueOf(user.getContactno()));
         txtRegNo.requestFocus();
 
 }
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
-                    
+        if(!(txtRegNo.getText().equals("")&&txtFName.getText().equals("")&&txtEmail.getText().equals("")&&txtAddress.getText().equals("")&&txtaddress2.getText().equals("")&&txtCity2.getText().equals("")&&txtDOB.getText().equals("")&&txtPhone.getText().equals("")&&txtLName1.getText().equals("")&&txtEmail.getText().equals(""))){
+            User user = new User();
+            user.setID(txtRegNo.getText());
+            user.setfName(txtFName.getText());
+            user.setlName(txtLName1.getText());
+            user.setAddressl1(txtAddress.getText());
+            user.setAddressl2(txtaddress2.getText());
+            user.setCity(txtCity2.getText());
+            user.setNIC(txtDOB.getText());
+            user.setEmail(txtEmail.getText());
+            user.setContactno(Integer.parseInt(txtPhone.getText()));
+            user.setGender((String)adGender.getSelectedItem());
+
+            UserImp userImp = new UserImp();
+            userImp.Update(user,"admin");
+            Load();
+        
+         }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
     }//GEN-LAST:event_AdUpdateActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
@@ -2188,6 +2213,7 @@ public void admin_setting(){
          cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetableMouseClicked
 
+
     private void tdepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdepActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tdepActionPerformed
@@ -2221,8 +2247,9 @@ public void admin_setting(){
         
     }//GEN-LAST:event_timesubMouseClicked
 
+
     private void timesubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesubActionPerformed
-        // TODO add your handling code here:
+        Load();
     }//GEN-LAST:event_timesubActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -2239,7 +2266,13 @@ public void admin_setting(){
 
             CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
             carmaintananceImp.Add(carmaintanance);
-            //Load();
+            Load();
+            midtxt.setText("");
+            reasontxt.setText("");
+            partstxt.setText("");
+            costtxt.setText(""); 
+            carid.setText("");
+            ivoicetxt.setText("");
         
         }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
@@ -2251,9 +2284,90 @@ public void admin_setting(){
         
     }//GEN-LAST:event_jButton7MouseClicked
 
+private void time_table_clear(){
+        ttmonday.setText("");
+        tstues.setText("");
+        tswed.setText("");
+        tsthus.setText("");
+        tsfri.setText("");
+}
+    private void NoticeTbaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoticeTbaleMouseClicked
+        timeTablesView.setText("");         
+        DefaultTableModel df=(DefaultTableModel)NoticeTbale.getModel();
+        int selectedIndex=NoticeTbale.getSelectedRow();
+        String NoticeID=(df.getValueAt(selectedIndex, 0).toString());
+        try {
+
+            insert=conn1.prepareStatement("select *  from notice where Notice_ID='"+NoticeID+"'");
+            ResultSet rs= insert.executeQuery();
+   
+            while(rs.next()){
+            
+                   timeTablesView.append("\nDate :- "+rs.getString("DATE")+"\n"+rs.getString("Subject")+"\n\n"+rs.getString("Content")+"\n------------------------------------------------------------");;
+                 }
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_NoticeTbaleMouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        timeTablesView.setText("");
+    }//GEN-LAST:event_jButton6MouseClicked
+private void clear_add_notice(){
+   noticeNum.setText("");
+   noticeTitle.setText("");
+   noticeContent.setText("");
+   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+   LocalDateTime now = LocalDateTime.now();  
+   noticeDate.setText(dtf.format(now));
+
+} 
+    private void addNoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNoticeMouseClicked
+        String noticeNumber=noticeNum.getText();
+        String noticeTl=noticeTitle.getText();
+        String noticeD=noticeDate.getText();
+        String noticeCon=noticeContent.getText();
+
+
+            try {
+
+                insert=conn1.prepareStatement("INSERT INTO notice( Notice_ID, Subject,Content, DATE)VALUES (?,?,?,?)");
+                insert.setString(1, noticeNumber);
+                insert.setString(2, noticeTl);
+                insert.setString(3,noticeCon);
+                insert.setString(4, noticeD);
+
+
+
+                if(noticeNumber.isEmpty() || noticeTl.isEmpty() || noticeCon.isEmpty()){
+
+                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+
+                }else{
+
+                        insert.executeUpdate();
+                        clear_add_notice();
+
+                }
+            
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
+    }//GEN-LAST:event_addNoticeMouseClicked
+
+    private void clearNoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearNoticeMouseClicked
+        clear_add_notice();
+    }//GEN-LAST:event_clearNoticeMouseClicked
+
+
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
        
     }//GEN-LAST:event_jButton5MouseClicked
+
 
     private void jLabel78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel78MouseClicked
        this.setState(ICONIFIED);
@@ -2513,6 +2627,7 @@ public void admin_setting(){
     }//GEN-LAST:event_cadd1ActionPerformed
 
 
+
     private void sub1name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sub1name1ActionPerformed
@@ -2520,6 +2635,7 @@ public void admin_setting(){
     private void sub1name2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sub1name2ActionPerformed
+
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
        if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
@@ -2585,6 +2701,30 @@ public void admin_setting(){
     }//GEN-LAST:event_jButton11ActionPerformed
 
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       String MID = viewMidtxt.getText();
+       CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+       CarMaintanance m = new CarMaintanance();
+       m=carmaintananceImp.Serch(MID);
+       
+       DefaultTableModel UTF=(DefaultTableModel) jTable3.getModel();
+       UTF.setRowCount(0);
+       UTF.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
+       
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void timesub1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesub1ActionPerformed
+        String CID = viewCidtxt.getText();
+       CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+       CarMaintanance m = new CarMaintanance();
+       m=carmaintananceImp.Serch_cid(CID);
+       
+       DefaultTableModel UTF=(DefaultTableModel) jTable3.getModel();
+       UTF.setRowCount(0);
+       UTF.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
+    }//GEN-LAST:event_timesub1ActionPerformed
+
+
     private void menutimetable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetable1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_menutimetable1MouseClicked
@@ -2638,12 +2778,14 @@ public void admin_setting(){
 
         DefaultTableModel UFT=(DefaultTableModel) InvoiceTable.getModel();
         UFT.setRowCount(0);
-       // ReportImp reportImp = new ReportImp();
-       // List<Report> report=reportImp.ReportList();
 
-            UFT.addRow(new Object[]{report.getBookingID(),report.getAdminID(),report.getDate(),report.getText()+report.getAmount()});
+        UFT.addRow(new Object[]{report.getBookingID(),report.getAdminID(),report.getDate(),report.getText()+report.getAmount()});
             
-            TAmountDisplay.setText("RS: "+report.getAmount());
+        TAmountDisplay.setText("RS: "+report.getAmount());
+        
+        cusname.setText(report.getCustomerName());
+        cusad1.setText(report.getAddress1());
+        cusad2.setText(report.getAddress2());
 
     }//GEN-LAST:event_Csearch4ActionPerformed
 
@@ -2750,6 +2892,7 @@ public void admin_setting(){
             UFT.addRow(new Object[]{managecar.getCarID(),managecar.getCname(),managecar.getCtype(),managecar.getCstatus(),managecar.getCprice(),managecar.getCseats(),managecar.getCnoplate(),managecar.getCfuel()});
     }//GEN-LAST:event_jButton1ActionPerformed
 
+
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2802,6 +2945,24 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
             }
         });
     }
+    
+    private void Load(){
+ 
+        DefaultTableModel UFT=(DefaultTableModel) jTable3.getModel();
+        UFT.setRowCount(0);
+        CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+        List<CarMaintanance> mlist=carmaintananceImp.list();
+        for(CarMaintanance m:mlist){
+            UFT.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
+        }
+        
+       
+        
+
+}
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AID;
@@ -2856,8 +3017,11 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JButton cdelete;
     private javax.swing.JTextField costtxt;
     private javax.swing.JButton csearch;
+    private javax.swing.JLabel cusad1;
+    private javax.swing.JLabel cusad2;
     private rojerusan.RSMaterialButtonRectangle cusidsearch;
     private javax.swing.JTextField cusidtxt;
+    private javax.swing.JLabel cusname;
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JTextField drivertxt;
@@ -2930,9 +3094,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
@@ -2968,6 +3129,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -3002,19 +3164,27 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField reasontxt;
     private javax.swing.JTextField sdatetxt;
     private javax.swing.JLabel stCount;
+
+    private javax.swing.JTextArea timeTablesView;
+
     private javax.swing.JComboBox statustxt;
     private javax.swing.JTextField sub1name1;
     private javax.swing.JTextField sub1name2;
+
     private javax.swing.JButton timesub;
+    private javax.swing.JButton timesub1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity1;
     private javax.swing.JTextField txtCity2;
     private javax.swing.JTextField txtDOB;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFName;
-    private javax.swing.JTextField txtLName;
+    private javax.swing.JTextField txtLName1;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtRegNo;
     private javax.swing.JTextField txtaddress2;
     private javax.swing.JLabel txtid;
+    private javax.swing.JTextField viewCidtxt;
+    private javax.swing.JTextField viewMidtxt;
     // End of variables declaration//GEN-END:variables
 }

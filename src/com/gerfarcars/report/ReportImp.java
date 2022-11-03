@@ -193,6 +193,19 @@ public class ReportImp implements ReportDAO{
             
  
             JOptionPane.showMessageDialog(null,"New Checkout is added!!");
+            
+            
+           String sql1="Select * from customer where ID='"+report.getCustomerID()+"';";
+                pst1=conn.prepareStatement(sql1);
+                ResultSet rs1;
+                rs1 = pst1.executeQuery();
+            
+                while(rs1.next()){               
+                    report.setCustomerName(rs1.getString("Fname")+" "+rs1.getString("Lname"));
+                    report.setAddress1(rs1.getString("Line1")+", "+rs1.getString("Line2"));
+                    report.setAddress2(rs1.getString("City"));
+                    
+                } 
         } catch (SQLException ex) {
             Logger.getLogger(UserImp.class.getName()).log(Level.SEVERE, null, ex);
         }
