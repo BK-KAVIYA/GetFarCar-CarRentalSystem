@@ -1664,7 +1664,7 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_menutimetableActionPerformed
 
     private void menuuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuuserActionPerformed
-        AdminUserManage aum=new AdminUserManage();
+        DriverDashboard aum=new DriverDashboard();
         aum.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuuserActionPerformed
@@ -1681,7 +1681,6 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-    admin_setting(); 
     cardLayout1.show(CardjPannel,"CardPri2");
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -1696,6 +1695,7 @@ public void admin_onload(String ID){
                 System.exit(0);
         }
     }//GEN-LAST:event_jLabel17MouseClicked
+
 
 public void admin_setting(){
     DriverDashboard driverdahboard = new DriverDashboard();
@@ -1718,6 +1718,7 @@ public void admin_setting(){
 
 
 }
+
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
 
       if(!(fnametxt.getText().equals("")&&lnametxt.getText().equals("")&&idtxt.getText().equals("")&&line1txt.getText().equals("")&&line2txt.getText().equals("")&&citytxt.getText().equals("")&&gendertxt.getText.equals("")&&emailtxt.getText().equals("")&&phonetxt.getText().equals("")&&phonetxt.getText().equals(""))){

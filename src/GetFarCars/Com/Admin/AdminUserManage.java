@@ -197,10 +197,12 @@ public class AdminUserManage extends javax.swing.JFrame {
         priCard4.add(txtNIC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
 
         jLabel30.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("Re-enter the password");
         priCard4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 329, -1, 32));
 
         jLabel31.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("Password");
         priCard4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 252, -1, 32));
 
@@ -231,7 +233,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         });
         priCard4.add(LecUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 107, 40));
 
-        jPanel4.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 102));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 0, 0));
@@ -246,14 +248,15 @@ public class AdminUserManage extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Dcpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Dpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,12 +305,14 @@ public class AdminUserManage extends javax.swing.JFrame {
                 "ID", "F Name", "L Name", "Address ", "City", "Email", "NIC", "Contact"
             }
         ));
-        Jdriver.setColorBackgoundHead(new java.awt.Color(102, 153, 255));
-        Jdriver.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        Jdriver.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        Jdriver.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
+        Jdriver.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        Jdriver.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
+        Jdriver.setColorSelBackgound(new java.awt.Color(0, 0, 102));
         Jdriver.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jdriver.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jdriver.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Jdriver.setSelectionBackground(new java.awt.Color(0, 0, 102));
         Jdriver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JdriverMouseClicked(evt);
@@ -319,7 +324,7 @@ public class AdminUserManage extends javax.swing.JFrame {
             Jdriver.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
 
-        priCard4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 670, 140));
+        priCard4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 670, 130));
 
         jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel33.setText("Email");
@@ -401,20 +406,23 @@ public class AdminUserManage extends javax.swing.JFrame {
         priCard1.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 176, 29));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Password");
         priCard1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 252, -1, 32));
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Re-enter the password");
         priCard1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 329, -1, 32));
 
+        Csearch.setBackground(new java.awt.Color(0, 0, 102));
         Csearch.setText("Search");
         Csearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CsearchActionPerformed(evt);
             }
         });
-        priCard1.add(Csearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 90, 40));
+        priCard1.add(Csearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 90, 40));
 
         cusTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -426,9 +434,9 @@ public class AdminUserManage extends javax.swing.JFrame {
                 "ID", "F Name", "L Name", "Address ", "City", "Email", "NIC", "Contact"
             }
         ));
-        cusTable.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
-        cusTable.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        cusTable.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        cusTable.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
+        cusTable.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        cusTable.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
         cusTable.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cusTable.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cusTable.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -440,23 +448,25 @@ public class AdminUserManage extends javax.swing.JFrame {
 
         priCard1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 670, 110));
 
+        StDelete.setBackground(new java.awt.Color(0, 0, 102));
         StDelete.setText("Delete");
         StDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StDeleteActionPerformed(evt);
             }
         });
-        priCard1.add(StDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 107, 40));
+        priCard1.add(StDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 440, 107, 40));
 
+        StUpdate.setBackground(new java.awt.Color(0, 0, 102));
         StUpdate.setText("Update");
         StUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StUpdateActionPerformed(evt);
             }
         });
-        priCard1.add(StUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 107, 40));
+        priCard1.add(StUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, 107, 40));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 0, 0));
@@ -466,6 +476,8 @@ public class AdminUserManage extends javax.swing.JFrame {
 
         Cpwd.setText("Cpwd");
 
+        ShowPassword.setBackground(new java.awt.Color(0, 0, 102));
+        ShowPassword.setForeground(new java.awt.Color(255, 255, 255));
         ShowPassword.setText(" Show Password");
         ShowPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -478,15 +490,17 @@ public class AdminUserManage extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ShowPassword)
-                    .addComponent(Ccpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ShowPassword)
+                            .addComponent(Ccpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Cpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -494,14 +508,14 @@ public class AdminUserManage extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(37, 37, 37)
                 .addComponent(Cpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(Ccpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ShowPassword)
                 .addContainerGap())
         );
 
-        priCard1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 220, 180));
+        priCard1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 220, 190));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/minimize.png"))); // NOI18N
         jLabel36.setText("jLabel29");
@@ -521,13 +535,14 @@ public class AdminUserManage extends javax.swing.JFrame {
         });
         priCard1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, -1));
 
+        StAdd1.setBackground(new java.awt.Color(0, 0, 102));
         StAdd1.setText("Add");
         StAdd1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StAdd1ActionPerformed(evt);
             }
         });
-        priCard1.add(StAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 90, 40));
+        priCard1.add(StAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 90, 40));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel14.setText("Adress Line 2");
@@ -602,9 +617,7 @@ public class AdminUserManage extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

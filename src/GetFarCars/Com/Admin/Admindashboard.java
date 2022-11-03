@@ -7,6 +7,7 @@ package GetFarCars.Com.Admin;
 
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
+import com.gerfarcars.report.CalAmount;
 import com.gerfarcars.report.Report;
 import com.gerfarcars.report.ReportImp;
 import com.getfarcar.booking.Booking;
@@ -43,10 +44,6 @@ import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-
-import java.util.Vector;
-
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -212,9 +209,8 @@ public class Admindashboard extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        viewCidtxt = new javax.swing.JTextField();
-        viewMidtxt = new javax.swing.JTextField();
-        timesub1 = new javax.swing.JButton();
+        sub1name1 = new javax.swing.JTextField();
+        sub1name2 = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -1088,23 +1084,28 @@ public class Admindashboard extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Search");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
             }
         });
-        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 80, 30));
+        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 80, 30));
 
         timesub.setBackground(new java.awt.Color(255, 51, 51));
         timesub.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         timesub.setForeground(new java.awt.Color(255, 255, 255));
-        timesub.setText("Reset");
+        timesub.setText("Search");
+        timesub.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                timesubMouseClicked(evt);
+            }
+        });
         timesub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 timesubActionPerformed(evt);
             }
         });
-        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 80, 30));
+        jPanel10.add(timesub, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 80, 30));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(255, 153, 0));
@@ -1142,19 +1143,22 @@ public class Admindashboard extends javax.swing.JFrame {
         }
 
         jPanel10.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 570, 100));
-        jPanel10.add(viewCidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, -1));
-        jPanel10.add(viewMidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, -1));
 
-        timesub1.setBackground(new java.awt.Color(255, 51, 51));
-        timesub1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        timesub1.setForeground(new java.awt.Color(255, 255, 255));
-        timesub1.setText("Search");
-        timesub1.addActionListener(new java.awt.event.ActionListener() {
+        sub1name1.setEnabled(false);
+        sub1name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timesub1ActionPerformed(evt);
+                sub1name1ActionPerformed(evt);
             }
         });
-        jPanel10.add(timesub1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 80, 30));
+        jPanel10.add(sub1name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 130, -1));
+
+        sub1name2.setEnabled(false);
+        sub1name2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub1name2ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(sub1name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
 
         jTabbedPane2.addTab("View Maintanance", new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/timetableListr.png")), jPanel10); // NOI18N
 
@@ -2213,7 +2217,6 @@ public void admin_setting(){
          cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetableMouseClicked
 
-
     private void tdepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdepActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tdepActionPerformed
@@ -2247,9 +2250,8 @@ public void admin_setting(){
         
     }//GEN-LAST:event_timesubMouseClicked
 
-
     private void timesubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesubActionPerformed
-        Load();
+        // TODO add your handling code here:
     }//GEN-LAST:event_timesubActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -2266,13 +2268,7 @@ public void admin_setting(){
 
             CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
             carmaintananceImp.Add(carmaintanance);
-            Load();
-            midtxt.setText("");
-            reasontxt.setText("");
-            partstxt.setText("");
-            costtxt.setText(""); 
-            carid.setText("");
-            ivoicetxt.setText("");
+            //Load();
         
         }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
@@ -2284,90 +2280,9 @@ public void admin_setting(){
         
     }//GEN-LAST:event_jButton7MouseClicked
 
-private void time_table_clear(){
-        ttmonday.setText("");
-        tstues.setText("");
-        tswed.setText("");
-        tsthus.setText("");
-        tsfri.setText("");
-}
-    private void NoticeTbaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoticeTbaleMouseClicked
-        timeTablesView.setText("");         
-        DefaultTableModel df=(DefaultTableModel)NoticeTbale.getModel();
-        int selectedIndex=NoticeTbale.getSelectedRow();
-        String NoticeID=(df.getValueAt(selectedIndex, 0).toString());
-        try {
-
-            insert=conn1.prepareStatement("select *  from notice where Notice_ID='"+NoticeID+"'");
-            ResultSet rs= insert.executeQuery();
-   
-            while(rs.next()){
-            
-                   timeTablesView.append("\nDate :- "+rs.getString("DATE")+"\n"+rs.getString("Subject")+"\n\n"+rs.getString("Content")+"\n------------------------------------------------------------");;
-                 }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_NoticeTbaleMouseClicked
-
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        timeTablesView.setText("");
-    }//GEN-LAST:event_jButton6MouseClicked
-private void clear_add_notice(){
-   noticeNum.setText("");
-   noticeTitle.setText("");
-   noticeContent.setText("");
-   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-   LocalDateTime now = LocalDateTime.now();  
-   noticeDate.setText(dtf.format(now));
-
-} 
-    private void addNoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNoticeMouseClicked
-        String noticeNumber=noticeNum.getText();
-        String noticeTl=noticeTitle.getText();
-        String noticeD=noticeDate.getText();
-        String noticeCon=noticeContent.getText();
-
-
-            try {
-
-                insert=conn1.prepareStatement("INSERT INTO notice( Notice_ID, Subject,Content, DATE)VALUES (?,?,?,?)");
-                insert.setString(1, noticeNumber);
-                insert.setString(2, noticeTl);
-                insert.setString(3,noticeCon);
-                insert.setString(4, noticeD);
-
-
-
-                if(noticeNumber.isEmpty() || noticeTl.isEmpty() || noticeCon.isEmpty()){
-
-                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
-
-                }else{
-
-                        insert.executeUpdate();
-                        clear_add_notice();
-
-                }
-            
-
-                } catch (SQLException ex) {
-                    Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-                }
-    }//GEN-LAST:event_addNoticeMouseClicked
-
-    private void clearNoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearNoticeMouseClicked
-        clear_add_notice();
-    }//GEN-LAST:event_clearNoticeMouseClicked
-
-
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
        
     }//GEN-LAST:event_jButton5MouseClicked
-
 
     private void jLabel78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel78MouseClicked
        this.setState(ICONIFIED);
@@ -2438,7 +2353,7 @@ private void clear_add_notice(){
         String CID=bookingidtxt.getText();
         BookingImp bookingimp = new BookingImp();
         Booking booking = new Booking();    
-        booking=bookingimp.Search(BID);
+        booking=bookingimp.Search(CID);
         
         DefaultTableModel UFT=(DefaultTableModel) bookingtable.getModel();
         UFT.setRowCount(0);
@@ -2453,7 +2368,7 @@ private void clear_add_notice(){
     }//GEN-LAST:event_cusidsearchActionPerformed
 
     private void booking_id_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_id_searchActionPerformed
-         String BID=bookingidtxt.getText();
+        String BID=bookingidtxt.getText();
         BookingImp bookingimp = new BookingImp();
         Booking booking = new Booking();    
         booking=bookingimp.Search(BID);
@@ -2495,9 +2410,9 @@ private void clear_add_notice(){
             report.setCustomerID(customertxt.getText());
 
             
-             BID1.setText(report.getBookingID());
-             CID1.setText(report.getCustomerID());
-             AID.setText(report.getAdminID());     
+            BID1.setText(report.getBookingID());
+            CID1.setText(report.getCustomerID());
+            AID.setText(report.getAdminID());     
 
 
             
@@ -2505,6 +2420,12 @@ private void clear_add_notice(){
             bookingImp.Add(booking);
             Load();
             
+            CalAmount calAmount = new CalAmount();
+            calAmount.setCarID(cartxt.getText());
+            calAmount.setStartDate(sdatetxt.getText());
+            calAmount.setEndDate(edatetxt.getText());
+            double tAmount = calAmount.calAmount();
+            Amount.setText(String.valueOf(tAmount));
             
 
         }else{
@@ -2627,7 +2548,6 @@ private void clear_add_notice(){
     }//GEN-LAST:event_cadd1ActionPerformed
 
 
-
     private void sub1name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sub1name1ActionPerformed
@@ -2635,7 +2555,6 @@ private void clear_add_notice(){
     private void sub1name2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1name2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sub1name2ActionPerformed
-
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
        if(!(midtxt.getText().equals("")&&reasontxt.getText().equals("")&&partstxt.getText().equals("")&&costtxt.getText().equals("")&&carid.getText().equals("")&&ivoicetxt.getText().equals(""))){
@@ -2701,30 +2620,6 @@ private void clear_add_notice(){
     }//GEN-LAST:event_jButton11ActionPerformed
 
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       String MID = viewMidtxt.getText();
-       CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
-       CarMaintanance m = new CarMaintanance();
-       m=carmaintananceImp.Serch(MID);
-       
-       DefaultTableModel UTF=(DefaultTableModel) jTable3.getModel();
-       UTF.setRowCount(0);
-       UTF.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
-       
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void timesub1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesub1ActionPerformed
-        String CID = viewCidtxt.getText();
-       CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
-       CarMaintanance m = new CarMaintanance();
-       m=carmaintananceImp.Serch_cid(CID);
-       
-       DefaultTableModel UTF=(DefaultTableModel) jTable3.getModel();
-       UTF.setRowCount(0);
-       UTF.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
-    }//GEN-LAST:event_timesub1ActionPerformed
-
-
     private void menutimetable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetable1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_menutimetable1MouseClicked
@@ -2767,7 +2662,7 @@ private void clear_add_notice(){
             report.setCustomerID(CID1.getText());
             report.setAdminID(AID.getText());
             report.setDate(Date.getText());
-            report.setAmount(Integer.parseInt(Amount.getText()));
+            report.setAmount(Double.parseDouble(Amount.getText()));
             ReportImp reportImp = new ReportImp();
             reportImp.Add(report);
             Load();
@@ -2783,9 +2678,17 @@ private void clear_add_notice(){
             
         TAmountDisplay.setText("RS: "+report.getAmount());
         
-        cusname.setText(report.getCustomerName());
-        cusad1.setText(report.getAddress1());
-        cusad2.setText(report.getAddress2());
+  
+        ReportImp reportImp1 = new ReportImp();
+        List<Report> report2=reportImp1.InvoiceList(CID1.getText());
+        
+        for(Report repo:report2){
+            cusname.setText(repo.getCustomerName());
+            cusad1.setText(repo.getAddress1());
+            cusad2.setText(repo.getAddress2());
+        }
+
+        
 
     }//GEN-LAST:event_Csearch4ActionPerformed
 
@@ -2892,7 +2795,6 @@ private void clear_add_notice(){
             UFT.addRow(new Object[]{managecar.getCarID(),managecar.getCname(),managecar.getCtype(),managecar.getCstatus(),managecar.getCprice(),managecar.getCseats(),managecar.getCnoplate(),managecar.getCfuel()});
     }//GEN-LAST:event_jButton1ActionPerformed
 
-
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
           
@@ -2945,24 +2847,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
             }
         });
     }
-    
-    private void Load(){
- 
-        DefaultTableModel UFT=(DefaultTableModel) jTable3.getModel();
-        UFT.setRowCount(0);
-        CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
-        List<CarMaintanance> mlist=carmaintananceImp.list();
-        for(CarMaintanance m:mlist){
-            UFT.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
-        }
-        
-       
-        
-
-}
-    
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AID;
@@ -3164,15 +3048,10 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField reasontxt;
     private javax.swing.JTextField sdatetxt;
     private javax.swing.JLabel stCount;
-
-    private javax.swing.JTextArea timeTablesView;
-
     private javax.swing.JComboBox statustxt;
     private javax.swing.JTextField sub1name1;
     private javax.swing.JTextField sub1name2;
-
     private javax.swing.JButton timesub;
-    private javax.swing.JButton timesub1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity1;
     private javax.swing.JTextField txtCity2;
@@ -3184,7 +3063,5 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField txtRegNo;
     private javax.swing.JTextField txtaddress2;
     private javax.swing.JLabel txtid;
-    private javax.swing.JTextField viewCidtxt;
-    private javax.swing.JTextField viewMidtxt;
     // End of variables declaration//GEN-END:variables
 }
