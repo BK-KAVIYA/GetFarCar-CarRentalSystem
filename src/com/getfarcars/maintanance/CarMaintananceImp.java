@@ -141,8 +141,8 @@ public class CarMaintananceImp implements MaintananceDAO{
             
             while(rs.next()){
                 CarMaintanance carmaintanance = new CarMaintanance();
-                carmaintanance.setCarMaintananceRolle(rs.getInt("CarMaintananceRolleID"));   ------------------------------------++++++++
-                carmaintanance.setUserType(rs.getString("UserType"));              ------------------------------------+++++++++++++***
+                carmaintanance.setCarMaintananceRolle(rs.getInt("CarMaintananceRolleID")); 
+                carmaintanance.setUserType(rs.getString("UserType"));
                 list.add(carmaintanance);
             
             }

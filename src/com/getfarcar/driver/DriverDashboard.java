@@ -5,6 +5,7 @@
 package com.getfarcar.driver;
 
 
+import GetFarCars.Com.Admin.AdminUserManage;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
 import com.getfarcar.booking.Booking;
@@ -100,16 +101,15 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        txtRegNo = new javax.swing.JTextField();
-        selGender = new javax.swing.JComboBox<String>();
+        idtxt = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        txtLName = new javax.swing.JTextField();
+        lnametxt = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        txtFName = new javax.swing.JTextField();
-        txtAddress = new javax.swing.JTextField();
+        fnametxt = new javax.swing.JTextField();
+        line1txt = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        txtCity = new javax.swing.JTextField();
+        line2txt = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -120,13 +120,18 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         ShowPassword = new javax.swing.JCheckBox();
-        txtPhone = new javax.swing.JTextField();
-        txtDOB = new javax.swing.JTextField();
+        nictxt = new javax.swing.JTextField();
+        citytxt = new javax.swing.JTextField();
         AdUpdate = new rojerusan.RSMaterialButtonRectangle();
         lblimage = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         txtid = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        phonetxt = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        emailtxt = new javax.swing.JTextField();
+        drivergender = new javax.swing.JComboBox();
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -510,7 +515,7 @@ public class DriverDashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -543,43 +548,40 @@ public class DriverDashboard extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("Registration Number");
-        CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 243, 143, 29));
-        CardPri2.add(txtRegNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 241, 260, 32));
-
-        selGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        CardPri2.add(selGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 111, 186, 28));
+        CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 143, 29));
+        CardPri2.add(idtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 260, 32));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
-        CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 73, -1, 32));
-        CardPri2.add(txtLName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 194, 260, 29));
+        CardPri2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, 32));
+        CardPri2.add(lnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 260, 29));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setText("Last Name");
-        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 159, -1, 32));
+        CardPri2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 32));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("First Name");
-        CardPri2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 70, -1, 32));
-        CardPri2.add(txtFName, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 106, 260, 29));
-        CardPri2.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 323, 398, 32));
+        CardPri2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, 32));
+        CardPri2.add(fnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 260, 29));
+        CardPri2.add(line1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 170, 32));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("Adress Line 1");
-        CardPri2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 284, -1, 32));
-        CardPri2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 400, 398, 32));
+        CardPri2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 32));
+        CardPri2.add(line2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 190, 32));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("Adress Line 2");
-        CardPri2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 361, -1, 32));
+        CardPri2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, 32));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel26.setText("Date of Birth");
-        CardPri2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 430, -1, 32));
+        jLabel26.setText("City");
+        CardPri2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, 32));
 
         jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel27.setText("Phone Number");
-        CardPri2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 430, -1, 32));
+        CardPri2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, -1, 32));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -617,8 +619,8 @@ public class DriverDashboard extends javax.swing.JFrame {
         jPanel3.add(ShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         CardPri2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, 190));
-        CardPri2.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 470, 193, 29));
-        CardPri2.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 470, 176, 29));
+        CardPri2.add(nictxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 180, 29));
+        CardPri2.add(citytxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 176, 29));
 
         AdUpdate.setText("Update");
         AdUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -651,6 +653,19 @@ public class DriverDashboard extends javax.swing.JFrame {
 
         txtid.setText("Image name");
         CardPri2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 120, 20));
+
+        jLabel55.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel55.setText("NIC");
+        CardPri2.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, 32));
+        CardPri2.add(phonetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 176, 29));
+
+        jLabel56.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel56.setText("Email");
+        CardPri2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 32));
+        CardPri2.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 180, 29));
+
+        drivergender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        CardPri2.add(drivergender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 140, -1));
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1666,7 +1681,7 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-    admin_setting(); 
+    Driver_setting(); 
     cardLayout1.show(CardjPannel,"CardPri2");
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -1682,112 +1697,49 @@ public void admin_onload(String ID){
         }
     }//GEN-LAST:event_jLabel17MouseClicked
 
-public void admin_setting(){
-    /*int c;
-    try {
+public void Driver_setting(){
+    DriverDashboard driverdahboard = new DriverDashboard();
+        String UID=getUser();
+        UserImp userImp = new UserImp();
+        User user = new User();     
+        user=userImp.Serch(UID);
+        
+        fnametxt.setText(user.getfName());
+        lnametxt.setText(user.getlName());
+        idtxt.setText(user.getID());
+        line1txt.setText(user.getAddressl1());
+        line2txt.setText(user.getAddressl2());
+        citytxt.setText(user.getCity());
+        drivergender.setSelectedItem(user.getGender());
+        emailtxt.setText(user.getEmail());
+        phonetxt.setText(String.valueOf(user.getContactno()));
+        nictxt.setText(user.getNIC());
+        fnametxt.requestFocus();
 
-            insert=conn1.prepareStatement("select *  from admin where admin_id='"+userID+"'");
-            ResultSet rs= insert.executeQuery();
-            ResultSetMetaData Rss=rs.getMetaData();
-            c=Rss.getColumnCount();
-
-            while(rs.next()){
-                for(int a=1;a<c;a++){
-                    txtRegNo.setText(rs.getString("admin_id"));
-                    txtFName.setText(rs.getString("f_name"));
-                    txtLName.setText(rs.getString("l_name"));
-                    txtAddress.setText(rs.getString("address_l1"));
-                    txtCity.setText(rs.getString("address_l2"));
-
-                    String gen = (String)rs.getString("gender");
-                    //selGender.addItem(gen);
-                    selGender.setSelectedItem(gen);
-
-                    txtDOB.setText(rs.getString("dob"));
-                    txtPhone.setText(rs.getString("phone_num")); 
-
-                    String status = (String)rs.getString("admin_role");
-                    selStatus.setSelectedItem(status);
-
-                    byte[] imagedata=rs.getBytes("picture_path");
-                    format=new ImageIcon(imagedata);
-                    Image mm=format.getImage();
-                    Image img2=mm.getScaledInstance(lblimage.getWidth(),lblimage.getHeight(), Image.SCALE_SMOOTH);
-                    ImageIcon image=new ImageIcon(img2);
-                    lblimage.setIcon(image);
- 
-                }
-            }
-
-            insert=conn1.prepareStatement("select *  from log_user where Uname='"+userID+"'");
-            ResultSet rs1= insert.executeQuery();
-            ResultSetMetaData Rss1=rs.getMetaData();
-            c=Rss1.getColumnCount();
-
-            while(rs1.next()){
-                for(int a=1;a<c;a++){
-                    adPwd.setText(rs1.getString("Password"));
-                    adCPwd.setText(rs1.getString("Password"));
-                 }
-            }
-
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
 
 }
     private void AdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdUpdateActionPerformed
 
-      /*  try {
-            String RegNO=txtRegNo.getText();
-            String FName=txtFName.getText();
-            String LName=txtLName.getText();
-            String Address=txtAddress.getText();
-            String City=txtCity.getText();
-            String Gender=(String)selGender.getSelectedItem();
-            String DOB=txtDOB.getText();
-            String Telephone=txtPhone.getText();
-            String Type=(String)selStatus.getSelectedItem();
-            String id=txtid.getText(); 
+      if(!(fnametxt.getText().equals("")&&lnametxt.getText().equals("")&&idtxt.getText().equals("")&&line1txt.getText().equals("")&&line2txt.getText().equals("")&&citytxt.getText().equals("")&&emailtxt.getText().equals("")&&phonetxt.getText().equals("")&&nictxt.getText().equals(""))){
+            User user = new User();
+            user.setID(idtxt.getText());
+            user.setfName(fnametxt.getText());
+            user.setlName(lnametxt.getText());
+            user.setAddressl1(line1txt.getText());
+            user.setAddressl2(line2txt.getText());
+            user.setCity(citytxt.getText());
+            user.setNIC(nictxt.getText());
+            user.setEmail(emailtxt.getText());
+            user.setContactno(Integer.parseInt(phonetxt.getText()));
+            user.setGender((String)drivergender.getSelectedItem());
 
-
-            insert=conn1.prepareStatement("update  admin set admin_id =?,f_name=?,l_name=?,address_l1=?,address_l2=?,gender=?,dob=?,phone_num=?,admin_role=?,picture_path=? where admin_id=?");
-            insert.setString(1, RegNO);
-            insert.setString(2, FName);
-            insert.setString(3, LName);
-            insert.setString(4,Address );
-            insert.setString(5, City);
-            insert.setString(6, Gender);
-            insert.setString(7, DOB);
-            insert.setString(8,Telephone );
-            insert.setString(9,Type );
-            insert.setBytes(10, pimage);
-            insert.setString(11, RegNO);
-
-
-            String AdPwd=adPwd.getText();
-            String AdCpwd=adCPwd.getText();
-            update=conn1.prepareStatement("update  log_user set Password=? where Uname=?");
-            update.setString(1, AdPwd);
-            update.setString(2, RegNO);
-
-        if(RegNO.isEmpty() || FName.isEmpty() || LName.isEmpty() || Address.isEmpty() || City.isEmpty() || Gender.isEmpty() || DOB.isEmpty() || Telephone.isEmpty() || AdPwd.isEmpty() || AdCpwd.isEmpty()){
-            JOptionPane.showMessageDialog(this,"Fill the all the fields!!");
-         }else{
-                if(AdPwd.equals(AdCpwd)){
-                    insert.executeUpdate();
-                    update.executeUpdate();
-                    JOptionPane.showMessageDialog(this,"Profile Update!!");
-                }else{
-                    JOptionPane.showMessageDialog(this,"Password not matched!!");
-                }
-                    
-        }
+            UserImp userImp = new UserImp();
+            userImp.Update(user,"driver");
             
-        } catch (SQLException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        
+         }else{
+            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+        }
     }//GEN-LAST:event_AdUpdateActionPerformed
 
    
@@ -2172,13 +2124,13 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admindashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DriverDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -2227,12 +2179,17 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField carid;
     private javax.swing.JTextField cartxt;
     private javax.swing.JButton cdelete;
+    private javax.swing.JTextField citytxt;
     private javax.swing.JTextField costtxt;
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JLabel demoCount;
+    private javax.swing.JComboBox drivergender;
     private javax.swing.JTextField drivertxt;
     private javax.swing.JTextField edatetxt;
+    private javax.swing.JTextField emailtxt;
+    private javax.swing.JTextField fnametxt;
+    private javax.swing.JTextField idtxt;
     private javax.swing.JTextField ivoicetxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
@@ -2292,6 +2249,8 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
@@ -2343,28 +2302,25 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblimage;
     private javax.swing.JLabel lecCount;
+    private javax.swing.JTextField line1txt;
+    private javax.swing.JTextField line2txt;
+    private javax.swing.JTextField lnametxt;
     private rojerusan.RSMaterialButtonRectangle manage_booking_search;
     private rojerusan.RSMaterialButtonRectangle menucourse;
     private rojerusan.RSMaterialButtonRectangle menunotice;
     private rojerusan.RSMaterialButtonRectangle menutimetable;
     private rojerusan.RSMaterialButtonRectangle menuuser;
     private javax.swing.JTextField midtxt;
+    private javax.swing.JTextField nictxt;
     private javax.swing.JTextField partstxt;
+    private javax.swing.JTextField phonetxt;
     private javax.swing.JTextField reasontxt;
     private javax.swing.JTextField sdatetxt;
-    private javax.swing.JComboBox<String> selGender;
     private javax.swing.JLabel stCount;
     private javax.swing.JComboBox statustxt;
     private javax.swing.JTextField sub1name1;
     private javax.swing.JTextField sub1name2;
     private javax.swing.JButton timesub;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtCity;
-    private javax.swing.JTextField txtDOB;
-    private javax.swing.JTextField txtFName;
-    private javax.swing.JTextField txtLName;
-    private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtRegNo;
     private javax.swing.JLabel txtid;
     // End of variables declaration//GEN-END:variables
 }
