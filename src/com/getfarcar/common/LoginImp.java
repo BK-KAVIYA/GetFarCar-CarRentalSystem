@@ -2,7 +2,8 @@
 package com.getfarcar.common;
 
 import GetFarCars.Com.Admin.AdminUserManage;
-import GetFarCars.Com.Admin.DriverDashboard;
+import GetFarCars.Com.Admin.Admindashboard;
+import com.getfarcar.driver.DriverDashboard;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
 import java.sql.Connection;
@@ -24,14 +25,24 @@ public class LoginImp implements LoginDAO{
         LoginPageGetFarCars loginPage = new LoginPageGetFarCars();
         String sql="SELECT * FROM user WHERE user_id='"+logins.getID()+"';";
         try {
-            pst=conn.prepareStatement .show();
+            pst=conn.prepareStatement(sql);
+            ResultSet rs=pst.executeQuery();
+            
+            while(rs.next()){
+                if(rs.getString("Password").equals(logins.getPassword())){
+                    switch(rs.getInt("Role")){
+                        case 1:
+                            Admindashboard admindashboard = new Admindashboard();
+                            admindashboard.setUser(logins.getID());
+                            loginPage.dispose();
+                            admindashboard.show();
                             break;
                         case 2:
-                            /*SellerInterface sellerInterface = new SellerInterface();
-                            sellerInterface.Load(logins.getID());
-                            sellerInterface.setUserID(logins.getID());
+                            DriverDashboard driverdashboard = new DriverDashboard();
+                            //driverdashboard.Load(logins.getID());
+                            driverdashboard.setUser(logins.getID());
                             loginPage.dispose();
-                            sellerInterface.show();*/
+                            driverdashboard.show();
                             
                             break;
                         default :
