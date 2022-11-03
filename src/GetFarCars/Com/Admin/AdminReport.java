@@ -368,6 +368,7 @@ public class AdminReport extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 30, 40));
 
         rSMaterialButtonRectangle2.setBackground(new java.awt.Color(102, 153, 255));
+        rSMaterialButtonRectangle2.setForeground(new java.awt.Color(0, 0, 102));
         rSMaterialButtonRectangle2.setText("TRANSACTION REPORT");
         rSMaterialButtonRectangle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -377,6 +378,7 @@ public class AdminReport extends javax.swing.JFrame {
         jPanel3.add(rSMaterialButtonRectangle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 200, 50));
 
         rSMaterialButtonRectangle4.setBackground(new java.awt.Color(102, 153, 255));
+        rSMaterialButtonRectangle4.setForeground(new java.awt.Color(0, 0, 102));
         rSMaterialButtonRectangle4.setText("SUMMARY REPORT");
         rSMaterialButtonRectangle4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
