@@ -11,4 +11,22 @@ package com.getfarcar.driver;
  */
 public class Driver {
     
+     private String DID;
+    private String fname;
+    private String lName;
+    private String Addressl1;
+    private String Addressl2;
+    private String City;
+    private String Gender;
+    private String Email;
+    private String NIC;
+    private String UserType;
+    private String password;
+    private int UserRolle;
+    private int Contactno;
+    
+    
+    
+    
+    
 }

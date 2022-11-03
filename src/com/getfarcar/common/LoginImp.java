@@ -38,11 +38,11 @@ public class LoginImp implements LoginDAO{
                             admindashboard.show();
                             break;
                         case 2:
-                            /*SellerInterface sellerInterface = new SellerInterface();
-                            sellerInterface.Load(logins.getID());
-                            sellerInterface.setUserID(logins.getID());
+                            DriverDashboard driverdashboard = new DriverDashboard();
+                            //driverdashboard.Load(logins.getID());
+                            driverdashboard.setUser(logins.getID());
                             loginPage.dispose();
-                            sellerInterface.show();*/
+                            driverdashboard.show();
                             
                             break;
                         default :
