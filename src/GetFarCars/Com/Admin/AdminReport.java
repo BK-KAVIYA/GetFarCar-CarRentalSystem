@@ -272,7 +272,7 @@ public class AdminReport extends javax.swing.JFrame {
         jLabel27.setText("23 Octomber, 2022");
         priCard1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, 20));
 
-        jPanel5.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 102));
 
         jLabel28.setBackground(new java.awt.Color(0, 51, 255));
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -291,11 +291,12 @@ public class AdminReport extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel28)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 24, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        priCard1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 660, 40));
+        priCard1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 660, 50));
 
         ADR1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -307,9 +308,9 @@ public class AdminReport extends javax.swing.JFrame {
                 "Booking ID", "Customer Name", "Car Model", "Start Date", "End Date"
             }
         ));
-        ADR1.setColorBackgoundHead(new java.awt.Color(51, 204, 255));
-        ADR1.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        ADR1.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        ADR1.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
+        ADR1.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        ADR1.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
         ADR1.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ADR1.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ADR1.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -334,7 +335,7 @@ public class AdminReport extends javax.swing.JFrame {
             }
         ));
         CAV.setAltoHead(25);
-        CAV.setColorBackgoundHead(new java.awt.Color(51, 204, 255));
+        CAV.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
         CAV.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
         CAV.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
         CAV.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
