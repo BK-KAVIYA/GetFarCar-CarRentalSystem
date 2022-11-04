@@ -16,7 +16,7 @@ public class Report {
     private String EndDate;   
     private String Date;
     private String Time;
-    private int Amount;
+    private double Amount;
     private int Tcars;
     private int Acars;
 
@@ -148,11 +148,11 @@ public class Report {
         this.Time = Time;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return Amount;
     }
 
-    public void setAmount(int Amount) {
+    public void setAmount(double Amount) {
         this.Amount = Amount;
     }
 

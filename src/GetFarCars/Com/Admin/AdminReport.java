@@ -147,9 +147,9 @@ public class AdminReport extends javax.swing.JFrame {
                 "Invoice No", "Customer Name", "Vehicale Model", "Date ", "Amount"
             }
         ));
-        Ttable.setColorBackgoundHead(new java.awt.Color(51, 153, 255));
-        Ttable.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        Ttable.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        Ttable.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
+        Ttable.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        Ttable.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
         Ttable.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Ttable.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Ttable.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -158,7 +158,7 @@ public class AdminReport extends javax.swing.JFrame {
             Ttable.getColumnModel().getColumn(0).setPreferredWidth(40);
         }
 
-        priCard4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 670, 140));
+        priCard4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 670, 150));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Get_far_cars_logo copy.png"))); // NOI18N
         priCard4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
@@ -179,7 +179,7 @@ public class AdminReport extends javax.swing.JFrame {
         jLabel22.setText("getfarcars@gmail.com");
         priCard4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 102));
 
         jLabel23.setBackground(new java.awt.Color(0, 51, 255));
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -191,9 +191,9 @@ public class AdminReport extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(187, 187, 187)
+                .addGap(186, 186, 186)
                 .addComponent(jLabel23)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,7 +270,7 @@ public class AdminReport extends javax.swing.JFrame {
         jLabel27.setText("23 Octomber, 2022");
         priCard1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, 20));
 
-        jPanel5.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 102));
 
         jLabel28.setBackground(new java.awt.Color(0, 51, 255));
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -289,11 +289,12 @@ public class AdminReport extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel28)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 24, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        priCard1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 660, 40));
+        priCard1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 660, 50));
 
         ADR1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -305,9 +306,9 @@ public class AdminReport extends javax.swing.JFrame {
                 "Booking ID", "Customer Name", "Car Model", "Start Date", "End Date"
             }
         ));
-        ADR1.setColorBackgoundHead(new java.awt.Color(51, 204, 255));
-        ADR1.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        ADR1.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        ADR1.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
+        ADR1.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        ADR1.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
         ADR1.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ADR1.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ADR1.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -332,7 +333,7 @@ public class AdminReport extends javax.swing.JFrame {
             }
         ));
         CAV.setAltoHead(25);
-        CAV.setColorBackgoundHead(new java.awt.Color(51, 204, 255));
+        CAV.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
         CAV.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
         CAV.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
         CAV.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
