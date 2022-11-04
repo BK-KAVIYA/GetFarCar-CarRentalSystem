@@ -421,11 +421,6 @@ public class Admindashboard extends javax.swing.JFrame {
         menutimetable1.setBackground(new java.awt.Color(102, 153, 255));
         menutimetable1.setForeground(new java.awt.Color(0, 0, 102));
         menutimetable1.setText("MAINTANACE");
-        menutimetable1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menutimetable1MouseClicked(evt);
-            }
-        });
         menutimetable1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menutimetable1ActionPerformed(evt);
@@ -2042,6 +2037,15 @@ public class Admindashboard extends javax.swing.JFrame {
             BFT.addRow(new Object[]{booking.getBid(),booking.getStartdate(),booking.getEnddate(),booking.getStatus(),booking.getDeposit(),booking.getCustomerid(),booking.getCarid(),booking.getDriverid()});
         }
         
+          DefaultTableModel UFT1=(DefaultTableModel) jTable3.getModel();
+        UFT1.setRowCount(0);
+        CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
+        List<CarMaintanance> mlist=carmaintananceImp.list();
+        for(CarMaintanance m:mlist){
+            UFT1.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
+        }
+        
+        
    
    
    } 
@@ -2725,12 +2729,8 @@ private void clear_add_notice(){
     }//GEN-LAST:event_timesub1ActionPerformed
 
 
-    private void menutimetable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetable1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menutimetable1MouseClicked
-
     private void menutimetable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menutimetable1ActionPerformed
-        // TODO add your handling code here:
+        cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetable1ActionPerformed
 
     private void menuReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReportActionPerformed
@@ -2946,20 +2946,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
         });
     }
     
-    private void Load(){
  
-        DefaultTableModel UFT=(DefaultTableModel) jTable3.getModel();
-        UFT.setRowCount(0);
-        CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
-        List<CarMaintanance> mlist=carmaintananceImp.list();
-        for(CarMaintanance m:mlist){
-            UFT.addRow(new Object[]{m.getM_ID(),m.getReason(),m.getParts(),m.getCost(),m.getCar_id(),m.getInvoice_id()});
-        }
-        
-       
-        
-
-}
     
     
     
@@ -3016,12 +3003,12 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField cartxt;
     private javax.swing.JButton cdelete;
     private javax.swing.JTextField costtxt;
+    private javax.swing.JButton csearch;
     private javax.swing.JLabel cusad1;
     private javax.swing.JLabel cusad2;
-    private javax.swing.JLabel cusname;
-    private javax.swing.JButton csearch;
     private rojerusan.RSMaterialButtonRectangle cusidsearch;
     private javax.swing.JTextField cusidtxt;
+    private javax.swing.JLabel cusname;
     private javax.swing.JTextField customertxt;
     private javax.swing.JTextField damounttxt;
     private javax.swing.JTextField drivertxt;
@@ -3164,13 +3151,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField reasontxt;
     private javax.swing.JTextField sdatetxt;
     private javax.swing.JLabel stCount;
-
-    private javax.swing.JTextArea timeTablesView;
-
     private javax.swing.JComboBox statustxt;
-    private javax.swing.JTextField sub1name1;
-    private javax.swing.JTextField sub1name2;
-
     private javax.swing.JButton timesub;
     private javax.swing.JButton timesub1;
     private javax.swing.JTextField txtAddress;
