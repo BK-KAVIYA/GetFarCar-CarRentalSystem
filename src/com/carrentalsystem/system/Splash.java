@@ -67,9 +67,6 @@ public class Splash extends javax.swing.JFrame {
             MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(MyprogressLayout.createSequentialGroup()
-                .addComponent(presentage, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(MyprogressLayout.createSequentialGroup()
                 .addGroup(MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MyprogressLayout.createSequentialGroup()
                         .addGap(627, 627, 627)
@@ -83,6 +80,9 @@ public class Splash extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(MyprogressLayout.createSequentialGroup()
+                .addComponent(presentage, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         MyprogressLayout.setVerticalGroup(
             MyprogressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

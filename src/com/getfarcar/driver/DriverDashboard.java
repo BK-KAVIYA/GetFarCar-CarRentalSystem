@@ -5,32 +5,22 @@
 package com.getfarcar.driver;
 
 
-import GetFarCars.Com.Admin.AdminUserManage;
 import com.carrentalsystem.system.DBConnector;
 import com.carrentalsystem.system.LoginPageGetFarCars;
 import com.getfarcar.booking.Booking;
 import com.getfarcar.booking.BookingImp;
 import com.getfarcar.common.User;
 import com.getfarcar.common.UserImp;
-import com.getfarcars.maintanance.CarMaintanance;
-import com.getfarcars.maintanance.CarMaintananceImp;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 import java.util.List;
-import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -132,80 +122,6 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel56 = new javax.swing.JLabel();
         emailtxt = new javax.swing.JTextField();
         drivergender = new javax.swing.JComboBox();
-        CardPri3 = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        ScarId = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        cModel = new javax.swing.JComboBox<String>();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        cName = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        cType = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
-        cStatus = new javax.swing.JTextField();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        cadd = new javax.swing.JButton();
-        jLabel45 = new javax.swing.JLabel();
-        cdelete = new javax.swing.JButton();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        carId = new javax.swing.JTextField();
-        cPrice = new javax.swing.JTextField();
-        cSeats = new javax.swing.JTextField();
-        cNoplate = new javax.swing.JTextField();
-        cFueltype = new javax.swing.JComboBox();
-        cadd1 = new javax.swing.JButton();
-        jLabel78 = new javax.swing.JLabel();
-        jLabel79 = new javax.swing.JLabel();
-        CardPri4 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel47 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        timesub = new javax.swing.JButton();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        sub1name1 = new javax.swing.JTextField();
-        sub1name2 = new javax.swing.JTextField();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel53 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        midtxt = new javax.swing.JTextField();
-        ivoicetxt = new javax.swing.JTextField();
-        reasontxt = new javax.swing.JTextField();
-        partstxt = new javax.swing.JTextField();
-        costtxt = new javax.swing.JTextField();
-        carid = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        Search = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jLabel80 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
-
         CardPri5 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -254,7 +170,7 @@ public class DriverDashboard extends javax.swing.JFrame {
 
         menuuser.setBackground(new java.awt.Color(102, 153, 255));
         menuuser.setForeground(new java.awt.Color(0, 0, 102));
-        menuuser.setText("Manage Users");
+        menuuser.setText("Home");
         menuuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuuserActionPerformed(evt);
@@ -265,9 +181,9 @@ public class DriverDashboard extends javax.swing.JFrame {
         menunotice.setBackground(new java.awt.Color(102, 153, 255));
         menunotice.setForeground(new java.awt.Color(0, 0, 102));
         menunotice.setText("CAR RESERVATION");
-        menunotice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menunoticeActionPerformed(evt);
+        menunotice.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menunoticeMouseClicked(evt);
             }
         });
         jPanel1.add(menunotice, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, 54));
@@ -493,7 +409,7 @@ public class DriverDashboard extends javax.swing.JFrame {
                 jLabel16MouseClicked(evt);
             }
         });
-        CardPri2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 57, 32, -1));
+        CardPri2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 32, -1));
 
         jLabel15.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
         jLabel15.setText("Driver >Settings");
@@ -511,14 +427,6 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("Registration Number");
         CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 143, 29));
-
-        gendertxt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        gendertxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gendertxtActionPerformed(evt);
-            }
-        });
-        CardPri2.add(gendertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 186, 28));
 
         idtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -559,7 +467,7 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel27.setText("Phone Number");
         CardPri2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, -1, 32));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -579,13 +487,17 @@ public class DriverDashboard extends javax.swing.JFrame {
         jPanel3.add(adPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 181, 30));
 
         jLabel32.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Re-enter the Password");
         jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jLabel33.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("Password");
         jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 14, 100, 30));
 
+        ShowPassword.setBackground(new java.awt.Color(0, 0, 102));
+        ShowPassword.setForeground(new java.awt.Color(255, 255, 255));
         ShowPassword.setText(" Show Password");
         ShowPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -598,6 +510,7 @@ public class DriverDashboard extends javax.swing.JFrame {
         CardPri2.add(nictxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 180, 29));
         CardPri2.add(citytxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 176, 29));
 
+        AdUpdate.setBackground(new java.awt.Color(0, 0, 102));
         AdUpdate.setText("Update");
         AdUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -606,9 +519,9 @@ public class DriverDashboard extends javax.swing.JFrame {
         });
         CardPri2.add(AdUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 107, 40));
 
-        lblimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/man-with-beard-avatar-character-isolated-icon-free-vector-removebg-preview-removebg-preview.png"))); // NOI18N
+        lblimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/user1.png"))); // NOI18N
         lblimage.setText("jLabel31");
-        CardPri2.add(lblimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 120, 110));
+        CardPri2.add(lblimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 140, 130));
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/minimize.png"))); // NOI18N
         jLabel30.setText("jLabel29");
@@ -641,7 +554,7 @@ public class DriverDashboard extends javax.swing.JFrame {
         CardPri2.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 180, 29));
 
         drivergender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        CardPri2.add(drivergender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 140, -1));
+        CardPri2.add(drivergender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 160, 30));
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -649,23 +562,21 @@ public class DriverDashboard extends javax.swing.JFrame {
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane3.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane3.setForeground(new java.awt.Color(204, 0, 51));
+        jTabbedPane3.setForeground(new java.awt.Color(0, 0, 102));
         jTabbedPane3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51), new java.awt.Color(255, 0, 51)));
+        jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 102), new java.awt.Color(0, 0, 102), new java.awt.Color(0, 0, 102), new java.awt.Color(0, 0, 102)));
         jPanel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         jLabel72.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel72.setForeground(new java.awt.Color(0, 0, 102));
         jLabel72.setText("Most Recent Bookings");
 
         jLabel84.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel84.setForeground(new java.awt.Color(255, 0, 51));
         jLabel84.setText("Booking ID :");
 
         jLabel85.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel85.setForeground(new java.awt.Color(255, 0, 51));
         jLabel85.setText("Customer ID :");
 
         BIDtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -674,6 +585,7 @@ public class DriverDashboard extends javax.swing.JFrame {
             }
         });
 
+        Csearch2.setBackground(new java.awt.Color(0, 0, 102));
         Csearch2.setText("Search");
         Csearch2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -681,6 +593,7 @@ public class DriverDashboard extends javax.swing.JFrame {
             }
         });
 
+        Csearch3.setBackground(new java.awt.Color(0, 0, 102));
         Csearch3.setText("Search");
         Csearch3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -700,9 +613,9 @@ public class DriverDashboard extends javax.swing.JFrame {
                 "Booking ID", "Start Date", "End Date", "Status ", "Deposite", "Cus_ID", "Car ID"
             }
         ));
-        driverBooking.setColorBackgoundHead(new java.awt.Color(204, 0, 51));
-        driverBooking.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        driverBooking.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        driverBooking.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
+        driverBooking.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        driverBooking.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
         driverBooking.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         driverBooking.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         driverBooking.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -817,10 +730,7 @@ public class DriverDashboard extends javax.swing.JFrame {
      * @param aUser
      */
 
-    public void setUser(String aUser) {
-        userID = aUser;
-    }  
-public void Load(){
+        public void Load(){
         DefaultTableModel BFT=(DefaultTableModel) driverBooking.getModel();
         BFT.setRowCount(0);
         BookingImp bookingimp = new BookingImp();
@@ -907,7 +817,7 @@ public void admin_onload(String ID){
 
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        DriverSetting();
+       // DriverSetting();
         cardLayout1.show(CardjPannel,"CardPri2");
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -967,7 +877,7 @@ public void Driver_setting(){
             user.setNIC(nictxt.getText());
             user.setEmail(emailtxt.getText());
             user.setContactno(Integer.parseInt(phonetxt.getText()));
-            user.setGender((String)gendertxt.getSelectedItem());
+            user.setGender((String)drivergender.getSelectedItem());
 
             UserImp userImp = new UserImp();
             userImp.Update(user,"driver");
@@ -1009,8 +919,9 @@ public void Driver_setting(){
     }//GEN-LAST:event_jLabel30MouseClicked
 
 
-    private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
+    private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {                                           
         cardLayout1.show(CardjPannel,"CardPri5"); 
+    }
     private void menucourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menucourseActionPerformed
         cardLayout1.show(CardjPannel,"CardPri3");
     }//GEN-LAST:event_menucourseActionPerformed
@@ -1024,11 +935,6 @@ public void Driver_setting(){
     private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
        
     }//GEN-LAST:event_cdeleteActionPerformed
-
-    private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
-        cardLayout1.show(CardjPannel,"CardPri5"); 
-
-    }//GEN-LAST:event_menunoticeActionPerformed
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         JFileChooser fchoser=new JFileChooser();
@@ -1058,10 +964,6 @@ public void Driver_setting(){
         // TODO add your handling code here:
     }//GEN-LAST:event_adPwdActionPerformed
 
-
-    private void gendertxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gendertxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_gendertxtActionPerformed
 
     private void jLabel83MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel83MouseClicked
         int dialogResult=JOptionPane.showConfirmDialog(null,"Do You Want to Exit?", "Warnning",JOptionPane.YES_NO_OPTION);
@@ -1116,6 +1018,10 @@ public void Driver_setting(){
 
     cardLayout1.show(CardjPannel,"CardPri2");
     }//GEN-LAST:event_DriverSettingMouseClicked
+
+    private void menunoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menunoticeMouseClicked
+        cardLayout1.show(CardjPannel,"CardPri5");
+    }//GEN-LAST:event_menunoticeMouseClicked
 
 
 
@@ -1181,13 +1087,8 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel CardjPannel;
     private rojerusan.RSMaterialButtonRectangle Csearch2;
     private rojerusan.RSMaterialButtonRectangle Csearch3;
-
     private javax.swing.JTextField CusID;
-
     private javax.swing.JLabel DriverSetting;
-    private rojeru_san.complementos.RSTableMetro Jdriver;
-    private javax.swing.JTextField ScarId;
-    private javax.swing.JButton Search;
     private javax.swing.JCheckBox ShowPassword;
     private javax.swing.JPasswordField adCPwd;
     private javax.swing.JLabel adName;
@@ -1196,8 +1097,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel demoCount;
     private rojeru_san.complementos.RSTableMetro driverBooking;
     private javax.swing.JComboBox drivergender;
-    private javax.swing.JTextField drivertxt;
-    private javax.swing.JTextField edatetxt;
     private javax.swing.JTextField emailtxt;
     private javax.swing.JTextField fnametxt;
     private javax.swing.JTextField idtxt;
@@ -1234,15 +1133,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel72;
-
-    private javax.swing.JLabel jLabel8;
-
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;

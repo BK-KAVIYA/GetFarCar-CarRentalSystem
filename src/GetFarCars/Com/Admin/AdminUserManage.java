@@ -598,7 +598,7 @@ public class AdminUserManage extends javax.swing.JFrame {
                 rSMaterialButtonRectangle4ActionPerformed(evt);
             }
         });
-        jPanel3.add(rSMaterialButtonRectangle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 240, 50));
+        jPanel3.add(rSMaterialButtonRectangle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 250, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/Update1.png"))); // NOI18N
         jLabel3.setText("jLabel3");

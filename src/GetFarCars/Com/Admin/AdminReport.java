@@ -336,8 +336,8 @@ public class AdminReport extends javax.swing.JFrame {
         ));
         CAV.setAltoHead(25);
         CAV.setColorBackgoundHead(new java.awt.Color(0, 0, 102));
-        CAV.setColorFilasForeground1(new java.awt.Color(204, 51, 0));
-        CAV.setColorFilasForeground2(new java.awt.Color(255, 0, 0));
+        CAV.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        CAV.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
         CAV.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CAV.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CAV.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

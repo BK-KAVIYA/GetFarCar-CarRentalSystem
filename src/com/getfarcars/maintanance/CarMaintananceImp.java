@@ -140,7 +140,7 @@ public class CarMaintananceImp implements MaintananceDAO{
             rs = pst.executeQuery();
             
             while(rs.next()){
-                CarMaintanance carmaintanance = new CarMaintanance()
+                CarMaintanance carmaintanance = new CarMaintanance();
                 
                 carmaintanance.setM_ID(rs.getString("M_ID"));
                 carmaintanance.setReason(rs.getString("reason"));

@@ -83,10 +83,11 @@ public class UserImp implements UserDAO{
                 break;
         }
         
-        String sql="select * from "+TableName+" where ID=?;";
+        
 
             
         try {
+            String sql="select * from "+TableName+" where ID=?;";
             pst=conn.prepareStatement(sql);
             pst.setString(1,userID);
             ResultSet rs=pst.executeQuery();
