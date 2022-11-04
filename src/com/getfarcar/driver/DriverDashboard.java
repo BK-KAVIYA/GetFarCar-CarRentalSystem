@@ -77,7 +77,7 @@ public class DriverDashboard extends javax.swing.JFrame {
         menunotice = new rojerusan.RSMaterialButtonRectangle();
         jLabel7 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        DriverSetting = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         CardjPannel = new javax.swing.JPanel();
         CardPri1 = new javax.swing.JPanel();
@@ -102,9 +102,6 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         idtxt = new javax.swing.JTextField();
-
-        gendertxt = new javax.swing.JComboBox<String>();
-
         jLabel20 = new javax.swing.JLabel();
         lnametxt = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
@@ -134,9 +131,7 @@ public class DriverDashboard extends javax.swing.JFrame {
         phonetxt = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         emailtxt = new javax.swing.JTextField();
-
         drivergender = new javax.swing.JComboBox();
-
         CardPri3 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -334,12 +329,21 @@ public class DriverDashboard extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 539, 34, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 153, 0));
+        jPanel6.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jPanel6AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/profileSetting.png"))); // NOI18N
-        jLabel8.setText("jLabel8");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        DriverSetting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PHOTOS/profileSetting.png"))); // NOI18N
+        DriverSetting.setText("jLabel8");
+        DriverSetting.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                DriverSettingMouseClicked(evt);
             }
         });
 
@@ -349,14 +353,14 @@ public class DriverDashboard extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DriverSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8))
+                .addComponent(DriverSetting))
         );
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 50, 30));
@@ -554,12 +558,13 @@ public class DriverDashboard extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("Registration Number");
         CardPri2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 143, 29));
+
+        idtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idtxtActionPerformed(evt);
+            }
+        });
         CardPri2.add(idtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 260, 32));
-
-
-        gendertxt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
-        CardPri2.add(gendertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 186, 28));
-
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
@@ -674,11 +679,8 @@ public class DriverDashboard extends javax.swing.JFrame {
         CardPri2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 32));
         CardPri2.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 180, 29));
 
-
         drivergender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
         CardPri2.add(drivergender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 140, -1));
-
-
 
         CardjPannel.add(CardPri2, "CardPri2");
 
@@ -1608,13 +1610,14 @@ public class DriverDashboard extends javax.swing.JFrame {
         return userID;
     }
 
+    public void setUser(String aUser) {
+        userID = aUser;
+    } 
     /**
      *
      * @param aUser
      */
-    public void setUser(String aUser) {
-        userID = aUser;
-    }  
+     
 
 public void admin_onload(String ID){
    /* int lec,stu,demo,c;
@@ -1693,13 +1696,6 @@ public void admin_onload(String ID){
         }
     }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-
-    Driver_setting(); 
-
-    cardLayout1.show(CardjPannel,"CardPri2");
-    }//GEN-LAST:event_jLabel8MouseClicked
-
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         cardLayout1.show(CardjPannel,"CardPri1");
     }//GEN-LAST:event_jLabel16MouseClicked
@@ -1713,12 +1709,11 @@ public void admin_onload(String ID){
     }//GEN-LAST:event_jLabel17MouseClicked
 
 
+
+
+
 public void Driver_setting(){
 
-
-public void admin_setting(){
-
-    DriverDashboard driverdahboard = new DriverDashboard();
         String UID=getUser();
         UserImp userImp = new UserImp();
         User user = new User();     
@@ -1730,11 +1725,7 @@ public void admin_setting(){
         line1txt.setText(user.getAddressl1());
         line2txt.setText(user.getAddressl2());
         citytxt.setText(user.getCity());
-
         drivergender.setSelectedItem(user.getGender());
-
-        gendertxt.setSelectedItem(user.getGender());
-
         emailtxt.setText(user.getEmail());
         phonetxt.setText(String.valueOf(user.getContactno()));
         nictxt.setText(user.getNIC());
@@ -1761,26 +1752,7 @@ public void admin_setting(){
 
             UserImp userImp = new UserImp();
             userImp.Update(user,"driver");
-            
-
-      if(!(fnametxt.getText().equals("")&&lnametxt.getText().equals("")&&idtxt.getText().equals("")&&line1txt.getText().equals("")&&line2txt.getText().equals("")&&citytxt.getText().equals("")&&gendertxt.getText.equals("")&&emailtxt.getText().equals("")&&phonetxt.getText().equals("")&&phonetxt.getText().equals(""))){
-            User user = new User();
-            user.setID(txtRegNo.getText());
-            user.setfName(txtFName.getText());
-            user.setlName(txtLName1.getText());
-            user.setAddressl1(txtAddress.getText());
-            user.setAddressl2(txtaddress2.getText());
-            user.setCity(txtCity2.getText());
-            user.setNIC(txtDOB.getText());
-            user.setEmail(txtEmail.getText());
-            user.setContactno(Integer.parseInt(txtPhone.getText()));
-            user.setGender((String)adGender.getSelectedItem());
-
-            UserImp userImp = new UserImp();
-            userImp.Update(user,"admin");
-            Load();
-
-        
+    
          }else{
             JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
         }
@@ -1790,7 +1762,6 @@ public void admin_setting(){
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         int dialogResult=JOptionPane.showConfirmDialog(null,"Do You Want to Exit?", "Warnning",JOptionPane.YES_NO_OPTION);
-
         if(dialogResult==JOptionPane.YES_NO_OPTION){    
                 System.exit(0);
         }
@@ -1821,9 +1792,7 @@ public void admin_setting(){
         cardLayout1.show(CardjPannel,"CardPri3");
     }//GEN-LAST:event_menucourseActionPerformed
 
-    private void clear_cource_fields(){
-  
-}
+
     private void caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddActionPerformed
 
             
@@ -1835,9 +1804,7 @@ public void admin_setting(){
 
     private void menunoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menunoticeActionPerformed
         cardLayout1.show(CardjPannel,"CardPri5"); 
-        /*LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
-        noticeDate.setText(dtf.format(now));*/
+
     }//GEN-LAST:event_menunoticeActionPerformed
 
     private void menutimetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menutimetableMouseClicked
@@ -2133,6 +2100,20 @@ public void admin_setting(){
         // TODO add your handling code here:
     }//GEN-LAST:event_adPwdActionPerformed
 
+    private void idtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idtxtActionPerformed
+
+    private void jPanel6AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel6AncestorAdded
+
+    }//GEN-LAST:event_jPanel6AncestorAdded
+
+    private void DriverSettingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DriverSettingMouseClicked
+        Driver_setting(); 
+
+    cardLayout1.show(CardjPannel,"CardPri2");
+    }//GEN-LAST:event_DriverSettingMouseClicked
+
 
 // This code use to resize image to fit lable
 public ImageIcon resizeImage(String imagePath, byte[] pic){
@@ -2197,6 +2178,7 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JPanel CardjPannel;
     private rojerusan.RSMaterialButtonRectangle Csearch2;
     private rojerusan.RSMaterialButtonRectangle Csearch3;
+    private javax.swing.JLabel DriverSetting;
     private rojeru_san.complementos.RSTableMetro Jdriver;
     private javax.swing.JTextField ScarId;
     private javax.swing.JButton Search;
@@ -2233,9 +2215,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JTextField edatetxt;
     private javax.swing.JTextField emailtxt;
     private javax.swing.JTextField fnametxt;
-
-    private javax.swing.JComboBox<String> gendertxt;
-
     private javax.swing.JTextField idtxt;
     private javax.swing.JTextField ivoicetxt;
     private javax.swing.JButton jButton1;
@@ -2307,7 +2286,6 @@ public ImageIcon resizeImage(String imagePath, byte[] pic){
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
