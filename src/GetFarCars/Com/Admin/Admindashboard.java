@@ -1144,7 +1144,6 @@ public class Admindashboard extends javax.swing.JFrame {
 
         jPanel10.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 570, 100));
 
-        sub1name1.setEnabled(false);
         sub1name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sub1name1ActionPerformed(evt);
@@ -1152,7 +1151,6 @@ public class Admindashboard extends javax.swing.JFrame {
         });
         jPanel10.add(sub1name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 130, -1));
 
-        sub1name2.setEnabled(false);
         sub1name2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sub1name2ActionPerformed(evt);
@@ -2019,6 +2017,8 @@ public class Admindashboard extends javax.swing.JFrame {
             ResultSetMetaData Rss2=rs2.getMetaData();
             c=Rss2.getColumnCount();
             BookCount.setText(String.valueOf(c));
+            
+      
 
         } catch (SQLException ex) {
             Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
@@ -2335,7 +2335,7 @@ public void admin_setting(){
             {            
                 baos.write(buf,0,readnum);                
             }
-            pimage=baos.toByteArray();
+          //  pimage=baos.toByteArray();
             lblimage.setIcon(resizeImage(fname, buf));
         } catch (Exception e) {
         }       
@@ -2350,21 +2350,16 @@ public void admin_setting(){
     private void cusidsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusidsearchActionPerformed
       
         
-        String CID=bookingidtxt.getText();
+        String CID=cusidtxt.getText();
         BookingImp bookingimp = new BookingImp();
-        Booking booking = new Booking();    
-        booking=bookingimp.Search(CID);
-        
+
+        List<Booking> c_booking=bookingimp.SearchCustomerList(CID);
         DefaultTableModel UFT=(DefaultTableModel) bookingtable.getModel();
         UFT.setRowCount(0);
-
-            UFT.addRow(new Object[]{booking.getBid(),booking.getStartdate(),booking.getEnddate(),booking.getStatus(),booking.getDeposit(),booking.getCustomerid(),booking.getCarid(),booking.getDriverid(),booking.getAdminid()});
-        
-        
-        
-        
-        
-        
+        for(Booking booking:c_booking){
+           UFT.addRow(new Object[]{booking.getBid(),booking.getStartdate(),booking.getEnddate(),booking.getStatus(),booking.getDeposit(),booking.getCustomerid(),booking.getCarid(),booking.getDriverid()});
+        }
+         
     }//GEN-LAST:event_cusidsearchActionPerformed
 
     private void booking_id_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_id_searchActionPerformed
@@ -2563,9 +2558,6 @@ public void admin_setting(){
                 CarMaintananceImp carmaintananceImp = new CarMaintananceImp();
                 carmaintananceImp.Delete(carmaintanance);
 
-              
-
-
                 midtxt.setText("");
                 reasontxt.setText("");
                 partstxt.setText("");
@@ -2575,7 +2567,7 @@ public void admin_setting(){
                
             
             }else{
-            JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
+                JOptionPane.showMessageDialog(null,"Please fill all the fields!!");
             }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -2625,7 +2617,7 @@ public void admin_setting(){
     }//GEN-LAST:event_menutimetable1MouseClicked
 
     private void menutimetable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menutimetable1ActionPerformed
-        // TODO add your handling code here:
+       cardLayout1.show(CardjPannel,"CardPri4");
     }//GEN-LAST:event_menutimetable1ActionPerformed
 
     private void menuReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReportActionPerformed
@@ -2693,23 +2685,7 @@ public void admin_setting(){
     }//GEN-LAST:event_Csearch4ActionPerformed
 
     private void Csearch5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Csearch5ActionPerformed
-       /* try {
-            MessageFormat header=new MessageFormat("Invoice");
-            MessageFormat footer=new MessageFormat("Thank You!");
-            InvoiceTable.print(JTable.PrintMode.FIT_WIDTH, header, footer);
-        } catch (PrinterException ex) {
-            Logger.getLogger(Admindashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        
-        
-        /*Toolkit tkp = Invoice.getToolkit();
-        PrintJob pjp = tkp.getPrintJob(this, null, null);
-        Graphics g = pjp.getGraphics();
-        Invoice.print(g);
-        g.dispose();
-        pjp.end();*/
-        
-        
+
             PrinterJob job = PrinterJob.getPrinterJob();
             job.setJobName("Print Data");
             job.setPrintable(new Printable(){

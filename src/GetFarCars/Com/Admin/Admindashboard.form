@@ -2072,9 +2072,6 @@
                           </SubComponents>
                         </Container>
                         <Component class="javax.swing.JTextField" name="sub1name1">
-                          <Properties>
-                            <Property name="enabled" type="boolean" value="false"/>
-                          </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sub1name1ActionPerformed"/>
                           </Events>
@@ -2085,9 +2082,6 @@
                           </Constraints>
                         </Component>
                         <Component class="javax.swing.JTextField" name="sub1name2">
-                          <Properties>
-                            <Property name="enabled" type="boolean" value="false"/>
-                          </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sub1name2ActionPerformed"/>
                           </Events>

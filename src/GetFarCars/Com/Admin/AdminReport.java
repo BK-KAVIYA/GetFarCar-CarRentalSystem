@@ -90,6 +90,8 @@ public class AdminReport extends javax.swing.JFrame {
         ADR1 = new rojeru_san.complementos.RSTableMetro();
         jScrollPane7 = new javax.swing.JScrollPane();
         CAV = new rojeru_san.complementos.RSTableMetro();
+        Availability = new javax.swing.JProgressBar();
+        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         rSMaterialButtonRectangle2 = new rojerusan.RSMaterialButtonRectangle();
@@ -255,8 +257,8 @@ public class AdminReport extends javax.swing.JFrame {
         priCard1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, 100));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Get Far Cars");
-        priCard1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, 20));
+        jLabel9.setText("Car Availability");
+        priCard1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, -1, 20));
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel24.setText("NO10,  Neluwa Road, Galle");
@@ -344,6 +346,13 @@ public class AdminReport extends javax.swing.JFrame {
         }
 
         priCard1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 420, 80));
+
+        Availability.setForeground(new java.awt.Color(0, 204, 0));
+        priCard1.add(Availability, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 170, 40));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("Get Far Cars");
+        priCard1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, 20));
 
         jPanel1.add(priCard1, "priCard1");
 
@@ -443,8 +452,10 @@ private void Load(){
             CA.addRow(new Object[]{repo.getVehicaleType(),repo.getTcars(),repo.getAcars()});
         }
         
-        
-        
+        ReportImp reportImp1 = new ReportImp();
+
+        Availability.setValue((int) reportImp1.get_Precentage());
+        System.out.println(reportImp1.get_Precentage());
         
 
 }
@@ -535,17 +546,19 @@ private void Load(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminUserManage().setVisible(true);
+                new AdminReport().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.complementos.RSTableMetro ADR1;
+    private javax.swing.JProgressBar Availability;
     private rojeru_san.complementos.RSTableMetro CAV;
     private rojeru_san.complementos.RSTableMetro Ttable;
     private javax.swing.JLabel amount;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;

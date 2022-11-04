@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.carrentalsystem.system;
-
-import Dashboard.*;
 import javax.swing.JProgressBar;
 
 /**

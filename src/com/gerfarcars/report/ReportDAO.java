@@ -13,4 +13,5 @@ public interface ReportDAO {
     public List<Report> InvoiceList(String CID);
     public List<Report> AdminReportList();
     public List<Report> AdminCarAvailability();
+    public double get_Precentage();
 }

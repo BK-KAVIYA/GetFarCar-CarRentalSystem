@@ -12,8 +12,7 @@ public interface UserDAO {
     public void Update(User user,String tableName);
     public void Delete(User user,String tablename);
     public User Serch(String userID);
-    public User Serch_cid(String Car_ID);
     public List<User> list();
-    public List<User> CarMaintanancelist(String MID);
+    
     
 }

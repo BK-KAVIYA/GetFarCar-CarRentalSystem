@@ -111,7 +111,6 @@ public class UserImp implements UserDAO{
         return user;
     }
 
-    @Override
     public List<User> list(String tableName) {
         List<User> list =new ArrayList<User>();
          try {
@@ -145,7 +144,6 @@ public class UserImp implements UserDAO{
          return list;
     }
 
-    @Override
     public List<User> Userlist() {
         List<User> list =new ArrayList<User>();
             
@@ -206,6 +204,15 @@ public class UserImp implements UserDAO{
             Logger.getLogger(UserImp.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @Override
+    public List<User> list() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+
 
 
     
