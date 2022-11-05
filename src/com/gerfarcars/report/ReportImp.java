@@ -29,8 +29,49 @@ public class ReportImp implements ReportDAO{
     DBConnector obj=DBConnector.getObject();
     java.sql.Connection conn=obj.getConnection();
     
-    private int Tamount=0;
+    private int Tamount;
+    private double presentage;
+    private double totalCars;
+    private double availableCar;
+    private double precentage;
+    private double retprecentage;
 
+    public int getPrecentage() {
+        return (int) precentage;
+    }
+
+    public void setPrecentage(double precentage) {
+        this.precentage = precentage;
+    }
+    
+
+    public double getTotalCars() {
+        return totalCars;
+    }
+
+    public void setTotalCars(double totalCars) {
+        this.totalCars = totalCars;
+    }
+
+    public double getAvailableCar() {
+        return availableCar;
+    }
+
+    public void setAvailableCar(double availableCar) {
+        this.availableCar = availableCar;
+    }
+
+    
+    
+    public double getPresentage() {
+        return presentage;
+    }
+
+    public void setPresentage(double presentage) {
+        this.presentage = presentage;
+    }
+    
+    
     public int getTamount() {
         return Tamount;
     }
@@ -156,6 +197,10 @@ public class ReportImp implements ReportDAO{
                 report2.setTcars(rs.getInt("Number_Of_Cars"));
                 report2.setAcars(rs.getInt("Available_Cars"));
                 
+                totalCars=totalCars+rs.getInt("Number_Of_Cars");
+                availableCar=availableCar+rs.getInt("Available_Cars");
+                             
+                
                 String sql2="Select * FROM car WHERE Car_ID=(SELECT Car_ID from caravailability where Car_ID='"+rs.getString("Car_ID")+"');";
                 pst1=conn.prepareStatement(sql2);
                 ResultSet rs3;
@@ -226,5 +271,32 @@ public class ReportImp implements ReportDAO{
         
         return list;
     }
+    
+   public double get_Precentage(){
+     try {
+            String sql="SELECT * FROM caravailability;";
+            pst=conn.prepareStatement(sql);
+            ResultSet rs;
+            rs = pst.executeQuery();
+            
+            while(rs.next()){
+                Report report2 = new Report();
+                report2.setVehicaleID(rs.getString("Car_ID"));
+                report2.setTcars(rs.getInt("Number_Of_Cars"));
+                report2.setAcars(rs.getInt("Available_Cars"));
+                
+                totalCars=totalCars+rs.getInt("Number_Of_Cars");
+                availableCar=availableCar+rs.getInt("Available_Cars");
+                
+                setAvailableCar(availableCar);
+                setTotalCars(totalCars); 
+                
+            }
+                } catch (SQLException ex) {
+                    Logger.getLogger(ReportImp.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               retprecentage=(getAvailableCar()/getTotalCars())*100;
+   return retprecentage;
+   }
     
 }

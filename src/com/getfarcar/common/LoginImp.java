@@ -28,12 +28,13 @@ public class LoginImp implements LoginDAO{
             pst=conn.prepareStatement(sql);
             ResultSet rs=pst.executeQuery();
             
-            while(rs.next()){
+            if(rs.next()){
                 if(rs.getString("Password").equals(logins.getPassword())){
                     switch(rs.getInt("Role")){
                         case 1:
                             Admindashboard admindashboard = new Admindashboard();
                             admindashboard.setUser(logins.getID());
+                            admindashboard.admin_setting(logins.getID());
                             loginPage.dispose();
                             admindashboard.show();
                             break;
@@ -50,7 +51,9 @@ public class LoginImp implements LoginDAO{
                     
                     }
                 }
-                }
+                }else{
+                     JOptionPane.showMessageDialog(loginPage,"Please Enter the correct username and password!!");
+            }
 
         }catch (SQLException ex) {
             Logger.getLogger(LoginImp.class.getName()).log(Level.SEVERE, null, ex);
